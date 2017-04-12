@@ -46,7 +46,7 @@ namespace DXApplication1
             if (frmDanhMucNhomKhachHang.tos == true)
             {
                 NHOMKHACHHANG nhomkh = new NHOMKHACHHANG();
-                //Chỗ này có vấn đề xem lại dùm
+
                 nhomkh.MANHOMKH= tm.ATTangMa3("NKH", "NHOMKHACHHANG");
              
                 nhomkh.TENNHOMKH = txtTenNhomKH.Text;
@@ -55,31 +55,32 @@ namespace DXApplication1
 
                 qltb.NHOMKHACHHANGs.InsertOnSubmit(nhomkh);
                 qltb.SubmitChanges();
-                MessageBox.Show("Success");
+                MessageBox.Show("Thêm thành công");
                 LoadNhomKH();
                 this.Close();
             }
             else
             {
                 string manhomkh = frmDanhMucNhomKhachHang.dgvnhomkhachhang.CurrentRow.Cells[0].Value.ToString();
-                NHOMKHACHHANG md = qltb.NHOMKHACHHANGs.Where(t => t.MANHOMKH == manhomkh).FirstOrDefault();
+                NHOMKHACHHANG nkh = qltb.NHOMKHACHHANGs.Where(t => t.MANHOMKH == manhomkh).FirstOrDefault();
 
-               
-                md.TENNHOMKH = txtTenNhomKH.Text;
-                
-                md.GHICHU = txtDienGiai.Text;
-               
-                md.KHUYENMAI= int.Parse(txtKhuyenMai.Text);
+
+                nkh.TENNHOMKH = txtTenNhomKH.Text;
+
+                nkh.GHICHU = txtDienGiai.Text;
+
+                nkh.KHUYENMAI= int.Parse(txtKhuyenMai.Text);
                 
 
                 qltb.SubmitChanges();
+                MessageBox.Show("Sửa thành công");
                 LoadNhomKH();
             }
         }
         public void LoadNhomKH()
         {
-            var nhomkh = from md in qltb.NHOMKHACHHANGs
-                            select new { md.MANHOMKH, md.TENNHOMKH, md.KHUYENMAI, md.GHICHU };
+            var nhomkh = from mnkh in qltb.NHOMKHACHHANGs
+                            select new { mnkh.MANHOMKH, mnkh.TENNHOMKH, mnkh.KHUYENMAI, mnkh.GHICHU };
             frmDanhMucNhomKhachHang.dgvnhomkhachhang.DataSource = nhomkh;
         }
     }

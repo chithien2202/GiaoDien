@@ -67,31 +67,32 @@ namespace DXApplication1
                 khachhang.SDTKH = int.Parse(txtSoDienThoai.Text);
                 qltb.KHACHHANGs.InsertOnSubmit(khachhang);
                 qltb.SubmitChanges();
-                MessageBox.Show("Success");
+                MessageBox.Show("Thêm thành công");
                 LoadKhachHang();
                 this.Close();
             }
             else
             {
                 string makhachhang = frmDanhMucKhachHang.dgvkhachang.CurrentRow.Cells[0].Value.ToString();
-                KHACHHANG md = qltb.KHACHHANGs.Where(t => t.MAKHACHKHACH == makhachhang).FirstOrDefault();
-               
-                md.MANHOMKH = cbbnhomkhachhang.Text;
-                md.TENKHACHHANG = txtTenKhachHang.Text;
-                md.DIACHIKH = txtDiaChi.Text;
-                md.GHICHU = txtDienGiai.Text;
-                md.EMAILKH = txtEmail.Text;
-                md.FAX = int.Parse(txtFax.Text);
-                md.SDTKH = int.Parse(txtSoDienThoai.Text);
+                KHACHHANG kh = qltb.KHACHHANGs.Where(t => t.MAKHACHKHACH == makhachhang).FirstOrDefault();
+
+                kh.MANHOMKH = cbbnhomkhachhang.Text;
+                kh.TENKHACHHANG = txtTenKhachHang.Text;
+                kh.DIACHIKH = txtDiaChi.Text;
+                kh.GHICHU = txtDienGiai.Text;
+                kh.EMAILKH = txtEmail.Text;
+                kh.FAX = int.Parse(txtFax.Text);
+                kh.SDTKH = int.Parse(txtSoDienThoai.Text);
                
                 qltb.SubmitChanges();
+                MessageBox.Show("Sửa thành công");
                 LoadKhachHang();
             }
         }
         public void LoadKhachHang()
         {
-            var khachhang = from md in qltb.KHACHHANGs
-                        select new { md.MAKHACHKHACH, md.TENKHACHHANG, md.NHOMKHACHHANG, md.DIACHIKH, md.EMAILKH, md.FAX, md.SDTKH,md.GHICHU };
+            var khachhang = from kh in qltb.KHACHHANGs
+                        select new { kh.MAKHACHKHACH, kh.TENKHACHHANG, kh.NHOMKHACHHANG, kh.DIACHIKH, kh.EMAILKH, kh.FAX, kh.SDTKH, kh.GHICHU };
             frmDanhMucKhachHang.dgvkhachang.DataSource = khachhang;
         }
             

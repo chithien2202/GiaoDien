@@ -65,31 +65,32 @@ namespace DXApplication1
                 nhanvien.SDTNV = int.Parse(txtSoDienThoai.Text);
                 qltb.NHANVIENs.InsertOnSubmit(nhanvien);
                 qltb.SubmitChanges();
-                MessageBox.Show("Success");
+                MessageBox.Show("Thêm thành công");
                 Loadnhanvien();
                 this.Close();
             }
             else
             {
                 string manhanvien = frmDanhMucNhanVien.dgvnhanvien.CurrentRow.Cells[0].Value.ToString();
-                NHANVIEN md = qltb.NHANVIENs.Where(t => t.MANHANVIEN == manhanvien).FirstOrDefault();
+                NHANVIEN nv = qltb.NHANVIENs.Where(t => t.MANHANVIEN == manhanvien).FirstOrDefault();
 
-                md.MABOPHAN = cbbbophan.Text;
-                md.TENNHANVIEN = txtTenNhanVien.Text;
-                md.DIACHINV = txtDiaChi.Text;
-                md.GHICHU = txtDienGiai.Text;
-                md.EMAILNV = txtEmail.Text;
-                md.LUONG = int.Parse(txtLuong.Text);
-                md.SDTNV = int.Parse(txtSoDienThoai.Text);
+                nv.MABOPHAN = cbbbophan.Text;
+                nv.TENNHANVIEN = txtTenNhanVien.Text;
+                nv.DIACHINV = txtDiaChi.Text;
+                nv.GHICHU = txtDienGiai.Text;
+                nv.EMAILNV = txtEmail.Text;
+                nv.LUONG = int.Parse(txtLuong.Text);
+                nv.SDTNV = int.Parse(txtSoDienThoai.Text);
 
                 qltb.SubmitChanges();
+                MessageBox.Show("Sửa thành công");
                 Loadnhanvien();
             }
         }
         public void Loadnhanvien()
         {
-            var nhanvien = from md in qltb.NHANVIENs
-                            select new { md.MANHANVIEN, md.MABOPHAN, md.TENNHANVIEN, md.DIACHINV, md.EMAILNV, md.LUONG, md.SDTNV, md.GHICHU };
+            var nhanvien = from nv in qltb.NHANVIENs
+                            select new { nv.MANHANVIEN, nv.MABOPHAN, nv.TENNHANVIEN, nv.DIACHINV, nv.SDTNV, nv.EMAILNV, nv.LUONG,  nv.GHICHU };
             frmDanhMucNhanVien.dgvnhanvien.DataSource = nhanvien;
         }
     }

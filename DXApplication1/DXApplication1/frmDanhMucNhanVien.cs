@@ -61,7 +61,7 @@ namespace DXApplication1
                 NHANVIEN nhanvien = qltb.NHANVIENs.Where(t => t.MANHANVIEN == manhanvien).FirstOrDefault();
                 qltb.NHANVIENs.DeleteOnSubmit(nhanvien);
                 qltb.SubmitChanges();
-                MessageBox.Show("Delete Success!");
+                MessageBox.Show("Xóa thành công!");
                 LoadGridviewnhanvien();
             }
 

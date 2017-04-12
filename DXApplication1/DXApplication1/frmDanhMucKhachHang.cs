@@ -41,8 +41,8 @@ namespace DXApplication1
         }
         public void LoadGridviewkhachhang()
         {
-            var khachhang = from md in qltb.KHACHHANGs
-                            select new { md.MAKHACHKHACH, md.MANHOMKH, md.TENKHACHHANG, md.DIACHIKH, md.EMAILKH, md.FAX, md.GHICHU, md.SDTKH };
+            var khachhang = from kh in qltb.KHACHHANGs
+                            select new { kh.MAKHACHKHACH, kh.MANHOMKH, kh.TENKHACHHANG, kh.DIACHIKH, kh.EMAILKH, kh.FAX, kh.GHICHU, kh.SDTKH };
             dgtvKhachHang.DataSource = khachhang;
         }
 

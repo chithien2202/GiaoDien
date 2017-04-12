@@ -40,8 +40,8 @@ namespace DXApplication1
         }
         public void LoadGridviewnhomkh()
         {
-            var nhomkh = from md in qltb.NHOMKHACHHANGs
-                            select new { md.MANHOMKH, md.TENNHOMKH, md.KHUYENMAI, md.GHICHU };
+            var nhomkh = from nkh in qltb.NHOMKHACHHANGs
+                            select new { nkh.MANHOMKH, nkh.TENNHOMKH, nkh.KHUYENMAI, nkh.GHICHU };
             dtgvnhomkhachhang.DataSource = nhomkh;
         }
 
