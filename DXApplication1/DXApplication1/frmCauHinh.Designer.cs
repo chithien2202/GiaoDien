@@ -34,14 +34,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbbServerName = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.cbbDatabase = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtUserName = new DevExpress.XtraEditors.TextEdit();
             this.txtPassword = new DevExpress.XtraEditors.TextEdit();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbServerName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbDatabase.Properties)).BeginInit();
+            this.cboSeverName = new System.Windows.Forms.ComboBox();
+            this.cboDatabase = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtUserName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             this.SuspendLayout();
@@ -97,28 +95,6 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Cấu hình kết nối";
             // 
-            // cbbServerName
-            // 
-            this.cbbServerName.Location = new System.Drawing.Point(148, 58);
-            this.cbbServerName.Name = "cbbServerName";
-            this.cbbServerName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbServerName.Properties.Appearance.Options.UseFont = true;
-            this.cbbServerName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbbServerName.Size = new System.Drawing.Size(203, 26);
-            this.cbbServerName.TabIndex = 5;
-            // 
-            // cbbDatabase
-            // 
-            this.cbbDatabase.Location = new System.Drawing.Point(148, 213);
-            this.cbbDatabase.Name = "cbbDatabase";
-            this.cbbDatabase.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbDatabase.Properties.Appearance.Options.UseFont = true;
-            this.cbbDatabase.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbbDatabase.Size = new System.Drawing.Size(203, 26);
-            this.cbbDatabase.TabIndex = 6;
-            // 
             // txtUserName
             // 
             this.txtUserName.Location = new System.Drawing.Point(148, 113);
@@ -155,17 +131,33 @@
             this.btnHuy.TabIndex = 10;
             this.btnHuy.Text = "&Hủy (F3)";
             // 
+            // cboSeverName
+            // 
+            this.cboSeverName.FormattingEnabled = true;
+            this.cboSeverName.Location = new System.Drawing.Point(148, 63);
+            this.cboSeverName.Name = "cboSeverName";
+            this.cboSeverName.Size = new System.Drawing.Size(203, 21);
+            this.cboSeverName.TabIndex = 11;
+            // 
+            // cboDatabase
+            // 
+            this.cboDatabase.FormattingEnabled = true;
+            this.cboDatabase.Location = new System.Drawing.Point(148, 222);
+            this.cboDatabase.Name = "cboDatabase";
+            this.cboDatabase.Size = new System.Drawing.Size(203, 21);
+            this.cboDatabase.TabIndex = 11;
+            // 
             // frmCauHinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(395, 304);
+            this.Controls.Add(this.cboDatabase);
+            this.Controls.Add(this.cboSeverName);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUserName);
-            this.Controls.Add(this.cbbDatabase);
-            this.Controls.Add(this.cbbServerName);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -173,8 +165,6 @@
             this.Controls.Add(this.label1);
             this.Name = "frmCauHinh";
             this.Text = "Cấu hình kết nối";
-            ((System.ComponentModel.ISupportInitialize)(this.cbbServerName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbDatabase.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUserName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -189,11 +179,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private DevExpress.XtraEditors.ComboBoxEdit cbbServerName;
-        private DevExpress.XtraEditors.ComboBoxEdit cbbDatabase;
         private DevExpress.XtraEditors.TextEdit txtUserName;
         private DevExpress.XtraEditors.TextEdit txtPassword;
         private DevExpress.XtraEditors.SimpleButton btnLuu;
         private DevExpress.XtraEditors.SimpleButton btnHuy;
+        private System.Windows.Forms.ComboBox cboSeverName;
+        private System.Windows.Forms.ComboBox cboDatabase;
     }
 }

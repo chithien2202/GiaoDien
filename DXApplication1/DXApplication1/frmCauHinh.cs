@@ -13,9 +13,8 @@ namespace DXApplication1
 {
     public partial class frmCauHinh : DevExpress.XtraEditors.XtraForm
     {
-        public frmCauHinh()
-        {
-            InitializeComponent();
-        }
+
+       
+
     }
 }

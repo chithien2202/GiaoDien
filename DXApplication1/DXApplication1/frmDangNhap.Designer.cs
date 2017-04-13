@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDangNhap));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.linkCauHinhKetNoi = new DevExpress.XtraEditors.HyperlinkLabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.lblTaiKhoan = new DevExpress.XtraEditors.LabelControl();
+            this.lblMatKhau = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.btnDangNhap = new DevExpress.XtraEditors.SimpleButton();
             this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
@@ -63,25 +63,25 @@
             this.linkCauHinhKetNoi.TabIndex = 1;
             this.linkCauHinhKetNoi.Text = "Cấu hình kết nối";
             // 
-            // labelControl1
+            // lblTaiKhoan
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.labelControl1.Location = new System.Drawing.Point(170, 89);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(65, 18);
-            this.labelControl1.TabIndex = 2;
-            this.labelControl1.Text = "Tài khoản";
+            this.lblTaiKhoan.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTaiKhoan.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblTaiKhoan.Location = new System.Drawing.Point(170, 89);
+            this.lblTaiKhoan.Name = "lblTaiKhoan";
+            this.lblTaiKhoan.Size = new System.Drawing.Size(65, 18);
+            this.lblTaiKhoan.TabIndex = 2;
+            this.lblTaiKhoan.Text = "Tài khoản";
             // 
-            // labelControl2
+            // lblMatKhau
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.labelControl2.Location = new System.Drawing.Point(170, 145);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(61, 18);
-            this.labelControl2.TabIndex = 3;
-            this.labelControl2.Text = "Mật khẩu";
+            this.lblMatKhau.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMatKhau.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblMatKhau.Location = new System.Drawing.Point(170, 145);
+            this.lblMatKhau.Name = "lblMatKhau";
+            this.lblMatKhau.Size = new System.Drawing.Size(61, 18);
+            this.lblMatKhau.TabIndex = 3;
+            this.lblMatKhau.Text = "Mật khẩu";
             // 
             // labelControl3
             // 
@@ -101,7 +101,7 @@
             this.btnDangNhap.Size = new System.Drawing.Size(97, 38);
             this.btnDangNhap.TabIndex = 5;
             this.btnDangNhap.Text = "Đăng nhập";
-            this.btnDangNhap.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // btnHuy
             // 
@@ -144,8 +144,8 @@
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.lblMatKhau);
+            this.Controls.Add(this.lblTaiKhoan);
             this.Controls.Add(this.linkCauHinhKetNoi);
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmDangNhap";
@@ -163,8 +163,8 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private DevExpress.XtraEditors.HyperlinkLabelControl linkCauHinhKetNoi;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl lblTaiKhoan;
+        private DevExpress.XtraEditors.LabelControl lblMatKhau;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SimpleButton btnDangNhap;
         private DevExpress.XtraEditors.SimpleButton btnHuy;

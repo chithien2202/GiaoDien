@@ -18,12 +18,7 @@ namespace DXApplication1
             InitializeComponent();
         }
 
-        private void pictureEdit1_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void btnDangNhap_Click(object sender, EventArgs e)
         {
             Form frm = new frmMain();
             this.Hide();
