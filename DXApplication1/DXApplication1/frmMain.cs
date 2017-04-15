@@ -140,11 +140,7 @@ namespace DXApplication1
             TabCreating(this.xtraTabControl1, "khách hàng", fff);
         }
 
-        private void btnNhomKhachHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            XtraForm fff = new frmDanhMucNhomKhachHang();
-            TabCreating(this.xtraTabControl1, "Nhóm khách hàng", fff);
-        }
+
 
         private void btnNhaSanXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

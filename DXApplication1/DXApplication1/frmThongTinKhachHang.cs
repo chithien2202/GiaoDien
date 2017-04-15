@@ -15,12 +15,12 @@ namespace DXApplication1
     {
         QLTBDataContext qltb = new QLTBDataContext();
 
-        private void Loadnhomkhachhang()
-        {
-            cbbnhomkhachhang.DataSource = qltb.NHOMKHACHHANGs;
-            cbbnhomkhachhang.DisplayMember = "TENNHOMKH";
-            cbbnhomkhachhang.ValueMember = "MANHOMKH";
-        }
+        //private void Loadnhomkhachhang()
+        //{
+        //    cbbnhomkhachhang.DataSource = qltb.NHOMKHACHHANGs;
+        //    cbbnhomkhachhang.DisplayMember = "TENNHOMKH";
+        //    cbbnhomkhachhang.ValueMember = "MANHOMKH";
+        //}
 
         public frmThongTinKhachHang()
         {
@@ -29,7 +29,7 @@ namespace DXApplication1
 
         private void frmThongTinKhachHang_Load(object sender, EventArgs e)
         {
-            Loadnhomkhachhang();
+            /*Loadnhomkhachhang()*/;
             if (frmDanhMucKhachHang.tos == true)
             {
                 btnLuu.Text = "Thêm";
@@ -92,7 +92,7 @@ namespace DXApplication1
         public void LoadKhachHang()
         {
             var khachhang = from kh in qltb.KHACHHANGs
-                        select new { kh.MAKHACHKHACH, kh.TENKHACHHANG, kh.NHOMKHACHHANG, kh.DIACHIKH, kh.EMAILKH, kh.FAX, kh.SDTKH, kh.GHICHU };
+                        select new { kh.MAKHACHKHACH, kh.TENKHACHHANG, kh.DIACHIKH, kh.EMAILKH, kh.FAX, kh.SDTKH, kh.GHICHU };
             frmDanhMucKhachHang.dgvkhachang.DataSource = khachhang;
         }
             

@@ -7,6 +7,8 @@ namespace DXApplication1
 {
     static class Program
     {
+        public static frmMain mainForm = null;
+        public static frmDangNhap loginForm = null;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

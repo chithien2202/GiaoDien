@@ -43,7 +43,7 @@ namespace DXApplication1
         private void LoadGridViewLinhKien()
         {
             var linhkien = from lk in qltb.LINHKIENs
-                           select new { lk.MALINHKIEN, lk.MATHIETBI, lk.TENLINHKIEN, lk.NGAYSX, lk.NGAYKETTHUC, lk.NGAYMUA_SUACHUA, lk.DONGIA, lk.GHICHULINHKIEN };
+                           select new { lk.MALINHKIEN, lk.MATHIETBI, lk.TENLINHKIEN, lk.NGAYSX, lk.NGAYKETTHUC, lk.NGAYMUA_SUACHUA, lk.GHICHULINHKIEN };
             dtgvDSLinhKien.DataSource = linhkien;
         }
 

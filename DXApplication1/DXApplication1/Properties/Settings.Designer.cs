@@ -44,14 +44,27 @@ namespace DXApplication1.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-6V52PV4\\SQLEXPRESS;Initial Catalog=DATHTT;User ID=sa;Password" +
             "=sa2014")]
         public string DATHTTConnectionString2 {
             get {
                 return ((string)(this["DATHTTConnectionString2"]));
+            }
+            set {
+                this["DATHTTConnectionString2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-6V52PV4\\SQLEXPRESS;Initial Catalog=DATHTT;User ID=sa;Password" +
+            "=sa2014")]
+        public string DATHTTConnectionString3 {
+            get {
+                return ((string)(this["DATHTTConnectionString3"]));
             }
         }
     }

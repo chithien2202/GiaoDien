@@ -209,7 +209,7 @@
             this.btnNhomKhachHang.Id = 27;
             this.btnNhomKhachHang.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnNhomKhachHang.LargeGlyph")));
             this.btnNhomKhachHang.Name = "btnNhomKhachHang";
-            this.btnNhomKhachHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhomKhachHang_ItemClick);
+            //this.btnNhomKhachHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhomKhachHang_ItemClick);
             // 
             // btnLinhKien
             // 

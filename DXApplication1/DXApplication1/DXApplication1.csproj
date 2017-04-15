@@ -163,12 +163,6 @@
     <Compile Include="frmDanhMucKhachHang.Designer.cs">
       <DependentUpon>frmDanhMucKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDanhMucNhomKhachHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDanhMucNhomKhachHang.Designer.cs">
-      <DependentUpon>frmDanhMucNhomKhachHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMangHinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,12 +277,6 @@
     <Compile Include="frmThongTinNhaSanXuat.Designer.cs">
       <DependentUpon>frmThongTinNhaSanXuat.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThongTinNhomKhachHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmThongTinNhomKhachHang.Designer.cs">
-      <DependentUpon>frmThongTinNhomKhachHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmThongTinNhomNguoiDung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -313,6 +301,8 @@
     <Compile Include="frm_background.Designer.cs">
       <DependentUpon>frm_background.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginResult.cs" />
+    <Compile Include="MaHoaPass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frmDanhMucNhanVien.cs">
@@ -344,6 +334,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLTB.dbml</DependentUpon>
     </Compile>
+    <Compile Include="QL_NguoiDung.cs" />
     <Compile Include="TangMa.cs" />
     <EmbeddedResource Include="frmCauHinh.resx">
       <DependentUpon>frmCauHinh.cs</DependentUpon>
@@ -389,9 +380,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmDanhMucNhomKhachHang.resx">
-      <DependentUpon>frmDanhMucNhomKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMangHinh.resx">
       <DependentUpon>frmMangHinh.cs</DependentUpon>
@@ -453,9 +441,6 @@
     <EmbeddedResource Include="frmThongTinNhaSanXuat.resx">
       <DependentUpon>frmThongTinNhaSanXuat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThongTinNhomKhachHang.resx">
-      <DependentUpon>frmThongTinNhomKhachHang.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmThongTinNhomNguoiDung.resx">
       <DependentUpon>frmThongTinNhomNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
@@ -488,10 +473,10 @@
     <EmbeddedResource Include="frmDanhSachHoaDon.resx">
       <DependentUpon>frmDanhSachHoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
     <None Include="QLTB.dbml.layout">
       <DependentUpon>QLTB.dbml</DependentUpon>
     </None>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

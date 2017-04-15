@@ -38,7 +38,6 @@ namespace DXApplication1
                 lk.NGAYSX = dtpNgaySX.Value;
                 lk.NGAYKETTHUC = dtpNgayHetBH.Value;
                 lk.NGAYMUA_SUACHUA = dtpNgayMua.Value;
-                lk.DONGIA = int.Parse(txtDonGia.Text);
                 lk.GHICHULINHKIEN = txtDienGiai.Text;
                 qltb.LINHKIENs.InsertOnSubmit(lk);
                 qltb.SubmitChanges();
@@ -53,7 +52,6 @@ namespace DXApplication1
                 lk.NGAYSX = dtpNgaySX.Value;
                 lk.NGAYKETTHUC = dtpNgayHetBH.Value;
                 lk.NGAYMUA_SUACHUA = dtpNgayMua.Value;
-                lk.DONGIA = decimal.Parse(txtDonGia.Text);
                 lk.GHICHULINHKIEN = txtDienGiai.Text;
                 qltb.SubmitChanges();
                 MessageBox.Show("Sửa thành công");
@@ -66,7 +64,7 @@ namespace DXApplication1
         public void LoadLinhKien()
         {
             var linhkien = from lk in qltb.LINHKIENs
-                           select new { lk.MALINHKIEN, lk.MATHIETBI, lk.TENLINHKIEN, lk.NGAYSX, lk.NGAYKETTHUC, lk.NGAYMUA_SUACHUA, lk.DONGIA, lk.GHICHULINHKIEN };
+                           select new { lk.MALINHKIEN, lk.MATHIETBI, lk.TENLINHKIEN, lk.NGAYSX, lk.NGAYKETTHUC, lk.NGAYMUA_SUACHUA, lk.GHICHULINHKIEN };
             frmDanhMucLinhKien.dtgvlk.DataSource = linhkien;
         }
 
@@ -90,7 +88,6 @@ namespace DXApplication1
                 dtpNgaySX.Text = lk.NGAYSX.ToString();
                 dtpNgayHetBH.Text = lk.NGAYKETTHUC.ToString();
                 dtpNgayMua.Text = lk.NGAYMUA_SUACHUA.ToString();
-                txtDonGia.Text = lk.DONGIA.ToString();
                 txtDienGiai.Text = lk.GHICHULINHKIEN;
             }
         }

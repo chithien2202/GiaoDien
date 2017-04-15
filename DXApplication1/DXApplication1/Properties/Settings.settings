@@ -18,7 +18,10 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=Brian-PC;Initial Catalog=DATHTT;User ID=sa;Password=sa2008</Value>
     </Setting>
-    <Setting Name="DATHTTConnectionString2" Type="(Connection string)" Scope="Application">
+    <Setting Name="DATHTTConnectionString2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=DESKTOP-6V52PV4\SQLEXPRESS;Initial Catalog=DATHTT;User ID=sa;Password=sa2014</Value>
+    </Setting>
+    <Setting Name="DATHTTConnectionString3" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;ConnectionString&gt;Data Source=DESKTOP-6V52PV4\SQLEXPRESS;Initial Catalog=DATHTT;User ID=sa;Password=sa2014&lt;/ConnectionString&gt;
