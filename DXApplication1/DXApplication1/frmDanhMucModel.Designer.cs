@@ -30,29 +30,28 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDanhMucModel));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.cbbLoai = new System.Windows.Forms.ComboBox();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.btnDong = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.cbbNhaSanXuat = new System.Windows.Forms.ComboBox();
             this.btnTroGiup = new DevExpress.XtraEditors.SimpleButton();
+            this.txtTenModel = new DevExpress.XtraEditors.TextEdit();
             this.btnIn = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.dtgvDSModel = new System.Windows.Forms.DataGridView();
-            this.cbbLoai = new System.Windows.Forms.ComboBox();
-            this.cbbNhaSanXuat = new System.Windows.Forms.ComboBox();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txtTenModel = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtDienGiai = new DevExpress.XtraEditors.TextEdit();
+            this.txtDienGiai = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenModel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSModel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTenModel.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDienGiai.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -77,6 +76,23 @@
             this.panelControl1.Size = new System.Drawing.Size(862, 125);
             this.panelControl1.TabIndex = 5;
             // 
+            // cbbLoai
+            // 
+            this.cbbLoai.FormattingEnabled = true;
+            this.cbbLoai.Location = new System.Drawing.Point(90, 48);
+            this.cbbLoai.Name = "cbbLoai";
+            this.cbbLoai.Size = new System.Drawing.Size(208, 21);
+            this.cbbLoai.TabIndex = 27;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Location = new System.Drawing.Point(355, 53);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(49, 16);
+            this.labelControl3.TabIndex = 24;
+            this.labelControl3.Text = "Diễn giải";
+            // 
             // btnDong
             // 
             this.btnDong.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
@@ -94,6 +110,24 @@
             this.btnDong.Text = "Đóng";
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl4.Location = new System.Drawing.Point(5, 48);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(32, 16);
+            this.labelControl4.TabIndex = 26;
+            this.labelControl4.Text = "Loại :";
+            // 
+            // cbbNhaSanXuat
+            // 
+            this.cbbNhaSanXuat.FormattingEnabled = true;
+            this.cbbNhaSanXuat.Location = new System.Drawing.Point(90, 12);
+            this.cbbNhaSanXuat.Name = "cbbNhaSanXuat";
+            this.cbbNhaSanXuat.Size = new System.Drawing.Size(208, 21);
+            this.cbbNhaSanXuat.TabIndex = 28;
+            // 
             // btnTroGiup
             // 
             this.btnTroGiup.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
@@ -109,6 +143,15 @@
             this.btnTroGiup.Size = new System.Drawing.Size(108, 23);
             this.btnTroGiup.TabIndex = 4;
             this.btnTroGiup.Text = "Trợ giúp";
+            // 
+            // txtTenModel
+            // 
+            this.txtTenModel.Location = new System.Drawing.Point(463, 12);
+            this.txtTenModel.Name = "txtTenModel";
+            this.txtTenModel.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenModel.Properties.Appearance.Options.UseFont = true;
+            this.txtTenModel.Size = new System.Drawing.Size(208, 22);
+            this.txtTenModel.TabIndex = 22;
             // 
             // btnIn
             // 
@@ -126,6 +169,16 @@
             this.btnIn.TabIndex = 3;
             this.btnIn.Text = "In";
             // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl2.Location = new System.Drawing.Point(355, 13);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(61, 16);
+            this.labelControl2.TabIndex = 23;
+            this.labelControl2.Text = "Tên model";
+            // 
             // btnSua
             // 
             this.btnSua.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
@@ -142,6 +195,16 @@
             this.btnSua.TabIndex = 2;
             this.btnSua.Text = "Sửa";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl1.Location = new System.Drawing.Point(8, 12);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(74, 16);
+            this.labelControl1.TabIndex = 21;
+            this.labelControl1.Text = "Nhà sản xuất";
             // 
             // btnXoa
             // 
@@ -199,78 +262,13 @@
             this.dtgvDSModel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvDSModel.Size = new System.Drawing.Size(858, 294);
             this.dtgvDSModel.TabIndex = 0;
-            // 
-            // cbbLoai
-            // 
-            this.cbbLoai.FormattingEnabled = true;
-            this.cbbLoai.Location = new System.Drawing.Point(90, 48);
-            this.cbbLoai.Name = "cbbLoai";
-            this.cbbLoai.Size = new System.Drawing.Size(208, 21);
-            this.cbbLoai.TabIndex = 27;
-            // 
-            // cbbNhaSanXuat
-            // 
-            this.cbbNhaSanXuat.FormattingEnabled = true;
-            this.cbbNhaSanXuat.Location = new System.Drawing.Point(90, 12);
-            this.cbbNhaSanXuat.Name = "cbbNhaSanXuat";
-            this.cbbNhaSanXuat.Size = new System.Drawing.Size(208, 21);
-            this.cbbNhaSanXuat.TabIndex = 28;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl4.Location = new System.Drawing.Point(5, 48);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(32, 16);
-            this.labelControl4.TabIndex = 26;
-            this.labelControl4.Text = "Loại :";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Location = new System.Drawing.Point(355, 53);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(49, 16);
-            this.labelControl3.TabIndex = 24;
-            this.labelControl3.Text = "Diễn giải";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl2.Location = new System.Drawing.Point(355, 13);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(61, 16);
-            this.labelControl2.TabIndex = 23;
-            this.labelControl2.Text = "Tên model";
-            // 
-            // txtTenModel
-            // 
-            this.txtTenModel.Location = new System.Drawing.Point(463, 12);
-            this.txtTenModel.Name = "txtTenModel";
-            this.txtTenModel.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenModel.Properties.Appearance.Options.UseFont = true;
-            this.txtTenModel.Size = new System.Drawing.Size(208, 22);
-            this.txtTenModel.TabIndex = 22;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl1.Location = new System.Drawing.Point(8, 12);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(74, 16);
-            this.labelControl1.TabIndex = 21;
-            this.labelControl1.Text = "Nhà sản xuất";
+            this.dtgvDSModel.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSModel_CellClick);
             // 
             // txtDienGiai
             // 
-            this.txtDienGiai.Location = new System.Drawing.Point(463, 50);
+            this.txtDienGiai.Location = new System.Drawing.Point(463, 53);
             this.txtDienGiai.Name = "txtDienGiai";
-            this.txtDienGiai.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDienGiai.Properties.Appearance.Options.UseFont = true;
-            this.txtDienGiai.Size = new System.Drawing.Size(208, 22);
+            this.txtDienGiai.Size = new System.Drawing.Size(208, 21);
             this.txtDienGiai.TabIndex = 29;
             // 
             // frmDanhMucModel
@@ -287,11 +285,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenModel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSModel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTenModel.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDienGiai.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -314,6 +311,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txtTenModel;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit txtDienGiai;
+        private System.Windows.Forms.TextBox txtDienGiai;
     }
 }

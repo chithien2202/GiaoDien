@@ -18,18 +18,13 @@ namespace DXApplication1
         public frmDanhMucModel()
         {
             InitializeComponent();
-            dgvmodel = dtgvDSModel;
         }
-        public static DataGridView dgvmodel;
 
         public static bool tos;
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (btnThem.Text == "Thêm")
             {
-                //tos = true;
-                //Form frm = new frmThongTinModel();
-                //frm.ShowDialog();
                 cbbNhaSanXuat.Enabled = true;
                 txtTenModel.Enabled = true;
                 cbbLoai.Enabled = true;
@@ -61,18 +56,13 @@ namespace DXApplication1
             }
         }
 
-        public static string mamd = "";
+
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            //tos = false;
-            //string mamodel = dtgvDSModel.CurrentRow.Cells[0].Value.ToString();
-            ////MODEL md = qltb.MODELs.Where(t => t.MAMODEL == mamodel).FirstOrDefault();
-            //mamd = mamodel.Trim();
-            //Form frm = new frmThongTinModel();
-            //frm.ShowDialog();
             if (btnSua.Text == "Sửa")
             {
+ 
                 cbbNhaSanXuat.Enabled = false;
                 txtTenModel.Enabled = true;
                 cbbLoai.Enabled = true;
@@ -80,26 +70,26 @@ namespace DXApplication1
 
                 btnSua.Text = "Lưu";
             }
-            else if (btnThem.Text == "Lưu")
+            else
             {
-
-                string mamodel = dtgvDSModel.CurrentRow.Cells[0].Value.ToString();
-                MODEL md = qltb.MODELs.Where(t => t.MAMODEL == mamodel).FirstOrDefault();
-                //md.MAMODEL = txtMaModel.Text;
-                //md.MANSX = cbbLoai.Text;
+                string mamd = dtgvDSModel.CurrentRow.Cells[0].Value.ToString();
+                MODEL md = qltb.MODELs.Where(t => t.MAMODEL ==mamd ).FirstOrDefault();
                 md.TENMODEL = txtTenModel.Text;
                 md.THUOC_LOAI = cbbLoai.Text;
                 md.GHICHUMODEL = txtDienGiai.Text;
                 qltb.SubmitChanges();
-                MessageBox.Show("Thành công");
+                MessageBox.Show("Sửa thành công");
+                LoadGridviewModel();
 
-                btnThem.Text = "Thêm";
+                btnSua.Text = "Sửa";
                 cbbNhaSanXuat.Enabled = false;
                 txtTenModel.Enabled = false;
                 cbbLoai.Enabled = false;
                 txtDienGiai.Enabled = false;
-            }
 
+                txtTenModel.Text = String.Empty;
+                txtDienGiai.Text = String.Empty;
+            }
 
         }
 
@@ -162,6 +152,21 @@ namespace DXApplication1
             cbbLoai.DataSource = qltb.PHANLOAIs;
             cbbLoai.DisplayMember = "TENPHANLOAI";
             cbbLoai.ValueMember = "TENPHANLOAI";
+        }
+
+        private void dtgvDSModel_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            //String mamd = dtgvDSModel.CurrentRow.Cells[0].Value.ToString();
+            //dtgvDSModel.DataSource = qltb.MODELs.Where(t => t.MAMODEL == mamd);
+            cbbNhaSanXuat.Enabled = false;
+            cbbLoai.Enabled = false;
+            txtTenModel.Enabled = false;
+            txtDienGiai.Enabled = false;
+            cbbLoai.Text = dtgvDSModel.CurrentRow.Cells[3].Value.ToString();
+            txtTenModel.Text = dtgvDSModel.CurrentRow.Cells[2].Value.ToString();
+            txtDienGiai.Text = dtgvDSModel.CurrentRow.Cells[4].Value.ToString();
+            cbbNhaSanXuat.Text = dtgvDSModel.CurrentRow.Cells[1].Value.ToString();
         }
     }
 }
