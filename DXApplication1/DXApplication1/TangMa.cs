@@ -10,7 +10,7 @@ namespace DXApplication1
 {
     public class TangMa
     {
-        public string ATTangMa3(string ma, string tenbang)
+        public static string ATTangMa3(string ma, string tenbang)
         {
             string sql = "select * from " + tenbang;
 

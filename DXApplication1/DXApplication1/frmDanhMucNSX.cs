@@ -18,31 +18,73 @@ namespace DXApplication1
         public frmDanhMucNSX()
         {
             InitializeComponent();
-            dgvnsx = dtgvNhaSanXuat;
             
         }
-        public static DevExpress.XtraGrid.GridControl dgvnsx;
+
 
 
         public static bool tos;
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            tos = true;
-            Form frm = new frmThongTinNhaSanXuat();
-            frm.ShowDialog();
-            
+            if (btnThem.Text == "Thêm")
+            {
+                txtTenNhaSanXuat.Enabled = true;
+                txtDienGiai.Enabled = true;
+
+                btnThem.Text = "Lưu";
+            }
+            else
+            {
+                NHASANXUAT nhasanxuat = new NHASANXUAT();
+                nhasanxuat.MANSX = TangMa.ATTangMa3("NSX", "NHASANXUAT");
+                nhasanxuat.TENNSX = txtTenNhaSanXuat.Text;
+                nhasanxuat.GHICHUSX = txtDienGiai.Text;
+                qltb.NHASANXUATs.InsertOnSubmit(nhasanxuat);
+                qltb.SubmitChanges();
+                MessageBox.Show("Success");
+                LoadGridViewNSX();
+
+                btnThem.Text = "Thêm";
+                txtTenNhaSanXuat.Enabled = false;
+                txtDienGiai.Enabled = false;
+
+
+                txtTenNhaSanXuat.Text = String.Empty;
+                txtDienGiai.Text = String.Empty;
+            }
+
         }
 
         public static string mnsx = "";
         private void btnSua_Click(object sender, EventArgs e)
         {
-            tos = false;
-            string mansx = dtgvNhaSanXuat.MainView.GetRow(gridView1.GetSelectedRows()[0]).ToString().Split(',')[0].Trim();
-            mnsx = mansx.Split(' ')[3].Trim();
-            Form frm = new frmThongTinNhaSanXuat();
-            frm.ShowDialog();
-            
+            if (btnSua.Text == "Sửa")
+            {
+
+                txtTenNhaSanXuat.Enabled = true;
+                txtDienGiai.Enabled = true;
+
+                btnSua.Text = "Lưu";
+            }
+            else
+            {
+                string mansx = dtgvNhaSanXuat.CurrentRow.Cells[0].Value.ToString();
+                NHASANXUAT nsx = qltb.NHASANXUATs.Where(t => t.MANSX == mansx).FirstOrDefault();
+                nsx.TENNSX = txtTenNhaSanXuat.Text;
+                nsx.GHICHUSX = txtDienGiai.Text;
+                qltb.SubmitChanges();
+                MessageBox.Show("Sửa thành công");
+                LoadGridViewNSX();
+
+                btnSua.Text = "Sửa";
+                txtTenNhaSanXuat.Enabled = false;
+                txtDienGiai.Enabled = false;
+
+                txtTenNhaSanXuat.Text = String.Empty;
+                txtDienGiai.Text = String.Empty;
+            }
+
         }
 
         void LoadGridViewNSX()
@@ -53,6 +95,8 @@ namespace DXApplication1
         }
         private void frmDanhMucNSX_Load(object sender, EventArgs e)
         {
+            txtTenNhaSanXuat.Enabled = false;
+            txtDienGiai.Enabled = false;
             LoadGridViewNSX();
         }
 
@@ -65,13 +109,13 @@ namespace DXApplication1
             {
                 try
                 {
-                    string mansx = dtgvNhaSanXuat.MainView.GetRow(gridView1.GetSelectedRows()[0]).ToString().Split(',')[0].Trim();
-                    string ma = mansx.Split(' ')[3].Trim();
-                    NHASANXUAT nsx = qltb.NHASANXUATs.Where(t => t.MANSX == ma).FirstOrDefault();
+                    string mansx = dtgvNhaSanXuat.CurrentRow.Cells[0].Value.ToString();
+                    NHASANXUAT nsx = qltb.NHASANXUATs.Where(t => t.MANSX == mansx).FirstOrDefault();
                     qltb.NHASANXUATs.DeleteOnSubmit(nsx);
                     qltb.SubmitChanges();
-                    MessageBox.Show("Delete Success!");
                     LoadGridViewNSX();
+                    MessageBox.Show("Delete Success!");
+                    
                 }
                 catch
                 {
@@ -92,5 +136,12 @@ namespace DXApplication1
             this.Close();
         }
 
+        private void dtgvNhaSanXuat_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtTenNhaSanXuat.Enabled = false;
+            txtDienGiai.Enabled = false;
+            txtTenNhaSanXuat.Text = dtgvNhaSanXuat.CurrentRow.Cells[1].Value.ToString();
+            txtDienGiai.Text = dtgvNhaSanXuat.CurrentRow.Cells[2].Value.ToString();
+        }
     }
 }

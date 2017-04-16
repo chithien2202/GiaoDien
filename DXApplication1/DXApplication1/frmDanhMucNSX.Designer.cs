@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDanhMucNSX));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.txtDienGiai = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtTenNhaSanXuat = new DevExpress.XtraEditors.TextEdit();
             this.btnDong = new DevExpress.XtraEditors.SimpleButton();
             this.btnTroGiup = new DevExpress.XtraEditors.SimpleButton();
             this.btnIn = new DevExpress.XtraEditors.SimpleButton();
@@ -37,21 +41,22 @@
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.dtgvNhaSanXuat = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dtgvNhaSanXuat = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDienGiai.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenNhaSanXuat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNhaSanXuat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.txtDienGiai);
+            this.panelControl1.Controls.Add(this.labelControl3);
+            this.panelControl1.Controls.Add(this.labelControl2);
+            this.panelControl1.Controls.Add(this.txtTenNhaSanXuat);
             this.panelControl1.Controls.Add(this.btnDong);
             this.panelControl1.Controls.Add(this.btnTroGiup);
             this.panelControl1.Controls.Add(this.btnIn);
@@ -61,8 +66,45 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(862, 34);
+            this.panelControl1.Size = new System.Drawing.Size(862, 86);
             this.panelControl1.TabIndex = 6;
+            // 
+            // txtDienGiai
+            // 
+            this.txtDienGiai.Location = new System.Drawing.Point(434, 12);
+            this.txtDienGiai.Name = "txtDienGiai";
+            this.txtDienGiai.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDienGiai.Properties.Appearance.Options.UseFont = true;
+            this.txtDienGiai.Size = new System.Drawing.Size(190, 22);
+            this.txtDienGiai.TabIndex = 16;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Location = new System.Drawing.Point(363, 12);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(49, 16);
+            this.labelControl3.TabIndex = 15;
+            this.labelControl3.Text = "Diễn giải";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl2.Location = new System.Drawing.Point(12, 12);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(99, 16);
+            this.labelControl2.TabIndex = 14;
+            this.labelControl2.Text = "Tên nhà sản xuất";
+            // 
+            // txtTenNhaSanXuat
+            // 
+            this.txtTenNhaSanXuat.Location = new System.Drawing.Point(128, 12);
+            this.txtTenNhaSanXuat.Name = "txtTenNhaSanXuat";
+            this.txtTenNhaSanXuat.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenNhaSanXuat.Properties.Appearance.Options.UseFont = true;
+            this.txtTenNhaSanXuat.Size = new System.Drawing.Size(190, 22);
+            this.txtTenNhaSanXuat.TabIndex = 13;
             // 
             // btnDong
             // 
@@ -74,11 +116,11 @@
             this.btnDong.Appearance.Options.UseFont = true;
             this.btnDong.Appearance.Options.UseForeColor = true;
             this.btnDong.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.Image")));
-            this.btnDong.Location = new System.Drawing.Point(583, 5);
+            this.btnDong.Location = new System.Drawing.Point(580, 49);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(95, 23);
             this.btnDong.TabIndex = 5;
-            this.btnDong.Text = "&Đóng (F10)";
+            this.btnDong.Text = "Đóng";
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnTroGiup
@@ -91,11 +133,11 @@
             this.btnTroGiup.Appearance.Options.UseFont = true;
             this.btnTroGiup.Appearance.Options.UseForeColor = true;
             this.btnTroGiup.Image = ((System.Drawing.Image)(resources.GetObject("btnTroGiup.Image")));
-            this.btnTroGiup.Location = new System.Drawing.Point(437, 5);
+            this.btnTroGiup.Location = new System.Drawing.Point(434, 49);
             this.btnTroGiup.Name = "btnTroGiup";
             this.btnTroGiup.Size = new System.Drawing.Size(108, 23);
             this.btnTroGiup.TabIndex = 4;
-            this.btnTroGiup.Text = "Trợ &giúp (F9)";
+            this.btnTroGiup.Text = "Trợ giúp";
             // 
             // btnIn
             // 
@@ -107,11 +149,11 @@
             this.btnIn.Appearance.Options.UseFont = true;
             this.btnIn.Appearance.Options.UseForeColor = true;
             this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
-            this.btnIn.Location = new System.Drawing.Point(330, 5);
+            this.btnIn.Location = new System.Drawing.Point(327, 49);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(75, 23);
             this.btnIn.TabIndex = 3;
-            this.btnIn.Text = "&In (F8)";
+            this.btnIn.Text = "In";
             // 
             // btnSua
             // 
@@ -123,11 +165,11 @@
             this.btnSua.Appearance.Options.UseFont = true;
             this.btnSua.Appearance.Options.UseForeColor = true;
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
-            this.btnSua.Location = new System.Drawing.Point(126, 5);
+            this.btnSua.Location = new System.Drawing.Point(123, 49);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(82, 23);
             this.btnSua.TabIndex = 2;
-            this.btnSua.Text = "&Sửa (F6)";
+            this.btnSua.Text = "Sửa";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
@@ -140,11 +182,11 @@
             this.btnXoa.Appearance.Options.UseFont = true;
             this.btnXoa.Appearance.Options.UseForeColor = true;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(230, 5);
+            this.btnXoa.Location = new System.Drawing.Point(227, 49);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 1;
-            this.btnXoa.Text = "&Xóa (F7)";
+            this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
@@ -157,11 +199,11 @@
             this.btnThem.Appearance.Options.UseFont = true;
             this.btnThem.Appearance.Options.UseForeColor = true;
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.Location = new System.Drawing.Point(15, 5);
+            this.btnThem.Location = new System.Drawing.Point(12, 49);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(83, 23);
             this.btnThem.TabIndex = 0;
-            this.btnThem.Text = "&Thêm(F5)";
+            this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // groupControl1
@@ -170,58 +212,23 @@
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.Controls.Add(this.dtgvNhaSanXuat);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 34);
+            this.groupControl1.Location = new System.Drawing.Point(0, 86);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(862, 435);
+            this.groupControl1.Size = new System.Drawing.Size(862, 383);
             this.groupControl1.TabIndex = 7;
             this.groupControl1.Text = "Nhà sản xuất";
             // 
             // dtgvNhaSanXuat
             // 
+            this.dtgvNhaSanXuat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvNhaSanXuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvNhaSanXuat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvNhaSanXuat.Location = new System.Drawing.Point(2, 26);
-            this.dtgvNhaSanXuat.MainView = this.gridView1;
             this.dtgvNhaSanXuat.Name = "dtgvNhaSanXuat";
-            this.dtgvNhaSanXuat.Size = new System.Drawing.Size(858, 407);
+            this.dtgvNhaSanXuat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvNhaSanXuat.Size = new System.Drawing.Size(858, 355);
             this.dtgvNhaSanXuat.TabIndex = 0;
-            this.dtgvNhaSanXuat.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3});
-            this.gridView1.GridControl = this.dtgvNhaSanXuat;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Mã nhà sản xuất";
-            this.gridColumn1.FieldName = "MANSX";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Tên nhà sản xuất";
-            this.gridColumn2.FieldName = "TENNSX";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Diễn giải";
-            this.gridColumn3.FieldName = "GHICHUSX";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.dtgvNhaSanXuat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvNhaSanXuat_CellClick);
             // 
             // frmDanhMucNSX
             // 
@@ -236,10 +243,12 @@
             this.Load += new System.EventHandler(this.frmDanhMucNSX_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDienGiai.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenNhaSanXuat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNhaSanXuat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -254,11 +263,10 @@
         private DevExpress.XtraEditors.SimpleButton btnXoa;
         private DevExpress.XtraEditors.SimpleButton btnThem;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraGrid.GridControl dtgvNhaSanXuat;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-
+        private DevExpress.XtraEditors.TextEdit txtDienGiai;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit txtTenNhaSanXuat;
+        private System.Windows.Forms.DataGridView dtgvNhaSanXuat;
     }
 }

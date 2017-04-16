@@ -45,7 +45,7 @@ namespace DXApplication1
             {
                 NHOMNGUOIDUNG nhomnd = new NHOMNGUOIDUNG();
                 // Chổ này nữa 
-                nhomnd.MANHOM = tm.ATTangMa3("NND", "NHOMNGUOIDUNG");
+                //nhomnd.MANHOM = tm.ATTangMa3("NND", "NHOMNGUOIDUNG");
                 
                 nhomnd.TENNHOM = txtTenNhomND.Text;
 
