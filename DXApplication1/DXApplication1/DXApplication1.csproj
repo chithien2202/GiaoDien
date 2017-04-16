@@ -106,7 +106,7 @@
     <Compile Include="frmDanhMucModel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDanhMucModel.Designer.cs">
+    <Compile Include="frmDanhMucModel.designer.cs">
       <DependentUpon>frmDanhMucModel.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDanhMucNSX.cs">
