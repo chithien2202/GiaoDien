@@ -156,17 +156,20 @@ namespace DXApplication1
 
         private void dtgvDSModel_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            //String mamd = dtgvDSModel.CurrentRow.Cells[0].Value.ToString();
-            //dtgvDSModel.DataSource = qltb.MODELs.Where(t => t.MAMODEL == mamd);
-            cbbNhaSanXuat.Enabled = false;
-            cbbLoai.Enabled = false;
-            txtTenModel.Enabled = false;
-            txtDienGiai.Enabled = false;
-            cbbLoai.Text = dtgvDSModel.CurrentRow.Cells[3].Value.ToString();
-            txtTenModel.Text = dtgvDSModel.CurrentRow.Cells[2].Value.ToString();
-            txtDienGiai.Text = dtgvDSModel.CurrentRow.Cells[4].Value.ToString();
-            cbbNhaSanXuat.Text = dtgvDSModel.CurrentRow.Cells[1].Value.ToString();
+            try
+            {
+                //String mamd = dtgvDSModel.CurrentRow.Cells[0].Value.ToString();
+                //dtgvDSModel.DataSource = qltb.MODELs.Where(t => t.MAMODEL == mamd);
+                cbbNhaSanXuat.Enabled = false;
+                cbbLoai.Enabled = false;
+                txtTenModel.Enabled = false;
+                txtDienGiai.Enabled = false;
+                cbbLoai.Text = dtgvDSModel.CurrentRow.Cells[3].Value.ToString();
+                txtTenModel.Text = dtgvDSModel.CurrentRow.Cells[2].Value.ToString();
+                txtDienGiai.Text = dtgvDSModel.CurrentRow.Cells[4].Value.ToString();
+                cbbNhaSanXuat.Text = dtgvDSModel.CurrentRow.Cells[1].Value.ToString();
+            }
+            catch { }
         }
     }
 }

@@ -29,7 +29,7 @@ namespace DXApplication1
            string pwd = mahoa.Encrypt(txtMatKhau.Text, PubicKey);
 
             LoginResult result;
-            result = CauHinh.Check_User(txtTaiKhoan.Text, pwd);
+            result = CauHinh.Check_User(txtTaiKhoan.Text, txtMatKhau.Text);
             // Wrong username or pass
             if (result == LoginResult.Invalid)
             {

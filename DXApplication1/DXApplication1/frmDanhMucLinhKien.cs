@@ -168,18 +168,22 @@ namespace DXApplication1
 
         private void dtgvDSLinhKien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            cbbThietBi.Enabled = false;
-            dtpNgaySX.Enabled = false;
-            txtTenLinhKien.Enabled = false;
-            dtpNgayMua.Enabled = false;
-            dtpNgayHetBH.Enabled = false;
-            txtDienGiai.Enabled = false;
-            cbbThietBi.Text = dtgvDSLinhKien.CurrentRow.Cells[1].Value.ToString();
-            dtpNgaySX.Text = dtgvDSLinhKien.CurrentRow.Cells[3].Value.ToString();
-            txtTenLinhKien.Text = dtgvDSLinhKien.CurrentRow.Cells[2].Value.ToString();
-            dtpNgayMua.Text = dtgvDSLinhKien.CurrentRow.Cells[5].Value.ToString();
-            dtpNgayHetBH.Text = dtgvDSLinhKien.CurrentRow.Cells[4].Value.ToString();
-            txtDienGiai.Text = dtgvDSLinhKien.CurrentRow.Cells[6].Value.ToString();
+            try
+            {
+                cbbThietBi.Enabled = false;
+                dtpNgaySX.Enabled = false;
+                txtTenLinhKien.Enabled = false;
+                dtpNgayMua.Enabled = false;
+                dtpNgayHetBH.Enabled = false;
+                txtDienGiai.Enabled = false;
+                cbbThietBi.Text = dtgvDSLinhKien.CurrentRow.Cells[1].Value.ToString();
+                dtpNgaySX.Text = dtgvDSLinhKien.CurrentRow.Cells[3].Value.ToString();
+                txtTenLinhKien.Text = dtgvDSLinhKien.CurrentRow.Cells[2].Value.ToString();
+                dtpNgayMua.Text = dtgvDSLinhKien.CurrentRow.Cells[5].Value.ToString();
+                dtpNgayHetBH.Text = dtgvDSLinhKien.CurrentRow.Cells[4].Value.ToString();
+                txtDienGiai.Text = dtgvDSLinhKien.CurrentRow.Cells[6].Value.ToString();
+            }
+            catch { }
         }
 
         private void LoadCbbThietBi()

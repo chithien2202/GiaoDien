@@ -138,10 +138,14 @@ namespace DXApplication1
 
         private void dtgvNhaSanXuat_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtTenNhaSanXuat.Enabled = false;
-            txtDienGiai.Enabled = false;
-            txtTenNhaSanXuat.Text = dtgvNhaSanXuat.CurrentRow.Cells[1].Value.ToString();
-            txtDienGiai.Text = dtgvNhaSanXuat.CurrentRow.Cells[2].Value.ToString();
+            try
+            {
+                txtTenNhaSanXuat.Enabled = false;
+                txtDienGiai.Enabled = false;
+                txtTenNhaSanXuat.Text = dtgvNhaSanXuat.CurrentRow.Cells[1].Value.ToString();
+                txtDienGiai.Text = dtgvNhaSanXuat.CurrentRow.Cells[2].Value.ToString();
+            }
+            catch { }
         }
     }
 }
