@@ -30,6 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDanhMucThietBi));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.txtDienGiai = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.dtpNgayHetBH = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayMua = new System.Windows.Forms.DateTimePicker();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.cbbMaModel = new System.Windows.Forms.ComboBox();
+            this.txtSoSerial = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtTenThietBi = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnDong = new DevExpress.XtraEditors.SimpleButton();
             this.btnTroGiup = new DevExpress.XtraEditors.SimpleButton();
             this.btnIn = new DevExpress.XtraEditors.SimpleButton();
@@ -37,25 +49,31 @@
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.dtgvDSThietBi = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.MATHIETBI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MAMODEL = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.SERIAL = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TENTHIETBI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NGAYMUA_SUACHUA = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NGAYKETTHUC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.GHICHU = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dtgvDSThietBi = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDienGiai.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSoSerial.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenThietBi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSThietBi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.txtDienGiai);
+            this.panelControl1.Controls.Add(this.labelControl3);
+            this.panelControl1.Controls.Add(this.dtpNgayHetBH);
+            this.panelControl1.Controls.Add(this.dtpNgayMua);
+            this.panelControl1.Controls.Add(this.labelControl7);
+            this.panelControl1.Controls.Add(this.labelControl4);
+            this.panelControl1.Controls.Add(this.cbbMaModel);
+            this.panelControl1.Controls.Add(this.txtSoSerial);
+            this.panelControl1.Controls.Add(this.labelControl5);
+            this.panelControl1.Controls.Add(this.labelControl2);
+            this.panelControl1.Controls.Add(this.txtTenThietBi);
+            this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.btnDong);
             this.panelControl1.Controls.Add(this.btnTroGiup);
             this.panelControl1.Controls.Add(this.btnIn);
@@ -65,8 +83,118 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(781, 34);
+            this.panelControl1.Size = new System.Drawing.Size(781, 163);
             this.panelControl1.TabIndex = 5;
+            // 
+            // txtDienGiai
+            // 
+            this.txtDienGiai.Location = new System.Drawing.Point(447, 86);
+            this.txtDienGiai.Name = "txtDienGiai";
+            this.txtDienGiai.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDienGiai.Properties.Appearance.Options.UseFont = true;
+            this.txtDienGiai.Size = new System.Drawing.Size(174, 22);
+            this.txtDienGiai.TabIndex = 35;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Location = new System.Drawing.Point(326, 89);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(49, 16);
+            this.labelControl3.TabIndex = 34;
+            this.labelControl3.Text = "Diễn giải";
+            // 
+            // dtpNgayHetBH
+            // 
+            this.dtpNgayHetBH.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayHetBH.Location = new System.Drawing.Point(95, 85);
+            this.dtpNgayHetBH.Name = "dtpNgayHetBH";
+            this.dtpNgayHetBH.Size = new System.Drawing.Size(203, 21);
+            this.dtpNgayHetBH.TabIndex = 32;
+            // 
+            // dtpNgayMua
+            // 
+            this.dtpNgayMua.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayMua.Location = new System.Drawing.Point(447, 49);
+            this.dtpNgayMua.Name = "dtpNgayMua";
+            this.dtpNgayMua.Size = new System.Drawing.Size(174, 21);
+            this.dtpNgayMua.TabIndex = 33;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl7.Location = new System.Drawing.Point(20, 87);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(69, 16);
+            this.labelControl7.TabIndex = 31;
+            this.labelControl7.Text = "Ngày hết BH";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl4.Location = new System.Drawing.Point(326, 53);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(115, 16);
+            this.labelControl4.TabIndex = 30;
+            this.labelControl4.Text = "Ngày mua/sửa chữa";
+            // 
+            // cbbMaModel
+            // 
+            this.cbbMaModel.FormattingEnabled = true;
+            this.cbbMaModel.Location = new System.Drawing.Point(95, 11);
+            this.cbbMaModel.Name = "cbbMaModel";
+            this.cbbMaModel.Size = new System.Drawing.Size(203, 21);
+            this.cbbMaModel.TabIndex = 29;
+            // 
+            // txtSoSerial
+            // 
+            this.txtSoSerial.Location = new System.Drawing.Point(447, 12);
+            this.txtSoSerial.Name = "txtSoSerial";
+            this.txtSoSerial.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoSerial.Properties.Appearance.Options.UseFont = true;
+            this.txtSoSerial.Size = new System.Drawing.Size(174, 22);
+            this.txtSoSerial.TabIndex = 28;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl5.Location = new System.Drawing.Point(323, 15);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(52, 16);
+            this.labelControl5.TabIndex = 27;
+            this.labelControl5.Text = "Số Serial";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl2.Location = new System.Drawing.Point(20, 51);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(65, 16);
+            this.labelControl2.TabIndex = 26;
+            this.labelControl2.Text = "Tên thiết bị";
+            // 
+            // txtTenThietBi
+            // 
+            this.txtTenThietBi.Location = new System.Drawing.Point(95, 48);
+            this.txtTenThietBi.Name = "txtTenThietBi";
+            this.txtTenThietBi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenThietBi.Properties.Appearance.Options.UseFont = true;
+            this.txtTenThietBi.Size = new System.Drawing.Size(203, 22);
+            this.txtTenThietBi.TabIndex = 25;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl1.Location = new System.Drawing.Point(20, 12);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(56, 16);
+            this.labelControl1.TabIndex = 24;
+            this.labelControl1.Text = "Mã model";
             // 
             // btnDong
             // 
@@ -78,11 +206,12 @@
             this.btnDong.Appearance.Options.UseFont = true;
             this.btnDong.Appearance.Options.UseForeColor = true;
             this.btnDong.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.Image")));
-            this.btnDong.Location = new System.Drawing.Point(583, 5);
+            this.btnDong.Location = new System.Drawing.Point(575, 126);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(95, 23);
             this.btnDong.TabIndex = 5;
-            this.btnDong.Text = "&Đóng (F10)";
+            this.btnDong.Text = "Đóng";
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnTroGiup
             // 
@@ -94,11 +223,11 @@
             this.btnTroGiup.Appearance.Options.UseFont = true;
             this.btnTroGiup.Appearance.Options.UseForeColor = true;
             this.btnTroGiup.Image = ((System.Drawing.Image)(resources.GetObject("btnTroGiup.Image")));
-            this.btnTroGiup.Location = new System.Drawing.Point(437, 5);
+            this.btnTroGiup.Location = new System.Drawing.Point(429, 126);
             this.btnTroGiup.Name = "btnTroGiup";
             this.btnTroGiup.Size = new System.Drawing.Size(108, 23);
             this.btnTroGiup.TabIndex = 4;
-            this.btnTroGiup.Text = "Trợ &giúp (F9)";
+            this.btnTroGiup.Text = "Trợ giúp";
             // 
             // btnIn
             // 
@@ -110,11 +239,11 @@
             this.btnIn.Appearance.Options.UseFont = true;
             this.btnIn.Appearance.Options.UseForeColor = true;
             this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
-            this.btnIn.Location = new System.Drawing.Point(330, 5);
+            this.btnIn.Location = new System.Drawing.Point(322, 126);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(75, 23);
             this.btnIn.TabIndex = 3;
-            this.btnIn.Text = "&In (F8)";
+            this.btnIn.Text = "In";
             // 
             // btnSua
             // 
@@ -126,11 +255,11 @@
             this.btnSua.Appearance.Options.UseFont = true;
             this.btnSua.Appearance.Options.UseForeColor = true;
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
-            this.btnSua.Location = new System.Drawing.Point(126, 5);
+            this.btnSua.Location = new System.Drawing.Point(118, 126);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(82, 23);
             this.btnSua.TabIndex = 2;
-            this.btnSua.Text = "&Sửa (F6)";
+            this.btnSua.Text = "Sửa";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
@@ -143,11 +272,11 @@
             this.btnXoa.Appearance.Options.UseFont = true;
             this.btnXoa.Appearance.Options.UseForeColor = true;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(230, 5);
+            this.btnXoa.Location = new System.Drawing.Point(222, 126);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 1;
-            this.btnXoa.Text = "&Xóa (F7)";
+            this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
@@ -160,11 +289,11 @@
             this.btnThem.Appearance.Options.UseFont = true;
             this.btnThem.Appearance.Options.UseForeColor = true;
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.Location = new System.Drawing.Point(15, 5);
+            this.btnThem.Location = new System.Drawing.Point(7, 126);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(83, 23);
             this.btnThem.TabIndex = 0;
-            this.btnThem.Text = "&Thêm(F5)";
+            this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // groupControl1
@@ -173,93 +302,23 @@
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.Controls.Add(this.dtgvDSThietBi);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 34);
+            this.groupControl1.Location = new System.Drawing.Point(0, 163);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(781, 416);
+            this.groupControl1.Size = new System.Drawing.Size(781, 287);
             this.groupControl1.TabIndex = 6;
             this.groupControl1.Text = "Danh sách thiết bị";
             // 
             // dtgvDSThietBi
             // 
+            this.dtgvDSThietBi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvDSThietBi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvDSThietBi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvDSThietBi.Location = new System.Drawing.Point(2, 26);
-            this.dtgvDSThietBi.MainView = this.gridView1;
             this.dtgvDSThietBi.Name = "dtgvDSThietBi";
-            this.dtgvDSThietBi.Size = new System.Drawing.Size(777, 388);
+            this.dtgvDSThietBi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvDSThietBi.Size = new System.Drawing.Size(777, 259);
             this.dtgvDSThietBi.TabIndex = 0;
-            this.dtgvDSThietBi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.MATHIETBI,
-            this.MAMODEL,
-            this.SERIAL,
-            this.TENTHIETBI,
-            this.NGAYMUA_SUACHUA,
-            this.NGAYKETTHUC,
-            this.GHICHU});
-            this.gridView1.GridControl = this.dtgvDSThietBi;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // MATHIETBI
-            // 
-            this.MATHIETBI.Caption = "Mã thiết bị";
-            this.MATHIETBI.FieldName = "MATHIETBI";
-            this.MATHIETBI.Name = "MATHIETBI";
-            this.MATHIETBI.Visible = true;
-            this.MATHIETBI.VisibleIndex = 0;
-            // 
-            // MAMODEL
-            // 
-            this.MAMODEL.Caption = "Mã Model";
-            this.MAMODEL.FieldName = "MAMODEL";
-            this.MAMODEL.Name = "MAMODEL";
-            this.MAMODEL.Visible = true;
-            this.MAMODEL.VisibleIndex = 1;
-            // 
-            // SERIAL
-            // 
-            this.SERIAL.Caption = "Serial";
-            this.SERIAL.FieldName = "SERIAL";
-            this.SERIAL.Name = "SERIAL";
-            this.SERIAL.Visible = true;
-            this.SERIAL.VisibleIndex = 2;
-            // 
-            // TENTHIETBI
-            // 
-            this.TENTHIETBI.Caption = "Tên thiết bị";
-            this.TENTHIETBI.FieldName = "TENTHIETBI";
-            this.TENTHIETBI.Name = "TENTHIETBI";
-            this.TENTHIETBI.Visible = true;
-            this.TENTHIETBI.VisibleIndex = 3;
-            // 
-            // NGAYMUA_SUACHUA
-            // 
-            this.NGAYMUA_SUACHUA.Caption = "Ngày mua/sửa chữa";
-            this.NGAYMUA_SUACHUA.FieldName = "NGAYMUA_SUACHUA";
-            this.NGAYMUA_SUACHUA.Name = "NGAYMUA_SUACHUA";
-            this.NGAYMUA_SUACHUA.Visible = true;
-            this.NGAYMUA_SUACHUA.VisibleIndex = 4;
-            // 
-            // NGAYKETTHUC
-            // 
-            this.NGAYKETTHUC.Caption = "Ngày hết BH";
-            this.NGAYKETTHUC.FieldName = "NGAYKETTHUC";
-            this.NGAYKETTHUC.Name = "NGAYKETTHUC";
-            this.NGAYKETTHUC.Visible = true;
-            this.NGAYKETTHUC.VisibleIndex = 5;
-            // 
-            // GHICHU
-            // 
-            this.GHICHU.Caption = "Diễn giải";
-            this.GHICHU.FieldName = "GHICHUTHIETBI";
-            this.GHICHU.Name = "GHICHU";
-            this.GHICHU.Visible = true;
-            this.GHICHU.VisibleIndex = 6;
+            this.dtgvDSThietBi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSThietBi_CellClick);
             // 
             // frmDanhMucThietBi
             // 
@@ -274,10 +333,13 @@
             this.Load += new System.EventHandler(this.frmDanhMucThietBi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDienGiai.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSoSerial.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenThietBi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSThietBi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -292,14 +354,18 @@
         private DevExpress.XtraEditors.SimpleButton btnXoa;
         private DevExpress.XtraEditors.SimpleButton btnThem;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraGrid.GridControl dtgvDSThietBi;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn MATHIETBI;
-        private DevExpress.XtraGrid.Columns.GridColumn TENTHIETBI;
-        private DevExpress.XtraGrid.Columns.GridColumn SERIAL;
-        private DevExpress.XtraGrid.Columns.GridColumn NGAYMUA_SUACHUA;
-        private DevExpress.XtraGrid.Columns.GridColumn NGAYKETTHUC;
-        private DevExpress.XtraGrid.Columns.GridColumn GHICHU;
-        private DevExpress.XtraGrid.Columns.GridColumn MAMODEL;
+        private System.Windows.Forms.DataGridView dtgvDSThietBi;
+        private System.Windows.Forms.ComboBox cbbMaModel;
+        private DevExpress.XtraEditors.TextEdit txtSoSerial;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit txtTenThietBi;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private System.Windows.Forms.DateTimePicker dtpNgayHetBH;
+        private System.Windows.Forms.DateTimePicker dtpNgayMua;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.TextEdit txtDienGiai;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
     }
 }

@@ -17,7 +17,7 @@ namespace DXApplication1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDanhMucLinhKien());
+            Application.Run(new frmDanhMucBoPhan());
         }
     }
 }

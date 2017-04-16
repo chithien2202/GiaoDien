@@ -25,8 +25,8 @@ namespace DXApplication1
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
         {
-            Form frm = new frmThongTinLinhKien();
-            frm.ShowDialog();
+            //Form frm = new frmThongTinLinhKien();
+            //frm.ShowDialog();
         }
     }
 }
