@@ -68,7 +68,7 @@ namespace DXApplication1
             }
         }
 
-        public static string mtb = "";
+
         private void btnSua_Click(object sender, EventArgs e)
         {
             if (btnSua.Text == "Sửa")
