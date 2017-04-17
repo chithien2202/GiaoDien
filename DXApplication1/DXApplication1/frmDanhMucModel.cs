@@ -20,7 +20,6 @@ namespace DXApplication1
             InitializeComponent();
         }
 
-        public static bool tos;
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (btnThem.Text == "Thêm")

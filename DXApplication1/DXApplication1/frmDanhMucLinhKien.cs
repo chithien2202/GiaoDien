@@ -17,12 +17,9 @@ namespace DXApplication1
         public frmDanhMucLinhKien()
         {
             InitializeComponent();
-            //dtgvlk = dtgvDSLinhKien;
         }
 
-        public static DevExpress.XtraGrid.GridControl dtgvlk;
 
-        public static bool tos;
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (btnThem.Text == "Thêm")
@@ -70,7 +67,6 @@ namespace DXApplication1
             }
         }
 
-        public static string mlk = "";
         private void btnSua_Click(object sender, EventArgs e)
         {
             if (btnSua.Text == "Sửa")

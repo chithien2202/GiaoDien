@@ -17,12 +17,9 @@ namespace DXApplication1
         public frmDanhMucThietBi()
         {
             InitializeComponent();
-           // dtgvtb = dtgvDSThietBi;
         }
 
-        //public static DevExpress.XtraGrid.GridControl dtgvtb;
 
-        public static bool tos;
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (btnThem.Text == "Thêm")

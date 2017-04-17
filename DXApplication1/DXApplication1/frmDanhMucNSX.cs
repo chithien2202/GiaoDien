@@ -18,12 +18,8 @@ namespace DXApplication1
         public frmDanhMucNSX()
         {
             InitializeComponent();
-            
         }
 
-
-
-        public static bool tos;
 
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -56,7 +52,6 @@ namespace DXApplication1
 
         }
 
-        public static string mnsx = "";
         private void btnSua_Click(object sender, EventArgs e)
         {
             if (btnSua.Text == "Sửa")
