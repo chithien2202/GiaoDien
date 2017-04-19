@@ -48,15 +48,6 @@ namespace DXApplication1
             }
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-
-        }
 
         void LoadGridViewNguoiDung()
         {
@@ -70,6 +61,77 @@ namespace DXApplication1
             txtTenDangNhap.Enabled = false;
             txtMatKhau.Enabled = false;
             LoadGridViewNguoiDung();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if (btnSua.Text == "Sửa")
+            {
+
+                txtTenDangNhap.Enabled = false;
+                txtMatKhau.Enabled = true;
+
+                btnSua.Text = "Lưu";
+            }
+            else
+            {
+                string taikhoan = dtgvDSNguoiDung.CurrentRow.Cells[0].Value.ToString();
+                NGUOIDUNG nd = qltb.NGUOIDUNGs.Where(t => t.TaiKhoan == taikhoan).FirstOrDefault();
+                nd.MatKhau = txtMatKhau.Text;
+                qltb.SubmitChanges();
+                LoadGridViewNguoiDung();
+                MessageBox.Show("Sửa thành công");
+
+                btnSua.Text = "Sửa";
+                txtTenDangNhap.Enabled = false;
+                txtMatKhau.Enabled = false;
+
+                txtTenDangNhap.Text = String.Empty;
+                txtMatKhau.Text = String.Empty;
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo);
+
+            if (dr == DialogResult.Yes)
+
+            {
+                try
+                {
+                    string taikhoan = dtgvDSNguoiDung.CurrentRow.Cells[0].Value.ToString();
+                    NGUOIDUNG nd = qltb.NGUOIDUNGs.Where(t => t.TaiKhoan == taikhoan).FirstOrDefault();
+                    qltb.NGUOIDUNGs.DeleteOnSubmit(nd);
+                    qltb.SubmitChanges();
+                    LoadGridViewNguoiDung();
+                    MessageBox.Show("Delete Success!");
+
+                }
+                catch
+                {
+                    MessageBox.Show("Dữ liệu đang được sử dụng, không thể xóa!");
+
+                }
+            }
+
+            if (dr == DialogResult.No)
+
+            {
+                this.Close();
+            }
+        }
+
+        private void dtgvDSNguoiDung_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                txtTenDangNhap.Enabled = false;
+                txtMatKhau.Enabled = false;
+                txtTenDangNhap.Text = dtgvDSNguoiDung.CurrentRow.Cells[0].Value.ToString();
+                txtMatKhau.Text = dtgvDSNguoiDung.CurrentRow.Cells[1].Value.ToString();
+            }
+            catch { }
         }
     }
 }
