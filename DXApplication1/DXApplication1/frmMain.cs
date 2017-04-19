@@ -236,5 +236,11 @@ namespace DXApplication1
         {
             Application.Exit();
         }
+
+        private void btnNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            XtraForm fff = new frmNguoiDung();
+            TabCreating(this.xtraTabControl1, "Người dùng", fff);
+        }
     }
 }
