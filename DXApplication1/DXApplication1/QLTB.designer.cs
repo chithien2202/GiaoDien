@@ -30,9 +30,6 @@ namespace DXApplication1
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertTHIETBI(THIETBI instance);
-    partial void UpdateTHIETBI(THIETBI instance);
-    partial void DeleteTHIETBI(THIETBI instance);
     partial void InsertBANGBAOGIA(BANGBAOGIA instance);
     partial void UpdateBANGBAOGIA(BANGBAOGIA instance);
     partial void DeleteBANGBAOGIA(BANGBAOGIA instance);
@@ -87,6 +84,9 @@ namespace DXApplication1
     partial void InsertPHIEUTIEPNHAN(PHIEUTIEPNHAN instance);
     partial void UpdatePHIEUTIEPNHAN(PHIEUTIEPNHAN instance);
     partial void DeletePHIEUTIEPNHAN(PHIEUTIEPNHAN instance);
+    partial void InsertTHIETBI(THIETBI instance);
+    partial void UpdateTHIETBI(THIETBI instance);
+    partial void DeleteTHIETBI(THIETBI instance);
     #endregion
 		
 		public QLTBDataContext() : 
@@ -117,14 +117,6 @@ namespace DXApplication1
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<THIETBI> THIETBIs
-		{
-			get
-			{
-				return this.GetTable<THIETBI>();
-			}
 		}
 		
 		public System.Data.Linq.Table<BANGBAOGIA> BANGBAOGIAs
@@ -270,356 +262,13 @@ namespace DXApplication1
 				return this.GetTable<PHIEUTIEPNHAN>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THIETBI")]
-	public partial class THIETBI : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _MATHIETBI;
-		
-		private string _MAMODEL;
-		
-		private string _SERIAL;
-		
-		private string _TENTHIETBI;
-		
-		private System.Nullable<System.DateTime> _NGAYMUA_SUACHUA;
-		
-		private System.Nullable<System.DateTime> _NGAYKETTHUC;
-		
-		private string _GHICHUTHIETBI;
-		
-		private System.Nullable<bool> _TRANGTHAI;
-		
-		private System.Nullable<bool> _XOA;
-		
-		private EntitySet<LINHKIEN> _LINHKIENs;
-		
-		private EntitySet<PHIEUTIEPNHAN> _PHIEUTIEPNHANs;
-		
-		private EntityRef<MODEL> _MODEL;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMATHIETBIChanging(string value);
-    partial void OnMATHIETBIChanged();
-    partial void OnMAMODELChanging(string value);
-    partial void OnMAMODELChanged();
-    partial void OnSERIALChanging(string value);
-    partial void OnSERIALChanged();
-    partial void OnTENTHIETBIChanging(string value);
-    partial void OnTENTHIETBIChanged();
-    partial void OnNGAYMUA_SUACHUAChanging(System.Nullable<System.DateTime> value);
-    partial void OnNGAYMUA_SUACHUAChanged();
-    partial void OnNGAYKETTHUCChanging(System.Nullable<System.DateTime> value);
-    partial void OnNGAYKETTHUCChanged();
-    partial void OnGHICHUTHIETBIChanging(string value);
-    partial void OnGHICHUTHIETBIChanged();
-    partial void OnTRANGTHAIChanging(System.Nullable<bool> value);
-    partial void OnTRANGTHAIChanged();
-    partial void OnXOAChanging(System.Nullable<bool> value);
-    partial void OnXOAChanged();
-    #endregion
-		
-		public THIETBI()
-		{
-			this._LINHKIENs = new EntitySet<LINHKIEN>(new Action<LINHKIEN>(this.attach_LINHKIENs), new Action<LINHKIEN>(this.detach_LINHKIENs));
-			this._PHIEUTIEPNHANs = new EntitySet<PHIEUTIEPNHAN>(new Action<PHIEUTIEPNHAN>(this.attach_PHIEUTIEPNHANs), new Action<PHIEUTIEPNHAN>(this.detach_PHIEUTIEPNHANs));
-			this._MODEL = default(EntityRef<MODEL>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MATHIETBI", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MATHIETBI
+		public System.Data.Linq.Table<THIETBI> THIETBIs
 		{
 			get
 			{
-				return this._MATHIETBI;
+				return this.GetTable<THIETBI>();
 			}
-			set
-			{
-				if ((this._MATHIETBI != value))
-				{
-					this.OnMATHIETBIChanging(value);
-					this.SendPropertyChanging();
-					this._MATHIETBI = value;
-					this.SendPropertyChanged("MATHIETBI");
-					this.OnMATHIETBIChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAMODEL", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string MAMODEL
-		{
-			get
-			{
-				return this._MAMODEL;
-			}
-			set
-			{
-				if ((this._MAMODEL != value))
-				{
-					if (this._MODEL.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMAMODELChanging(value);
-					this.SendPropertyChanging();
-					this._MAMODEL = value;
-					this.SendPropertyChanged("MAMODEL");
-					this.OnMAMODELChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SERIAL", DbType="VarChar(12)")]
-		public string SERIAL
-		{
-			get
-			{
-				return this._SERIAL;
-			}
-			set
-			{
-				if ((this._SERIAL != value))
-				{
-					this.OnSERIALChanging(value);
-					this.SendPropertyChanging();
-					this._SERIAL = value;
-					this.SendPropertyChanged("SERIAL");
-					this.OnSERIALChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENTHIETBI", DbType="NVarChar(50)")]
-		public string TENTHIETBI
-		{
-			get
-			{
-				return this._TENTHIETBI;
-			}
-			set
-			{
-				if ((this._TENTHIETBI != value))
-				{
-					this.OnTENTHIETBIChanging(value);
-					this.SendPropertyChanging();
-					this._TENTHIETBI = value;
-					this.SendPropertyChanged("TENTHIETBI");
-					this.OnTENTHIETBIChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYMUA_SUACHUA", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NGAYMUA_SUACHUA
-		{
-			get
-			{
-				return this._NGAYMUA_SUACHUA;
-			}
-			set
-			{
-				if ((this._NGAYMUA_SUACHUA != value))
-				{
-					this.OnNGAYMUA_SUACHUAChanging(value);
-					this.SendPropertyChanging();
-					this._NGAYMUA_SUACHUA = value;
-					this.SendPropertyChanged("NGAYMUA_SUACHUA");
-					this.OnNGAYMUA_SUACHUAChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYKETTHUC", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NGAYKETTHUC
-		{
-			get
-			{
-				return this._NGAYKETTHUC;
-			}
-			set
-			{
-				if ((this._NGAYKETTHUC != value))
-				{
-					this.OnNGAYKETTHUCChanging(value);
-					this.SendPropertyChanging();
-					this._NGAYKETTHUC = value;
-					this.SendPropertyChanged("NGAYKETTHUC");
-					this.OnNGAYKETTHUCChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHUTHIETBI", DbType="NVarChar(50)")]
-		public string GHICHUTHIETBI
-		{
-			get
-			{
-				return this._GHICHUTHIETBI;
-			}
-			set
-			{
-				if ((this._GHICHUTHIETBI != value))
-				{
-					this.OnGHICHUTHIETBIChanging(value);
-					this.SendPropertyChanging();
-					this._GHICHUTHIETBI = value;
-					this.SendPropertyChanged("GHICHUTHIETBI");
-					this.OnGHICHUTHIETBIChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRANGTHAI", DbType="Bit")]
-		public System.Nullable<bool> TRANGTHAI
-		{
-			get
-			{
-				return this._TRANGTHAI;
-			}
-			set
-			{
-				if ((this._TRANGTHAI != value))
-				{
-					this.OnTRANGTHAIChanging(value);
-					this.SendPropertyChanging();
-					this._TRANGTHAI = value;
-					this.SendPropertyChanged("TRANGTHAI");
-					this.OnTRANGTHAIChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_XOA", DbType="Bit")]
-		public System.Nullable<bool> XOA
-		{
-			get
-			{
-				return this._XOA;
-			}
-			set
-			{
-				if ((this._XOA != value))
-				{
-					this.OnXOAChanging(value);
-					this.SendPropertyChanging();
-					this._XOA = value;
-					this.SendPropertyChanged("XOA");
-					this.OnXOAChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="THIETBI_LINHKIEN", Storage="_LINHKIENs", ThisKey="MATHIETBI", OtherKey="MATHIETBI")]
-		public EntitySet<LINHKIEN> LINHKIENs
-		{
-			get
-			{
-				return this._LINHKIENs;
-			}
-			set
-			{
-				this._LINHKIENs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="THIETBI_PHIEUTIEPNHAN", Storage="_PHIEUTIEPNHANs", ThisKey="MATHIETBI", OtherKey="MATHIETBI")]
-		public EntitySet<PHIEUTIEPNHAN> PHIEUTIEPNHANs
-		{
-			get
-			{
-				return this._PHIEUTIEPNHANs;
-			}
-			set
-			{
-				this._PHIEUTIEPNHANs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MODEL_THIETBI", Storage="_MODEL", ThisKey="MAMODEL", OtherKey="MAMODEL", IsForeignKey=true)]
-		public MODEL MODEL
-		{
-			get
-			{
-				return this._MODEL.Entity;
-			}
-			set
-			{
-				MODEL previousValue = this._MODEL.Entity;
-				if (((previousValue != value) 
-							|| (this._MODEL.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._MODEL.Entity = null;
-						previousValue.THIETBIs.Remove(this);
-					}
-					this._MODEL.Entity = value;
-					if ((value != null))
-					{
-						value.THIETBIs.Add(this);
-						this._MAMODEL = value.MAMODEL;
-					}
-					else
-					{
-						this._MAMODEL = default(string);
-					}
-					this.SendPropertyChanged("MODEL");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_LINHKIENs(LINHKIEN entity)
-		{
-			this.SendPropertyChanging();
-			entity.THIETBI = this;
-		}
-		
-		private void detach_LINHKIENs(LINHKIEN entity)
-		{
-			this.SendPropertyChanging();
-			entity.THIETBI = null;
-		}
-		
-		private void attach_PHIEUTIEPNHANs(PHIEUTIEPNHAN entity)
-		{
-			this.SendPropertyChanging();
-			entity.THIETBI = this;
-		}
-		
-		private void detach_PHIEUTIEPNHANs(PHIEUTIEPNHAN entity)
-		{
-			this.SendPropertyChanging();
-			entity.THIETBI = null;
 		}
 	}
 	
@@ -2059,8 +1708,6 @@ namespace DXApplication1
 		
 		private string _MAKHACHKHACH;
 		
-		private string _MANHOMKH;
-		
 		private string _TENKHACHHANG;
 		
 		private string _DIACHIKH;
@@ -2085,8 +1732,6 @@ namespace DXApplication1
     partial void OnCreated();
     partial void OnMAKHACHKHACHChanging(string value);
     partial void OnMAKHACHKHACHChanged();
-    partial void OnMANHOMKHChanging(string value);
-    partial void OnMANHOMKHChanged();
     partial void OnTENKHACHHANGChanging(string value);
     partial void OnTENKHACHHANGChanged();
     partial void OnDIACHIKHChanging(string value);
@@ -2126,26 +1771,6 @@ namespace DXApplication1
 					this._MAKHACHKHACH = value;
 					this.SendPropertyChanged("MAKHACHKHACH");
 					this.OnMAKHACHKHACHChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MANHOMKH", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string MANHOMKH
-		{
-			get
-			{
-				return this._MANHOMKH;
-			}
-			set
-			{
-				if ((this._MANHOMKH != value))
-				{
-					this.OnMANHOMKHChanging(value);
-					this.SendPropertyChanging();
-					this._MANHOMKH = value;
-					this.SendPropertyChanged("MANHOMKH");
-					this.OnMANHOMKHChanged();
 				}
 			}
 		}
@@ -5178,9 +4803,9 @@ namespace DXApplication1
 		
 		private EntityRef<KHACHHANG> _KHACHHANG;
 		
-		private EntityRef<THIETBI> _THIETBI;
-		
 		private EntityRef<NHANVIEN> _NHANVIEN;
+		
+		private EntityRef<THIETBI> _THIETBI;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -5214,8 +4839,8 @@ namespace DXApplication1
 		{
 			this._PHIEUSUACHUAs = new EntitySet<PHIEUSUACHUA>(new Action<PHIEUSUACHUA>(this.attach_PHIEUSUACHUAs), new Action<PHIEUSUACHUA>(this.detach_PHIEUSUACHUAs));
 			this._KHACHHANG = default(EntityRef<KHACHHANG>);
-			this._THIETBI = default(EntityRef<THIETBI>);
 			this._NHANVIEN = default(EntityRef<NHANVIEN>);
+			this._THIETBI = default(EntityRef<THIETBI>);
 			OnCreated();
 		}
 		
@@ -5498,40 +5123,6 @@ namespace DXApplication1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="THIETBI_PHIEUTIEPNHAN", Storage="_THIETBI", ThisKey="MATHIETBI", OtherKey="MATHIETBI", IsForeignKey=true)]
-		public THIETBI THIETBI
-		{
-			get
-			{
-				return this._THIETBI.Entity;
-			}
-			set
-			{
-				THIETBI previousValue = this._THIETBI.Entity;
-				if (((previousValue != value) 
-							|| (this._THIETBI.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._THIETBI.Entity = null;
-						previousValue.PHIEUTIEPNHANs.Remove(this);
-					}
-					this._THIETBI.Entity = value;
-					if ((value != null))
-					{
-						value.PHIEUTIEPNHANs.Add(this);
-						this._MATHIETBI = value.MATHIETBI;
-					}
-					else
-					{
-						this._MATHIETBI = default(string);
-					}
-					this.SendPropertyChanged("THIETBI");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NHANVIEN_PHIEUTIEPNHAN", Storage="_NHANVIEN", ThisKey="MANHANVIEN", OtherKey="MANHANVIEN", IsForeignKey=true)]
 		public NHANVIEN NHANVIEN
 		{
@@ -5566,6 +5157,40 @@ namespace DXApplication1
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="THIETBI_PHIEUTIEPNHAN", Storage="_THIETBI", ThisKey="MATHIETBI", OtherKey="MATHIETBI", IsForeignKey=true)]
+		public THIETBI THIETBI
+		{
+			get
+			{
+				return this._THIETBI.Entity;
+			}
+			set
+			{
+				THIETBI previousValue = this._THIETBI.Entity;
+				if (((previousValue != value) 
+							|| (this._THIETBI.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._THIETBI.Entity = null;
+						previousValue.PHIEUTIEPNHANs.Remove(this);
+					}
+					this._THIETBI.Entity = value;
+					if ((value != null))
+					{
+						value.PHIEUTIEPNHANs.Add(this);
+						this._MATHIETBI = value.MATHIETBI;
+					}
+					else
+					{
+						this._MATHIETBI = default(string);
+					}
+					this.SendPropertyChanged("THIETBI");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -5596,6 +5221,357 @@ namespace DXApplication1
 		{
 			this.SendPropertyChanging();
 			entity.PHIEUTIEPNHAN = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THIETBI")]
+	public partial class THIETBI : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MATHIETBI;
+		
+		private string _MAMODEL;
+		
+		private string _SERIAL;
+		
+		private string _TENTHIETBI;
+		
+		private System.Nullable<System.DateTime> _NGAYMUA_SUACHUA;
+		
+		private System.Nullable<System.DateTime> _NGAYKETTHUC;
+		
+		private string _GHICHUTHIETBI;
+		
+		private System.Nullable<bool> _TRANGTHAI;
+		
+		private System.Nullable<bool> _XOA;
+		
+		private EntitySet<LINHKIEN> _LINHKIENs;
+		
+		private EntitySet<PHIEUTIEPNHAN> _PHIEUTIEPNHANs;
+		
+		private EntityRef<MODEL> _MODEL;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMATHIETBIChanging(string value);
+    partial void OnMATHIETBIChanged();
+    partial void OnMAMODELChanging(string value);
+    partial void OnMAMODELChanged();
+    partial void OnSERIALChanging(string value);
+    partial void OnSERIALChanged();
+    partial void OnTENTHIETBIChanging(string value);
+    partial void OnTENTHIETBIChanged();
+    partial void OnNGAYMUA_SUACHUAChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYMUA_SUACHUAChanged();
+    partial void OnNGAYKETTHUCChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYKETTHUCChanged();
+    partial void OnGHICHUTHIETBIChanging(string value);
+    partial void OnGHICHUTHIETBIChanged();
+    partial void OnTRANGTHAIChanging(System.Nullable<bool> value);
+    partial void OnTRANGTHAIChanged();
+    partial void OnXOAChanging(System.Nullable<bool> value);
+    partial void OnXOAChanged();
+    #endregion
+		
+		public THIETBI()
+		{
+			this._LINHKIENs = new EntitySet<LINHKIEN>(new Action<LINHKIEN>(this.attach_LINHKIENs), new Action<LINHKIEN>(this.detach_LINHKIENs));
+			this._PHIEUTIEPNHANs = new EntitySet<PHIEUTIEPNHAN>(new Action<PHIEUTIEPNHAN>(this.attach_PHIEUTIEPNHANs), new Action<PHIEUTIEPNHAN>(this.detach_PHIEUTIEPNHANs));
+			this._MODEL = default(EntityRef<MODEL>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MATHIETBI", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MATHIETBI
+		{
+			get
+			{
+				return this._MATHIETBI;
+			}
+			set
+			{
+				if ((this._MATHIETBI != value))
+				{
+					this.OnMATHIETBIChanging(value);
+					this.SendPropertyChanging();
+					this._MATHIETBI = value;
+					this.SendPropertyChanged("MATHIETBI");
+					this.OnMATHIETBIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAMODEL", DbType="Char(10) NOT NULL", CanBeNull=false)]
+		public string MAMODEL
+		{
+			get
+			{
+				return this._MAMODEL;
+			}
+			set
+			{
+				if ((this._MAMODEL != value))
+				{
+					if (this._MODEL.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMAMODELChanging(value);
+					this.SendPropertyChanging();
+					this._MAMODEL = value;
+					this.SendPropertyChanged("MAMODEL");
+					this.OnMAMODELChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SERIAL", DbType="VarChar(12)")]
+		public string SERIAL
+		{
+			get
+			{
+				return this._SERIAL;
+			}
+			set
+			{
+				if ((this._SERIAL != value))
+				{
+					this.OnSERIALChanging(value);
+					this.SendPropertyChanging();
+					this._SERIAL = value;
+					this.SendPropertyChanged("SERIAL");
+					this.OnSERIALChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENTHIETBI", DbType="NVarChar(50)")]
+		public string TENTHIETBI
+		{
+			get
+			{
+				return this._TENTHIETBI;
+			}
+			set
+			{
+				if ((this._TENTHIETBI != value))
+				{
+					this.OnTENTHIETBIChanging(value);
+					this.SendPropertyChanging();
+					this._TENTHIETBI = value;
+					this.SendPropertyChanged("TENTHIETBI");
+					this.OnTENTHIETBIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYMUA_SUACHUA", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYMUA_SUACHUA
+		{
+			get
+			{
+				return this._NGAYMUA_SUACHUA;
+			}
+			set
+			{
+				if ((this._NGAYMUA_SUACHUA != value))
+				{
+					this.OnNGAYMUA_SUACHUAChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYMUA_SUACHUA = value;
+					this.SendPropertyChanged("NGAYMUA_SUACHUA");
+					this.OnNGAYMUA_SUACHUAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYKETTHUC", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYKETTHUC
+		{
+			get
+			{
+				return this._NGAYKETTHUC;
+			}
+			set
+			{
+				if ((this._NGAYKETTHUC != value))
+				{
+					this.OnNGAYKETTHUCChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYKETTHUC = value;
+					this.SendPropertyChanged("NGAYKETTHUC");
+					this.OnNGAYKETTHUCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHUTHIETBI", DbType="NVarChar(50)")]
+		public string GHICHUTHIETBI
+		{
+			get
+			{
+				return this._GHICHUTHIETBI;
+			}
+			set
+			{
+				if ((this._GHICHUTHIETBI != value))
+				{
+					this.OnGHICHUTHIETBIChanging(value);
+					this.SendPropertyChanging();
+					this._GHICHUTHIETBI = value;
+					this.SendPropertyChanged("GHICHUTHIETBI");
+					this.OnGHICHUTHIETBIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRANGTHAI", DbType="Bit")]
+		public System.Nullable<bool> TRANGTHAI
+		{
+			get
+			{
+				return this._TRANGTHAI;
+			}
+			set
+			{
+				if ((this._TRANGTHAI != value))
+				{
+					this.OnTRANGTHAIChanging(value);
+					this.SendPropertyChanging();
+					this._TRANGTHAI = value;
+					this.SendPropertyChanged("TRANGTHAI");
+					this.OnTRANGTHAIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_XOA", DbType="Bit")]
+		public System.Nullable<bool> XOA
+		{
+			get
+			{
+				return this._XOA;
+			}
+			set
+			{
+				if ((this._XOA != value))
+				{
+					this.OnXOAChanging(value);
+					this.SendPropertyChanging();
+					this._XOA = value;
+					this.SendPropertyChanged("XOA");
+					this.OnXOAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="THIETBI_LINHKIEN", Storage="_LINHKIENs", ThisKey="MATHIETBI", OtherKey="MATHIETBI")]
+		public EntitySet<LINHKIEN> LINHKIENs
+		{
+			get
+			{
+				return this._LINHKIENs;
+			}
+			set
+			{
+				this._LINHKIENs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="THIETBI_PHIEUTIEPNHAN", Storage="_PHIEUTIEPNHANs", ThisKey="MATHIETBI", OtherKey="MATHIETBI")]
+		public EntitySet<PHIEUTIEPNHAN> PHIEUTIEPNHANs
+		{
+			get
+			{
+				return this._PHIEUTIEPNHANs;
+			}
+			set
+			{
+				this._PHIEUTIEPNHANs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MODEL_THIETBI", Storage="_MODEL", ThisKey="MAMODEL", OtherKey="MAMODEL", IsForeignKey=true)]
+		public MODEL MODEL
+		{
+			get
+			{
+				return this._MODEL.Entity;
+			}
+			set
+			{
+				MODEL previousValue = this._MODEL.Entity;
+				if (((previousValue != value) 
+							|| (this._MODEL.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._MODEL.Entity = null;
+						previousValue.THIETBIs.Remove(this);
+					}
+					this._MODEL.Entity = value;
+					if ((value != null))
+					{
+						value.THIETBIs.Add(this);
+						this._MAMODEL = value.MAMODEL;
+					}
+					else
+					{
+						this._MAMODEL = default(string);
+					}
+					this.SendPropertyChanged("MODEL");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_LINHKIENs(LINHKIEN entity)
+		{
+			this.SendPropertyChanging();
+			entity.THIETBI = this;
+		}
+		
+		private void detach_LINHKIENs(LINHKIEN entity)
+		{
+			this.SendPropertyChanging();
+			entity.THIETBI = null;
+		}
+		
+		private void attach_PHIEUTIEPNHANs(PHIEUTIEPNHAN entity)
+		{
+			this.SendPropertyChanging();
+			entity.THIETBI = this;
+		}
+		
+		private void detach_PHIEUTIEPNHANs(PHIEUTIEPNHAN entity)
+		{
+			this.SendPropertyChanging();
+			entity.THIETBI = null;
 		}
 	}
 }
