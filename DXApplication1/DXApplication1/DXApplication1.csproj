@@ -253,12 +253,6 @@
     <Compile Include="frmThongTinKhachHang.Designer.cs">
       <DependentUpon>frmThongTinKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThongTinNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmThongTinNhanVien.Designer.cs">
-      <DependentUpon>frmThongTinNhanVien.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmTimkiemKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -398,9 +392,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmThongTinKhachHang.resx">
       <DependentUpon>frmThongTinKhachHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmThongTinNhanVien.resx">
-      <DependentUpon>frmThongTinNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTimkiemKhachHang.resx">
       <DependentUpon>frmTimkiemKhachHang.cs</DependentUpon>
