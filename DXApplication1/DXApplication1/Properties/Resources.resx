@@ -118,6 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="cn" xml:space="preserve">
-    <value>Data Source=DESKTOP-6V52PV4\SQLEXPRESS;Initial Catalog=DATHTT;Persist Security Info=True;User ID=sa;Password=sa2014</value>
+    <value>Data Source=DESKTOP-6V52PV4\SQLEXPRESS;Initial Catalog=QLTB;Persist Security Info=True;User ID=sa;Password=sa2014</value>
   </data>
 </root>

@@ -310,10 +310,11 @@
             // 
             this.dtgvnhanvien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvnhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvnhanvien.Location = new System.Drawing.Point(5, 29);
+            this.dtgvnhanvien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvnhanvien.Location = new System.Drawing.Point(2, 26);
             this.dtgvnhanvien.Name = "dtgvnhanvien";
             this.dtgvnhanvien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvnhanvien.Size = new System.Drawing.Size(845, 367);
+            this.dtgvnhanvien.Size = new System.Drawing.Size(858, 254);
             this.dtgvnhanvien.TabIndex = 0;
             this.dtgvnhanvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvnhanvien_CellClick);
             // 

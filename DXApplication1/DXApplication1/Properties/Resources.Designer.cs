@@ -61,7 +61,7 @@ namespace DXApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data Source=DESKTOP-6V52PV4\SQLEXPRESS;Initial Catalog=DATHTT;Persist Security Info=True;User ID=sa;Password=sa2014.
+        ///   Looks up a localized string similar to Data Source=DESKTOP-6V52PV4\SQLEXPRESS;Initial Catalog=QLTB;Persist Security Info=True;User ID=sa;Password=sa2014.
         /// </summary>
         internal static string cn {
             get {
