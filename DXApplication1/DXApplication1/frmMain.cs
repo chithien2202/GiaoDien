@@ -100,7 +100,7 @@ namespace DXApplication1
 
         private void btnNhomNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            XtraForm fff = new frmNhomNguoiDUng();
+            XtraForm fff = new frmNhomNguoiDung();
             TabCreating(this.xtraTabControl1, "Nhóm người dùng", fff);
         }
 

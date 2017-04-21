@@ -11,11 +11,11 @@ using DevExpress.XtraEditors;
 
 namespace DXApplication1
 {
-    public partial class frmNhomNguoiDUng : DevExpress.XtraEditors.XtraForm
+    public partial class frmNhomNguoiDung : DevExpress.XtraEditors.XtraForm
     {
       QLTBDataContext qltb = new QLTBDataContext();
    
-        public frmNhomNguoiDUng()
+        public frmNhomNguoiDung()
         {
             InitializeComponent();
         }

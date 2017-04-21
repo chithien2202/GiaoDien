@@ -25,6 +25,7 @@ namespace DXApplication1
             {
                 txtTenDangNhap.Enabled = true;
                 txtMatKhau.Enabled = true;
+                chkHoatDong.Enabled = true;
 
                 btnThem.Text = "Lưu";
             }
@@ -33,6 +34,14 @@ namespace DXApplication1
                 NGUOIDUNG nguoidung = new NGUOIDUNG();
                 nguoidung.TaiKhoan = txtTenDangNhap.Text;
                 nguoidung.MatKhau = txtMatKhau.Text;
+                if(chkHoatDong.Checked)
+                {
+                    nguoidung.HoatDong = true;
+                }
+                else
+                {
+                    nguoidung.HoatDong = false;
+                }
                 qltb.NGUOIDUNGs.InsertOnSubmit(nguoidung);
                 qltb.SubmitChanges();
                 MessageBox.Show("Success");
@@ -41,10 +50,12 @@ namespace DXApplication1
                 btnThem.Text = "Thêm";
                 txtTenDangNhap.Enabled = false;
                 txtMatKhau.Enabled = false;
+                chkHoatDong.Enabled = false;
 
 
                 txtTenDangNhap.Text = String.Empty;
                 txtMatKhau.Text = String.Empty;
+                chkHoatDong.Checked = false;
             }
         }
 
@@ -52,7 +63,7 @@ namespace DXApplication1
         void LoadGridViewNguoiDung()
         {
             var nguoidung = from nd in qltb.NGUOIDUNGs
-                      select new { nd.TaiKhoan, nd.MatKhau};
+                      select new { nd.TaiKhoan, nd.MatKhau, nd.HoatDong};
             dtgvDSNguoiDung.DataSource = nguoidung;
         }
 
@@ -60,6 +71,7 @@ namespace DXApplication1
         {
             txtTenDangNhap.Enabled = false;
             txtMatKhau.Enabled = false;
+            chkHoatDong.Checked = false;
             LoadGridViewNguoiDung();
         }
 
@@ -71,6 +83,7 @@ namespace DXApplication1
                 txtTenDangNhap.Enabled = false;
                 txtMatKhau.Enabled = true;
 
+
                 btnSua.Text = "Lưu";
             }
             else
@@ -78,6 +91,14 @@ namespace DXApplication1
                 string taikhoan = dtgvDSNguoiDung.CurrentRow.Cells[0].Value.ToString();
                 NGUOIDUNG nd = qltb.NGUOIDUNGs.Where(t => t.TaiKhoan == taikhoan).FirstOrDefault();
                 nd.MatKhau = txtMatKhau.Text;
+                if(chkHoatDong.Checked)
+                {
+                    nd.HoatDong = true;
+                }
+                else
+                {
+                    nd.HoatDong = false;
+                }
                 qltb.SubmitChanges();
                 LoadGridViewNguoiDung();
                 MessageBox.Show("Sửa thành công");
@@ -85,9 +106,11 @@ namespace DXApplication1
                 btnSua.Text = "Sửa";
                 txtTenDangNhap.Enabled = false;
                 txtMatKhau.Enabled = false;
+                chkHoatDong.Enabled = false;
 
                 txtTenDangNhap.Text = String.Empty;
                 txtMatKhau.Text = String.Empty;
+                chkHoatDong.Checked = false;
             }
         }
 
@@ -128,8 +151,17 @@ namespace DXApplication1
             {
                 txtTenDangNhap.Enabled = false;
                 txtMatKhau.Enabled = false;
+                chkHoatDong.Enabled = false;
                 txtTenDangNhap.Text = dtgvDSNguoiDung.CurrentRow.Cells[0].Value.ToString();
                 txtMatKhau.Text = dtgvDSNguoiDung.CurrentRow.Cells[1].Value.ToString();
+                if(dtgvDSNguoiDung.CurrentRow.Cells[2].Value.ToString()=="True")
+                {
+                    chkHoatDong.Checked = true;
+                }
+                else
+                {
+                    chkHoatDong.Checked = false;
+                }
             }
             catch { }
         }

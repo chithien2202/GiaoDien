@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DATHTT" Class="QLTBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-6V52PV4\SQLEXPRESS;Initial Catalog=DATHTT;User ID=sa" SettingsObjectName="DXApplication1.Properties.Settings" SettingsPropertyName="DATHTTConnectionString3" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLTB" Class="QLTBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-6V52PV4\SQLEXPRESS;Initial Catalog=QLTB;User ID=sa" SettingsObjectName="DXApplication1.Properties.Settings" SettingsPropertyName="DATHTTConnectionString3" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BANGBAOGIA" Member="BANGBAOGIAs">
     <Type Name="BANGBAOGIA">
       <Column Name="MABG" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -10,6 +10,22 @@
       <Column Name="XOA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="BANGBAOGIA_CHITIETSUACHUA" Member="CHITIETSUACHUAs" ThisKey="MABG" OtherKey="MABG" Type="CHITIETSUACHUA" />
       <Association Name="PHANLOAI_BANGBAOGIA" Member="PHANLOAI" ThisKey="MAPHANLOAI" OtherKey="MAPHANLOAI" Type="PHANLOAI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.THIETBI" Member="THIETBIs">
+    <Type Name="THIETBI">
+      <Column Name="MATHIETBI" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MAMODEL" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SERIAL" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="TENTHIETBI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NGAYMUA_SUACHUA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NGAYKETTHUC" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GHICHUTHIETBI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="XOA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="THIETBI_LINHKIEN" Member="LINHKIENs" ThisKey="MATHIETBI" OtherKey="MATHIETBI" Type="LINHKIEN" />
+      <Association Name="THIETBI_PHIEUTIEPNHAN" Member="PHIEUTIEPNHANs" ThisKey="MATHIETBI" OtherKey="MATHIETBI" Type="PHIEUTIEPNHAN" />
+      <Association Name="MODEL_THIETBI" Member="MODEL" ThisKey="MAMODEL" OtherKey="MAMODEL" Type="MODEL" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.BOPHAN" Member="BOPHANs">
@@ -117,16 +133,16 @@
     <Type Name="NGUOIDUNG">
       <Column Name="TaiKhoan" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MatKhau" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="CoQuyen" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HoatDong" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.NGUOIDUNGNHOMNGDUNG" Member="NGUOIDUNGNHOMNGDUNGs">
     <Type Name="NGUOIDUNGNHOMNGDUNG">
-      <Column Name="MANHANVIEN" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENDANGNHAP" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MANHOMNGDUNG" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="GHICHU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="XOA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="NHANVIEN_NGUOIDUNGNHOMNGDUNG" Member="NHANVIEN" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="NHANVIEN" IsForeignKey="true" />
+      <Association Name="NHANVIEN_NGUOIDUNGNHOMNGDUNG" Member="NHANVIEN" ThisKey="TENDANGNHAP" OtherKey="MANHANVIEN" Type="NHANVIEN" IsForeignKey="true" />
       <Association Name="NHOMNGUOIDUNG_NGUOIDUNGNHOMNGDUNG" Member="NHOMNGUOIDUNG" ThisKey="MANHOMNGDUNG" OtherKey="MANHOM" Type="NHOMNGUOIDUNG" IsForeignKey="true" />
     </Type>
   </Table>
@@ -143,7 +159,7 @@
       <Column Name="XOA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="NHANVIEN_CHITIETSUACHUA" Member="CHITIETSUACHUAs" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="CHITIETSUACHUA" />
       <Association Name="NHANVIEN_HOADON" Member="HOADONs" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="HOADON" />
-      <Association Name="NHANVIEN_NGUOIDUNGNHOMNGDUNG" Member="NGUOIDUNGNHOMNGDUNGs" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="NGUOIDUNGNHOMNGDUNG" />
+      <Association Name="NHANVIEN_NGUOIDUNGNHOMNGDUNG" Member="NGUOIDUNGNHOMNGDUNGs" ThisKey="MANHANVIEN" OtherKey="TENDANGNHAP" Type="NGUOIDUNGNHOMNGDUNG" />
       <Association Name="NHANVIEN_PHIEUSUACHUA" Member="PHIEUSUACHUAs" ThisKey="MANHANVIEN" OtherKey="MANHANVIENTIEPNHAN" Type="PHIEUSUACHUA" />
       <Association Name="NHANVIEN_PHIEUSUACHUA1" Member="PHIEUSUACHUAs1" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="PHIEUSUACHUA" />
       <Association Name="NHANVIEN_PHIEUSUACHUA2" Member="PHIEUSUACHUAs2" ThisKey="MANHANVIEN" OtherKey="NGUOIGOI" Type="PHIEUSUACHUA" />
@@ -167,7 +183,7 @@
       <Column Name="GHICHU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="XOA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="NHOMNGUOIDUNG_NGUOIDUNGNHOMNGDUNG" Member="NGUOIDUNGNHOMNGDUNGs" ThisKey="MANHOM" OtherKey="MANHOMNGDUNG" Type="NGUOIDUNGNHOMNGDUNG" />
-      <Association Name="NHOMNGUOIDUNG_PHANQUYEN" Member="PHANQUYENs" ThisKey="MANHOM" OtherKey="MANHOMNGDUNG" Type="PHANQUYEN" />
+      <Association Name="NHOMNGUOIDUNG_PHANQUYEN" Member="PHANQUYENs" ThisKey="MANHOM" OtherKey="MANHOMNGUOIDUNG" Type="PHANQUYEN" />
     </Type>
   </Table>
   <Table Name="dbo.PHANLOAI" Member="PHANLOAIs">
@@ -180,11 +196,11 @@
   </Table>
   <Table Name="dbo.PHANQUYEN" Member="PHANQUYENs">
     <Type Name="PHANQUYEN">
-      <Column Name="MANHOMNGDUNG" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MANHOMNGUOIDUNG" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MAMANHINH" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="COQUYEN" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="MANHINH_PHANQUYEN" Member="MANHINH" ThisKey="MAMANHINH" OtherKey="MaManHinh" Type="MANHINH" IsForeignKey="true" />
-      <Association Name="NHOMNGUOIDUNG_PHANQUYEN" Member="NHOMNGUOIDUNG" ThisKey="MANHOMNGDUNG" OtherKey="MANHOM" Type="NHOMNGUOIDUNG" IsForeignKey="true" />
+      <Association Name="NHOMNGUOIDUNG_PHANQUYEN" Member="NHOMNGUOIDUNG" ThisKey="MANHOMNGUOIDUNG" OtherKey="MANHOM" Type="NHOMNGUOIDUNG" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.PHIEUSUACHUA" Member="PHIEUSUACHUAs">
@@ -225,24 +241,8 @@
       <Column Name="XOA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="PHIEUTIEPNHAN_PHIEUSUACHUA" Member="PHIEUSUACHUAs" ThisKey="MAPHIEUTN" OtherKey="MAPHIEUTN" Type="PHIEUSUACHUA" />
       <Association Name="KHACHHANG_PHIEUTIEPNHAN" Member="KHACHHANG" ThisKey="MAKHACHKHACH" OtherKey="MAKHACHKHACH" Type="KHACHHANG" IsForeignKey="true" />
-      <Association Name="NHANVIEN_PHIEUTIEPNHAN" Member="NHANVIEN" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="NHANVIEN" IsForeignKey="true" />
       <Association Name="THIETBI_PHIEUTIEPNHAN" Member="THIETBI" ThisKey="MATHIETBI" OtherKey="MATHIETBI" Type="THIETBI" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.THIETBI" Member="THIETBIs">
-    <Type Name="THIETBI">
-      <Column Name="MATHIETBI" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MAMODEL" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
-      <Column Name="SERIAL" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
-      <Column Name="TENTHIETBI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NGAYMUA_SUACHUA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="NGAYKETTHUC" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="GHICHUTHIETBI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="XOA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="THIETBI_LINHKIEN" Member="LINHKIENs" ThisKey="MATHIETBI" OtherKey="MATHIETBI" Type="LINHKIEN" />
-      <Association Name="THIETBI_PHIEUTIEPNHAN" Member="PHIEUTIEPNHANs" ThisKey="MATHIETBI" OtherKey="MATHIETBI" Type="PHIEUTIEPNHAN" />
-      <Association Name="MODEL_THIETBI" Member="MODEL" ThisKey="MAMODEL" OtherKey="MAMODEL" Type="MODEL" IsForeignKey="true" />
+      <Association Name="NHANVIEN_PHIEUTIEPNHAN" Member="NHANVIEN" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="NHANVIEN" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

@@ -39,6 +39,7 @@
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.dtgvDSNguoiDung = new System.Windows.Forms.DataGridView();
+            this.chkHoatDong = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMatKhau.Properties)).BeginInit();
@@ -50,6 +51,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.chkHoatDong);
             this.panelControl1.Controls.Add(this.btnSua);
             this.panelControl1.Controls.Add(this.btnXoa);
             this.panelControl1.Controls.Add(this.txtMatKhau);
@@ -172,6 +174,16 @@
             this.dtgvDSNguoiDung.TabIndex = 0;
             this.dtgvDSNguoiDung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSNguoiDung_CellClick);
             // 
+            // chkHoatDong
+            // 
+            this.chkHoatDong.AutoSize = true;
+            this.chkHoatDong.Location = new System.Drawing.Point(669, 14);
+            this.chkHoatDong.Name = "chkHoatDong";
+            this.chkHoatDong.Size = new System.Drawing.Size(78, 17);
+            this.chkHoatDong.TabIndex = 17;
+            this.chkHoatDong.Text = "Hoạt Động";
+            this.chkHoatDong.UseVisualStyleBackColor = true;
+            // 
             // frmNguoiDung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,5 +219,6 @@
         private System.Windows.Forms.DataGridView dtgvDSNguoiDung;
         private DevExpress.XtraEditors.SimpleButton btnSua;
         private DevExpress.XtraEditors.SimpleButton btnXoa;
+        private System.Windows.Forms.CheckBox chkHoatDong;
     }
 }

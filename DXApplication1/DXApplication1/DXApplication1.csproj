@@ -175,11 +175,11 @@
     <Compile Include="frmMangHinh.Designer.cs">
       <DependentUpon>frmMangHinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNhomNguoiDUng.cs">
+    <Compile Include="frmNhomNguoiDung.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNhomNguoiDUng.Designer.cs">
-      <DependentUpon>frmNhomNguoiDUng.cs</DependentUpon>
+    <Compile Include="frmNhomNguoiDung.Designer.cs">
+      <DependentUpon>frmNhomNguoiDung.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPhanLoaiGia.cs">
       <SubType>Form</SubType>
@@ -292,6 +292,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLTB.dbml</DependentUpon>
     </Compile>
+    <Compile Include="QLTBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLTBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QL_NguoiDung.cs" />
     <Compile Include="TangMa.cs" />
     <EmbeddedResource Include="frmCauHinh.resx">
@@ -345,8 +350,8 @@
     <EmbeddedResource Include="frmMangHinh.resx">
       <DependentUpon>frmMangHinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNhomNguoiDUng.resx">
-      <DependentUpon>frmNhomNguoiDUng.cs</DependentUpon>
+    <EmbeddedResource Include="frmNhomNguoiDung.resx">
+      <DependentUpon>frmNhomNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPhanLoaiGia.resx">
       <DependentUpon>frmPhanLoaiGia.cs</DependentUpon>
@@ -427,6 +432,17 @@
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>QLTB.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </None>
+    <None Include="QLTBDataSet.xsc">
+      <DependentUpon>QLTBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLTBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLTBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLTBDataSet.xss">
+      <DependentUpon>QLTBDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
