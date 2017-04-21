@@ -30,7 +30,7 @@ namespace DXApplication1
 
         public LoginResult Check_User(string pUser, string pPass)
         {
-            SqlDataAdapter daUser = new SqlDataAdapter("select * from NGUOIDUNG where TaiKhoan='" + pUser + "' and MatKhau ='" + pPass + "'",
+            SqlDataAdapter daUser = new SqlDataAdapter("select * from NGUOIDUNG where TENDANGNHAP='" + pUser + "' and MATKHAU ='" + pPass + "'",
                 Properties.Settings.Default.DATHTTConnectionString2);
             DataTable dt = new DataTable();
             daUser.Fill(dt);

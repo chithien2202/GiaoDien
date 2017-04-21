@@ -3059,9 +3059,9 @@ namespace DXApplication1
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _TaiKhoan;
+		private string _TENDANGNHAP;
 		
-		private string _MatKhau;
+		private string _MATKHAU;
 		
 		private System.Nullable<bool> _HoatDong;
 		
@@ -3069,10 +3069,10 @@ namespace DXApplication1
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnTaiKhoanChanging(string value);
-    partial void OnTaiKhoanChanged();
-    partial void OnMatKhauChanging(string value);
-    partial void OnMatKhauChanged();
+    partial void OnTENDANGNHAPChanging(string value);
+    partial void OnTENDANGNHAPChanged();
+    partial void OnMATKHAUChanging(string value);
+    partial void OnMATKHAUChanged();
     partial void OnHoatDongChanging(System.Nullable<bool> value);
     partial void OnHoatDongChanged();
     #endregion
@@ -3082,42 +3082,42 @@ namespace DXApplication1
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaiKhoan", DbType="VarChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string TaiKhoan
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENDANGNHAP", DbType="VarChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string TENDANGNHAP
 		{
 			get
 			{
-				return this._TaiKhoan;
+				return this._TENDANGNHAP;
 			}
 			set
 			{
-				if ((this._TaiKhoan != value))
+				if ((this._TENDANGNHAP != value))
 				{
-					this.OnTaiKhoanChanging(value);
+					this.OnTENDANGNHAPChanging(value);
 					this.SendPropertyChanging();
-					this._TaiKhoan = value;
-					this.SendPropertyChanged("TaiKhoan");
-					this.OnTaiKhoanChanged();
+					this._TENDANGNHAP = value;
+					this.SendPropertyChanged("TENDANGNHAP");
+					this.OnTENDANGNHAPChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MatKhau", DbType="VarChar(20)")]
-		public string MatKhau
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MATKHAU", DbType="VarChar(20)")]
+		public string MATKHAU
 		{
 			get
 			{
-				return this._MatKhau;
+				return this._MATKHAU;
 			}
 			set
 			{
-				if ((this._MatKhau != value))
+				if ((this._MATKHAU != value))
 				{
-					this.OnMatKhauChanging(value);
+					this.OnMATKHAUChanging(value);
 					this.SendPropertyChanging();
-					this._MatKhau = value;
-					this.SendPropertyChanged("MatKhau");
-					this.OnMatKhauChanged();
+					this._MATKHAU = value;
+					this.SendPropertyChanged("MATKHAU");
+					this.OnMATKHAUChanged();
 				}
 			}
 		}
@@ -3177,8 +3177,6 @@ namespace DXApplication1
 		
 		private System.Nullable<bool> _XOA;
 		
-		private EntityRef<NHANVIEN> _NHANVIEN;
-		
 		private EntityRef<NHOMNGUOIDUNG> _NHOMNGUOIDUNG;
 		
     #region Extensibility Method Definitions
@@ -3197,7 +3195,6 @@ namespace DXApplication1
 		
 		public NGUOIDUNGNHOMNGDUNG()
 		{
-			this._NHANVIEN = default(EntityRef<NHANVIEN>);
 			this._NHOMNGUOIDUNG = default(EntityRef<NHOMNGUOIDUNG>);
 			OnCreated();
 		}
@@ -3213,10 +3210,6 @@ namespace DXApplication1
 			{
 				if ((this._TENDANGNHAP != value))
 				{
-					if (this._NHANVIEN.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnTENDANGNHAPChanging(value);
 					this.SendPropertyChanging();
 					this._TENDANGNHAP = value;
@@ -3286,40 +3279,6 @@ namespace DXApplication1
 					this._XOA = value;
 					this.SendPropertyChanged("XOA");
 					this.OnXOAChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NHANVIEN_NGUOIDUNGNHOMNGDUNG", Storage="_NHANVIEN", ThisKey="TENDANGNHAP", OtherKey="MANHANVIEN", IsForeignKey=true)]
-		public NHANVIEN NHANVIEN
-		{
-			get
-			{
-				return this._NHANVIEN.Entity;
-			}
-			set
-			{
-				NHANVIEN previousValue = this._NHANVIEN.Entity;
-				if (((previousValue != value) 
-							|| (this._NHANVIEN.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._NHANVIEN.Entity = null;
-						previousValue.NGUOIDUNGNHOMNGDUNGs.Remove(this);
-					}
-					this._NHANVIEN.Entity = value;
-					if ((value != null))
-					{
-						value.NGUOIDUNGNHOMNGDUNGs.Add(this);
-						this._TENDANGNHAP = value.MANHANVIEN;
-					}
-					else
-					{
-						this._TENDANGNHAP = default(string);
-					}
-					this.SendPropertyChanged("NHANVIEN");
 				}
 			}
 		}
@@ -3407,8 +3366,6 @@ namespace DXApplication1
 		
 		private EntitySet<HOADON> _HOADONs;
 		
-		private EntitySet<NGUOIDUNGNHOMNGDUNG> _NGUOIDUNGNHOMNGDUNGs;
-		
 		private EntitySet<PHIEUSUACHUA> _PHIEUSUACHUAs;
 		
 		private EntitySet<PHIEUSUACHUA> _PHIEUSUACHUAs1;
@@ -3447,7 +3404,6 @@ namespace DXApplication1
 		{
 			this._CHITIETSUACHUAs = new EntitySet<CHITIETSUACHUA>(new Action<CHITIETSUACHUA>(this.attach_CHITIETSUACHUAs), new Action<CHITIETSUACHUA>(this.detach_CHITIETSUACHUAs));
 			this._HOADONs = new EntitySet<HOADON>(new Action<HOADON>(this.attach_HOADONs), new Action<HOADON>(this.detach_HOADONs));
-			this._NGUOIDUNGNHOMNGDUNGs = new EntitySet<NGUOIDUNGNHOMNGDUNG>(new Action<NGUOIDUNGNHOMNGDUNG>(this.attach_NGUOIDUNGNHOMNGDUNGs), new Action<NGUOIDUNGNHOMNGDUNG>(this.detach_NGUOIDUNGNHOMNGDUNGs));
 			this._PHIEUSUACHUAs = new EntitySet<PHIEUSUACHUA>(new Action<PHIEUSUACHUA>(this.attach_PHIEUSUACHUAs), new Action<PHIEUSUACHUA>(this.detach_PHIEUSUACHUAs));
 			this._PHIEUSUACHUAs1 = new EntitySet<PHIEUSUACHUA>(new Action<PHIEUSUACHUA>(this.attach_PHIEUSUACHUAs1), new Action<PHIEUSUACHUA>(this.detach_PHIEUSUACHUAs1));
 			this._PHIEUSUACHUAs2 = new EntitySet<PHIEUSUACHUA>(new Action<PHIEUSUACHUA>(this.attach_PHIEUSUACHUAs2), new Action<PHIEUSUACHUA>(this.detach_PHIEUSUACHUAs2));
@@ -3666,19 +3622,6 @@ namespace DXApplication1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NHANVIEN_NGUOIDUNGNHOMNGDUNG", Storage="_NGUOIDUNGNHOMNGDUNGs", ThisKey="MANHANVIEN", OtherKey="TENDANGNHAP")]
-		public EntitySet<NGUOIDUNGNHOMNGDUNG> NGUOIDUNGNHOMNGDUNGs
-		{
-			get
-			{
-				return this._NGUOIDUNGNHOMNGDUNGs;
-			}
-			set
-			{
-				this._NGUOIDUNGNHOMNGDUNGs.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NHANVIEN_PHIEUSUACHUA", Storage="_PHIEUSUACHUAs", ThisKey="MANHANVIEN", OtherKey="MANHANVIENTIEPNHAN")]
 		public EntitySet<PHIEUSUACHUA> PHIEUSUACHUAs
 		{
@@ -3804,18 +3747,6 @@ namespace DXApplication1
 		}
 		
 		private void detach_HOADONs(HOADON entity)
-		{
-			this.SendPropertyChanging();
-			entity.NHANVIEN = null;
-		}
-		
-		private void attach_NGUOIDUNGNHOMNGDUNGs(NGUOIDUNGNHOMNGDUNG entity)
-		{
-			this.SendPropertyChanging();
-			entity.NHANVIEN = this;
-		}
-		
-		private void detach_NGUOIDUNGNHOMNGDUNGs(NGUOIDUNGNHOMNGDUNG entity)
 		{
 			this.SendPropertyChanging();
 			entity.NHANVIEN = null;

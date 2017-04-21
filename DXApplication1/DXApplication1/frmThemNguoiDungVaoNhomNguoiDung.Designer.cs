@@ -28,215 +28,259 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThemNguoiDungVaoNhomNguoiDung));
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
+            this.cbbNhomNguoiDung = new System.Windows.Forms.ComboBox();
+            this.nHOMNGUOIDUNGBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLTBDataSet = new DXApplication1.QLTBDataSet();
+            this.nGUOIDUNGBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nGUOIDUNGTRONGNHOMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nHOMNGUOIDUNGTableAdapter = new DXApplication1.QLTBDataSetTableAdapters.NHOMNGUOIDUNGTableAdapter();
+            this.nGUOIDUNGTableAdapter = new DXApplication1.QLTBDataSetTableAdapters.NGUOIDUNGTableAdapter();
+            this.tableAdapterManager = new DXApplication1.QLTBDataSetTableAdapters.TableAdapterManager();
+            this.nGUOIDUNGNHOMNGDUNGTableAdapter = new DXApplication1.QLTBDataSetTableAdapters.NGUOIDUNGNHOMNGDUNGTableAdapter();
+            this.nGUOIDUNGTRONGNHOMTableAdapter = new DXApplication1.QLTBDataSetTableAdapters.NGUOIDUNGTRONGNHOMTableAdapter();
+            this.nGUOIDUNGNHOMNGDUNGBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnThem = new DevExpress.XtraEditors.SimpleButton();
+            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
+            this.nGUOIDUNGDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.nGUOIDUNGTRONGNHOMDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.nHOMNGUOIDUNGBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLTBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nGUOIDUNGBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nGUOIDUNGTRONGNHOMBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nGUOIDUNGNHOMNGDUNGBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nGUOIDUNGDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nGUOIDUNGTRONGNHOMDataGridView)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 98);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(476, 390);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "STT";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Mã Nhân viên";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Tên nhân viên";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Location = new System.Drawing.Point(516, 237);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 32);
-            this.simpleButton1.TabIndex = 2;
-            this.simpleButton1.Text = ">>";
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Location = new System.Drawing.Point(516, 323);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 32);
-            this.simpleButton2.TabIndex = 3;
-            this.simpleButton2.Text = "<<";
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Location = new System.Drawing.Point(682, 61);
+            this.labelControl1.Location = new System.Drawing.Point(670, 12);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(130, 19);
             this.labelControl1.TabIndex = 4;
             this.labelControl1.Text = "Nhóm người dùng";
             // 
-            // comboBox1
+            // cbbNhomNguoiDung
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(842, 53);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(191, 27);
-            this.comboBox1.TabIndex = 5;
+            this.cbbNhomNguoiDung.DataSource = this.nHOMNGUOIDUNGBindingSource;
+            this.cbbNhomNguoiDung.DisplayMember = "TENNHOM";
+            this.cbbNhomNguoiDung.FormattingEnabled = true;
+            this.cbbNhomNguoiDung.Location = new System.Drawing.Point(816, 12);
+            this.cbbNhomNguoiDung.Name = "cbbNhomNguoiDung";
+            this.cbbNhomNguoiDung.Size = new System.Drawing.Size(121, 21);
+            this.cbbNhomNguoiDung.TabIndex = 9;
+            this.cbbNhomNguoiDung.ValueMember = "MANHOM";
+            this.cbbNhomNguoiDung.SelectedIndexChanged += new System.EventHandler(this.cbbNhomNguoiDung_SelectedIndexChanged);
             // 
-            // gridControl2
+            // nHOMNGUOIDUNGBindingSource
             // 
-            this.gridControl2.Location = new System.Drawing.Point(619, 98);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(489, 390);
-            this.gridControl2.TabIndex = 6;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
+            this.nHOMNGUOIDUNGBindingSource.DataMember = "NHOMNGUOIDUNG";
+            this.nHOMNGUOIDUNGBindingSource.DataSource = this.qLTBDataSet;
             // 
-            // gridView2
+            // qLTBDataSet
             // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6});
-            this.gridView2.GridControl = this.gridControl2;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.qLTBDataSet.DataSetName = "QLTBDataSet";
+            this.qLTBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // gridColumn4
+            // nGUOIDUNGBindingSource
             // 
-            this.gridColumn4.Caption = "STT";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 0;
+            this.nGUOIDUNGBindingSource.DataMember = "NGUOIDUNG";
+            this.nGUOIDUNGBindingSource.DataSource = this.qLTBDataSet;
             // 
-            // gridColumn5
+            // nGUOIDUNGTRONGNHOMBindingSource
             // 
-            this.gridColumn5.Caption = "Mã Nhân viên";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 1;
+            this.nGUOIDUNGTRONGNHOMBindingSource.DataMember = "NGUOIDUNGTRONGNHOM";
+            this.nGUOIDUNGTRONGNHOMBindingSource.DataSource = this.qLTBDataSet;
             // 
-            // gridColumn6
+            // nHOMNGUOIDUNGTableAdapter
             // 
-            this.gridColumn6.Caption = "Tên nhân viên";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 2;
+            this.nHOMNGUOIDUNGTableAdapter.ClearBeforeFill = true;
             // 
-            // panelControl1
+            // nGUOIDUNGTableAdapter
             // 
-            this.panelControl1.Controls.Add(this.simpleButton6);
-            this.panelControl1.Controls.Add(this.simpleButton5);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1120, 34);
-            this.panelControl1.TabIndex = 8;
+            this.nGUOIDUNGTableAdapter.ClearBeforeFill = true;
             // 
-            // simpleButton6
+            // tableAdapterManager
             // 
-            this.simpleButton6.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.simpleButton6.Appearance.BackColor2 = System.Drawing.Color.Navy;
-            this.simpleButton6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton6.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.simpleButton6.Appearance.Options.UseBackColor = true;
-            this.simpleButton6.Appearance.Options.UseFont = true;
-            this.simpleButton6.Appearance.Options.UseForeColor = true;
-            this.simpleButton6.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.Image")));
-            this.simpleButton6.Location = new System.Drawing.Point(147, 5);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(95, 23);
-            this.simpleButton6.TabIndex = 5;
-            this.simpleButton6.Text = "&Đóng (F10)";
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BANGBAOGIATableAdapter = null;
+            this.tableAdapterManager.BOPHANTableAdapter = null;
+            this.tableAdapterManager.CHITIETHOADONTableAdapter = null;
+            this.tableAdapterManager.CHITIETSUACHUATableAdapter = null;
+            this.tableAdapterManager.HOADONTableAdapter = null;
+            this.tableAdapterManager.KHACHHANGTableAdapter = null;
+            this.tableAdapterManager.LINHKIENTableAdapter = null;
+            this.tableAdapterManager.MANHINHTableAdapter = null;
+            this.tableAdapterManager.MODELTableAdapter = null;
+            this.tableAdapterManager.NGUOIDUNGNHOMNGDUNGTableAdapter = this.nGUOIDUNGNHOMNGDUNGTableAdapter;
+            this.tableAdapterManager.NGUOIDUNGTableAdapter = this.nGUOIDUNGTableAdapter;
+            this.tableAdapterManager.NHANVIENTableAdapter = null;
+            this.tableAdapterManager.NHASANXUATTableAdapter = null;
+            this.tableAdapterManager.NHOMNGUOIDUNGTableAdapter = this.nHOMNGUOIDUNGTableAdapter;
+            this.tableAdapterManager.PHANLOAITableAdapter = null;
+            this.tableAdapterManager.PHANQUYENTableAdapter = null;
+            this.tableAdapterManager.PHIEUSUACHUATableAdapter = null;
+            this.tableAdapterManager.PHIEUTIEPNHANTableAdapter = null;
+            this.tableAdapterManager.THIETBITableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = DXApplication1.QLTBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // simpleButton5
+            // nGUOIDUNGNHOMNGDUNGTableAdapter
             // 
-            this.simpleButton5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.simpleButton5.Appearance.BackColor2 = System.Drawing.Color.Navy;
-            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton5.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.simpleButton5.Appearance.Options.UseBackColor = true;
-            this.simpleButton5.Appearance.Options.UseFont = true;
-            this.simpleButton5.Appearance.Options.UseForeColor = true;
-            this.simpleButton5.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.Image")));
-            this.simpleButton5.Location = new System.Drawing.Point(15, 5);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(83, 23);
-            this.simpleButton5.TabIndex = 0;
-            this.simpleButton5.Text = "&Lưu(F5)";
+            this.nGUOIDUNGNHOMNGDUNGTableAdapter.ClearBeforeFill = true;
+            // 
+            // nGUOIDUNGTRONGNHOMTableAdapter
+            // 
+            this.nGUOIDUNGTRONGNHOMTableAdapter.ClearBeforeFill = true;
+            // 
+            // nGUOIDUNGNHOMNGDUNGBindingSource
+            // 
+            this.nGUOIDUNGNHOMNGDUNGBindingSource.DataMember = "NGUOIDUNGNHOMNGDUNG";
+            this.nGUOIDUNGNHOMNGDUNGBindingSource.DataSource = this.qLTBDataSet;
+            // 
+            // btnThem
+            // 
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
+            this.btnThem.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnThem.Location = new System.Drawing.Point(523, 202);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(108, 38);
+            this.btnThem.TabIndex = 11;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+            this.btnXoa.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnXoa.Location = new System.Drawing.Point(523, 270);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(108, 38);
+            this.btnXoa.TabIndex = 12;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // nGUOIDUNGDataGridView
+            // 
+            this.nGUOIDUNGDataGridView.AutoGenerateColumns = false;
+            this.nGUOIDUNGDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.nGUOIDUNGDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.nGUOIDUNGDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewCheckBoxColumn1});
+            this.nGUOIDUNGDataGridView.DataSource = this.nGUOIDUNGBindingSource;
+            this.nGUOIDUNGDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nGUOIDUNGDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.nGUOIDUNGDataGridView.Name = "nGUOIDUNGDataGridView";
+            this.nGUOIDUNGDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.nGUOIDUNGDataGridView.Size = new System.Drawing.Size(451, 405);
+            this.nGUOIDUNGDataGridView.TabIndex = 12;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "TENDANGNHAP";
+            this.dataGridViewTextBoxColumn6.HeaderText = "TENDANGNHAP";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "MATKHAU";
+            this.dataGridViewTextBoxColumn7.HeaderText = "MATKHAU";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "HoatDong";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "HoatDong";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            // 
+            // nGUOIDUNGTRONGNHOMDataGridView
+            // 
+            this.nGUOIDUNGTRONGNHOMDataGridView.AutoGenerateColumns = false;
+            this.nGUOIDUNGTRONGNHOMDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.nGUOIDUNGTRONGNHOMDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.nGUOIDUNGTRONGNHOMDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn5});
+            this.nGUOIDUNGTRONGNHOMDataGridView.DataSource = this.nGUOIDUNGTRONGNHOMBindingSource;
+            this.nGUOIDUNGTRONGNHOMDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nGUOIDUNGTRONGNHOMDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.nGUOIDUNGTRONGNHOMDataGridView.Name = "nGUOIDUNGTRONGNHOMDataGridView";
+            this.nGUOIDUNGTRONGNHOMDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.nGUOIDUNGTRONGNHOMDataGridView.Size = new System.Drawing.Size(451, 405);
+            this.nGUOIDUNGTRONGNHOMDataGridView.TabIndex = 12;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "TENDANGNHAP";
+            this.dataGridViewTextBoxColumn8.HeaderText = "TENDANGNHAP";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "MATKHAU";
+            this.dataGridViewTextBoxColumn9.HeaderText = "MATKHAU";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "GHICHU";
+            this.dataGridViewTextBoxColumn5.HeaderText = "GHICHU";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.nGUOIDUNGDataGridView);
+            this.panel1.Location = new System.Drawing.Point(30, 39);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(451, 405);
+            this.panel1.TabIndex = 13;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.nGUOIDUNGTRONGNHOMDataGridView);
+            this.panel2.Location = new System.Drawing.Point(670, 39);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(451, 405);
+            this.panel2.TabIndex = 14;
             // 
             // frmThemNguoiDungVaoNhomNguoiDung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1120, 500);
-            this.Controls.Add(this.panelControl1);
-            this.Controls.Add(this.gridControl2);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(1128, 508);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnThem);
+            this.Controls.Add(this.cbbNhomNguoiDung);
             this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.simpleButton2);
-            this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.gridControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmThemNguoiDungVaoNhomNguoiDung";
             this.Text = "frmThemNguoiDungVaoNhomNguoiDung";
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.frmThemNguoiDungVaoNhomNguoiDung_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.nHOMNGUOIDUNGBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLTBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nGUOIDUNGBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nGUOIDUNGTRONGNHOMBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nGUOIDUNGNHOMNGDUNGBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nGUOIDUNGDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nGUOIDUNGTRONGNHOMDataGridView)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,22 +288,34 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private DevExpress.XtraGrid.GridControl gridControl2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
+
+        private System.Windows.Forms.ComboBox cbbNhomNguoiDung;
+        private QLTBDataSet qLTBDataSet;
+        private System.Windows.Forms.BindingSource nHOMNGUOIDUNGBindingSource;
+        private QLTBDataSetTableAdapters.NHOMNGUOIDUNGTableAdapter nHOMNGUOIDUNGTableAdapter;
+        private System.Windows.Forms.BindingSource nGUOIDUNGBindingSource;
+        private QLTBDataSetTableAdapters.NGUOIDUNGTableAdapter nGUOIDUNGTableAdapter;
+        private QLTBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.BindingSource nGUOIDUNGTRONGNHOMBindingSource;
+        private QLTBDataSetTableAdapters.NGUOIDUNGTRONGNHOMTableAdapter nGUOIDUNGTRONGNHOMTableAdapter;
+        private QLTBDataSetTableAdapters.NGUOIDUNGNHOMNGDUNGTableAdapter nGUOIDUNGNHOMNGDUNGTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.BindingSource nGUOIDUNGNHOMNGDUNGBindingSource;
+        private DevExpress.XtraEditors.SimpleButton btnThem;
+        private DevExpress.XtraEditors.SimpleButton btnXoa;
+        private System.Windows.Forms.DataGridView nGUOIDUNGDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridView nGUOIDUNGTRONGNHOMDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

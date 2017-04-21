@@ -131,8 +131,8 @@
   </Table>
   <Table Name="dbo.NGUOIDUNG" Member="NGUOIDUNGs">
     <Type Name="NGUOIDUNG">
-      <Column Name="TaiKhoan" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MatKhau" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TENDANGNHAP" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MATKHAU" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="HoatDong" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
@@ -142,7 +142,6 @@
       <Column Name="MANHOMNGDUNG" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="GHICHU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="XOA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="NHANVIEN_NGUOIDUNGNHOMNGDUNG" Member="NHANVIEN" ThisKey="TENDANGNHAP" OtherKey="MANHANVIEN" Type="NHANVIEN" IsForeignKey="true" />
       <Association Name="NHOMNGUOIDUNG_NGUOIDUNGNHOMNGDUNG" Member="NHOMNGUOIDUNG" ThisKey="MANHOMNGDUNG" OtherKey="MANHOM" Type="NHOMNGUOIDUNG" IsForeignKey="true" />
     </Type>
   </Table>
@@ -159,7 +158,6 @@
       <Column Name="XOA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="NHANVIEN_CHITIETSUACHUA" Member="CHITIETSUACHUAs" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="CHITIETSUACHUA" />
       <Association Name="NHANVIEN_HOADON" Member="HOADONs" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="HOADON" />
-      <Association Name="NHANVIEN_NGUOIDUNGNHOMNGDUNG" Member="NGUOIDUNGNHOMNGDUNGs" ThisKey="MANHANVIEN" OtherKey="TENDANGNHAP" Type="NGUOIDUNGNHOMNGDUNG" />
       <Association Name="NHANVIEN_PHIEUSUACHUA" Member="PHIEUSUACHUAs" ThisKey="MANHANVIEN" OtherKey="MANHANVIENTIEPNHAN" Type="PHIEUSUACHUA" />
       <Association Name="NHANVIEN_PHIEUSUACHUA1" Member="PHIEUSUACHUAs1" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="PHIEUSUACHUA" />
       <Association Name="NHANVIEN_PHIEUSUACHUA2" Member="PHIEUSUACHUAs2" ThisKey="MANHANVIEN" OtherKey="NGUOIGOI" Type="PHIEUSUACHUA" />

@@ -32,8 +32,8 @@ namespace DXApplication1
             else
             {
                 NGUOIDUNG nguoidung = new NGUOIDUNG();
-                nguoidung.TaiKhoan = txtTenDangNhap.Text;
-                nguoidung.MatKhau = txtMatKhau.Text;
+                nguoidung.TENDANGNHAP = txtTenDangNhap.Text;
+                nguoidung.MATKHAU = txtMatKhau.Text;
                 if(chkHoatDong.Checked)
                 {
                     nguoidung.HoatDong = true;
@@ -63,7 +63,7 @@ namespace DXApplication1
         void LoadGridViewNguoiDung()
         {
             var nguoidung = from nd in qltb.NGUOIDUNGs
-                      select new { nd.TaiKhoan, nd.MatKhau, nd.HoatDong};
+                      select new { nd.TENDANGNHAP, nd.MATKHAU, nd.HoatDong};
             dtgvDSNguoiDung.DataSource = nguoidung;
         }
 
@@ -89,8 +89,8 @@ namespace DXApplication1
             else
             {
                 string taikhoan = dtgvDSNguoiDung.CurrentRow.Cells[0].Value.ToString();
-                NGUOIDUNG nd = qltb.NGUOIDUNGs.Where(t => t.TaiKhoan == taikhoan).FirstOrDefault();
-                nd.MatKhau = txtMatKhau.Text;
+                NGUOIDUNG nd = qltb.NGUOIDUNGs.Where(t => t.TENDANGNHAP == taikhoan).FirstOrDefault();
+                nd.MATKHAU = txtMatKhau.Text;
                 if(chkHoatDong.Checked)
                 {
                     nd.HoatDong = true;
@@ -124,7 +124,7 @@ namespace DXApplication1
                 try
                 {
                     string taikhoan = dtgvDSNguoiDung.CurrentRow.Cells[0].Value.ToString();
-                    NGUOIDUNG nd = qltb.NGUOIDUNGs.Where(t => t.TaiKhoan == taikhoan).FirstOrDefault();
+                    NGUOIDUNG nd = qltb.NGUOIDUNGs.Where(t => t.TENDANGNHAP == taikhoan).FirstOrDefault();
                     qltb.NGUOIDUNGs.DeleteOnSubmit(nd);
                     qltb.SubmitChanges();
                     LoadGridViewNguoiDung();
