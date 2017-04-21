@@ -9,8 +9,10 @@ using System.Threading.Tasks;
 
 namespace DXApplication1
 {
+    
     public class QL_NguoiDung
     {
+        QLTBDataContext qltb = new QLTBDataContext();
         public int Check_Config()
         {
             if (Properties.Settings.Default.DATHTTConnectionString2 == string.Empty)
@@ -67,5 +69,33 @@ namespace DXApplication1
              ";Initial Catalog=" + pDBname + ";User ID=" + pUser + ";pwd= " + pPass + "";
             DXApplication1.Properties.Settings.Default.Save();
         }
+
+        
+        public DataTable GetQuyenManHinh(string tendn)
+        {
+            var quyen = (from ql in qltb.NGUOIDUNGs
+                         join od in qltb.NGUOIDUNGNHOMNGDUNGs on ql.TENDANGNHAP equals od.TENDANGNHAP
+                         join pq in qltb.PHANQUYENs on od.MANHOMNGDUNG equals pq.MANHOMNGUOIDUNG
+                         where ql.TENDANGNHAP == tendn && pq.COQUYEN == true
+                         orderby od.TENDANGNHAP
+                         select new
+                         {
+                             pq.MAMANHINH,
+                         });
+            DataTable dt = new DataTable();
+
+            //khoi tao database
+            dt.Columns.Add("MAMANHINH");
+
+            //duyet danh sach them database trong list quyen
+            foreach(var element in quyen)
+            {
+                var row = dt.NewRow();
+                row["MAMANHINH"] = element.MAMANHINH;
+                dt.Rows.Add(row);
+            }
+            return dt;
+        }
+
     }
 }
