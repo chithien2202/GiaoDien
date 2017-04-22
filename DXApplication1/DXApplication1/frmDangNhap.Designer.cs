@@ -38,6 +38,7 @@
             this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
             this.txtTaiKhoan = new DevExpress.XtraEditors.TextEdit();
             this.txtMatKhau = new DevExpress.XtraEditors.TextEdit();
+            this.chkLuuMK = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTaiKhoan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMatKhau.Properties)).BeginInit();
@@ -57,7 +58,7 @@
             this.linkCauHinhKetNoi.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkCauHinhKetNoi.Appearance.ForeColor = System.Drawing.Color.Lime;
             this.linkCauHinhKetNoi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.linkCauHinhKetNoi.Location = new System.Drawing.Point(17, 227);
+            this.linkCauHinhKetNoi.Location = new System.Drawing.Point(19, 224);
             this.linkCauHinhKetNoi.Name = "linkCauHinhKetNoi";
             this.linkCauHinhKetNoi.Size = new System.Drawing.Size(92, 16);
             this.linkCauHinhKetNoi.TabIndex = 1;
@@ -77,7 +78,7 @@
             // 
             this.lblMatKhau.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMatKhau.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.lblMatKhau.Location = new System.Drawing.Point(170, 145);
+            this.lblMatKhau.Location = new System.Drawing.Point(170, 128);
             this.lblMatKhau.Name = "lblMatKhau";
             this.lblMatKhau.Size = new System.Drawing.Size(61, 18);
             this.lblMatKhau.TabIndex = 3;
@@ -123,13 +124,24 @@
             // 
             // txtMatKhau
             // 
-            this.txtMatKhau.Location = new System.Drawing.Point(252, 143);
+            this.txtMatKhau.Location = new System.Drawing.Point(252, 126);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhau.Properties.Appearance.Options.UseFont = true;
             this.txtMatKhau.Properties.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(159, 24);
             this.txtMatKhau.TabIndex = 8;
+            // 
+            // chkLuuMK
+            // 
+            this.chkLuuMK.AutoSize = true;
+            this.chkLuuMK.ForeColor = System.Drawing.Color.Black;
+            this.chkLuuMK.Location = new System.Drawing.Point(252, 169);
+            this.chkLuuMK.Name = "chkLuuMK";
+            this.chkLuuMK.Size = new System.Drawing.Size(91, 17);
+            this.chkLuuMK.TabIndex = 9;
+            this.chkLuuMK.Text = "Lưu mật khẩu";
+            this.chkLuuMK.UseVisualStyleBackColor = true;
             // 
             // frmDangNhap
             // 
@@ -140,6 +152,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 252);
+            this.Controls.Add(this.chkLuuMK);
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.txtTaiKhoan);
             this.Controls.Add(this.btnHuy);
@@ -171,7 +184,6 @@
         private DevExpress.XtraEditors.SimpleButton btnHuy;
         private DevExpress.XtraEditors.TextEdit txtTaiKhoan;
         private DevExpress.XtraEditors.TextEdit txtMatKhau;
-
-
+        private System.Windows.Forms.CheckBox chkLuuMK;
     }
 }
