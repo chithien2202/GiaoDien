@@ -32,18 +32,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhanQuyen));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.qLTBDataSet = new DXApplication1.QLTBDataSet();
             this.nHOMNGUOIDUNGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nHOMNGUOIDUNGTableAdapter = new DXApplication1.QLTBDataSetTableAdapters.NHOMNGUOIDUNGTableAdapter();
             this.tableAdapterManager = new DXApplication1.QLTBDataSetTableAdapters.TableAdapterManager();
+            this.mANHINHTableAdapter = new DXApplication1.QLTBDataSetTableAdapters.MANHINHTableAdapter();
+            this.pHANQUYENTableAdapter = new DXApplication1.QLTBDataSetTableAdapters.PHANQUYENTableAdapter();
             this.nHOMNGUOIDUNGDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mANHINHBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mANHINHTableAdapter = new DXApplication1.QLTBDataSetTableAdapters.MANHINHTableAdapter();
             this.getPhanQuyenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.getPhanQuyenTableAdapter = new DXApplication1.QLTBDataSetTableAdapters.GetPhanQuyenTableAdapter();
             this.getPhanQuyenDataGridView = new System.Windows.Forms.DataGridView();
@@ -51,11 +50,8 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pHANQUYENBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pHANQUYENTableAdapter = new DXApplication1.QLTBDataSetTableAdapters.PHANQUYENTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLTBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nHOMNGUOIDUNGBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nHOMNGUOIDUNGDataGridView)).BeginInit();
@@ -91,22 +87,6 @@
             this.btnLuu.TabStop = false;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // gridControl2
-            // 
-            this.gridControl2.Location = new System.Drawing.Point(990, 132);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(8, 8);
-            this.gridControl2.TabIndex = 10;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.gridControl2;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             // 
             // qLTBDataSet
             // 
@@ -145,6 +125,14 @@
             this.tableAdapterManager.PHIEUTIEPNHANTableAdapter = null;
             this.tableAdapterManager.THIETBITableAdapter = null;
             this.tableAdapterManager.UpdateOrder = DXApplication1.QLTBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // mANHINHTableAdapter
+            // 
+            this.mANHINHTableAdapter.ClearBeforeFill = true;
+            // 
+            // pHANQUYENTableAdapter
+            // 
+            this.pHANQUYENTableAdapter.ClearBeforeFill = true;
             // 
             // nHOMNGUOIDUNGDataGridView
             // 
@@ -186,10 +174,6 @@
             // 
             this.mANHINHBindingSource.DataMember = "MANHINH";
             this.mANHINHBindingSource.DataSource = this.qLTBDataSet;
-            // 
-            // mANHINHTableAdapter
-            // 
-            this.mANHINHTableAdapter.ClearBeforeFill = true;
             // 
             // getPhanQuyenBindingSource
             // 
@@ -240,10 +224,6 @@
             this.pHANQUYENBindingSource.DataMember = "PHANQUYEN";
             this.pHANQUYENBindingSource.DataSource = this.qLTBDataSet;
             // 
-            // pHANQUYENTableAdapter
-            // 
-            this.pHANQUYENTableAdapter.ClearBeforeFill = true;
-            // 
             // frmPhanQuyen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,7 +231,6 @@
             this.ClientSize = new System.Drawing.Size(1120, 500);
             this.Controls.Add(this.getPhanQuyenDataGridView);
             this.Controls.Add(this.nHOMNGUOIDUNGDataGridView);
-            this.Controls.Add(this.gridControl2);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPhanQuyen";
@@ -259,8 +238,6 @@
             this.Load += new System.EventHandler(this.frmPhanQuyen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLTBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nHOMNGUOIDUNGBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nHOMNGUOIDUNGDataGridView)).EndInit();
@@ -276,8 +253,6 @@
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.SimpleButton btnLuu;
-        private DevExpress.XtraGrid.GridControl gridControl2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private QLTBDataSet qLTBDataSet;
         private System.Windows.Forms.BindingSource nHOMNGUOIDUNGBindingSource;
         private QLTBDataSetTableAdapters.NHOMNGUOIDUNGTableAdapter nHOMNGUOIDUNGTableAdapter;

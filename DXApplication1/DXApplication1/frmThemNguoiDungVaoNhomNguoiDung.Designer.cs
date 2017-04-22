@@ -68,7 +68,7 @@
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Location = new System.Drawing.Point(670, 12);
+            this.labelControl1.Location = new System.Drawing.Point(857, 3);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(130, 19);
             this.labelControl1.TabIndex = 4;
@@ -79,9 +79,9 @@
             this.cbbNhomNguoiDung.DataSource = this.nHOMNGUOIDUNGBindingSource;
             this.cbbNhomNguoiDung.DisplayMember = "TENNHOM";
             this.cbbNhomNguoiDung.FormattingEnabled = true;
-            this.cbbNhomNguoiDung.Location = new System.Drawing.Point(816, 12);
+            this.cbbNhomNguoiDung.Location = new System.Drawing.Point(1003, 3);
             this.cbbNhomNguoiDung.Name = "cbbNhomNguoiDung";
-            this.cbbNhomNguoiDung.Size = new System.Drawing.Size(121, 21);
+            this.cbbNhomNguoiDung.Size = new System.Drawing.Size(153, 21);
             this.cbbNhomNguoiDung.TabIndex = 9;
             this.cbbNhomNguoiDung.ValueMember = "MANHOM";
             this.cbbNhomNguoiDung.SelectedIndexChanged += new System.EventHandler(this.cbbNhomNguoiDung_SelectedIndexChanged);
@@ -155,7 +155,7 @@
             // 
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnThem.Location = new System.Drawing.Point(523, 202);
+            this.btnThem.Location = new System.Drawing.Point(620, 180);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(108, 38);
             this.btnThem.TabIndex = 11;
@@ -165,7 +165,7 @@
             // 
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnXoa.Location = new System.Drawing.Point(523, 270);
+            this.btnXoa.Location = new System.Drawing.Point(620, 248);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(108, 38);
             this.btnXoa.TabIndex = 12;
@@ -173,6 +173,8 @@
             // 
             // nGUOIDUNGDataGridView
             // 
+            this.nGUOIDUNGDataGridView.AllowUserToAddRows = false;
+            this.nGUOIDUNGDataGridView.AllowUserToDeleteRows = false;
             this.nGUOIDUNGDataGridView.AutoGenerateColumns = false;
             this.nGUOIDUNGDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.nGUOIDUNGDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -184,8 +186,9 @@
             this.nGUOIDUNGDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nGUOIDUNGDataGridView.Location = new System.Drawing.Point(0, 0);
             this.nGUOIDUNGDataGridView.Name = "nGUOIDUNGDataGridView";
+            this.nGUOIDUNGDataGridView.ReadOnly = true;
             this.nGUOIDUNGDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.nGUOIDUNGDataGridView.Size = new System.Drawing.Size(451, 405);
+            this.nGUOIDUNGDataGridView.Size = new System.Drawing.Size(537, 466);
             this.nGUOIDUNGDataGridView.TabIndex = 12;
             // 
             // dataGridViewTextBoxColumn6
@@ -208,6 +211,8 @@
             // 
             // nGUOIDUNGTRONGNHOMDataGridView
             // 
+            this.nGUOIDUNGTRONGNHOMDataGridView.AllowUserToAddRows = false;
+            this.nGUOIDUNGTRONGNHOMDataGridView.AllowUserToDeleteRows = false;
             this.nGUOIDUNGTRONGNHOMDataGridView.AutoGenerateColumns = false;
             this.nGUOIDUNGTRONGNHOMDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.nGUOIDUNGTRONGNHOMDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -219,8 +224,9 @@
             this.nGUOIDUNGTRONGNHOMDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nGUOIDUNGTRONGNHOMDataGridView.Location = new System.Drawing.Point(0, 0);
             this.nGUOIDUNGTRONGNHOMDataGridView.Name = "nGUOIDUNGTRONGNHOMDataGridView";
+            this.nGUOIDUNGTRONGNHOMDataGridView.ReadOnly = true;
             this.nGUOIDUNGTRONGNHOMDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.nGUOIDUNGTRONGNHOMDataGridView.Size = new System.Drawing.Size(451, 405);
+            this.nGUOIDUNGTRONGNHOMDataGridView.Size = new System.Drawing.Size(555, 466);
             this.nGUOIDUNGTRONGNHOMDataGridView.TabIndex = 12;
             // 
             // dataGridViewTextBoxColumn8
@@ -244,24 +250,24 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.nGUOIDUNGDataGridView);
-            this.panel1.Location = new System.Drawing.Point(30, 39);
+            this.panel1.Location = new System.Drawing.Point(0, 39);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(451, 405);
+            this.panel1.Size = new System.Drawing.Size(537, 466);
             this.panel1.TabIndex = 13;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.nGUOIDUNGTRONGNHOMDataGridView);
-            this.panel2.Location = new System.Drawing.Point(670, 39);
+            this.panel2.Location = new System.Drawing.Point(805, 39);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(451, 405);
+            this.panel2.Size = new System.Drawing.Size(555, 466);
             this.panel2.TabIndex = 14;
             // 
             // frmThemNguoiDungVaoNhomNguoiDung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1128, 508);
+            this.ClientSize = new System.Drawing.Size(1254, 482);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnXoa);
