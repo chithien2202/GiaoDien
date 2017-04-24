@@ -38,7 +38,7 @@ namespace DXApplication1
                 nhasanxuat.GHICHUSX = txtDienGiai.Text;
                 qltb.NHASANXUATs.InsertOnSubmit(nhasanxuat);
                 qltb.SubmitChanges();
-                MessageBox.Show("Success");
+                XtraMessageBox.Show("Thêm thành công","Thông báo");
                 LoadGridViewNSX();
 
                 btnThem.Text = "Thêm";
@@ -69,7 +69,7 @@ namespace DXApplication1
                 nsx.TENNSX = txtTenNhaSanXuat.Text;
                 nsx.GHICHUSX = txtDienGiai.Text;
                 qltb.SubmitChanges();
-                MessageBox.Show("Sửa thành công");
+                XtraMessageBox.Show("Sửa thành công","Thông báo");
                 LoadGridViewNSX();
 
                 btnSua.Text = "Sửa";
@@ -97,7 +97,7 @@ namespace DXApplication1
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo);
+            DialogResult dr = XtraMessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo);
 
             if (dr == DialogResult.Yes)
 
@@ -109,12 +109,12 @@ namespace DXApplication1
                     qltb.NHASANXUATs.DeleteOnSubmit(nsx);
                     qltb.SubmitChanges();
                     LoadGridViewNSX();
-                    MessageBox.Show("Delete Success!");
+                    XtraMessageBox.Show("Xóa thành công","Thông báo");
                     
                 }
                 catch
                 {
-                    MessageBox.Show("Dữ liệu đang được sử dụng, không thể xóa!");
+                    XtraMessageBox.Show("Dữ liệu đang được sử dụng, không thể xóa!","Thông báo");
 
                 }
             }

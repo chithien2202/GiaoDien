@@ -37,7 +37,7 @@ namespace DXApplication1
                 qltb.BOPHANs.InsertOnSubmit(bophan);
                 qltb.SubmitChanges();
                 LoadGridViewBoPhan();
-                MessageBox.Show("Success");
+                XtraMessageBox.Show("Thêm thành công","Thông báo");
                 
 
                 btnThem.Text = "Thêm";
@@ -69,7 +69,7 @@ namespace DXApplication1
                 nsx.DIENGIAI = txtDienGiai.Text;
                 qltb.SubmitChanges();
                 LoadGridViewBoPhan();
-                MessageBox.Show("Sửa thành công");
+                XtraMessageBox.Show("Sửa thành công","Thông báo");
 
                 btnSua.Text = "Sửa";
                 txtTenBoPhan.Enabled = false;
@@ -103,7 +103,7 @@ namespace DXApplication1
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo);
+            DialogResult dr = XtraMessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo);
 
             if (dr == DialogResult.Yes)
 
@@ -115,11 +115,11 @@ namespace DXApplication1
                     qltb.BOPHANs.DeleteOnSubmit(bophan);
                     qltb.SubmitChanges();
                     LoadGridViewBoPhan();
-                    MessageBox.Show("Delete Success!");
+                    XtraMessageBox.Show("Xóa thành công","Thông báo");
                 }
                 catch
                 {
-                    MessageBox.Show("Dữ liệu đang được sử dụng, không thể xóa!");
+                    XtraMessageBox.Show("Dữ liệu đang được sử dụng, không thể xóa!","Thông báo");
 
                 }
             }

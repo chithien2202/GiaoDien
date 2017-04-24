@@ -46,7 +46,7 @@ namespace DXApplication1
                 qltb.LINHKIENs.InsertOnSubmit(lk);
                 qltb.SubmitChanges();     
                 LoadGridViewLinhKien();
-                MessageBox.Show("Success");
+                XtraMessageBox.Show("Thêm thành công","Thông báo");
 
                 btnThem.Text = "Thêm";
                 cbbThietBi.Enabled = false;
@@ -91,7 +91,7 @@ namespace DXApplication1
                 lk.GHICHULINHKIEN = txtDienGiai.Text;
                 qltb.SubmitChanges();
                 LoadGridViewLinhKien();
-                MessageBox.Show("Sửa thành công");
+                XtraMessageBox.Show("Sửa thành công","Thông báo");
 
 
                 btnSua.Text = "Sửa";
@@ -133,7 +133,7 @@ namespace DXApplication1
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo);
+            DialogResult dr = XtraMessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo);
 
             if (dr == DialogResult.Yes)
 
@@ -145,12 +145,12 @@ namespace DXApplication1
                     qltb.LINHKIENs.DeleteOnSubmit(lk);
                     qltb.SubmitChanges();
                     LoadGridViewLinhKien();
-                    MessageBox.Show("Delete Success!");
+                    XtraMessageBox.Show("Xóa thành công","Thông báo");
                     
                 }
                 catch
                 {
-                    MessageBox.Show("Dữ liệu đang được sử dụng, không thể xóa!");
+                    XtraMessageBox.Show("Dữ liệu đang được sử dụng, không thể xóa!","Thông báo");
 
                 }
             }

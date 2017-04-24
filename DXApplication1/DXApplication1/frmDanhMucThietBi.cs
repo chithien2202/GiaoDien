@@ -50,7 +50,7 @@ namespace DXApplication1
                 qltb.THIETBIs.InsertOnSubmit(thietbi);
                 qltb.SubmitChanges();
                 LoadGridViewThietBi();
-                MessageBox.Show("Success");
+                XtraMessageBox.Show("Thêm thành công","Thông báo");
 
 
                 btnThem.Text = "Thêm";
@@ -95,7 +95,7 @@ namespace DXApplication1
                 thietbi.GHICHUTHIETBI = txtDienGiai.Text;
                 qltb.SubmitChanges();
                 LoadGridViewThietBi();
-                MessageBox.Show("Sửa thành công");
+                XtraMessageBox.Show("Sửa thành công","Thông báo");
                 
 
                 btnSua.Text = "Sửa";
@@ -134,7 +134,7 @@ namespace DXApplication1
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo);
+            DialogResult dr = XtraMessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo);
 
             if (dr == DialogResult.Yes)
 
@@ -146,12 +146,12 @@ namespace DXApplication1
                     qltb.THIETBIs.DeleteOnSubmit(thietbi);
                     qltb.SubmitChanges();
                     LoadGridViewThietBi();
-                    MessageBox.Show("Delete Success!");
+                    XtraMessageBox.Show("Xóa thành công","Thông báo");
                     
                 }
                 catch
                 {
-                    MessageBox.Show("Dữ liệu đang được sử dụng, không thể xóa!");
+                    XtraMessageBox.Show("Dữ liệu đang được sử dụng, không thể xóa!","Thông báo");
 
                 }
             }

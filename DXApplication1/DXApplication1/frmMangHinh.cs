@@ -38,7 +38,7 @@ namespace DXApplication1
 
                 qltb.MANHINHs.InsertOnSubmit(mh);
                 qltb.SubmitChanges();
-                MessageBox.Show("Success");
+                XtraMessageBox.Show("Thêm thành công","Thông báo");
                 LoadGridViewMangHinh();
 
                 btnThem.Text = "Thêm";
@@ -65,7 +65,7 @@ namespace DXApplication1
                 mh.TenManHinh = txtTenMangHinh.Text;
 
                 qltb.SubmitChanges();
-                MessageBox.Show("Sửa thành công");
+                XtraMessageBox.Show("Sửa thành công","Thông báo");
                 LoadGridViewMangHinh();
 
                 btnSua.Text = "Sửa";
@@ -77,7 +77,7 @@ namespace DXApplication1
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo);
+            DialogResult dr = XtraMessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo);
 
             if (dr == DialogResult.Yes)
             {
@@ -85,7 +85,7 @@ namespace DXApplication1
                 MANHINH mh = qltb.MANHINHs.Where(t => t.MaManHinh == mamh).FirstOrDefault();
                 qltb.MANHINHs.DeleteOnSubmit(mh);
                 qltb.SubmitChanges();
-                MessageBox.Show("Delete Success!");
+                XtraMessageBox.Show("Xóa thành công","Thông báo");
                 LoadGridViewMangHinh();
             }
 

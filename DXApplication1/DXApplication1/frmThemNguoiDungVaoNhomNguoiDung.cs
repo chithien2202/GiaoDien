@@ -42,12 +42,12 @@ namespace DXApplication1
                 if (this.nGUOIDUNGTRONGNHOMTableAdapter.KiemTraKhoaChinh(item.Cells[0].Value.ToString().Trim(), cbbNhomNguoiDung.SelectedValue.ToString().Trim()).ToString() == string.Empty ||
                     this.nGUOIDUNGTRONGNHOMTableAdapter.KiemTraKhoaChinh(item.Cells[0].Value.ToString().Trim(), cbbNhomNguoiDung.SelectedValue.ToString().Trim()).Rows.Count == 1)
                 {
-                    MessageBox.Show("Đã tồn tại");
+                    XtraMessageBox.Show("Đã tồn tại","Thông báo");
                 }
                 else
                 {
                     this.nGUOIDUNGNHOMNGDUNGTableAdapter.Insert(item.Cells[0].Value.ToString().Trim(), cbbNhomNguoiDung.SelectedValue.ToString().Trim(), string.Empty);
-                    MessageBox.Show("Them thanh cong");
+                    XtraMessageBox.Show("Thêm thành công","Thông báo");
                 }
             }
             LoadComboByCondition();
@@ -64,11 +64,11 @@ namespace DXApplication1
             {
                 if(this.nGUOIDUNGNHOMNGDUNGTableAdapter.Delete(item.Cells[0].Value.ToString(), cbbNhomNguoiDung.SelectedValue.ToString(), item.Cells[2].Value.ToString())==1)
                 {
-                    MessageBox.Show("Thành công");
+                    XtraMessageBox.Show("Thành công","Thông báo");
                 }
                 else
                 {
-                    MessageBox.Show("Thất bại");
+                    XtraMessageBox.Show("Thất bại","Thông báo");
                 }
             }
             LoadComboByCondition();

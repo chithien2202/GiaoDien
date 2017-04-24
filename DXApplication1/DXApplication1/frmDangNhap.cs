@@ -36,13 +36,13 @@ namespace DXApplication1
             // Wrong username or pass
             if (result == LoginResult.Invalid)
             {
-                MessageBox.Show("Sai " + lblTaiKhoan.Text + " Hoặc " + lblMatKhau.Text);
+                XtraMessageBox.Show("Sai " + lblTaiKhoan.Text + " Hoặc " + lblMatKhau.Text,"Thông báo");
                 return;
             }
             // Account had been disabled
             else if (result == LoginResult.Disabled)
             {
-                MessageBox.Show("Tài khoản bị khóa");
+                XtraMessageBox.Show("Tài khoản bị khóa","Thông báo");
                 return;
             }
             if (Program.mainForm == null || Program.mainForm.IsDisposed)
@@ -71,13 +71,13 @@ namespace DXApplication1
         {
             if (string.IsNullOrEmpty(txtTaiKhoan.Text.Trim()))
             {
-                MessageBox.Show("Không được bỏ trống " + lblTaiKhoan.Text.ToLower());
+                XtraMessageBox.Show("Không được bỏ trống " + lblTaiKhoan.Text.ToLower(),"Thông báo");
                 this.txtTaiKhoan.Focus();
                 return;
             }
             if (string.IsNullOrEmpty(this.txtMatKhau.Text))
             {
-                MessageBox.Show("Không được bỏ trống " + lblMatKhau.Text.ToLower());
+                XtraMessageBox.Show("Không được bỏ trống " + lblMatKhau.Text.ToLower(),"Thông báo");
                 this.txtMatKhau.Focus();
                 return;
             }
@@ -88,12 +88,12 @@ namespace DXApplication1
             }
             if (kq == 1)
             {
-                MessageBox.Show("Chuỗi cấu hình không tồn tại");// Xử lý cấu hình
+                XtraMessageBox.Show("Chuỗi cấu hình không tồn tại","Thông báo");// Xử lý cấu hình
                 ProcessConfig();
             }
             if (kq == 2)
             {
-                MessageBox.Show("Chuỗi cấu hình không phù hợp");// Xử lý cấu hình
+                XtraMessageBox.Show("Chuỗi cấu hình không phù hợp","Thông báo");// Xử lý cấu hình
                 ProcessConfig();
             }
         }

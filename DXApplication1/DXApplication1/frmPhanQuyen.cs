@@ -81,11 +81,11 @@ namespace DXApplication1
                 }
                 catch
                 {
-                    MessageBox.Show("Không thành công");
+                    XtraMessageBox.Show("Không thành công","Thông báo");
                     break;
                 }
             }
-            MessageBox.Show("Thành công");
+            XtraMessageBox.Show("Thành công","Thông báo");
         }
     }
 }

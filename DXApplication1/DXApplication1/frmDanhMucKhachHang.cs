@@ -48,7 +48,7 @@ namespace DXApplication1
                 khachhang.EMAILKH = txtEmail.Text;
                 qltb.KHACHHANGs.InsertOnSubmit(khachhang);
                 qltb.SubmitChanges();
-                MessageBox.Show("Success");
+                XtraMessageBox.Show("Thêm thành công","Thông báo");
                 LoadGridviewkhachhang();
 
                 btnThem.Text = "Thêm";
@@ -91,7 +91,7 @@ namespace DXApplication1
                 kh.FAX = int.Parse(txtFax.Text);
                 kh.EMAILKH = txtEmail.Text;
                 qltb.SubmitChanges();
-                MessageBox.Show("Sửa thành công");
+                XtraMessageBox.Show("Sửa thành công","Thông báo");
                 LoadGridviewkhachhang();
 
                 btnSua.Text = "Sửa";
@@ -121,7 +121,7 @@ namespace DXApplication1
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo);
+            DialogResult dr = XtraMessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo);
 
             if (dr == DialogResult.Yes)
             {
@@ -129,7 +129,7 @@ namespace DXApplication1
                 KHACHHANG khachhang = qltb.KHACHHANGs.Where(t => t.MAKHACHKHACH == makhachhang).FirstOrDefault();
                 qltb.KHACHHANGs.DeleteOnSubmit(khachhang);
                 qltb.SubmitChanges();
-                MessageBox.Show("Delete Success!");
+                XtraMessageBox.Show("Xóa thành công","Thong báo");
                 LoadGridviewkhachhang();
             }
 

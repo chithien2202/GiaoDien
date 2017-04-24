@@ -41,7 +41,7 @@ namespace DXApplication1
                 model.GHICHUMODEL = txtDienGiai.Text;
                 qltb.MODELs.InsertOnSubmit(model);
                 qltb.SubmitChanges();
-                MessageBox.Show("Success");
+                XtraMessageBox.Show("Thêm thành công","Thông báo");
                 LoadGridviewModel();
 
                 btnThem.Text = "Thêm";
@@ -77,7 +77,7 @@ namespace DXApplication1
                 md.THUOC_LOAI = cbbLoai.Text;
                 md.GHICHUMODEL = txtDienGiai.Text;
                 qltb.SubmitChanges();
-                MessageBox.Show("Sửa thành công");
+                XtraMessageBox.Show("Sửa thành công","Thông báo");
                 LoadGridviewModel();
 
                 btnSua.Text = "Sửa";
@@ -118,7 +118,7 @@ namespace DXApplication1
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo);
+            DialogResult dr = XtraMessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo);
 
             if (dr == DialogResult.Yes)
 
@@ -127,7 +127,7 @@ namespace DXApplication1
                 MODEL model = qltb.MODELs.Where(t => t.MAMODEL == mamodel).FirstOrDefault();
                 qltb.MODELs.DeleteOnSubmit(model);
                 qltb.SubmitChanges();
-                MessageBox.Show("Delete Success!");
+                XtraMessageBox.Show("Xóa thành công","Thông báo");
                 LoadGridviewModel();
             }
 

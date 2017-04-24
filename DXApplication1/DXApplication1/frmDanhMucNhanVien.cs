@@ -50,7 +50,7 @@ namespace DXApplication1
                 nhanvien.MABOPHAN = cbbBoPhan.SelectedValue.ToString();
                 qltb.NHANVIENs.InsertOnSubmit(nhanvien);
                 qltb.SubmitChanges();
-                MessageBox.Show("Success");
+                XtraMessageBox.Show("Thêm thành công","Thông báo");
                 LoadGridviewnhanvien();
 
                 btnThem.Text = "Thêm";
@@ -97,7 +97,7 @@ namespace DXApplication1
                 nv.EMAILNV = txtEmail.Text;
                 nv.MABOPHAN = cbbBoPhan.Text;
                 qltb.SubmitChanges();
-                MessageBox.Show("Sửa thành công");
+                XtraMessageBox.Show("Sửa thành công","Thông báo");
                 LoadGridviewnhanvien();
 
                 btnSua.Text = "Sửa";
@@ -140,7 +140,7 @@ namespace DXApplication1
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo);
+            DialogResult dr = XtraMessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo);
 
             if (dr == DialogResult.Yes)
             {
@@ -148,7 +148,7 @@ namespace DXApplication1
                 NHANVIEN nhanvien = qltb.NHANVIENs.Where(t => t.MANHANVIEN == manhanvien).FirstOrDefault();
                 qltb.NHANVIENs.DeleteOnSubmit(nhanvien);
                 qltb.SubmitChanges();
-                MessageBox.Show("Xóa thành công!");
+                XtraMessageBox.Show("Xóa thành công","Thông báo");
                 LoadGridviewnhanvien();
             }
 
