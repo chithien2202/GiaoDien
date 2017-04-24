@@ -1,36 +1,39 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.XtraBars;
+using DevExpress.XtraBars.Ribbon;
+using DevExpress.XtraEditors;
 using DevExpress.XtraTab;
-using DevExpress.XtraTab.ViewInfo;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-
+using System.Linq;
 namespace DXApplication1
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        QLTBDataContext qltb = new QLTBDataContext();
         public frmMain()
         {
+            send = new SendUserName(ShowUser);
             InitializeComponent();
-           
         }
-      
 
         private void Form1_Load(object sender, EventArgs e)
         {
             XtraForm fff = new frm_background();
             TabCreating(this.xtraTabControl1, "Màng Hình Chính", fff);
+
+            IEnumerable<string> listNQ = GetNhomNguoiDungByUserName(username.Caption);
+
+            foreach (var item in listNQ) //duyệt từng nhóm quyền
+            {
+                FindMenuPhanQuyen(this.ribbonControl1, item.ToString(), true);
+            }
         }
 
         private void navBarControl1_Click(object sender, EventArgs e)
         {
-
         }
+
         public void TabCreating(XtraTabControl TabControl, string Text, Form Form)
         {
             int Index = KiemTraTonTai(TabControl, Text);
@@ -38,7 +41,6 @@ namespace DXApplication1
             {
                 TabControl.SelectedTabPage = TabControl.TabPages[Index];
                 TabControl.SelectedTabPage.Text = Text;
-
             }
             else
             {
@@ -53,8 +55,21 @@ namespace DXApplication1
                 Form.Dock = DockStyle.Fill;
             }
         }
+        public IEnumerable<string> GetNhomNguoiDungByUserName(string userName)
+        {
+            var query = from nnd in this.qltb.NHOMNGUOIDUNGs
+                        join ndnnd in this.qltb.NGUOIDUNGNHOMNGDUNGs
+                        on nnd.MANHOM equals ndnnd.MANHOMNGDUNG
+                        join nd in this.qltb.NGUOIDUNGs
+                        on ndnnd.TENDANGNHAP equals nd.TENDANGNHAP
+                        join pq in this.qltb.PHANQUYENs
+                        on ndnnd.MANHOMNGDUNG equals pq.MANHOMNGUOIDUNG
+                        where nd.TENDANGNHAP == userName && pq.COQUYEN == true
+                        select pq.MAMANHINH;
+            return query;
+        }
 
-        static int KiemTraTonTai(XtraTabControl TabControlName, string TabName)
+        private static int KiemTraTonTai(XtraTabControl TabControlName, string TabName)
         {
             int temp = -1;
             for (int i = 0; i < TabControlName.TabPages.Count; i++)
@@ -71,19 +86,19 @@ namespace DXApplication1
         private void xtraTabControl1_CloseButtonClick(object sender, EventArgs e)
         {
             XtraTabControl TabControl = (XtraTabControl)sender;
-            
 
             int i = TabControl.SelectedTabPageIndex;
             TabControl.TabPages.RemoveAt(TabControl.SelectedTabPageIndex);
             TabControl.SelectedTabPageIndex = i - 1;
         }
 
-
         private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = new frmDangNhap();
-            this.Hide();
-            frm.ShowDialog();
+            if(Program.loginForm!=null)
+            {
+                this.Dispose();
+                Program.loginForm.Show();
+            }
         }
 
         private void btnSaoLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -139,8 +154,6 @@ namespace DXApplication1
             XtraForm fff = new frmDanhMucKhachHang();
             TabCreating(this.xtraTabControl1, "khách hàng", fff);
         }
-
-
 
         private void btnNhaSanXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -242,5 +255,40 @@ namespace DXApplication1
             XtraForm fff = new frmNguoiDung();
             TabCreating(this.xtraTabControl1, "Người dùng", fff);
         }
+
+
+        private void FindMenuPhanQuyen(RibbonControl mnuItems, string pScreenName, bool pEnable)
+        {
+            foreach (var item in ribbonControl1.Items)
+            {
+                if (item.GetType() == typeof(BarButtonItem))
+                {
+                    if (string.Equals(pScreenName, ((BarButtonItem)item).Tag))
+                    {
+                        if (pEnable)
+                        {
+                            ((BarButtonItem)item).Visibility = BarItemVisibility.Always;
+                        }
+                        else
+                        {
+                            ((BarButtonItem)item).Visibility = BarItemVisibility.Never;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        public delegate void SendUserName(string user);
+        public SendUserName send;
+
+        private void ShowUser(string user)
+        {
+            string manv = (from nv in qltb.NGUOIDUNGs
+                           where nv.TENDANGNHAP == user
+                           select nv.TENDANGNHAP).FirstOrDefault();
+            username.Caption = manv;
+        }
+
     }
 }

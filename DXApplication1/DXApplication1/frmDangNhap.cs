@@ -13,6 +13,7 @@ namespace DXApplication1
 {
     public partial class frmDangNhap : DevExpress.XtraEditors.XtraForm
     {
+        QLTBDataContext qltb = new QLTBDataContext();
         MaHoaPass mahoa = new MaHoaPass();
         QL_NguoiDung CauHinh = new QL_NguoiDung();
 
@@ -21,9 +22,11 @@ namespace DXApplication1
         public frmDangNhap()
         {
             InitializeComponent();
+            tendn = txtTaiKhoan.Text;
         }
-        
 
+        public static string tendn;
+        
         public void ProcessLogin()
         {
            string pwd = mahoa.Encrypt(txtMatKhau.Text, PubicKey);
@@ -46,8 +49,11 @@ namespace DXApplication1
             {
                 Program.mainForm = new frmMain();
             }
+
             this.Visible = false;
+            Program.mainForm.send(txtTaiKhoan.Text);
             Program.mainForm.Show();
+
         }
 
 
@@ -90,6 +96,25 @@ namespace DXApplication1
                 MessageBox.Show("Chuỗi cấu hình không phù hợp");// Xử lý cấu hình
                 ProcessConfig();
             }
+        }
+
+        public IEnumerable<PHANQUYEN> GetNhomNguoiDungByUserId(string userName)
+        {
+            var query = from nnd in this.qltb.NHOMNGUOIDUNGs
+                        join ndnnd in this.qltb.NGUOIDUNGNHOMNGDUNGs
+                        on nnd.MANHOM equals ndnnd.MANHOMNGDUNG
+                        join nd in this.qltb.NGUOIDUNGs
+                        on ndnnd.TENDANGNHAP equals nd.TENDANGNHAP
+                        join pq in this.qltb.PHANQUYENs
+                        on ndnnd.MANHOMNGDUNG equals pq.MANHOMNGUOIDUNG
+                        where nd.TENDANGNHAP == userName && pq.COQUYEN == true
+                        select pq;
+            return query;
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

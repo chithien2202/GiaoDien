@@ -112,9 +112,11 @@
             this.btnHuy.Size = new System.Drawing.Size(97, 38);
             this.btnHuy.TabIndex = 6;
             this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // txtTaiKhoan
             // 
+            this.txtTaiKhoan.EditValue = "";
             this.txtTaiKhoan.Location = new System.Drawing.Point(252, 87);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -124,6 +126,7 @@
             // 
             // txtMatKhau
             // 
+            this.txtMatKhau.EditValue = "";
             this.txtMatKhau.Location = new System.Drawing.Point(252, 126);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

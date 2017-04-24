@@ -76,6 +76,7 @@
             this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
             this.btnDoanhThu = new DevExpress.XtraBars.BarButtonItem();
             this.btnNguoiDung = new DevExpress.XtraBars.BarButtonItem();
+            this.username = new DevExpress.XtraBars.BarHeaderItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -150,9 +151,10 @@
             this.barButtonGroup1,
             this.btnDangXuat,
             this.btnDoanhThu,
-            this.btnNguoiDung});
+            this.btnNguoiDung,
+            this.username});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 72;
+            this.ribbonControl1.MaxItemId = 76;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -177,6 +179,8 @@
             this.btnTiepNhanSuaChuaBaoHanh.Id = 16;
             this.btnTiepNhanSuaChuaBaoHanh.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnTiepNhanSuaChuaBaoHanh.LargeGlyph")));
             this.btnTiepNhanSuaChuaBaoHanh.Name = "btnTiepNhanSuaChuaBaoHanh";
+            this.btnTiepNhanSuaChuaBaoHanh.Tag = "MH019     ";
+            this.btnTiepNhanSuaChuaBaoHanh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnTiepNhanSuaChuaBaoHanh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTiepNhanSuaChuaBaoHanh_ItemClick);
             // 
             // btnBoPhan
@@ -185,6 +189,8 @@
             this.btnBoPhan.Id = 24;
             this.btnBoPhan.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnBoPhan.LargeGlyph")));
             this.btnBoPhan.Name = "btnBoPhan";
+            this.btnBoPhan.Tag = "MH010     ";
+            this.btnBoPhan.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnBoPhan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBoPhan_ItemClick);
             // 
             // btnBangBaoGia
@@ -193,6 +199,8 @@
             this.btnBangBaoGia.Id = 25;
             this.btnBangBaoGia.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnBangBaoGia.LargeGlyph")));
             this.btnBangBaoGia.Name = "btnBangBaoGia";
+            this.btnBangBaoGia.Tag = "MH014     ";
+            this.btnBangBaoGia.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnBangBaoGia.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBangBaoGia_ItemClick);
             // 
             // btnThietBi
@@ -201,6 +209,8 @@
             this.btnThietBi.Id = 26;
             this.btnThietBi.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnThietBi.LargeGlyph")));
             this.btnThietBi.Name = "btnThietBi";
+            this.btnThietBi.Tag = "MH016     ";
+            this.btnThietBi.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnThietBi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThietBi_ItemClick);
             // 
             // btnLinhKien
@@ -209,6 +219,8 @@
             this.btnLinhKien.Id = 28;
             this.btnLinhKien.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnLinhKien.LargeGlyph")));
             this.btnLinhKien.Name = "btnLinhKien";
+            this.btnLinhKien.Tag = "MH017     ";
+            this.btnLinhKien.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnLinhKien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLinhKien_ItemClick);
             // 
             // btnKhachHang
@@ -217,6 +229,8 @@
             this.btnKhachHang.Id = 29;
             this.btnKhachHang.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnKhachHang.LargeGlyph")));
             this.btnKhachHang.Name = "btnKhachHang";
+            this.btnKhachHang.Tag = "MH012     ";
+            this.btnKhachHang.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnKhachHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKhachHang_ItemClick);
             // 
             // btnLoaiGia
@@ -225,6 +239,8 @@
             this.btnLoaiGia.Id = 30;
             this.btnLoaiGia.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnLoaiGia.LargeGlyph")));
             this.btnLoaiGia.Name = "btnLoaiGia";
+            this.btnLoaiGia.Tag = "MH015     ";
+            this.btnLoaiGia.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnLoaiGia.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLoaiGia_ItemClick);
             // 
             // btnModel
@@ -233,6 +249,8 @@
             this.btnModel.Id = 31;
             this.btnModel.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnModel.LargeGlyph")));
             this.btnModel.Name = "btnModel";
+            this.btnModel.Tag = "MH018     ";
+            this.btnModel.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnModel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnModel_ItemClick);
             // 
             // btnTimKiemKhachHang
@@ -241,6 +259,8 @@
             this.btnTimKiemKhachHang.Id = 32;
             this.btnTimKiemKhachHang.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnTimKiemKhachHang.LargeGlyph")));
             this.btnTimKiemKhachHang.Name = "btnTimKiemKhachHang";
+            this.btnTimKiemKhachHang.Tag = "MH023     ";
+            this.btnTimKiemKhachHang.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnTimKiemKhachHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTimKiemKhachHang_ItemClick);
             // 
             // barButtonItem15
@@ -255,6 +275,8 @@
             this.btnTimKiemTienDoSuaChua.Id = 34;
             this.btnTimKiemTienDoSuaChua.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnTimKiemTienDoSuaChua.LargeGlyph")));
             this.btnTimKiemTienDoSuaChua.Name = "btnTimKiemTienDoSuaChua";
+            this.btnTimKiemTienDoSuaChua.Tag = "MH024     ";
+            this.btnTimKiemTienDoSuaChua.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnTimKiemTienDoSuaChua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTimKiemTienDoSuaChua_ItemClick);
             // 
             // barButtonItem17
@@ -275,6 +297,8 @@
             this.btnLinhKienCuaTungThietBi.Id = 37;
             this.btnLinhKienCuaTungThietBi.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnLinhKienCuaTungThietBi.LargeGlyph")));
             this.btnLinhKienCuaTungThietBi.Name = "btnLinhKienCuaTungThietBi";
+            this.btnLinhKienCuaTungThietBi.Tag = "MH025     ";
+            this.btnLinhKienCuaTungThietBi.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnLinhKienCuaTungThietBi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLinhKienCuaTungThietBi_ItemClick);
             // 
             // btnThietBiNhan
@@ -283,6 +307,8 @@
             this.btnThietBiNhan.Id = 38;
             this.btnThietBiNhan.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnThietBiNhan.LargeGlyph")));
             this.btnThietBiNhan.Name = "btnThietBiNhan";
+            this.btnThietBiNhan.Tag = "MH026     ";
+            this.btnThietBiNhan.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnThietBiNhan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThietBiNhan_ItemClick);
             // 
             // barButtonItem21
@@ -296,6 +322,8 @@
             this.btnDoiMatKhau.Id = 40;
             this.btnDoiMatKhau.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnDoiMatKhau.LargeGlyph")));
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
+            this.btnDoiMatKhau.Tag = "MH001     ";
+            this.btnDoiMatKhau.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // barButtonItem23
             // 
@@ -315,6 +343,8 @@
             this.btnKhoiPhuc.Id = 43;
             this.btnKhoiPhuc.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnKhoiPhuc.LargeGlyph")));
             this.btnKhoiPhuc.Name = "btnKhoiPhuc";
+            this.btnKhoiPhuc.Tag = "MH004     ";
+            this.btnKhoiPhuc.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnKhoiPhuc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKhoiPhuc_ItemClick);
             // 
             // btnSaoLuu
@@ -323,6 +353,8 @@
             this.btnSaoLuu.Id = 44;
             this.btnSaoLuu.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnSaoLuu.LargeGlyph")));
             this.btnSaoLuu.Name = "btnSaoLuu";
+            this.btnSaoLuu.Tag = "MH003     ";
+            this.btnSaoLuu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnSaoLuu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSaoLuu_ItemClick);
             // 
             // barButtonItem27
@@ -337,6 +369,8 @@
             this.btnNhaSanXuat.Id = 46;
             this.btnNhaSanXuat.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnNhaSanXuat.LargeGlyph")));
             this.btnNhaSanXuat.Name = "btnNhaSanXuat";
+            this.btnNhaSanXuat.Tag = "MH013     ";
+            this.btnNhaSanXuat.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnNhaSanXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhaSanXuat_ItemClick);
             // 
             // btnNhanVien
@@ -345,6 +379,8 @@
             this.btnNhanVien.Id = 47;
             this.btnNhanVien.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnNhanVien.LargeGlyph")));
             this.btnNhanVien.Name = "btnNhanVien";
+            this.btnNhanVien.Tag = "MH011     ";
+            this.btnNhanVien.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnNhanVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhanVien_ItemClick);
             // 
             // barButtonItem30
@@ -359,6 +395,8 @@
             this.btnQuanLySuaChuaBaoHanh.Id = 49;
             this.btnQuanLySuaChuaBaoHanh.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnQuanLySuaChuaBaoHanh.LargeGlyph")));
             this.btnQuanLySuaChuaBaoHanh.Name = "btnQuanLySuaChuaBaoHanh";
+            this.btnQuanLySuaChuaBaoHanh.Tag = "MH020     ";
+            this.btnQuanLySuaChuaBaoHanh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnQuanLySuaChuaBaoHanh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQuanLySuaChuaBaoHanh_ItemClick);
             // 
             // barCheckItem1
@@ -373,6 +411,8 @@
             this.btnSuaChuaThietBi.Id = 51;
             this.btnSuaChuaThietBi.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnSuaChuaThietBi.LargeGlyph")));
             this.btnSuaChuaThietBi.Name = "btnSuaChuaThietBi";
+            this.btnSuaChuaThietBi.Tag = "MH021     ";
+            this.btnSuaChuaThietBi.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnSuaChuaThietBi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSuaChuaThietBi_ItemClick);
             // 
             // barButtonItem33
@@ -401,14 +441,18 @@
             this.btnNhomNguoiDung.Id = 57;
             this.btnNhomNguoiDung.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnNhomNguoiDung.LargeGlyph")));
             this.btnNhomNguoiDung.Name = "btnNhomNguoiDung";
+            this.btnNhomNguoiDung.Tag = "MH006     ";
+            this.btnNhomNguoiDung.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnNhomNguoiDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhomNguoiDung_ItemClick);
             // 
             // btnThemNguoiDungVaoNhom
             // 
-            this.btnThemNguoiDungVaoNhom.Caption = "Thêm người dung vào nhóm";
+            this.btnThemNguoiDungVaoNhom.Caption = "Thêm người dùng vào nhóm";
             this.btnThemNguoiDungVaoNhom.Id = 58;
             this.btnThemNguoiDungVaoNhom.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnThemNguoiDungVaoNhom.LargeGlyph")));
             this.btnThemNguoiDungVaoNhom.Name = "btnThemNguoiDungVaoNhom";
+            this.btnThemNguoiDungVaoNhom.Tag = "MH007     ";
+            this.btnThemNguoiDungVaoNhom.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnThemNguoiDungVaoNhom.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThemNguoiDungVaoNhom_ItemClick);
             // 
             // btnMangHinh
@@ -417,6 +461,8 @@
             this.btnMangHinh.Id = 59;
             this.btnMangHinh.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnMangHinh.LargeGlyph")));
             this.btnMangHinh.Name = "btnMangHinh";
+            this.btnMangHinh.Tag = "MH008     ";
+            this.btnMangHinh.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnMangHinh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMangHinh_ItemClick);
             // 
             // btnPhanQuyen
@@ -425,6 +471,8 @@
             this.btnPhanQuyen.Id = 60;
             this.btnPhanQuyen.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnPhanQuyen.LargeGlyph")));
             this.btnPhanQuyen.Name = "btnPhanQuyen";
+            this.btnPhanQuyen.Tag = "MH009     ";
+            this.btnPhanQuyen.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnPhanQuyen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhanQuyen_ItemClick);
             // 
             // barListItem1
@@ -452,6 +500,8 @@
             this.btnHoaDonThanhToan.Id = 64;
             this.btnHoaDonThanhToan.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnHoaDonThanhToan.LargeGlyph")));
             this.btnHoaDonThanhToan.Name = "btnHoaDonThanhToan";
+            this.btnHoaDonThanhToan.Tag = "MH022     ";
+            this.btnHoaDonThanhToan.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnHoaDonThanhToan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHoaDonThanhToan_ItemClick);
             // 
             // barButtonItem42
@@ -480,6 +530,8 @@
             this.btnDangXuat.Id = 68;
             this.btnDangXuat.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.LargeGlyph")));
             this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Tag = "MH002     ";
+            this.btnDangXuat.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnDangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangXuat_ItemClick);
             // 
             // btnDoanhThu
@@ -488,6 +540,8 @@
             this.btnDoanhThu.Id = 69;
             this.btnDoanhThu.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnDoanhThu.LargeGlyph")));
             this.btnDoanhThu.Name = "btnDoanhThu";
+            this.btnDoanhThu.Tag = "MH027     ";
+            this.btnDoanhThu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnDoanhThu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDoanhThu_ItemClick);
             // 
             // btnNguoiDung
@@ -497,7 +551,14 @@
             this.btnNguoiDung.Id = 70;
             this.btnNguoiDung.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnNguoiDung.LargeGlyph")));
             this.btnNguoiDung.Name = "btnNguoiDung";
+            this.btnNguoiDung.Tag = "MH005     ";
+            this.btnNguoiDung.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnNguoiDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNguoiDung_ItemClick);
+            // 
+            // username
+            // 
+            this.username.Id = 75;
+            this.username.Name = "username";
             // 
             // ribbonPage1
             // 
@@ -637,6 +698,7 @@
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem1);
+            this.ribbonStatusBar1.ItemLinks.Add(this.username);
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 658);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
@@ -750,7 +812,6 @@
         private DevExpress.XtraBars.BarButtonItem btnPhanQuyen;
         private DevExpress.XtraBars.BarListItem barListItem1;
         private DevExpress.XtraBars.BarStaticItem barStaticItem1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
         private DevExpress.XtraBars.BarButtonItem barButtonItem40;
         private DevExpress.XtraBars.BarButtonItem btnHoaDonThanhToan;
@@ -762,6 +823,8 @@
         private DevExpress.XtraBars.BarButtonItem btnDoanhThu;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.BarButtonItem btnNguoiDung;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private DevExpress.XtraBars.BarHeaderItem username;
     }
 }
 

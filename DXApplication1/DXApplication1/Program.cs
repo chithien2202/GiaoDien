@@ -17,6 +17,8 @@ namespace DXApplication1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            loginForm = new frmDangNhap();
+            mainForm = new frmMain();
             Application.Run(new frmDangNhap());
         }
     }
