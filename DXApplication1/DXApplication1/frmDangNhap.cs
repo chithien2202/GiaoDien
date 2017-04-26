@@ -81,6 +81,22 @@ namespace DXApplication1
                 this.txtMatKhau.Focus();
                 return;
             }
+           
+            //luu mk
+            if (chkLuuMK.Checked)
+            {
+                Properties.Settings.Default.luuMatKhau = chkLuuMK.Checked;
+                Properties.Settings.Default.username = txtTaiKhoan.Text;
+                Properties.Settings.Default.password = txtMatKhau.Text;
+                Properties.Settings.Default.Save();
+            }
+            else
+            {
+                Properties.Settings.Default.luuMatKhau = chkLuuMK.Checked;
+                Properties.Settings.Default.Save();
+            }
+            //
+
             int kq = CauHinh.Check_Config(); //hàm Check_Config() thuộc Class QL_NguoiDung
             if (kq == 0)
             {
@@ -115,6 +131,16 @@ namespace DXApplication1
         private void btnHuy_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void frmDangNhap_Load(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.luuMatKhau)
+            {
+                txtTaiKhoan.Text = Properties.Settings.Default.username;
+                txtMatKhau.Text = Properties.Settings.Default.password;
+                chkLuuMK.Checked = Properties.Settings.Default.luuMatKhau;
+            }
         }
     }
 }

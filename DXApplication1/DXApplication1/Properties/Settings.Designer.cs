@@ -67,5 +67,52 @@ namespace DXApplication1.Properties {
                 return ((string)(this["DATHTTConnectionString3"]));
             }
         }
+
+        //luu mk
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool luuMatKhau
+        {
+            get
+            {
+                return ((bool)(this["luuMatKhau"]));
+            }
+            set
+            {
+                this["luuMatKhau"] = value;
+            }
+        }
+
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string username
+        {
+            get
+            {
+                return ((string)(this["username"]));
+            }
+            set
+            {
+                this["username"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string password
+        {
+            get
+            {
+                return ((string)(this["password"]));
+            }
+            set
+            {
+                this["password"] = value;
+            }
+        }
     }
 }
