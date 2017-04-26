@@ -196,18 +196,21 @@
             this.dataGridViewTextBoxColumn6.DataPropertyName = "TENDANGNHAP";
             this.dataGridViewTextBoxColumn6.HeaderText = "TENDANGNHAP";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "MATKHAU";
             this.dataGridViewTextBoxColumn7.HeaderText = "MATKHAU";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // dataGridViewCheckBoxColumn1
             // 
             this.dataGridViewCheckBoxColumn1.DataPropertyName = "HoatDong";
             this.dataGridViewCheckBoxColumn1.HeaderText = "HoatDong";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             // 
             // nGUOIDUNGTRONGNHOMDataGridView
             // 
@@ -234,18 +237,21 @@
             this.dataGridViewTextBoxColumn8.DataPropertyName = "TENDANGNHAP";
             this.dataGridViewTextBoxColumn8.HeaderText = "TENDANGNHAP";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "MATKHAU";
             this.dataGridViewTextBoxColumn9.HeaderText = "MATKHAU";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "GHICHU";
             this.dataGridViewTextBoxColumn5.HeaderText = "GHICHU";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // panel1
             // 
