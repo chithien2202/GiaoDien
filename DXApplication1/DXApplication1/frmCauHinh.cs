@@ -24,14 +24,14 @@ namespace DXApplication1
 
         private void CbbDatabase_DropDown(object sender, EventArgs e)
         {
-            cbbDatabase.DataSource = CauHinh.GetDBName(cbbDatabase.Text, txtUserName.Text, txtPassword.Text);
+            cbbDatabase.DataSource = CauHinh.GetDBName(cbbServerName.Text, txtUserName.Text, txtPassword.Text);
             cbbDatabase.DisplayMember = "name";
         }
 
         private void CbbServerName_DropDown(object sender, EventArgs e)
         {
-            cbbServerName.DataSource = CauHinh.GetServerName();
-            cbbDatabase.DisplayMember = "ServerName";
+            cbbServerName.DataSource = CauHinh.GetSevername();
+            cbbServerName.DisplayMember = "ServerName";
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -63,8 +63,8 @@ namespace DXApplication1
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            CauHinh.SaveConfig(cbbServerName.Text, txtUserName.Text, txtPassword.Text, cbbDatabase.Text);
-            this.Close();
+            //CauHinh.SaveConfig(cbbServerName.Text, txtUserName.Text, txtPassword.Text, cbbDatabase.Text);
+            //this.Close();
         }
     }
 }

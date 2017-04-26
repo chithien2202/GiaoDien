@@ -142,7 +142,6 @@ namespace DXApplication1.Properties
             {
                 this["QLTBConnect"] = value;
             }
-
         }
     }
 }

@@ -30,7 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDanhMucBoPhan));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnTroGiup = new DevExpress.XtraEditors.SimpleButton();
             this.txtDienGiai = new DevExpress.XtraEditors.TextEdit();
+            this.btnIn = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtTenBoPhan = new DevExpress.XtraEditors.TextEdit();
@@ -40,8 +42,6 @@
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.dtgvDSBoPhan = new System.Windows.Forms.DataGridView();
-            this.btnTroGiup = new DevExpress.XtraEditors.SimpleButton();
-            this.btnIn = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDienGiai.Properties)).BeginInit();
@@ -69,12 +69,44 @@
             this.panelControl1.Size = new System.Drawing.Size(862, 81);
             this.panelControl1.TabIndex = 5;
             // 
+            // btnTroGiup
+            // 
+            this.btnTroGiup.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnTroGiup.Appearance.BackColor2 = System.Drawing.Color.Navy;
+            this.btnTroGiup.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTroGiup.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnTroGiup.Appearance.Options.UseBackColor = true;
+            this.btnTroGiup.Appearance.Options.UseFont = true;
+            this.btnTroGiup.Appearance.Options.UseForeColor = true;
+            this.btnTroGiup.Image = ((System.Drawing.Image)(resources.GetObject("btnTroGiup.Image")));
+            this.btnTroGiup.Location = new System.Drawing.Point(434, 48);
+            this.btnTroGiup.Name = "btnTroGiup";
+            this.btnTroGiup.Size = new System.Drawing.Size(108, 23);
+            this.btnTroGiup.TabIndex = 6;
+            this.btnTroGiup.Text = "Trợ giúp";
+            // 
             // txtDienGiai
             // 
             this.txtDienGiai.Location = new System.Drawing.Point(420, 11);
             this.txtDienGiai.Name = "txtDienGiai";
             this.txtDienGiai.Size = new System.Drawing.Size(217, 20);
             this.txtDienGiai.TabIndex = 16;
+            // 
+            // btnIn
+            // 
+            this.btnIn.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnIn.Appearance.BackColor2 = System.Drawing.Color.Navy;
+            this.btnIn.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIn.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnIn.Appearance.Options.UseBackColor = true;
+            this.btnIn.Appearance.Options.UseFont = true;
+            this.btnIn.Appearance.Options.UseForeColor = true;
+            this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
+            this.btnIn.Location = new System.Drawing.Point(327, 48);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(75, 23);
+            this.btnIn.TabIndex = 5;
+            this.btnIn.Text = "In";
             // 
             // labelControl3
             // 
@@ -185,7 +217,6 @@
             // dtgvDSBoPhan
             // 
             this.dtgvDSBoPhan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvDSBoPhan.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dtgvDSBoPhan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvDSBoPhan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvDSBoPhan.Location = new System.Drawing.Point(2, 26);
@@ -193,39 +224,6 @@
             this.dtgvDSBoPhan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvDSBoPhan.Size = new System.Drawing.Size(858, 368);
             this.dtgvDSBoPhan.TabIndex = 0;
-            this.dtgvDSBoPhan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSBoPhan_CellClick);
-            // 
-            // btnTroGiup
-            // 
-            this.btnTroGiup.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnTroGiup.Appearance.BackColor2 = System.Drawing.Color.Navy;
-            this.btnTroGiup.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTroGiup.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnTroGiup.Appearance.Options.UseBackColor = true;
-            this.btnTroGiup.Appearance.Options.UseFont = true;
-            this.btnTroGiup.Appearance.Options.UseForeColor = true;
-            this.btnTroGiup.Image = ((System.Drawing.Image)(resources.GetObject("btnTroGiup.Image")));
-            this.btnTroGiup.Location = new System.Drawing.Point(434, 48);
-            this.btnTroGiup.Name = "btnTroGiup";
-            this.btnTroGiup.Size = new System.Drawing.Size(108, 23);
-            this.btnTroGiup.TabIndex = 6;
-            this.btnTroGiup.Text = "Trợ giúp";
-            // 
-            // btnIn
-            // 
-            this.btnIn.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnIn.Appearance.BackColor2 = System.Drawing.Color.Navy;
-            this.btnIn.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIn.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnIn.Appearance.Options.UseBackColor = true;
-            this.btnIn.Appearance.Options.UseFont = true;
-            this.btnIn.Appearance.Options.UseForeColor = true;
-            this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
-            this.btnIn.Location = new System.Drawing.Point(327, 48);
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(75, 23);
-            this.btnIn.TabIndex = 5;
-            this.btnIn.Text = "In";
             // 
             // frmDanhMucBoPhan
             // 
@@ -262,8 +260,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txtTenBoPhan;
-        private System.Windows.Forms.DataGridView dtgvDSBoPhan;
         private DevExpress.XtraEditors.SimpleButton btnTroGiup;
         private DevExpress.XtraEditors.SimpleButton btnIn;
+        private System.Windows.Forms.DataGridView dtgvDSBoPhan;
     }
 }
