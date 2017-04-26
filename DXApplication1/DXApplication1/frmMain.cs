@@ -256,6 +256,12 @@ namespace DXApplication1
             TabCreating(this.xtraTabControl1, "Người dùng", fff);
         }
 
+        private void btnCauHinh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = new frmCauHinh();
+            frm.ShowDialog();
+        }
+
 
         private void FindMenuPhanQuyen(RibbonControl mnuItems, string pScreenName, bool pEnable)
         {
@@ -289,6 +295,7 @@ namespace DXApplication1
                            select nv.TENDANGNHAP).FirstOrDefault();
             username.Caption = manv;
         }
+
 
     }
 }

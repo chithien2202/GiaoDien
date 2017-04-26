@@ -96,6 +96,7 @@
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.btnCauHinh = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.SuspendLayout();
@@ -152,9 +153,10 @@
             this.btnDangXuat,
             this.btnDoanhThu,
             this.btnNguoiDung,
-            this.username});
+            this.username,
+            this.btnCauHinh});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 76;
+            this.ribbonControl1.MaxItemId = 77;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -339,7 +341,7 @@
             // 
             // btnKhoiPhuc
             // 
-            this.btnKhoiPhuc.Caption = "Khôi phục dư liệu";
+            this.btnKhoiPhuc.Caption = "Khôi phục dữ liệu";
             this.btnKhoiPhuc.Id = 43;
             this.btnKhoiPhuc.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnKhoiPhuc.LargeGlyph")));
             this.btnKhoiPhuc.Name = "btnKhoiPhuc";
@@ -584,6 +586,7 @@
             // 
             this.ribbonPageGroup9.ItemLinks.Add(this.btnSaoLuu);
             this.ribbonPageGroup9.ItemLinks.Add(this.btnKhoiPhuc);
+            this.ribbonPageGroup9.ItemLinks.Add(this.btnCauHinh);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "Cơ sở dữ liệu";
             // 
@@ -732,6 +735,15 @@
             this.xtraTabControl1.Size = new System.Drawing.Size(1130, 523);
             this.xtraTabControl1.TabIndex = 7;
             // 
+            // btnCauHinh
+            // 
+            this.btnCauHinh.Caption = "Cấu hình";
+            this.btnCauHinh.Glyph = ((System.Drawing.Image)(resources.GetObject("btnCauHinh.Glyph")));
+            this.btnCauHinh.Id = 76;
+            this.btnCauHinh.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnCauHinh.LargeGlyph")));
+            this.btnCauHinh.Name = "btnCauHinh";
+            this.btnCauHinh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCauHinh_ItemClick);
+            // 
             // frmMain
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -825,6 +837,7 @@
         private DevExpress.XtraBars.BarButtonItem btnNguoiDung;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraBars.BarHeaderItem username;
+        private DevExpress.XtraBars.BarButtonItem btnCauHinh;
     }
 }
 
