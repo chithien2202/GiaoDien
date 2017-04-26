@@ -29,33 +29,34 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhucHoi));
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.btnBrower = new DevExpress.XtraEditors.SimpleButton();
+            this.txtLocation = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPhucHoi = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLocation.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // simpleButton3
+            // btnBrower
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(436, 81);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(36, 23);
-            this.simpleButton3.TabIndex = 17;
-            this.simpleButton3.Text = "...";
+            this.btnBrower.Location = new System.Drawing.Point(436, 81);
+            this.btnBrower.Name = "btnBrower";
+            this.btnBrower.Size = new System.Drawing.Size(36, 23);
+            this.btnBrower.TabIndex = 17;
+            this.btnBrower.Text = "...";
+            this.btnBrower.Click += new System.EventHandler(this.btnBrower_Click);
             // 
-            // textEdit1
+            // txtLocation
             // 
-            this.textEdit1.Location = new System.Drawing.Point(178, 82);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Size = new System.Drawing.Size(252, 22);
-            this.textEdit1.TabIndex = 16;
+            this.txtLocation.Location = new System.Drawing.Point(178, 82);
+            this.txtLocation.Name = "txtLocation";
+            this.txtLocation.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLocation.Properties.Appearance.Options.UseFont = true;
+            this.txtLocation.Size = new System.Drawing.Size(252, 22);
+            this.txtLocation.TabIndex = 16;
             // 
             // simpleButton2
             // 
@@ -68,16 +69,17 @@
             this.simpleButton2.TabIndex = 15;
             this.simpleButton2.Text = "&Hủy";
             // 
-            // simpleButton1
+            // btnPhucHoi
             // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(230, 136);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(105, 38);
-            this.simpleButton1.TabIndex = 14;
-            this.simpleButton1.Text = "Đồng ý";
+            this.btnPhucHoi.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhucHoi.Appearance.Options.UseFont = true;
+            this.btnPhucHoi.Image = ((System.Drawing.Image)(resources.GetObject("btnPhucHoi.Image")));
+            this.btnPhucHoi.Location = new System.Drawing.Point(230, 136);
+            this.btnPhucHoi.Name = "btnPhucHoi";
+            this.btnPhucHoi.Size = new System.Drawing.Size(105, 38);
+            this.btnPhucHoi.TabIndex = 14;
+            this.btnPhucHoi.Text = "Phục hồi";
+            this.btnPhucHoi.Click += new System.EventHandler(this.btnPhucHoi_Click);
             // 
             // labelControl2
             // 
@@ -112,16 +114,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 184);
-            this.Controls.Add(this.simpleButton3);
-            this.Controls.Add(this.textEdit1);
+            this.Controls.Add(this.btnBrower);
+            this.Controls.Add(this.txtLocation);
             this.Controls.Add(this.simpleButton2);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.btnPhucHoi);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmPhucHoi";
             this.Text = "Phục hồi dữ liệu";
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLocation.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -130,10 +132,10 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.SimpleButton btnBrower;
+        private DevExpress.XtraEditors.TextEdit txtLocation;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnPhucHoi;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.PictureBox pictureBox1;
