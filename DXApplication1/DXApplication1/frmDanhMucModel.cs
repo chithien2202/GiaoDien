@@ -38,7 +38,14 @@ namespace DXApplication1
                 model.MANSX = cbbNhaSanXuat.SelectedValue.ToString();
                 model.TENMODEL = txtTenModel.Text;
                 model.THUOC_LOAI = cbbLoai.SelectedValue.ToString();
-                model.GHICHUMODEL = txtDienGiai.Text;
+                if (txtDienGiai.Text == null)
+                {
+                    model.GHICHUMODEL = txtDienGiai.Text = "";
+                }
+                else
+                {
+                    model.GHICHUMODEL = txtDienGiai.Text;
+                }
                 qltb.MODELs.InsertOnSubmit(model);
                 qltb.SubmitChanges();
                 XtraMessageBox.Show("Thêm thành công","Thông báo");

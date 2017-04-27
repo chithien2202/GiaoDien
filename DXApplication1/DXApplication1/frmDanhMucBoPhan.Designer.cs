@@ -212,7 +212,7 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(862, 396);
             this.groupControl1.TabIndex = 6;
-            this.groupControl1.Text = "Danh sách người dùng";
+            this.groupControl1.Text = "Danh sách bộ phận";
             // 
             // dtgvDSBoPhan
             // 
@@ -224,6 +224,7 @@
             this.dtgvDSBoPhan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvDSBoPhan.Size = new System.Drawing.Size(858, 368);
             this.dtgvDSBoPhan.TabIndex = 0;
+            this.dtgvDSBoPhan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSBoPhan_CellClick);
             // 
             // frmDanhMucBoPhan
             // 

@@ -47,6 +47,14 @@ namespace DXApplication1
                 thietbi.TENTHIETBI = txtTenThietBi.Text;
                 thietbi.NGAYMUA_SUACHUA = dtpNgayMua.Value;
                 thietbi.NGAYKETTHUC = dtpNgayHetBH.Value;
+                if (txtDienGiai.Text == null)
+                {
+                    thietbi.GHICHUTHIETBI = txtDienGiai.Text = "";
+                }
+                else
+                {
+                    thietbi.GHICHUTHIETBI = txtDienGiai.Text;
+                }
                 qltb.THIETBIs.InsertOnSubmit(thietbi);
                 qltb.SubmitChanges();
                 LoadGridViewThietBi();

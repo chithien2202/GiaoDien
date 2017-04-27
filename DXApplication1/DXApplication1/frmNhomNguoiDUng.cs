@@ -35,8 +35,14 @@ namespace DXApplication1
                 NHOMNGUOIDUNG nhomnd = new NHOMNGUOIDUNG();
                 nhomnd.MANHOM = TangMa.ATTangMa3("NND", "NHOMNGUOIDUNG");
                 nhomnd.TENNHOM = txtTenNhom.Text;
-
-                nhomnd.GHICHU = txtDienGiai.Text;
+                if (txtDienGiai.Text == null)
+                {
+                    nhomnd.GHICHU = txtDienGiai.Text = "";
+                }
+                else
+                {
+                    nhomnd.GHICHU = txtDienGiai.Text;
+                }
 
                 qltb.NHOMNGUOIDUNGs.InsertOnSubmit(nhomnd);
                 qltb.SubmitChanges();

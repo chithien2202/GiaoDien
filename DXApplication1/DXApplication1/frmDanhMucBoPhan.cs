@@ -33,7 +33,14 @@ namespace DXApplication1
                 BOPHAN bophan = new BOPHAN();
                 bophan.MABOPHAN = TangMa.ATTangMa2("BP", "BOPHAN");
                 bophan.TENBOPHAN = txtTenBoPhan.Text;
-                bophan.DIENGIAI = txtDienGiai.Text;
+                if (txtDienGiai.Text == null)
+                {
+                    bophan.DIENGIAI = txtDienGiai.Text="";
+                }
+                else
+                {
+                    bophan.DIENGIAI = txtDienGiai.Text;
+                }
                 qltb.BOPHANs.InsertOnSubmit(bophan);
                 qltb.SubmitChanges();
                 LoadGridViewBoPhan();
@@ -142,9 +149,8 @@ namespace DXApplication1
             }
             catch
             {
-            	
+
             }
-            
         }
     }
 }

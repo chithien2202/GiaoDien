@@ -44,7 +44,14 @@ namespace DXApplication1
                 nhanvien.TENNHANVIEN = txtTenNV.Text;
                 nhanvien.SDTNV = int.Parse(txtSDT.Text);
                 nhanvien.DIACHINV = txtDChi.Text;
-                nhanvien.GHICHU = txtDienGiai.Text;
+                if (txtDienGiai.Text == null)
+                {
+                    nhanvien.GHICHU = txtDienGiai.Text = "";
+                }
+                else
+                {
+                    nhanvien.GHICHU = txtDienGiai.Text;
+                }
                 nhanvien.LUONG = int.Parse(txtLuong.Text);
                 nhanvien.EMAILNV = txtEmail.Text;
                 nhanvien.MABOPHAN = cbbBoPhan.SelectedValue.ToString();

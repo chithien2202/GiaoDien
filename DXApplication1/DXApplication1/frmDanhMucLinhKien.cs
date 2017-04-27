@@ -42,7 +42,14 @@ namespace DXApplication1
                 lk.NGAYSX = dtpNgaySX.Value;
                 lk.NGAYKETTHUC = dtpNgayHetBH.Value;
                 lk.NGAYMUA_SUACHUA = dtpNgayMua.Value;
-                lk.GHICHULINHKIEN = txtDienGiai.Text;
+                if (txtDienGiai.Text == null)
+                {
+                    lk.GHICHULINHKIEN = txtDienGiai.Text = "";
+                }
+                else
+                {
+                    lk.GHICHULINHKIEN = txtDienGiai.Text;
+                }
                 qltb.LINHKIENs.InsertOnSubmit(lk);
                 qltb.SubmitChanges();     
                 LoadGridViewLinhKien();

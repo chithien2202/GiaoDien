@@ -43,7 +43,14 @@ namespace DXApplication1
                 khachhang.TENKHACHHANG = txtTenKH.Text;
                 khachhang.SDTKH = int.Parse(txtSDT.Text);
                 khachhang.DIACHIKH = txtDChi.Text;
-                khachhang.GHICHU = txtDienGiai.Text;
+                if (txtDienGiai.Text == null)
+                {
+                    khachhang.GHICHU = txtDienGiai.Text = "";
+                }
+                else
+                {
+                    khachhang.GHICHU = txtDienGiai.Text;
+                }
                 khachhang.FAX = int.Parse(txtFax.Text);
                 khachhang.EMAILKH = txtEmail.Text;
                 qltb.KHACHHANGs.InsertOnSubmit(khachhang);

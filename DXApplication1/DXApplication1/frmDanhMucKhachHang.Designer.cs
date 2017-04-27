@@ -282,7 +282,7 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(862, 349);
             this.groupControl1.TabIndex = 6;
-            this.groupControl1.Text = "Khách hàng ";
+            this.groupControl1.Text = "Danh sách khách hàng ";
             // 
             // dgtvKhachHang
             // 

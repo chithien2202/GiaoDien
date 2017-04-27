@@ -216,7 +216,7 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(862, 383);
             this.groupControl1.TabIndex = 7;
-            this.groupControl1.Text = "Nhà sản xuất";
+            this.groupControl1.Text = "Danh sách nhà sản xuất";
             // 
             // dtgvNhaSanXuat
             // 

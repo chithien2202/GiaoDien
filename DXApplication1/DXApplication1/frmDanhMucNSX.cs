@@ -35,7 +35,14 @@ namespace DXApplication1
                 NHASANXUAT nhasanxuat = new NHASANXUAT();
                 nhasanxuat.MANSX = TangMa.ATTangMa3("NSX", "NHASANXUAT");
                 nhasanxuat.TENNSX = txtTenNhaSanXuat.Text;
-                nhasanxuat.GHICHUSX = txtDienGiai.Text;
+                if (txtDienGiai.Text == null)
+                {
+                    nhasanxuat.GHICHUSX = txtDienGiai.Text = "";
+                }
+                else
+                {
+                    nhasanxuat.GHICHUSX = txtDienGiai.Text;
+                }
                 qltb.NHASANXUATs.InsertOnSubmit(nhasanxuat);
                 qltb.SubmitChanges();
                 XtraMessageBox.Show("Thêm thành công","Thông báo");
