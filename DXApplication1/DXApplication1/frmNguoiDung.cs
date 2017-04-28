@@ -92,6 +92,7 @@ namespace DXApplication1
 
                 txtTenDangNhap.Enabled = false;
                 txtMatKhau.Enabled = true;
+                chkHoatDong.Enabled = true;
 
 
                 btnSua.Text = "Lưu";
