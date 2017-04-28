@@ -32,40 +32,6 @@ namespace DXApplication1
                 dtpNgayHetBH.Enabled = true;
                 txtDienGiai.Enabled = true;
 
-                btnThem.Text = "Lưu";
-            }
-            else
-            {
-                LINHKIEN lk = new LINHKIEN();
-                //lk.MALINHKIEN = TangMa.ATTangMa2("LK", "LINHKIEN");
-                lk.MALINHKIEN = tangma.ThemMaLinhKien();
-                lk.MATHIETBI = cbbThietBi.SelectedValue.ToString();
-                lk.TENLINHKIEN = txtTenLinhKien.Text;
-                lk.NGAYSX = dtpNgaySX.Value;
-                lk.NGAYKETTHUC = dtpNgayHetBH.Value;
-                lk.NGAYMUA_SUACHUA = dtpNgayMua.Value;
-                if (txtDienGiai.Text == null)
-                {
-                    lk.GHICHULINHKIEN = txtDienGiai.Text = "";
-                }
-                else
-                {
-                    lk.GHICHULINHKIEN = txtDienGiai.Text;
-                }
-                qltb.LINHKIENs.InsertOnSubmit(lk);
-                qltb.SubmitChanges();     
-                LoadGridViewLinhKien();
-                XtraMessageBox.Show("Thêm thành công","Thông báo");
-
-                btnThem.Text = "Thêm";
-                cbbThietBi.Enabled = false;
-                dtpNgaySX.Enabled = false;
-                txtTenLinhKien.Enabled = false;
-                dtpNgayMua.Enabled = false;
-                dtpNgayHetBH.Enabled = false;
-                txtDienGiai.Enabled = false;
-
-
                 cbbThietBi.Text = String.Empty;
                 dtpNgaySX.Text = String.Empty;
                 txtTenLinhKien.Text = String.Empty;
@@ -73,6 +39,53 @@ namespace DXApplication1
                 dtpNgayHetBH.Text = String.Empty;
                 txtDienGiai.Text = String.Empty;
 
+                btnThem.Text = "Lưu";
+            }
+            else
+            {
+                if (txtTenLinhKien.Text == String.Empty)
+                {
+                    XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo");
+                }
+                else
+                {
+                    LINHKIEN lk = new LINHKIEN();
+                    //lk.MALINHKIEN = TangMa.ATTangMa2("LK", "LINHKIEN");
+                    lk.MALINHKIEN = tangma.ThemMaLinhKien();
+                    lk.MATHIETBI = cbbThietBi.SelectedValue.ToString();
+                    lk.TENLINHKIEN = txtTenLinhKien.Text;
+                    lk.NGAYSX = dtpNgaySX.Value;
+                    lk.NGAYKETTHUC = dtpNgayHetBH.Value;
+                    lk.NGAYMUA_SUACHUA = dtpNgayMua.Value;
+                    if (txtDienGiai.Text == null)
+                    {
+                        lk.GHICHULINHKIEN = txtDienGiai.Text = "";
+                    }
+                    else
+                    {
+                        lk.GHICHULINHKIEN = txtDienGiai.Text;
+                    }
+                    qltb.LINHKIENs.InsertOnSubmit(lk);
+                    qltb.SubmitChanges();
+                    LoadGridViewLinhKien();
+                    XtraMessageBox.Show("Thêm thành công", "Thông báo");
+
+                    btnThem.Text = "Thêm";
+                    cbbThietBi.Enabled = false;
+                    dtpNgaySX.Enabled = false;
+                    txtTenLinhKien.Enabled = false;
+                    dtpNgayMua.Enabled = false;
+                    dtpNgayHetBH.Enabled = false;
+                    txtDienGiai.Enabled = false;
+
+
+                    cbbThietBi.Text = String.Empty;
+                    dtpNgaySX.Text = String.Empty;
+                    txtTenLinhKien.Text = String.Empty;
+                    dtpNgayMua.Text = String.Empty;
+                    dtpNgayHetBH.Text = String.Empty;
+                    txtDienGiai.Text = String.Empty;
+                }
             }
         }
 

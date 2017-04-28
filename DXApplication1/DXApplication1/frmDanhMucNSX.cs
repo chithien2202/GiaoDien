@@ -29,34 +29,44 @@ namespace DXApplication1
                 txtTenNhaSanXuat.Enabled = true;
                 txtDienGiai.Enabled = true;
 
+                txtTenNhaSanXuat.Text = String.Empty;
+                txtDienGiai.Text = String.Empty;
+
                 btnThem.Text = "Lưu";
             }
             else
             {
-                NHASANXUAT nhasanxuat = new NHASANXUAT();
-                //nhasanxuat.MANSX = TangMa.ATTangMa3("NSX", "NHASANXUAT");
-                nhasanxuat.MANSX = tangma.ThemMaNSX();
-                nhasanxuat.TENNSX = txtTenNhaSanXuat.Text;
-                if (txtDienGiai.Text == null)
+                if (txtTenNhaSanXuat.Text == String.Empty)
                 {
-                    nhasanxuat.GHICHUSX = txtDienGiai.Text = "";
+                    XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo");
                 }
                 else
                 {
-                    nhasanxuat.GHICHUSX = txtDienGiai.Text;
+                    NHASANXUAT nhasanxuat = new NHASANXUAT();
+                    //nhasanxuat.MANSX = TangMa.ATTangMa3("NSX", "NHASANXUAT");
+                    nhasanxuat.MANSX = tangma.ThemMaNSX();
+                    nhasanxuat.TENNSX = txtTenNhaSanXuat.Text;
+                    if (txtDienGiai.Text == null)
+                    {
+                        nhasanxuat.GHICHUSX = txtDienGiai.Text = "";
+                    }
+                    else
+                    {
+                        nhasanxuat.GHICHUSX = txtDienGiai.Text;
+                    }
+                    qltb.NHASANXUATs.InsertOnSubmit(nhasanxuat);
+                    qltb.SubmitChanges();
+                    XtraMessageBox.Show("Thêm thành công", "Thông báo");
+                    LoadGridViewNSX();
+
+                    btnThem.Text = "Thêm";
+                    txtTenNhaSanXuat.Enabled = false;
+                    txtDienGiai.Enabled = false;
+
+
+                    txtTenNhaSanXuat.Text = String.Empty;
+                    txtDienGiai.Text = String.Empty;
                 }
-                qltb.NHASANXUATs.InsertOnSubmit(nhasanxuat);
-                qltb.SubmitChanges();
-                XtraMessageBox.Show("Thêm thành công","Thông báo");
-                LoadGridViewNSX();
-
-                btnThem.Text = "Thêm";
-                txtTenNhaSanXuat.Enabled = false;
-                txtDienGiai.Enabled = false;
-
-
-                txtTenNhaSanXuat.Text = String.Empty;
-                txtDienGiai.Text = String.Empty;
             }
 
         }

@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMangHinh));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTenMangHinh = new System.Windows.Forms.TextBox();
             this.btnDong = new DevExpress.XtraEditors.SimpleButton();
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtTenMangHinh = new System.Windows.Forms.TextBox();
             this.dtgvMangHinh = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -55,6 +55,24 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(676, 68);
             this.panelControl1.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(12, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 13);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Tên màn hình";
+            // 
+            // txtTenMangHinh
+            // 
+            this.txtTenMangHinh.Enabled = false;
+            this.txtTenMangHinh.Location = new System.Drawing.Point(95, 5);
+            this.txtTenMangHinh.Name = "txtTenMangHinh";
+            this.txtTenMangHinh.Size = new System.Drawing.Size(163, 21);
+            this.txtTenMangHinh.TabIndex = 32;
             // 
             // btnDong
             // 
@@ -122,24 +140,6 @@
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(12, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 13);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Tên màng hình";
-            // 
-            // txtTenMangHinh
-            // 
-            this.txtTenMangHinh.Enabled = false;
-            this.txtTenMangHinh.Location = new System.Drawing.Point(95, 5);
-            this.txtTenMangHinh.Name = "txtTenMangHinh";
-            this.txtTenMangHinh.Size = new System.Drawing.Size(163, 21);
-            this.txtTenMangHinh.TabIndex = 32;
             // 
             // dtgvMangHinh
             // 

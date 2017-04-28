@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNguoiDung));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.chkHoatDong = new System.Windows.Forms.CheckBox();
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.txtMatKhau = new DevExpress.XtraEditors.TextEdit();
@@ -39,7 +40,6 @@
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.dtgvDSNguoiDung = new System.Windows.Forms.DataGridView();
-            this.chkHoatDong = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMatKhau.Properties)).BeginInit();
@@ -64,6 +64,16 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(862, 81);
             this.panelControl1.TabIndex = 5;
+            // 
+            // chkHoatDong
+            // 
+            this.chkHoatDong.AutoSize = true;
+            this.chkHoatDong.Location = new System.Drawing.Point(669, 14);
+            this.chkHoatDong.Name = "chkHoatDong";
+            this.chkHoatDong.Size = new System.Drawing.Size(78, 17);
+            this.chkHoatDong.TabIndex = 17;
+            this.chkHoatDong.Text = "Hoạt Động";
+            this.chkHoatDong.UseVisualStyleBackColor = true;
             // 
             // btnSua
             // 
@@ -108,7 +118,9 @@
             // 
             // labelControl3
             // 
+            this.labelControl3.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl3.Location = new System.Drawing.Point(353, 12);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(52, 16);
@@ -173,16 +185,6 @@
             this.dtgvDSNguoiDung.Size = new System.Drawing.Size(858, 368);
             this.dtgvDSNguoiDung.TabIndex = 0;
             this.dtgvDSNguoiDung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSNguoiDung_CellClick);
-            // 
-            // chkHoatDong
-            // 
-            this.chkHoatDong.AutoSize = true;
-            this.chkHoatDong.Location = new System.Drawing.Point(669, 14);
-            this.chkHoatDong.Name = "chkHoatDong";
-            this.chkHoatDong.Size = new System.Drawing.Size(78, 17);
-            this.chkHoatDong.TabIndex = 17;
-            this.chkHoatDong.Text = "Hoạt Động";
-            this.chkHoatDong.UseVisualStyleBackColor = true;
             // 
             // frmNguoiDung
             // 

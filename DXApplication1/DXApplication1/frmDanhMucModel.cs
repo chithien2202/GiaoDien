@@ -30,37 +30,47 @@ namespace DXApplication1
                 cbbLoai.Enabled = true;
                 txtDienGiai.Enabled = true;
 
+                txtTenModel.Text = String.Empty;
+                txtDienGiai.Text = String.Empty;
+
                 btnThem.Text = "Lưu";
             }
             else
             {
-                MODEL model = new MODEL();
-                //model.MAMODEL = TangMa.ATTangMa2("MD", "MODEL");
-                model.MAMODEL = tangma.ThemMaModel();
-                model.MANSX = cbbNhaSanXuat.SelectedValue.ToString();
-                model.TENMODEL = txtTenModel.Text;
-                model.THUOC_LOAI = cbbLoai.SelectedValue.ToString();
-                if (txtDienGiai.Text == null)
+                if (txtTenModel.Text == String.Empty)
                 {
-                    model.GHICHUMODEL = txtDienGiai.Text = "";
+                    XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo");
                 }
                 else
                 {
-                    model.GHICHUMODEL = txtDienGiai.Text;
+                    MODEL model = new MODEL();
+                    //model.MAMODEL = TangMa.ATTangMa2("MD", "MODEL");
+                    model.MAMODEL = tangma.ThemMaModel();
+                    model.MANSX = cbbNhaSanXuat.SelectedValue.ToString();
+                    model.TENMODEL = txtTenModel.Text;
+                    model.THUOC_LOAI = cbbLoai.SelectedValue.ToString();
+                    if (txtDienGiai.Text == null)
+                    {
+                        model.GHICHUMODEL = txtDienGiai.Text = "";
+                    }
+                    else
+                    {
+                        model.GHICHUMODEL = txtDienGiai.Text;
+                    }
+                    qltb.MODELs.InsertOnSubmit(model);
+                    qltb.SubmitChanges();
+                    XtraMessageBox.Show("Thêm thành công", "Thông báo");
+                    LoadGridviewModel();
+
+                    btnThem.Text = "Thêm";
+                    cbbNhaSanXuat.Enabled = false;
+                    txtTenModel.Enabled = false;
+                    cbbLoai.Enabled = false;
+                    txtDienGiai.Enabled = false;
+
+                    txtTenModel.Text = String.Empty;
+                    txtDienGiai.Text = String.Empty;
                 }
-                qltb.MODELs.InsertOnSubmit(model);
-                qltb.SubmitChanges();
-                XtraMessageBox.Show("Thêm thành công","Thông báo");
-                LoadGridviewModel();
-
-                btnThem.Text = "Thêm";
-                cbbNhaSanXuat.Enabled = false;
-                txtTenModel.Enabled = false;
-                cbbLoai.Enabled = false;
-                txtDienGiai.Enabled = false;
-
-                txtTenModel.Text = String.Empty;
-                txtDienGiai.Text = String.Empty;
             }
         }
 

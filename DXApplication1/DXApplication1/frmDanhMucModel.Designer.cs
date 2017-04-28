@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDanhMucModel));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.txtDienGiai = new System.Windows.Forms.TextBox();
             this.cbbLoai = new System.Windows.Forms.ComboBox();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.btnDong = new DevExpress.XtraEditors.SimpleButton();
@@ -45,7 +46,6 @@
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.dtgvDSModel = new System.Windows.Forms.DataGridView();
-            this.txtDienGiai = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenModel.Properties)).BeginInit();
@@ -75,6 +75,13 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(862, 125);
             this.panelControl1.TabIndex = 5;
+            // 
+            // txtDienGiai
+            // 
+            this.txtDienGiai.Location = new System.Drawing.Point(463, 53);
+            this.txtDienGiai.Name = "txtDienGiai";
+            this.txtDienGiai.Size = new System.Drawing.Size(208, 21);
+            this.txtDienGiai.TabIndex = 29;
             // 
             // cbbLoai
             // 
@@ -116,9 +123,9 @@
             this.labelControl4.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl4.Location = new System.Drawing.Point(5, 48);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(32, 16);
+            this.labelControl4.Size = new System.Drawing.Size(23, 16);
             this.labelControl4.TabIndex = 26;
-            this.labelControl4.Text = "Loại :";
+            this.labelControl4.Text = "Loại";
             // 
             // cbbNhaSanXuat
             // 
@@ -263,13 +270,6 @@
             this.dtgvDSModel.Size = new System.Drawing.Size(858, 294);
             this.dtgvDSModel.TabIndex = 0;
             this.dtgvDSModel.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSModel_CellClick);
-            // 
-            // txtDienGiai
-            // 
-            this.txtDienGiai.Location = new System.Drawing.Point(463, 53);
-            this.txtDienGiai.Name = "txtDienGiai";
-            this.txtDienGiai.Size = new System.Drawing.Size(208, 21);
-            this.txtDienGiai.TabIndex = 29;
             // 
             // frmDanhMucModel
             // 

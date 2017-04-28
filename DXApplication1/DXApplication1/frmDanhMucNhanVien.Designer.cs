@@ -126,7 +126,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(14, 95);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 13);

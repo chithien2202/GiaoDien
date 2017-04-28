@@ -27,35 +27,45 @@ namespace DXApplication1
                 txtMatKhau.Enabled = true;
                 chkHoatDong.Enabled = true;
 
+                txtTenDangNhap.Text = String.Empty;
+                txtMatKhau.Text = String.Empty;
+
                 btnThem.Text = "Lưu";
             }
             else
             {
-                NGUOIDUNG nguoidung = new NGUOIDUNG();
-                nguoidung.TENDANGNHAP = txtTenDangNhap.Text;
-                nguoidung.MATKHAU = txtMatKhau.Text;
-                if(chkHoatDong.Checked)
+                if (txtTenDangNhap.Text == String.Empty || txtMatKhau.Text == String.Empty)
                 {
-                    nguoidung.HoatDong = true;
+                    XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo");
                 }
                 else
                 {
-                    nguoidung.HoatDong = false;
+                    NGUOIDUNG nguoidung = new NGUOIDUNG();
+                    nguoidung.TENDANGNHAP = txtTenDangNhap.Text;
+                    nguoidung.MATKHAU = txtMatKhau.Text;
+                    if (chkHoatDong.Checked)
+                    {
+                        nguoidung.HoatDong = true;
+                    }
+                    else
+                    {
+                        nguoidung.HoatDong = false;
+                    }
+                    qltb.NGUOIDUNGs.InsertOnSubmit(nguoidung);
+                    qltb.SubmitChanges();
+                    XtraMessageBox.Show("Thêm thành công", "Thông báo");
+                    LoadGridViewNguoiDung();
+
+                    btnThem.Text = "Thêm";
+                    txtTenDangNhap.Enabled = false;
+                    txtMatKhau.Enabled = false;
+                    chkHoatDong.Enabled = false;
+
+
+                    txtTenDangNhap.Text = String.Empty;
+                    txtMatKhau.Text = String.Empty;
+                    chkHoatDong.Checked = false;
                 }
-                qltb.NGUOIDUNGs.InsertOnSubmit(nguoidung);
-                qltb.SubmitChanges();
-                XtraMessageBox.Show("Thêm thành công","Thông báo");
-                LoadGridViewNguoiDung();
-
-                btnThem.Text = "Thêm";
-                txtTenDangNhap.Enabled = false;
-                txtMatKhau.Enabled = false;
-                chkHoatDong.Enabled = false;
-
-
-                txtTenDangNhap.Text = String.Empty;
-                txtMatKhau.Text = String.Empty;
-                chkHoatDong.Checked = false;
             }
         }
 

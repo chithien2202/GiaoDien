@@ -32,22 +32,29 @@ namespace DXApplication1
             }
             else
             {
-                MANHINH mh = new MANHINH();
-                //mh.MaManHinh = TangMa.ATTangMa2("MH", "MANHINH");
-                mh.MaManHinh = tangma.ThemMaMangHinh();
-                mh.TenManHinh = txtTenMangHinh.Text;
+                if (txtTenMangHinh.Text == String.Empty)
+                {
+                    XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo");
+                }
+                else
+                {
+                    MANHINH mh = new MANHINH();
+                    //mh.MaManHinh = TangMa.ATTangMa2("MH", "MANHINH");
+                    mh.MaManHinh = tangma.ThemMaMangHinh();
+                    mh.TenManHinh = txtTenMangHinh.Text;
 
 
-                qltb.MANHINHs.InsertOnSubmit(mh);
-                qltb.SubmitChanges();
-                XtraMessageBox.Show("Thêm thành công","Thông báo");
-                LoadGridViewMangHinh();
+                    qltb.MANHINHs.InsertOnSubmit(mh);
+                    qltb.SubmitChanges();
+                    XtraMessageBox.Show("Thêm thành công", "Thông báo");
+                    LoadGridViewMangHinh();
 
-                btnThem.Text = "Thêm";
-                txtTenMangHinh.Enabled = false;
+                    btnThem.Text = "Thêm";
+                    txtTenMangHinh.Enabled = false;
 
 
-                txtTenMangHinh.Text = String.Empty;
+                    txtTenMangHinh.Text = String.Empty;
+                }
             }
         }
 

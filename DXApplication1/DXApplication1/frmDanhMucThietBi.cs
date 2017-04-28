@@ -41,40 +41,47 @@ namespace DXApplication1
             }
             else
             {
-                THIETBI thietbi = new THIETBI();
-                //thietbi.MATHIETBI = TangMa.ATTangMa2("TB", "THIETBI");
-                thietbi.MATHIETBI = tangma.ThemMaThietBi();
-                thietbi.MAMODEL = cbbMaModel.Text;
-                thietbi.SERIAL = txtSoSerial.Text;
-                thietbi.TENTHIETBI = txtTenThietBi.Text;
-                thietbi.NGAYMUA_SUACHUA = dtpNgayMua.Value;
-                thietbi.NGAYKETTHUC = dtpNgayHetBH.Value;
-                if (txtDienGiai.Text == null)
+                if (txtSoSerial.Text == String.Empty || txtTenThietBi.Text == String.Empty)
                 {
-                    thietbi.GHICHUTHIETBI = txtDienGiai.Text = "";
+                    XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo");
                 }
                 else
                 {
-                    thietbi.GHICHUTHIETBI = txtDienGiai.Text;
+                    THIETBI thietbi = new THIETBI();
+                    //thietbi.MATHIETBI = TangMa.ATTangMa2("TB", "THIETBI");
+                    thietbi.MATHIETBI = tangma.ThemMaThietBi();
+                    thietbi.MAMODEL = cbbMaModel.Text;
+                    thietbi.SERIAL = txtSoSerial.Text;
+                    thietbi.TENTHIETBI = txtTenThietBi.Text;
+                    thietbi.NGAYMUA_SUACHUA = dtpNgayMua.Value;
+                    thietbi.NGAYKETTHUC = dtpNgayHetBH.Value;
+                    if (txtDienGiai.Text == null)
+                    {
+                        thietbi.GHICHUTHIETBI = txtDienGiai.Text = "";
+                    }
+                    else
+                    {
+                        thietbi.GHICHUTHIETBI = txtDienGiai.Text;
+                    }
+                    qltb.THIETBIs.InsertOnSubmit(thietbi);
+                    qltb.SubmitChanges();
+                    LoadGridViewThietBi();
+                    XtraMessageBox.Show("Thêm thành công", "Thông báo");
+
+
+                    btnThem.Text = "Thêm";
+                    cbbMaModel.Enabled = false;
+                    txtSoSerial.Enabled = false;
+                    txtTenThietBi.Enabled = false;
+                    dtpNgayMua.Enabled = false;
+                    dtpNgayHetBH.Enabled = false;
+                    txtDienGiai.Enabled = false;
+
+
+                    txtDienGiai.Text = String.Empty;
+                    txtSoSerial.Text = String.Empty;
+                    txtTenThietBi.Text = String.Empty;
                 }
-                qltb.THIETBIs.InsertOnSubmit(thietbi);
-                qltb.SubmitChanges();
-                LoadGridViewThietBi();
-                XtraMessageBox.Show("Thêm thành công","Thông báo");
-
-
-                btnThem.Text = "Thêm";
-                cbbMaModel.Enabled = false;
-                txtSoSerial.Enabled = false;
-                txtTenThietBi.Enabled = false;
-                dtpNgayMua.Enabled = false;
-                dtpNgayHetBH.Enabled = false;
-                txtDienGiai.Enabled = false;
-
-
-                txtDienGiai.Text = String.Empty;
-                txtSoSerial.Text = String.Empty;
-                txtTenThietBi.Text = String.Empty;
             }
         }
 

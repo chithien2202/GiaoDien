@@ -36,44 +36,54 @@ namespace DXApplication1
                 cbbBoPhan.Enabled = true;
                 txtDienGiai.Enabled = true;
 
+                txtTenNV.Text = String.Empty;
+                txtDienGiai.Text = String.Empty;
+
                 btnThem.Text = "Lưu";
             }
             else
             {
-                NHANVIEN nhanvien = new NHANVIEN();
-                //nhanvien.MANHANVIEN = TangMa.ATTangMa2("NV", "NHANVIEN");
-                nhanvien.MANHANVIEN = tangma.ThemMaNhanVien();
-                nhanvien.TENNHANVIEN = txtTenNV.Text;
-                nhanvien.SDTNV = int.Parse(txtSDT.Text);
-                nhanvien.DIACHINV = txtDChi.Text;
-                if (txtDienGiai.Text == null)
+                if (txtTenNV.Text == String.Empty || txtDChi.Text == String.Empty || txtSDT.Text == String.Empty || txtSDT.Text == String.Empty || txtSDT.Text == String.Empty)
                 {
-                    nhanvien.GHICHU = txtDienGiai.Text = "";
+                    XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo");
                 }
                 else
                 {
-                    nhanvien.GHICHU = txtDienGiai.Text;
+                    NHANVIEN nhanvien = new NHANVIEN();
+                    //nhanvien.MANHANVIEN = TangMa.ATTangMa2("NV", "NHANVIEN");
+                    nhanvien.MANHANVIEN = tangma.ThemMaNhanVien();
+                    nhanvien.TENNHANVIEN = txtTenNV.Text;
+                    nhanvien.SDTNV = int.Parse(txtSDT.Text);
+                    nhanvien.DIACHINV = txtDChi.Text;
+                    if (txtDienGiai.Text == null)
+                    {
+                        nhanvien.GHICHU = txtDienGiai.Text = "";
+                    }
+                    else
+                    {
+                        nhanvien.GHICHU = txtDienGiai.Text;
+                    }
+                    nhanvien.LUONG = int.Parse(txtLuong.Text);
+                    nhanvien.EMAILNV = txtEmail.Text;
+                    nhanvien.MABOPHAN = cbbBoPhan.SelectedValue.ToString();
+                    qltb.NHANVIENs.InsertOnSubmit(nhanvien);
+                    qltb.SubmitChanges();
+                    XtraMessageBox.Show("Thêm thành công", "Thông báo");
+                    LoadGridviewnhanvien();
+
+                    btnThem.Text = "Thêm";
+                    cbbBoPhan.Enabled = false;
+                    txtTenNV.Enabled = false;
+                    txtDChi.Enabled = false;
+                    txtEmail.Enabled = false;
+                    txtSDT.Enabled = false;
+                    txtLuong.Enabled = false;
+                    cbbBoPhan.Enabled = false;
+                    txtDienGiai.Enabled = false;
+
+                    txtTenNV.Text = String.Empty;
+                    txtDienGiai.Text = String.Empty;
                 }
-                nhanvien.LUONG = int.Parse(txtLuong.Text);
-                nhanvien.EMAILNV = txtEmail.Text;
-                nhanvien.MABOPHAN = cbbBoPhan.SelectedValue.ToString();
-                qltb.NHANVIENs.InsertOnSubmit(nhanvien);
-                qltb.SubmitChanges();
-                XtraMessageBox.Show("Thêm thành công","Thông báo");
-                LoadGridviewnhanvien();
-
-                btnThem.Text = "Thêm";
-                cbbBoPhan.Enabled = false;
-                txtTenNV.Enabled = false;
-                txtDChi.Enabled = false;
-                txtEmail.Enabled = false;
-                txtSDT.Enabled = false;
-                txtLuong.Enabled = false;
-                cbbBoPhan.Enabled = false;
-                txtDienGiai.Enabled = false;
-
-                txtTenNV.Text = String.Empty;
-                txtDienGiai.Text = String.Empty;
             }
         }
 

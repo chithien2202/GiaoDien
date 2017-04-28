@@ -32,45 +32,54 @@ namespace DXApplication1
                 txtEmail.Enabled = true;
                 txtSDT.Enabled = true;
                 txtFax.Enabled = true;
-
                 txtDienGiai.Enabled = true;
+
+                txtTenKH.Text = String.Empty;
+                txtDienGiai.Text = String.Empty;
 
                 btnThem.Text = "Lưu";
             }
             else
             {
-                KHACHHANG khachhang = new KHACHHANG();
-                //khachhang.MAKHACHKHACH = TangMa.ATTangMa2("KH", "KHACHHANG");
-                khachhang.MAKHACHKHACH = tangma.ThemMaKhachHang();
-                khachhang.TENKHACHHANG = txtTenKH.Text;
-                khachhang.SDTKH = int.Parse(txtSDT.Text);
-                khachhang.DIACHIKH = txtDChi.Text;
-                if (txtDienGiai.Text == null)
+                if (txtTenKH.Text == String.Empty || txtSDT.Text == String.Empty || txtDChi.Text==String.Empty)
                 {
-                    khachhang.GHICHU = txtDienGiai.Text = "";
+                    XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo");
                 }
                 else
                 {
-                    khachhang.GHICHU = txtDienGiai.Text;
+                    KHACHHANG khachhang = new KHACHHANG();
+                    //khachhang.MAKHACHKHACH = TangMa.ATTangMa2("KH", "KHACHHANG");
+                    khachhang.MAKHACHKHACH = tangma.ThemMaKhachHang();
+                    khachhang.TENKHACHHANG = txtTenKH.Text;
+                    khachhang.SDTKH = int.Parse(txtSDT.Text);
+                    khachhang.DIACHIKH = txtDChi.Text;
+                    if (txtDienGiai.Text == null)
+                    {
+                        khachhang.GHICHU = txtDienGiai.Text = "";
+                    }
+                    else
+                    {
+                        khachhang.GHICHU = txtDienGiai.Text;
+                    }
+                    khachhang.FAX = int.Parse(txtFax.Text);
+                    khachhang.EMAILKH = txtEmail.Text;
+                    qltb.KHACHHANGs.InsertOnSubmit(khachhang);
+                    qltb.SubmitChanges();
+                    XtraMessageBox.Show("Thêm thành công", "Thông báo");
+                    LoadGridviewkhachhang();
+
+                    btnThem.Text = "Thêm";
+                    txtTenKH.Enabled = false;
+                    txtDChi.Enabled = false;
+                    txtEmail.Enabled = false;
+                    txtSDT.Enabled = false;
+                    txtFax.Enabled = false;
+
+                    txtDienGiai.Enabled = false;
+
+                    txtTenKH.Text = String.Empty;
+                    txtDienGiai.Text = String.Empty;
                 }
-                khachhang.FAX = int.Parse(txtFax.Text);
-                khachhang.EMAILKH = txtEmail.Text;
-                qltb.KHACHHANGs.InsertOnSubmit(khachhang);
-                qltb.SubmitChanges();
-                XtraMessageBox.Show("Thêm thành công","Thông báo");
-                LoadGridviewkhachhang();
-
-                btnThem.Text = "Thêm";
-                txtTenKH.Enabled = false;
-                txtDChi.Enabled = false;
-                txtEmail.Enabled = false;
-                txtSDT.Enabled = false;
-                txtFax.Enabled = false;
-
-                txtDienGiai.Enabled = false;
-
-                txtTenKH.Text = String.Empty;
-                txtDienGiai.Text = String.Empty;
             }
         }
 

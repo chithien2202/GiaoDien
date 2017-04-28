@@ -26,35 +26,45 @@ namespace DXApplication1
             {
                 txtTenBoPhan.Enabled = true;
                 txtDienGiai.Enabled = true;
+                txtTenBoPhan.Text = String.Empty;
+                txtDienGiai.Text = String.Empty;
 
                 btnThem.Text = "Lưu";
             }
+            
             else
             {
-                BOPHAN bophan = new BOPHAN();
-                bophan.MABOPHAN = tangma.ThemMaBoPhan();
-                bophan.TENBOPHAN = txtTenBoPhan.Text;
-                if (txtDienGiai.Text == null)
+                if (txtTenBoPhan.Text == String.Empty)
                 {
-                    bophan.DIENGIAI = txtDienGiai.Text="";
+                    XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin","Thông báo");
                 }
                 else
                 {
-                    bophan.DIENGIAI = txtDienGiai.Text;
+                    BOPHAN bophan = new BOPHAN();
+                    bophan.MABOPHAN = tangma.ThemMaBoPhan();
+                    bophan.TENBOPHAN = txtTenBoPhan.Text;
+                    if (txtDienGiai.Text == null)
+                    {
+                        bophan.DIENGIAI = txtDienGiai.Text = "";
+                    }
+                    else
+                    {
+                        bophan.DIENGIAI = txtDienGiai.Text;
+                    }
+                    qltb.BOPHANs.InsertOnSubmit(bophan);
+                    qltb.SubmitChanges();
+                    LoadGridViewBoPhan();
+                    XtraMessageBox.Show("Thêm thành công", "Thông báo");
+
+
+                    btnThem.Text = "Thêm";
+                    txtTenBoPhan.Enabled = false;
+                    txtDienGiai.Enabled = false;
+
+
+                    txtTenBoPhan.Text = String.Empty;
+                    txtDienGiai.Text = String.Empty;
                 }
-                qltb.BOPHANs.InsertOnSubmit(bophan);
-                qltb.SubmitChanges();
-                LoadGridViewBoPhan();
-                XtraMessageBox.Show("Thêm thành công","Thông báo");
-                
-
-                btnThem.Text = "Thêm";
-                txtTenBoPhan.Enabled = false;
-                txtDienGiai.Enabled = false;
-
-
-                txtTenBoPhan.Text = String.Empty;
-                txtDienGiai.Text = String.Empty;
             }
         }
 
