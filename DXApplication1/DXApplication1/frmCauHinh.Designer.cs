@@ -143,17 +143,17 @@
             // cbbServerName
             // 
             this.cbbServerName.FormattingEnabled = true;
-            this.cbbServerName.Location = new System.Drawing.Point(130, 57);
+            this.cbbServerName.Location = new System.Drawing.Point(122, 57);
             this.cbbServerName.Name = "cbbServerName";
-            this.cbbServerName.Size = new System.Drawing.Size(121, 21);
+            this.cbbServerName.Size = new System.Drawing.Size(203, 21);
             this.cbbServerName.TabIndex = 21;
             // 
             // cbbDatabase
             // 
             this.cbbDatabase.FormattingEnabled = true;
-            this.cbbDatabase.Location = new System.Drawing.Point(130, 216);
+            this.cbbDatabase.Location = new System.Drawing.Point(122, 216);
             this.cbbDatabase.Name = "cbbDatabase";
-            this.cbbDatabase.Size = new System.Drawing.Size(121, 21);
+            this.cbbDatabase.Size = new System.Drawing.Size(203, 21);
             this.cbbDatabase.TabIndex = 21;
             // 
             // frmCauHinh

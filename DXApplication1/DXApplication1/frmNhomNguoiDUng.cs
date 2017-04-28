@@ -14,6 +14,7 @@ namespace DXApplication1
     public partial class frmNhomNguoiDung : DevExpress.XtraEditors.XtraForm
     {
       QLTBDataContext qltb = new QLTBDataContext();
+        TangMa tangma = new TangMa();
    
         public frmNhomNguoiDung()
         {
@@ -33,7 +34,8 @@ namespace DXApplication1
             else
             {
                 NHOMNGUOIDUNG nhomnd = new NHOMNGUOIDUNG();
-                nhomnd.MANHOM = TangMa.ATTangMa3("NND", "NHOMNGUOIDUNG");
+                //nhomnd.MANHOM = TangMa.ATTangMa3("NND", "NHOMNGUOIDUNG");
+                nhomnd.MANHOM = tangma.ThemMaNhomNguoiDung();
                 nhomnd.TENNHOM = txtTenNhom.Text;
                 if (txtDienGiai.Text == null)
                 {

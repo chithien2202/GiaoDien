@@ -15,6 +15,7 @@ namespace DXApplication1
     public partial class frmDanhMucNSX : DevExpress.XtraEditors.XtraForm
     {
         QLTBDataContext qltb = new QLTBDataContext();
+        TangMa tangma = new TangMa();
         public frmDanhMucNSX()
         {
             InitializeComponent();
@@ -33,7 +34,8 @@ namespace DXApplication1
             else
             {
                 NHASANXUAT nhasanxuat = new NHASANXUAT();
-                nhasanxuat.MANSX = TangMa.ATTangMa3("NSX", "NHASANXUAT");
+                //nhasanxuat.MANSX = TangMa.ATTangMa3("NSX", "NHASANXUAT");
+                nhasanxuat.MANSX = tangma.ThemMaNSX();
                 nhasanxuat.TENNSX = txtTenNhaSanXuat.Text;
                 if (txtDienGiai.Text == null)
                 {

@@ -14,6 +14,7 @@ namespace DXApplication1
     public partial class frmDanhMucBoPhan : DevExpress.XtraEditors.XtraForm
     {
         QLTBDataContext qltb = new QLTBDataContext();
+        TangMa tangma = new TangMa();
         public frmDanhMucBoPhan()
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace DXApplication1
             else
             {
                 BOPHAN bophan = new BOPHAN();
-                bophan.MABOPHAN = TangMa.ATTangMa2("BP", "BOPHAN");
+                bophan.MABOPHAN = tangma.ThemMaBoPhan();
                 bophan.TENBOPHAN = txtTenBoPhan.Text;
                 if (txtDienGiai.Text == null)
                 {

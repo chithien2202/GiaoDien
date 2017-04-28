@@ -14,6 +14,7 @@ namespace DXApplication1
     public partial class frmMangHinh : DevExpress.XtraEditors.XtraForm
     {
         QLTBDataContext qltb = new QLTBDataContext();
+        TangMa tangma = new TangMa();
         public frmMangHinh()
         {
             InitializeComponent();
@@ -32,7 +33,8 @@ namespace DXApplication1
             else
             {
                 MANHINH mh = new MANHINH();
-                mh.MaManHinh = TangMa.ATTangMa2("MH", "MANHINH");
+                //mh.MaManHinh = TangMa.ATTangMa2("MH", "MANHINH");
+                mh.MaManHinh = tangma.ThemMaMangHinh();
                 mh.TenManHinh = txtTenMangHinh.Text;
 
 

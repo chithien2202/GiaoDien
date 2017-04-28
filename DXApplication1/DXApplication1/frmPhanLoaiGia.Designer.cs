@@ -103,7 +103,7 @@
             // 
             this.textEdit1.Location = new System.Drawing.Point(141, 10);
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(208, 20);
+            this.textEdit1.Size = new System.Drawing.Size(274, 20);
             this.textEdit1.TabIndex = 7;
             // 
             // simpleButton2

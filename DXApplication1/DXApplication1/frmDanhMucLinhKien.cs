@@ -14,6 +14,7 @@ namespace DXApplication1
     public partial class frmDanhMucLinhKien : DevExpress.XtraEditors.XtraForm
     {
         QLTBDataContext qltb = new QLTBDataContext();
+        TangMa tangma = new TangMa();
         public frmDanhMucLinhKien()
         {
             InitializeComponent();
@@ -36,7 +37,8 @@ namespace DXApplication1
             else
             {
                 LINHKIEN lk = new LINHKIEN();
-                lk.MALINHKIEN = TangMa.ATTangMa2("LK", "LINHKIEN");
+                //lk.MALINHKIEN = TangMa.ATTangMa2("LK", "LINHKIEN");
+                lk.MALINHKIEN = tangma.ThemMaLinhKien();
                 lk.MATHIETBI = cbbThietBi.SelectedValue.ToString();
                 lk.TENLINHKIEN = txtTenLinhKien.Text;
                 lk.NGAYSX = dtpNgaySX.Value;

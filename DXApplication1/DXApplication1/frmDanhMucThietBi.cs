@@ -14,6 +14,7 @@ namespace DXApplication1
     public partial class frmDanhMucThietBi : DevExpress.XtraEditors.XtraForm
     {
         QLTBDataContext qltb = new QLTBDataContext();
+        TangMa tangma = new TangMa();
         public frmDanhMucThietBi()
         {
             InitializeComponent();
@@ -41,7 +42,8 @@ namespace DXApplication1
             else
             {
                 THIETBI thietbi = new THIETBI();
-                thietbi.MATHIETBI = TangMa.ATTangMa2("TB", "THIETBI");
+                //thietbi.MATHIETBI = TangMa.ATTangMa2("TB", "THIETBI");
+                thietbi.MATHIETBI = tangma.ThemMaThietBi();
                 thietbi.MAMODEL = cbbMaModel.Text;
                 thietbi.SERIAL = txtSoSerial.Text;
                 thietbi.TENTHIETBI = txtTenThietBi.Text;

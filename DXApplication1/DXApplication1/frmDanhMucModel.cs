@@ -15,6 +15,7 @@ namespace DXApplication1
     public partial class frmDanhMucModel : DevExpress.XtraEditors.XtraForm
     {
         QLTBDataContext qltb = new QLTBDataContext();
+        TangMa tangma = new TangMa();
         public frmDanhMucModel()
         {
             InitializeComponent();
@@ -34,7 +35,8 @@ namespace DXApplication1
             else
             {
                 MODEL model = new MODEL();
-                model.MAMODEL = TangMa.ATTangMa2("MD", "MODEL");
+                //model.MAMODEL = TangMa.ATTangMa2("MD", "MODEL");
+                model.MAMODEL = tangma.ThemMaModel();
                 model.MANSX = cbbNhaSanXuat.SelectedValue.ToString();
                 model.TENMODEL = txtTenModel.Text;
                 model.THUOC_LOAI = cbbLoai.SelectedValue.ToString();
