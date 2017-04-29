@@ -69,5 +69,10 @@ namespace DXApplication1
                 XtraMessageBox.Show(ex.ToString());
             }
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

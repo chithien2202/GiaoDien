@@ -288,10 +288,11 @@
             // 
             this.dgtvKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgtvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgtvKhachHang.Location = new System.Drawing.Point(5, 29);
+            this.dgtvKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgtvKhachHang.Location = new System.Drawing.Point(2, 26);
             this.dgtvKhachHang.Name = "dgtvKhachHang";
             this.dgtvKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgtvKhachHang.Size = new System.Drawing.Size(845, 411);
+            this.dgtvKhachHang.Size = new System.Drawing.Size(858, 321);
             this.dgtvKhachHang.TabIndex = 0;
             this.dgtvKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgtvKhachHang_CellClick);
             // 

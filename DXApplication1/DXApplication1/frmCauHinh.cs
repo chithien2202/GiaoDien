@@ -65,6 +65,7 @@ namespace DXApplication1
         {
             //CauHinh.SaveConfig(cbbServerName.Text, txtUserName.Text, txtPassword.Text, cbbDatabase.Text);
             //this.Close();
+            this.Close();
         }
     }
 }

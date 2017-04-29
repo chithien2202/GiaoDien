@@ -65,9 +65,9 @@ namespace DXApplication1
             }
         }
 
-        private void btnConnect_Click(object sender, EventArgs e)
+        private void btnHuy_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
         }
     }
 }

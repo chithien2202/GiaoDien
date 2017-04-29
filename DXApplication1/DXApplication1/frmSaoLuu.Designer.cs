@@ -32,7 +32,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
             this.btnBackup = new DevExpress.XtraEditors.SimpleButton();
             this.txtLocation = new DevExpress.XtraEditors.TextEdit();
             this.btnBrower = new DevExpress.XtraEditors.SimpleButton();
@@ -68,16 +68,17 @@
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Sao lưu dữ liệu";
             // 
-            // simpleButton2
+            // btnHuy
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(361, 131);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(109, 38);
-            this.simpleButton2.TabIndex = 8;
-            this.simpleButton2.Text = "&Hủy";
+            this.btnHuy.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Appearance.Options.UseFont = true;
+            this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
+            this.btnHuy.Location = new System.Drawing.Point(361, 131);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(109, 38);
+            this.btnHuy.TabIndex = 8;
+            this.btnHuy.Text = "&Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnBackup
             // 
@@ -116,7 +117,7 @@
             this.ClientSize = new System.Drawing.Size(485, 194);
             this.Controls.Add(this.btnBrower);
             this.Controls.Add(this.txtLocation);
-            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnBackup);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
@@ -135,7 +136,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnHuy;
         private DevExpress.XtraEditors.SimpleButton btnBackup;
         private DevExpress.XtraEditors.TextEdit txtLocation;
         private DevExpress.XtraEditors.SimpleButton btnBrower;

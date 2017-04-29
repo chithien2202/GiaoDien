@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhucHoi));
             this.btnBrower = new DevExpress.XtraEditors.SimpleButton();
             this.txtLocation = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
             this.btnPhucHoi = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -58,16 +58,17 @@
             this.txtLocation.Size = new System.Drawing.Size(252, 22);
             this.txtLocation.TabIndex = 16;
             // 
-            // simpleButton2
+            // btnHuy
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(374, 136);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(109, 38);
-            this.simpleButton2.TabIndex = 15;
-            this.simpleButton2.Text = "&Hủy";
+            this.btnHuy.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Appearance.Options.UseFont = true;
+            this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
+            this.btnHuy.Location = new System.Drawing.Point(374, 136);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(109, 38);
+            this.btnHuy.TabIndex = 15;
+            this.btnHuy.Text = "&Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnPhucHoi
             // 
@@ -116,7 +117,7 @@
             this.ClientSize = new System.Drawing.Size(496, 184);
             this.Controls.Add(this.btnBrower);
             this.Controls.Add(this.txtLocation);
-            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnPhucHoi);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
@@ -134,7 +135,7 @@
 
         private DevExpress.XtraEditors.SimpleButton btnBrower;
         private DevExpress.XtraEditors.TextEdit txtLocation;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnHuy;
         private DevExpress.XtraEditors.SimpleButton btnPhucHoi;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
