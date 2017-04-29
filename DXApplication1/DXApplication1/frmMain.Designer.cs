@@ -77,6 +77,7 @@
             this.btnDoanhThu = new DevExpress.XtraBars.BarButtonItem();
             this.btnNguoiDung = new DevExpress.XtraBars.BarButtonItem();
             this.username = new DevExpress.XtraBars.BarHeaderItem();
+            this.btnCauHinh = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -96,7 +97,6 @@
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.btnCauHinh = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.SuspendLayout();
@@ -459,7 +459,7 @@
             // 
             // btnMangHinh
             // 
-            this.btnMangHinh.Caption = "Màng hình";
+            this.btnMangHinh.Caption = "Màn hình";
             this.btnMangHinh.Id = 59;
             this.btnMangHinh.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnMangHinh.LargeGlyph")));
             this.btnMangHinh.Name = "btnMangHinh";
@@ -561,6 +561,15 @@
             // 
             this.username.Id = 75;
             this.username.Name = "username";
+            // 
+            // btnCauHinh
+            // 
+            this.btnCauHinh.Caption = "Cấu hình";
+            this.btnCauHinh.Glyph = ((System.Drawing.Image)(resources.GetObject("btnCauHinh.Glyph")));
+            this.btnCauHinh.Id = 76;
+            this.btnCauHinh.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnCauHinh.LargeGlyph")));
+            this.btnCauHinh.Name = "btnCauHinh";
+            this.btnCauHinh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCauHinh_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -734,15 +743,6 @@
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.Size = new System.Drawing.Size(1130, 523);
             this.xtraTabControl1.TabIndex = 7;
-            // 
-            // btnCauHinh
-            // 
-            this.btnCauHinh.Caption = "Cấu hình";
-            this.btnCauHinh.Glyph = ((System.Drawing.Image)(resources.GetObject("btnCauHinh.Glyph")));
-            this.btnCauHinh.Id = 76;
-            this.btnCauHinh.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnCauHinh.LargeGlyph")));
-            this.btnCauHinh.Name = "btnCauHinh";
-            this.btnCauHinh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCauHinh_ItemClick);
             // 
             // frmMain
             // 
