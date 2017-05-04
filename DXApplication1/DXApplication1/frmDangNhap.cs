@@ -51,7 +51,7 @@ namespace DXApplication1
             }
 
             this.Visible = false;
-            Program.mainForm.send(txtTaiKhoan.Text);
+            Program.mainForm.getUserName = txtTaiKhoan.Text.ToString();
             Program.mainForm.Show();
 
         }

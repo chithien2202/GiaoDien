@@ -19,7 +19,7 @@ namespace DXApplication1
             Application.SetCompatibleTextRenderingDefault(false);
             loginForm = new frmDangNhap();
             mainForm = new frmMain();
-            Application.Run(new frmDangNhap());
+            Application.Run(loginForm);
         }
     }
 }

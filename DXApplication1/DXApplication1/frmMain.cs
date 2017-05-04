@@ -11,14 +11,16 @@ namespace DXApplication1
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         QLTBDataContext qltb = new QLTBDataContext();
+        public  string getUserName;
         public frmMain()
         {
-            send = new SendUserName(ShowUser);
+         
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            ShowUser(getUserName);
             XtraForm fff = new frm_background();
             TabCreating(this.xtraTabControl1, "Màng Hình Chính", fff);
 
@@ -284,16 +286,23 @@ namespace DXApplication1
 
             }
         }
-
-        public delegate void SendUserName(string user);
-        public SendUserName send;
-
-        private void ShowUser(string user)
+ 
+       
+       
+        private  void ShowUser(string user)
         {
-            string manv = (from nv in qltb.NGUOIDUNGs
-                           where nv.TENDANGNHAP == user
-                           select nv.TENDANGNHAP).FirstOrDefault();
-            username.Caption = manv;
+            try
+            {
+                string manv = (from nv in qltb.NGUOIDUNGs
+                               where nv.TENDANGNHAP == user
+                               select nv.TENDANGNHAP).FirstOrDefault();
+                username.Caption = manv;
+            }
+            catch (System.Exception ex)
+            {
+               
+            }
+           
         }
 
 

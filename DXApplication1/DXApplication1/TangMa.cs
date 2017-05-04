@@ -178,6 +178,17 @@ namespace DXApplication1
         }
 
 
+        public string ThemMaPTN()
+        {
+            ArrayList MangTam = new ArrayList();
+            var ma = from phieutiepnhan in qltb.PHIEUTIEPNHANs select phieutiepnhan;
+            foreach (PHIEUTIEPNHAN ptn in ma)
+            {
+                MangTam.Add(int.Parse(ptn.MAPHIEUTN.Substring(3)));
+            }
+            return KiemTra(MangTam, "PTN");
+        }
+
 
 
 
