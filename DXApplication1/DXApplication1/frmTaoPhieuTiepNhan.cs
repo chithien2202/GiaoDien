@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraTab;
 
 namespace DXApplication1
 {
@@ -57,11 +58,6 @@ namespace DXApplication1
                 false,
                 txtGhiChu.Text
                 );
-
-            //if (flag)
-            //{
-            //    MessageBox.Show("df");
-            //}
         }
 
 
@@ -83,6 +79,30 @@ namespace DXApplication1
         {
             LoadCbbKhachHang();
             LoadCbbThietBi();
+            LoadGridViewPTN();
+        }
+
+        private void LoadGridViewPTN()
+        {
+            var phieutiepnhan = from ptn in qltb.PHIEUTIEPNHANs
+                          select new { ptn.MAPHIEUTN, ptn.MATHIETBI, ptn.MANHANVIEN, ptn.MAKHACHKHACH, ptn.NGAYNHAN,
+                              ptn.NGAYHENTRA, ptn.TINHHINHHUHONG, ptn.PHUKIENKEMTHEO, ptn.HINHTHUC, ptn.GHICHUPTN };
+            dtgvDSPTN.DataSource = phieutiepnhan;
+        }
+
+        private void btnThemKH_Click(object sender, EventArgs e)
+        {
+            XtraForm fff = new frmDanhMucKhachHang();
+            fff.ShowDialog();
+            //fff.Show("frmDanhMucKhachHang");
+            //TabCreating(this.xtraTabControl1, "Khách hàng", fff);
+        }
+
+        private void btnThemThietBi_Click(object sender, EventArgs e)
+        {
+            XtraForm fff = new frmDanhMucThietBi();
+            fff.ShowDialog();
+            //TabCreating(this.xtraTabControl1, "Phân quyền", fff);
         }
     }
 }

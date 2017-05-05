@@ -45,21 +45,7 @@ namespace DXApplication1
             }
             catch (Exception ex)
             {
-                //PHIEUTIEPNHAN ptn = new PHIEUTIEPNHAN();
-                //ptn.MAPHIEUTN = maPhieuNhan;
-                //ptn.MATHIETBI = maThietBi;
-                //ptn.MANHANVIEN = maNhanVien;
-                //ptn.MAKHACHKHACH = maHanhKhach;
-                //ptn.NGAYNHAN = ngayNhan;
-                //ptn.NGAYHENTRA = ngayTra;
-                //ptn.TINHHINHHUHONG = tinhTrangHuHong;
-                //ptn.PHUKIENKEMTHEO = phuKienKemTheo;
-                //ptn.HINHTHUC = hinhThuc;
-                //ptn.GHICHUPTN = ghiChu;
-                //qltb.PHIEUTIEPNHANs.InsertOnSubmit(ptn);
-                //qltb.SubmitChanges();
-                //XtraMessageBox.Show("Thêm thành công", "Thông báo");
-                XtraMessageBox.Show("âs");
+                XtraMessageBox.Show("Thêm thất bại","Thông báo");
                 return false;
             }
         }
