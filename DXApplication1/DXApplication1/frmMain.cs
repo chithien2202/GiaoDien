@@ -32,6 +32,33 @@ namespace DXApplication1
             }
         }
 
+        //===================================================
+        private bool CheckExistFrom(string name)
+        {
+            bool check = false;
+            foreach (Form frmMain in this.MdiChildren)
+            {
+                if (frmMain.Name == name)
+                {
+                    check = true;
+                    break;
+                }
+            }
+            return check;
+        }
+        //===================================================
+        private void ActiveChildFrom(string name)
+        {
+            foreach (Form frmMain in this.MdiChildren)
+            {
+                if (frmMain.Name == name)
+                {
+                    frmMain.Activate();
+                    break;
+                }
+            }
+        }
+
         private void navBarControl1_Click(object sender, EventArgs e)
         {
         }
@@ -305,6 +332,16 @@ namespace DXApplication1
            
         }
 
-
+        private void btnQuanLySuaChuaBaoHanh2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            XtraForm fff = new frmTaoPhieuSuaChuaXacNhan();
+            TabCreating(this.xtraTabControl1, "Tạo phiếu sửa chữa", fff);
+        }
+        
+        private void btnCTPhieuSuaChua_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            XtraForm fff = new frmChiTietPhieuSuaChua();
+            TabCreating(this.xtraTabControl1, "Chi tiết phiếu sửa chữa", fff);
+        }
     }
 }

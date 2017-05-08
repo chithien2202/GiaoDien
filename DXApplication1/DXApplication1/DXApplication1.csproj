@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v16.1" />
     <Reference Include="DevExpress.ExpressApp.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.ExpressApp.Xpo.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -73,6 +74,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmChiTietPhieuSuaChua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChiTietPhieuSuaChua.Designer.cs">
+      <DependentUpon>frmChiTietPhieuSuaChua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTaoPhieuSuaChuaXacNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaoPhieuSuaChuaXacNhan.Designer.cs">
+      <DependentUpon>frmTaoPhieuSuaChuaXacNhan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCauHinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -301,6 +314,12 @@
     </Compile>
     <Compile Include="QL_NguoiDung.cs" />
     <Compile Include="TangMa.cs" />
+    <EmbeddedResource Include="frmChiTietPhieuSuaChua.resx">
+      <DependentUpon>frmChiTietPhieuSuaChua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTaoPhieuSuaChuaXacNhan.resx">
+      <DependentUpon>frmTaoPhieuSuaChuaXacNhan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCauHinh.resx">
       <DependentUpon>frmCauHinh.cs</DependentUpon>
     </EmbeddedResource>

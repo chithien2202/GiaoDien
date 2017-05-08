@@ -2,13 +2,13 @@
   <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-6V52PV4\SQLEXPRESS;Initial Catalog=QLTB;User ID=sa" SettingsObjectName="DXApplication1.Properties.Settings" SettingsPropertyName="DATHTTConnectionString3" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BANGBAOGIA" Member="BANGBAOGIAs">
     <Type Name="BANGBAOGIA">
-      <Column Name="MABG" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MABG" Type="System.Decimal" DbType="Money NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MAPHANLOAI" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
       <Column Name="TENBAOGIA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="DONGIA" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="GHICHUBAOGIA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="XOA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="BANGBAOGIA_CHITIETSUACHUA" Member="CHITIETSUACHUAs" ThisKey="MABG" OtherKey="MABG" Type="CHITIETSUACHUA" />
+      <Association Name="BANGBAOGIA_CHITIETSUACHUA" Member="CHITIETSUACHUAs" ThisKey="MABG" OtherKey="GIATHANH" Type="CHITIETSUACHUA" />
       <Association Name="PHANLOAI_BANGBAOGIA" Member="PHANLOAI" ThisKey="MAPHANLOAI" OtherKey="MAPHANLOAI" Type="PHANLOAI" IsForeignKey="true" />
     </Type>
   </Table>
@@ -43,6 +43,8 @@
       <Column Name="MAHOADON" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="NGAYKETTHUCBH" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="THANHTIEN" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GIATHANH" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Association Name="HOADON_CHITIETHOADON" Member="HOADON" ThisKey="MAHOADON" OtherKey="MAHOADON" Type="HOADON" IsForeignKey="true" />
       <Association Name="LINHKIEN_CHITIETHOADON" Member="LINHKIEN" ThisKey="MALINHKIEN" OtherKey="MALINHKIEN" Type="LINHKIEN" IsForeignKey="true" />
     </Type>
@@ -51,17 +53,18 @@
     <Type Name="CHITIETSUACHUA">
       <Column Name="MACTSC" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MAPSC" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
-      <Column Name="MANHANVIEN" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
-      <Column Name="MABG" Type="System.String" DbType="Char(10)" CanBeNull="true" />
-      <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MANHANVIENSUA" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="MANHANVIENNHAN" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="GIATHANH" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="NGAYSUA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="NGAYSUAXONG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="GHICHUCTSC" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="MALINHKIEN" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
-      <Association Name="BANGBAOGIA_CHITIETSUACHUA" Member="BANGBAOGIA" ThisKey="MABG" OtherKey="MABG" Type="BANGBAOGIA" IsForeignKey="true" />
+      <Column Name="MALINHKIEN" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Association Name="BANGBAOGIA_CHITIETSUACHUA" Member="BANGBAOGIA" ThisKey="GIATHANH" OtherKey="MABG" Type="BANGBAOGIA" IsForeignKey="true" />
       <Association Name="LINHKIEN_CHITIETSUACHUA" Member="LINHKIEN" ThisKey="MALINHKIEN" OtherKey="MALINHKIEN" Type="LINHKIEN" IsForeignKey="true" />
-      <Association Name="NHANVIEN_CHITIETSUACHUA" Member="NHANVIEN" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="NHANVIEN" IsForeignKey="true" />
+      <Association Name="NHANVIEN_CHITIETSUACHUA" Member="NHANVIEN" ThisKey="MANHANVIENNHAN" OtherKey="MANHANVIEN" Type="NHANVIEN" IsForeignKey="true" />
       <Association Name="PHIEUSUACHUA_CHITIETSUACHUA" Member="PHIEUSUACHUA" ThisKey="MAPSC" OtherKey="MAPSC" Type="PHIEUSUACHUA" IsForeignKey="true" />
     </Type>
   </Table>
@@ -156,7 +159,7 @@
       <Column Name="LUONG" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="GHICHU" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="XOA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="NHANVIEN_CHITIETSUACHUA" Member="CHITIETSUACHUAs" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="CHITIETSUACHUA" />
+      <Association Name="NHANVIEN_CHITIETSUACHUA" Member="CHITIETSUACHUAs" ThisKey="MANHANVIEN" OtherKey="MANHANVIENNHAN" Type="CHITIETSUACHUA" />
       <Association Name="NHANVIEN_HOADON" Member="HOADONs" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="HOADON" />
       <Association Name="NHANVIEN_PHIEUSUACHUA" Member="PHIEUSUACHUAs" ThisKey="MANHANVIEN" OtherKey="MANHANVIENTIEPNHAN" Type="PHIEUSUACHUA" />
       <Association Name="NHANVIEN_PHIEUSUACHUA1" Member="PHIEUSUACHUAs1" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="PHIEUSUACHUA" />
@@ -204,8 +207,8 @@
   <Table Name="dbo.PHIEUSUACHUA" Member="PHIEUSUACHUAs">
     <Type Name="PHIEUSUACHUA">
       <Column Name="MAPSC" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MANHANVIEN" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
-      <Column Name="MANHANVIENTIEPNHAN" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MANHANVIEN" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="MANHANVIENTIEPNHAN" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Column Name="MAPHIEUTN" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
       <Column Name="NGAYBATDAU" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="GHICHUPSC" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />

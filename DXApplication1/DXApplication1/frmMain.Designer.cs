@@ -78,6 +78,7 @@
             this.btnNguoiDung = new DevExpress.XtraBars.BarButtonItem();
             this.username = new DevExpress.XtraBars.BarHeaderItem();
             this.btnCauHinh = new DevExpress.XtraBars.BarButtonItem();
+            this.btnQuanLySuaChuaBaoHanh2 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -97,6 +98,7 @@
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.btnCTPhieuSuaChua = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.SuspendLayout();
@@ -154,9 +156,11 @@
             this.btnDoanhThu,
             this.btnNguoiDung,
             this.username,
-            this.btnCauHinh});
+            this.btnCauHinh,
+            this.btnQuanLySuaChuaBaoHanh2,
+            this.btnCTPhieuSuaChua});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 77;
+            this.ribbonControl1.MaxItemId = 80;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -571,6 +575,17 @@
             this.btnCauHinh.Name = "btnCauHinh";
             this.btnCauHinh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCauHinh_ItemClick);
             // 
+            // btnQuanLySuaChuaBaoHanh2
+            // 
+            this.btnQuanLySuaChuaBaoHanh2.Caption = "Quản lý sửa chữa bảo hành.";
+            this.btnQuanLySuaChuaBaoHanh2.Glyph = ((System.Drawing.Image)(resources.GetObject("btnQuanLySuaChuaBaoHanh2.Glyph")));
+            this.btnQuanLySuaChuaBaoHanh2.Id = 78;
+            this.btnQuanLySuaChuaBaoHanh2.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnQuanLySuaChuaBaoHanh2.LargeGlyph")));
+            this.btnQuanLySuaChuaBaoHanh2.Name = "btnQuanLySuaChuaBaoHanh2";
+            this.btnQuanLySuaChuaBaoHanh2.Tag = "MH028     ";
+            this.btnQuanLySuaChuaBaoHanh2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btnQuanLySuaChuaBaoHanh2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQuanLySuaChuaBaoHanh2_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -652,8 +667,10 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.btnQuanLySuaChuaBaoHanh);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnSuaChuaThietBi);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnHoaDonThanhToan);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnQuanLySuaChuaBaoHanh2);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnCTPhieuSuaChua);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "Nghiệp vụ sử lý";
+            this.ribbonPageGroup3.Text = "Nghiệp vụ xử lý";
             // 
             // ribbonPage4
             // 
@@ -744,6 +761,17 @@
             this.xtraTabControl1.Size = new System.Drawing.Size(1130, 523);
             this.xtraTabControl1.TabIndex = 7;
             // 
+            // btnCTPhieuSuaChua
+            // 
+            this.btnCTPhieuSuaChua.Caption = "Chi tiết phiếu sửa chữa";
+            this.btnCTPhieuSuaChua.Glyph = ((System.Drawing.Image)(resources.GetObject("btnCTPhieuSuaChua.Glyph")));
+            this.btnCTPhieuSuaChua.Id = 79;
+            this.btnCTPhieuSuaChua.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnCTPhieuSuaChua.LargeGlyph")));
+            this.btnCTPhieuSuaChua.Name = "btnCTPhieuSuaChua";
+            this.btnCTPhieuSuaChua.Tag = "MH029     ";
+            this.btnCTPhieuSuaChua.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btnCTPhieuSuaChua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCTPhieuSuaChua_ItemClick);
+            // 
             // frmMain
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -753,6 +781,7 @@
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
+            this.IsMdiContainer = true;
             this.Name = "frmMain";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -838,6 +867,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraBars.BarHeaderItem username;
         private DevExpress.XtraBars.BarButtonItem btnCauHinh;
+        private DevExpress.XtraBars.BarButtonItem btnQuanLySuaChuaBaoHanh2;
+        private DevExpress.XtraBars.BarButtonItem btnCTPhieuSuaChua;
     }
 }
 

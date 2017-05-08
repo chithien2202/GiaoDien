@@ -278,7 +278,7 @@ namespace DXApplication1
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _MABG;
+		private decimal _MABG;
 		
 		private string _MAPHANLOAI;
 		
@@ -298,7 +298,7 @@ namespace DXApplication1
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMABGChanging(string value);
+    partial void OnMABGChanging(decimal value);
     partial void OnMABGChanged();
     partial void OnMAPHANLOAIChanging(string value);
     partial void OnMAPHANLOAIChanged();
@@ -319,8 +319,8 @@ namespace DXApplication1
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MABG", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MABG
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MABG", DbType="Money NOT NULL", IsPrimaryKey=true)]
+		public decimal MABG
 		{
 			get
 			{
@@ -443,7 +443,7 @@ namespace DXApplication1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BANGBAOGIA_CHITIETSUACHUA", Storage="_CHITIETSUACHUAs", ThisKey="MABG", OtherKey="MABG")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BANGBAOGIA_CHITIETSUACHUA", Storage="_CHITIETSUACHUAs", ThisKey="MABG", OtherKey="GIATHANH")]
 		public EntitySet<CHITIETSUACHUA> CHITIETSUACHUAs
 		{
 			get
@@ -1050,6 +1050,10 @@ namespace DXApplication1
 		
 		private System.Nullable<decimal> _THANHTIEN;
 		
+		private System.Nullable<bool> _TRANGTHAI;
+		
+		private System.Nullable<decimal> _GIATHANH;
+		
 		private EntityRef<HOADON> _HOADON;
 		
 		private EntityRef<LINHKIEN> _LINHKIEN;
@@ -1066,6 +1070,10 @@ namespace DXApplication1
     partial void OnNGAYKETTHUCBHChanged();
     partial void OnTHANHTIENChanging(System.Nullable<decimal> value);
     partial void OnTHANHTIENChanged();
+    partial void OnTRANGTHAIChanging(System.Nullable<bool> value);
+    partial void OnTRANGTHAIChanged();
+    partial void OnGIATHANHChanging(System.Nullable<decimal> value);
+    partial void OnGIATHANHChanged();
     #endregion
 		
 		public CHITIETHOADON()
@@ -1159,6 +1167,46 @@ namespace DXApplication1
 					this._THANHTIEN = value;
 					this.SendPropertyChanged("THANHTIEN");
 					this.OnTHANHTIENChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRANGTHAI", DbType="Bit")]
+		public System.Nullable<bool> TRANGTHAI
+		{
+			get
+			{
+				return this._TRANGTHAI;
+			}
+			set
+			{
+				if ((this._TRANGTHAI != value))
+				{
+					this.OnTRANGTHAIChanging(value);
+					this.SendPropertyChanging();
+					this._TRANGTHAI = value;
+					this.SendPropertyChanged("TRANGTHAI");
+					this.OnTRANGTHAIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIATHANH", DbType="Money")]
+		public System.Nullable<decimal> GIATHANH
+		{
+			get
+			{
+				return this._GIATHANH;
+			}
+			set
+			{
+				if ((this._GIATHANH != value))
+				{
+					this.OnGIATHANHChanging(value);
+					this.SendPropertyChanging();
+					this._GIATHANH = value;
+					this.SendPropertyChanged("GIATHANH");
+					this.OnGIATHANHChanged();
 				}
 			}
 		}
@@ -1262,11 +1310,13 @@ namespace DXApplication1
 		
 		private string _MAPSC;
 		
-		private string _MANHANVIEN;
+		private string _MANHANVIENSUA;
 		
-		private string _MABG;
+		private string _MANHANVIENNHAN;
 		
-		private System.Nullable<int> _STT;
+		private System.Nullable<decimal> _GIATHANH;
+		
+		private int _STT;
 		
 		private System.Nullable<System.DateTime> _NGAYSUA;
 		
@@ -1294,11 +1344,13 @@ namespace DXApplication1
     partial void OnMACTSCChanged();
     partial void OnMAPSCChanging(string value);
     partial void OnMAPSCChanged();
-    partial void OnMANHANVIENChanging(string value);
-    partial void OnMANHANVIENChanged();
-    partial void OnMABGChanging(string value);
-    partial void OnMABGChanged();
-    partial void OnSTTChanging(System.Nullable<int> value);
+    partial void OnMANHANVIENSUAChanging(string value);
+    partial void OnMANHANVIENSUAChanged();
+    partial void OnMANHANVIENNHANChanging(string value);
+    partial void OnMANHANVIENNHANChanged();
+    partial void OnGIATHANHChanging(System.Nullable<decimal> value);
+    partial void OnGIATHANHChanged();
+    partial void OnSTTChanging(int value);
     partial void OnSTTChanged();
     partial void OnNGAYSUAChanging(System.Nullable<System.DateTime> value);
     partial void OnNGAYSUAChanged();
@@ -1365,56 +1417,76 @@ namespace DXApplication1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MANHANVIEN", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string MANHANVIEN
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MANHANVIENSUA", DbType="Char(10)")]
+		public string MANHANVIENSUA
 		{
 			get
 			{
-				return this._MANHANVIEN;
+				return this._MANHANVIENSUA;
 			}
 			set
 			{
-				if ((this._MANHANVIEN != value))
+				if ((this._MANHANVIENSUA != value))
+				{
+					this.OnMANHANVIENSUAChanging(value);
+					this.SendPropertyChanging();
+					this._MANHANVIENSUA = value;
+					this.SendPropertyChanged("MANHANVIENSUA");
+					this.OnMANHANVIENSUAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MANHANVIENNHAN", DbType="Char(10)")]
+		public string MANHANVIENNHAN
+		{
+			get
+			{
+				return this._MANHANVIENNHAN;
+			}
+			set
+			{
+				if ((this._MANHANVIENNHAN != value))
 				{
 					if (this._NHANVIEN.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnMANHANVIENChanging(value);
+					this.OnMANHANVIENNHANChanging(value);
 					this.SendPropertyChanging();
-					this._MANHANVIEN = value;
-					this.SendPropertyChanged("MANHANVIEN");
-					this.OnMANHANVIENChanged();
+					this._MANHANVIENNHAN = value;
+					this.SendPropertyChanged("MANHANVIENNHAN");
+					this.OnMANHANVIENNHANChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MABG", DbType="Char(10)")]
-		public string MABG
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIATHANH", DbType="Money")]
+		public System.Nullable<decimal> GIATHANH
 		{
 			get
 			{
-				return this._MABG;
+				return this._GIATHANH;
 			}
 			set
 			{
-				if ((this._MABG != value))
+				if ((this._GIATHANH != value))
 				{
 					if (this._BANGBAOGIA.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnMABGChanging(value);
+					this.OnGIATHANHChanging(value);
 					this.SendPropertyChanging();
-					this._MABG = value;
-					this.SendPropertyChanged("MABG");
-					this.OnMABGChanged();
+					this._GIATHANH = value;
+					this.SendPropertyChanged("GIATHANH");
+					this.OnGIATHANHChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STT", DbType="Int")]
-		public System.Nullable<int> STT
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STT", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int STT
 		{
 			get
 			{
@@ -1513,7 +1585,7 @@ namespace DXApplication1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MALINHKIEN", DbType="Char(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MALINHKIEN", DbType="Char(10)")]
 		public string MALINHKIEN
 		{
 			get
@@ -1537,7 +1609,7 @@ namespace DXApplication1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BANGBAOGIA_CHITIETSUACHUA", Storage="_BANGBAOGIA", ThisKey="MABG", OtherKey="MABG", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BANGBAOGIA_CHITIETSUACHUA", Storage="_BANGBAOGIA", ThisKey="GIATHANH", OtherKey="MABG", IsForeignKey=true)]
 		public BANGBAOGIA BANGBAOGIA
 		{
 			get
@@ -1560,11 +1632,11 @@ namespace DXApplication1
 					if ((value != null))
 					{
 						value.CHITIETSUACHUAs.Add(this);
-						this._MABG = value.MABG;
+						this._GIATHANH = value.MABG;
 					}
 					else
 					{
-						this._MABG = default(string);
+						this._GIATHANH = default(Nullable<decimal>);
 					}
 					this.SendPropertyChanged("BANGBAOGIA");
 				}
@@ -1605,7 +1677,7 @@ namespace DXApplication1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NHANVIEN_CHITIETSUACHUA", Storage="_NHANVIEN", ThisKey="MANHANVIEN", OtherKey="MANHANVIEN", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NHANVIEN_CHITIETSUACHUA", Storage="_NHANVIEN", ThisKey="MANHANVIENNHAN", OtherKey="MANHANVIEN", IsForeignKey=true)]
 		public NHANVIEN NHANVIEN
 		{
 			get
@@ -1628,11 +1700,11 @@ namespace DXApplication1
 					if ((value != null))
 					{
 						value.CHITIETSUACHUAs.Add(this);
-						this._MANHANVIEN = value.MANHANVIEN;
+						this._MANHANVIENNHAN = value.MANHANVIEN;
 					}
 					else
 					{
-						this._MANHANVIEN = default(string);
+						this._MANHANVIENNHAN = default(string);
 					}
 					this.SendPropertyChanged("NHANVIEN");
 				}
@@ -3596,7 +3668,7 @@ namespace DXApplication1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NHANVIEN_CHITIETSUACHUA", Storage="_CHITIETSUACHUAs", ThisKey="MANHANVIEN", OtherKey="MANHANVIEN")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NHANVIEN_CHITIETSUACHUA", Storage="_CHITIETSUACHUAs", ThisKey="MANHANVIEN", OtherKey="MANHANVIENNHAN")]
 		public EntitySet<CHITIETSUACHUA> CHITIETSUACHUAs
 		{
 			get
@@ -4590,7 +4662,7 @@ namespace DXApplication1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MANHANVIEN", DbType="Char(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MANHANVIEN", DbType="Char(10)")]
 		public string MANHANVIEN
 		{
 			get
@@ -4614,7 +4686,7 @@ namespace DXApplication1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MANHANVIENTIEPNHAN", DbType="Char(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MANHANVIENTIEPNHAN", DbType="Char(10)")]
 		public string MANHANVIENTIEPNHAN
 		{
 			get

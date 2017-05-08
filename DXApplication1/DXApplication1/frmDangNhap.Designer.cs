@@ -63,6 +63,7 @@
             this.linkCauHinhKetNoi.Size = new System.Drawing.Size(92, 16);
             this.linkCauHinhKetNoi.TabIndex = 1;
             this.linkCauHinhKetNoi.Text = "Cấu hình kết nối";
+            this.linkCauHinhKetNoi.Click += new System.EventHandler(this.linkCauHinhKetNoi_Click);
             // 
             // lblTaiKhoan
             // 

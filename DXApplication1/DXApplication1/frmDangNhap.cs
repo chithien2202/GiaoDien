@@ -142,5 +142,11 @@ namespace DXApplication1
                 chkLuuMK.Checked = Properties.Settings.Default.luuMatKhau;
             }
         }
+
+        private void linkCauHinhKetNoi_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmCauHinh();
+            frm.ShowDialog();
+        }
     }
 }
