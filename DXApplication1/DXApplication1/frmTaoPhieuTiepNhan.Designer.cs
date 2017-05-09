@@ -336,6 +336,7 @@
             this.btnIn.Size = new System.Drawing.Size(75, 23);
             this.btnIn.TabIndex = 9;
             this.btnIn.Text = "&In(F8)";
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // btnSua
             // 

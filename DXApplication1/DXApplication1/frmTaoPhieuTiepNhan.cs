@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraTab;
+using Microsoft.Office.Interop.Excel;
+using app = Microsoft.Office.Interop.Excel.Application;
 
 namespace DXApplication1
 {
@@ -206,6 +208,31 @@ namespace DXApplication1
                 txtGhiChu.Text = dtgvDSPTN.CurrentRow.Cells[9].Value.ToString();
             }
             catch { }
+        }
+
+
+        private void xuatExcel(DataGridView g, string duongDan, string tenTap)
+        {
+            app obj = new app();
+            obj.Application.Workbooks.Add(Type.Missing);
+            obj.Columns.ColumnWidth = 20;
+            obj.Visible = true;// mở excel lên
+            for (int i = 1; i < g.Columns.Count + 1; i++) { obj.Cells[1, i] = g.Columns[i - 1].HeaderText; }
+            for (int i = 0; i < g.Rows.Count; i++)
+            {
+                for (int j = 0; j < g.Columns.Count; j++)
+                {
+                    if (g.Rows[i].Cells[j].Value != null) { obj.Cells[i + 2, j + 1] = g.Rows[i].Cells[j].Value.ToString(); }
+                }
+            }
+            obj.ActiveWorkbook.SaveCopyAs(duongDan + tenTap + ".xlsx");
+            obj.ActiveWorkbook.Saved = true;
+
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            xuatExcel(dtgvDSPTN, @"D:\", "Danh sach phieu tiep nhan");
         }
     }
 }
