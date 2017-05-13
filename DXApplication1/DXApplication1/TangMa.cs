@@ -189,6 +189,19 @@ namespace DXApplication1
             return KiemTra(MangTam, "PTN");
         }
 
+        public string ThemMaPSC()
+        {
+            ArrayList MangTam = new ArrayList();
+            var ma = from phieusuachua in qltb.PHIEUSUACHUAs select phieusuachua;
+            foreach (PHIEUSUACHUA ptn in ma)
+            {
+                MangTam.Add(int.Parse(ptn.MAPSC.Substring(3)));
+            }
+            return KiemTra(MangTam, "PSC");
+        }
+
+
+
 
 
 
