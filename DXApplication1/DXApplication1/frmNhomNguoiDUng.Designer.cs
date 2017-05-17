@@ -39,6 +39,9 @@
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.dtgvnhomnguoidung = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvnhomnguoidung)).BeginInit();
@@ -167,6 +170,10 @@
             // 
             this.dtgvnhomnguoidung.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvnhomnguoidung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvnhomnguoidung.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
             this.dtgvnhomnguoidung.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvnhomnguoidung.Location = new System.Drawing.Point(0, 88);
             this.dtgvnhomnguoidung.Name = "dtgvnhomnguoidung";
@@ -175,7 +182,25 @@
             this.dtgvnhomnguoidung.TabIndex = 9;
             this.dtgvnhomnguoidung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvnhomnguoidung_CellClick);
             // 
-            // frmNhomNguoiDUng
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MANHOM";
+            this.Column1.HeaderText = "Mã nhóm";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TENNHOM";
+            this.Column2.HeaderText = "Tên nhóm";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "GHICHU";
+            this.Column3.HeaderText = "Ghi chú";
+            this.Column3.Name = "Column3";
+            // 
+            // frmNhomNguoiDung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -183,7 +208,7 @@
             this.Controls.Add(this.dtgvnhomnguoidung);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmNhomNguoiDUng";
+            this.Name = "frmNhomNguoiDung";
             this.Text = "frmNhomNguoiDUng";
             this.Load += new System.EventHandler(this.frmNhomNguoiDUng_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -206,5 +231,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDienGiai;
         private System.Windows.Forms.TextBox txtTenNhom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }

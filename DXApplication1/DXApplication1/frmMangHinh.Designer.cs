@@ -37,6 +37,8 @@
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.dtgvMangHinh = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMangHinh)).BeginInit();
@@ -145,6 +147,9 @@
             // 
             this.dtgvMangHinh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvMangHinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvMangHinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
             this.dtgvMangHinh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvMangHinh.Location = new System.Drawing.Point(0, 68);
             this.dtgvMangHinh.Name = "dtgvMangHinh";
@@ -152,6 +157,18 @@
             this.dtgvMangHinh.Size = new System.Drawing.Size(676, 297);
             this.dtgvMangHinh.TabIndex = 8;
             this.dtgvMangHinh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvMangHinh_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MaManHinh";
+            this.Column1.HeaderText = "Mã màn hình";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TenManHinh";
+            this.Column2.HeaderText = "Tên màn hình";
+            this.Column2.Name = "Column2";
             // 
             // frmMangHinh
             // 
@@ -182,5 +199,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTenMangHinh;
         private System.Windows.Forms.DataGridView dtgvMangHinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

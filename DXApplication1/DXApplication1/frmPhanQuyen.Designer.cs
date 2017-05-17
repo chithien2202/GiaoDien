@@ -39,17 +39,17 @@
             this.mANHINHTableAdapter = new DXApplication1.QLTBDataSetTableAdapters.MANHINHTableAdapter();
             this.pHANQUYENTableAdapter = new DXApplication1.QLTBDataSetTableAdapters.PHANQUYENTableAdapter();
             this.nHOMNGUOIDUNGDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mANHINHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.getPhanQuyenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.getPhanQuyenTableAdapter = new DXApplication1.QLTBDataSetTableAdapters.GetPhanQuyenTableAdapter();
             this.getPhanQuyenDataGridView = new System.Windows.Forms.DataGridView();
+            this.pHANQUYENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.pHANQUYENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qLTBDataSet)).BeginInit();
@@ -152,24 +152,6 @@
             this.nHOMNGUOIDUNGDataGridView.TabIndex = 11;
             this.nHOMNGUOIDUNGDataGridView.SelectionChanged += new System.EventHandler(this.nHOMNGUOIDUNGDataGridView_SelectionChanged);
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "MANHOM";
-            this.dataGridViewTextBoxColumn1.HeaderText = "MANHOM";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TENNHOM";
-            this.dataGridViewTextBoxColumn2.HeaderText = "TENNHOM";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "GHICHU";
-            this.dataGridViewTextBoxColumn3.HeaderText = "GHICHU";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
             // mANHINHBindingSource
             // 
             this.mANHINHBindingSource.DataMember = "MANHINH";
@@ -201,28 +183,46 @@
             this.getPhanQuyenDataGridView.Size = new System.Drawing.Size(457, 283);
             this.getPhanQuyenDataGridView.TabIndex = 12;
             // 
+            // pHANQUYENBindingSource
+            // 
+            this.pHANQUYENBindingSource.DataMember = "PHANQUYEN";
+            this.pHANQUYENBindingSource.DataSource = this.qLTBDataSet;
+            // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "MaManHinh";
-            this.dataGridViewTextBoxColumn4.HeaderText = "MaManHinh";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Mã màn hình";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "TenManHinh";
-            this.dataGridViewTextBoxColumn5.HeaderText = "TenManHinh";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Tên màn hình";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // dataGridViewCheckBoxColumn1
             // 
             this.dataGridViewCheckBoxColumn1.DataPropertyName = "COQUYEN";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "COQUYEN";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Có quyền";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             // 
-            // pHANQUYENBindingSource
+            // dataGridViewTextBoxColumn1
             // 
-            this.pHANQUYENBindingSource.DataMember = "PHANQUYEN";
-            this.pHANQUYENBindingSource.DataSource = this.qLTBDataSet;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "MANHOM";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã nhóm";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "TENNHOM";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tên nhóm";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "GHICHU";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Ghi chú";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // frmPhanQuyen
             // 
@@ -259,17 +259,17 @@
         private QLTBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private QLTBDataSetTableAdapters.MANHINHTableAdapter mANHINHTableAdapter;
         private System.Windows.Forms.DataGridView nHOMNGUOIDUNGDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.BindingSource mANHINHBindingSource;
         private System.Windows.Forms.BindingSource getPhanQuyenBindingSource;
         private QLTBDataSetTableAdapters.GetPhanQuyenTableAdapter getPhanQuyenTableAdapter;
         private System.Windows.Forms.DataGridView getPhanQuyenDataGridView;
+        private QLTBDataSetTableAdapters.PHANQUYENTableAdapter pHANQUYENTableAdapter;
+        private System.Windows.Forms.BindingSource pHANQUYENBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private QLTBDataSetTableAdapters.PHANQUYENTableAdapter pHANQUYENTableAdapter;
-        private System.Windows.Forms.BindingSource pHANQUYENBindingSource;
     }
 }
