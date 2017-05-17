@@ -200,6 +200,17 @@ namespace DXApplication1
             return KiemTra(MangTam, "PSC");
         }
 
+        public string ThemMaBBG()
+        {
+            ArrayList MangTam = new ArrayList();
+            var ma = from bangbaogia in qltb.BANGBAOGIAs select bangbaogia;
+            foreach (BANGBAOGIA bbg in ma)
+            {
+                MangTam.Add(int.Parse(bbg.MABG.Substring(3)));
+            }
+            return KiemTra(MangTam, "BBG");
+        }
+
 
 
 

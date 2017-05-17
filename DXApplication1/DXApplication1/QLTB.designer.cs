@@ -278,7 +278,7 @@ namespace DXApplication1
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private decimal _MABG;
+		private string _MABG;
 		
 		private string _MAPHANLOAI;
 		
@@ -298,7 +298,7 @@ namespace DXApplication1
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMABGChanging(decimal value);
+    partial void OnMABGChanging(string value);
     partial void OnMABGChanged();
     partial void OnMAPHANLOAIChanging(string value);
     partial void OnMAPHANLOAIChanged();
@@ -319,8 +319,8 @@ namespace DXApplication1
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MABG", DbType="Money NOT NULL", IsPrimaryKey=true)]
-		public decimal MABG
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MABG", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MABG
 		{
 			get
 			{
@@ -1314,7 +1314,7 @@ namespace DXApplication1
 		
 		private string _MANHANVIENNHAN;
 		
-		private System.Nullable<decimal> _GIATHANH;
+		private string _GIATHANH;
 		
 		private int _STT;
 		
@@ -1348,7 +1348,7 @@ namespace DXApplication1
     partial void OnMANHANVIENSUAChanged();
     partial void OnMANHANVIENNHANChanging(string value);
     partial void OnMANHANVIENNHANChanged();
-    partial void OnGIATHANHChanging(System.Nullable<decimal> value);
+    partial void OnGIATHANHChanging(string value);
     partial void OnGIATHANHChanged();
     partial void OnSTTChanging(int value);
     partial void OnSTTChanged();
@@ -1461,8 +1461,8 @@ namespace DXApplication1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIATHANH", DbType="Money")]
-		public System.Nullable<decimal> GIATHANH
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIATHANH", DbType="Char(10)")]
+		public string GIATHANH
 		{
 			get
 			{
@@ -1636,7 +1636,7 @@ namespace DXApplication1
 					}
 					else
 					{
-						this._GIATHANH = default(Nullable<decimal>);
+						this._GIATHANH = default(string);
 					}
 					this.SendPropertyChanged("BANGBAOGIA");
 				}

@@ -157,7 +157,7 @@ namespace DXApplication1
         private void btnMangHinh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             XtraForm fff = new frmMangHinh();
-            TabCreating(this.xtraTabControl1, "Màng hình", fff);
+            TabCreating(this.xtraTabControl1, "Màn hình", fff);
         }
 
         private void btnPhanQuyen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
