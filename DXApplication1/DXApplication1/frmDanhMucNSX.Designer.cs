@@ -42,6 +42,9 @@
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.dtgvNhaSanXuat = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDienGiai.Properties)).BeginInit();
@@ -222,6 +225,10 @@
             // 
             this.dtgvNhaSanXuat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvNhaSanXuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvNhaSanXuat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
             this.dtgvNhaSanXuat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvNhaSanXuat.Location = new System.Drawing.Point(2, 26);
             this.dtgvNhaSanXuat.Name = "dtgvNhaSanXuat";
@@ -229,6 +236,24 @@
             this.dtgvNhaSanXuat.Size = new System.Drawing.Size(858, 355);
             this.dtgvNhaSanXuat.TabIndex = 0;
             this.dtgvNhaSanXuat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvNhaSanXuat_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MANSX";
+            this.Column1.HeaderText = "Mã NSX";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TENNSX";
+            this.Column2.HeaderText = "Tên NSX";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "GHICHUSX";
+            this.Column3.HeaderText = "Ghi chú";
+            this.Column3.Name = "Column3";
             // 
             // frmDanhMucNSX
             // 
@@ -268,5 +293,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txtTenNhaSanXuat;
         private System.Windows.Forms.DataGridView dtgvNhaSanXuat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }

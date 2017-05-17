@@ -46,6 +46,11 @@
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.dtgvDSModel = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenModel.Properties)).BeginInit();
@@ -263,6 +268,12 @@
             // 
             this.dtgvDSModel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvDSModel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvDSModel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
             this.dtgvDSModel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvDSModel.Location = new System.Drawing.Point(2, 26);
             this.dtgvDSModel.Name = "dtgvDSModel";
@@ -270,6 +281,36 @@
             this.dtgvDSModel.Size = new System.Drawing.Size(858, 294);
             this.dtgvDSModel.TabIndex = 0;
             this.dtgvDSModel.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSModel_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MAMODEL";
+            this.Column1.HeaderText = "Mã model";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "MANSX";
+            this.Column2.HeaderText = "Mã NSX";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "TENMODEL";
+            this.Column3.HeaderText = "Tên model";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "THUOC_LOAI";
+            this.Column4.HeaderText = "Thuộc loại";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "GHICHUMODEL";
+            this.Column5.HeaderText = "Ghi chú";
+            this.Column5.Name = "Column5";
             // 
             // frmDanhMucModel
             // 
@@ -312,5 +353,10 @@
         private DevExpress.XtraEditors.TextEdit txtTenModel;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.TextBox txtDienGiai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

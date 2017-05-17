@@ -172,8 +172,15 @@ namespace DXApplication1
 
                 txtTenKH.Text = dgtvKhachHang.CurrentRow.Cells[1].Value.ToString();
                 txtDChi.Text = dgtvKhachHang.CurrentRow.Cells[2].Value.ToString();
-                txtSDT.Text = dgtvKhachHang.CurrentRow.Cells[3].Value.ToString();
-                txtFax.Text = dgtvKhachHang.CurrentRow.Cells[4].Value.ToString();
+                txtSDT.Text = dgtvKhachHang.CurrentRow.Cells[3].Value.ToString(); 
+                if(dgtvKhachHang.CurrentRow.Cells[4].Value == null)
+                {
+                    txtFax.Text = null;
+                }
+                else
+                {
+                    txtFax.Text = dgtvKhachHang.CurrentRow.Cells[4].Value.ToString();
+                }
                 txtEmail.Text = dgtvKhachHang.CurrentRow.Cells[5].Value.ToString();
                 txtDienGiai.Text = dgtvKhachHang.CurrentRow.Cells[6].Value.ToString();
 

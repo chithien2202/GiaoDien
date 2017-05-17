@@ -42,6 +42,9 @@
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.dtgvDSBoPhan = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDienGiai.Properties)).BeginInit();
@@ -218,6 +221,10 @@
             // 
             this.dtgvDSBoPhan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvDSBoPhan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvDSBoPhan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
             this.dtgvDSBoPhan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvDSBoPhan.Location = new System.Drawing.Point(2, 26);
             this.dtgvDSBoPhan.Name = "dtgvDSBoPhan";
@@ -225,6 +232,24 @@
             this.dtgvDSBoPhan.Size = new System.Drawing.Size(858, 368);
             this.dtgvDSBoPhan.TabIndex = 0;
             this.dtgvDSBoPhan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSBoPhan_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MABOPHAN";
+            this.Column1.HeaderText = "Mã bộ phận";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TENBOPHAN";
+            this.Column2.HeaderText = "Tên bộ phận";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "DIENGIAI";
+            this.Column3.HeaderText = "Diễn giải";
+            this.Column3.Name = "Column3";
             // 
             // frmDanhMucBoPhan
             // 
@@ -264,5 +289,8 @@
         private DevExpress.XtraEditors.SimpleButton btnTroGiup;
         private DevExpress.XtraEditors.SimpleButton btnIn;
         private System.Windows.Forms.DataGridView dtgvDSBoPhan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }

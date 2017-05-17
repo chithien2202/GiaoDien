@@ -50,6 +50,13 @@
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.dtgvDSThietBi = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDienGiai.Properties)).BeginInit();
@@ -312,6 +319,14 @@
             // 
             this.dtgvDSThietBi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvDSThietBi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvDSThietBi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7});
             this.dtgvDSThietBi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvDSThietBi.Location = new System.Drawing.Point(2, 26);
             this.dtgvDSThietBi.Name = "dtgvDSThietBi";
@@ -319,6 +334,48 @@
             this.dtgvDSThietBi.Size = new System.Drawing.Size(777, 259);
             this.dtgvDSThietBi.TabIndex = 0;
             this.dtgvDSThietBi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSThietBi_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MATHIETBI";
+            this.Column1.HeaderText = "Mã thiết bị";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "MAMODEL";
+            this.Column2.HeaderText = "Mã model";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "SERIAL";
+            this.Column3.HeaderText = "Serial";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "TENTHIETBI";
+            this.Column4.HeaderText = "Tên thiết bị";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "NGAYMUA_SUACHUA";
+            this.Column5.HeaderText = "Ngày mua/sửa chữa";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "NGAYKETTHUC";
+            this.Column6.HeaderText = "Ngày kết thúc";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "GHICHUTHIETBI";
+            this.Column7.HeaderText = "Ghi chú";
+            this.Column7.Name = "Column7";
             // 
             // frmDanhMucThietBi
             // 
@@ -367,5 +424,12 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit txtDienGiai;
         private DevExpress.XtraEditors.LabelControl labelControl3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }

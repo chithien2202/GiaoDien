@@ -28,6 +28,7 @@ namespace DXApplication1
                                    psc.MAPSC,
                                    psc.MANHANVIEN,
                                    psc.MANHANVIENTIEPNHAN,
+                                   psc.MAPHIEUTN,
                                    psc.NGAYBATDAU,
                                    psc.GHICHUPSC,
                                    psc.NGUOIGOI,
@@ -57,6 +58,61 @@ namespace DXApplication1
             qltb.SubmitChanges();
             LoadGridViewPSC();
             XtraMessageBox.Show("Xác nhận thành công", "Thông báo");
+        }
+
+        private void dtgvPhieuSuaChua_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                txtMaPSC.Enabled = false;
+                cbbNhanVienLap.Enabled = false;
+                cbbNhanVienTiepNhan.Enabled = false;
+                cbbMaPhieuTiepNhan.Enabled = false;
+                dtpNgayBatDau.Enabled = false;
+                cbbNguoiGoi.Enabled = false;
+                txtGiaDuKien.Enabled = false;
+                txtTongTien.Enabled = false;
+                txtThongTinSuaChua.Enabled = false;
+                chkTrangThai.Enabled = false;
+                chkDongY.Enabled = false;
+                txtGhiChu.Enabled = false;
+                txtMaPSC.Text = dtgvPhieuSuaChua.CurrentRow.Cells[0].Value.ToString();
+                cbbNhanVienLap.Text = dtgvPhieuSuaChua.CurrentRow.Cells[1].Value.ToString();
+
+                cbbMaPhieuTiepNhan.Text = dtgvPhieuSuaChua.CurrentRow.Cells[3].Value.ToString();
+                dtpNgayBatDau.Text = dtgvPhieuSuaChua.CurrentRow.Cells[4].Value.ToString();
+                txtGhiChu.Text = dtgvPhieuSuaChua.CurrentRow.Cells[5].Value.ToString();
+                cbbNguoiGoi.Text = dtgvPhieuSuaChua.CurrentRow.Cells[6].Value.ToString();
+                if (dtgvPhieuSuaChua.CurrentRow.Cells[7].Value.ToString() == "True")
+                {
+                    chkDongY.Checked = true;
+                }
+                else
+                {
+                    chkDongY.Checked = false;
+                }
+                txtGiaDuKien.Text = dtgvPhieuSuaChua.CurrentRow.Cells[8].Value.ToString();
+                txtThongTinSuaChua.Text = dtgvPhieuSuaChua.CurrentRow.Cells[9].Value.ToString();
+                txtTongTien.Text = dtgvPhieuSuaChua.CurrentRow.Cells[10].Value.ToString();
+                if (dtgvPhieuSuaChua.CurrentRow.Cells[11].Value.ToString() == "True")
+                {
+                    chkTrangThai.Checked = true;
+                }
+                else
+                {
+                    chkTrangThai.Checked = false;
+                }
+
+                if (dtgvPhieuSuaChua.CurrentRow.Cells[2].Value == null || dtgvPhieuSuaChua.CurrentRow.Cells[2].Value.ToString() == "")
+                {
+                    cbbNhanVienTiepNhan.Text = "";
+                }
+                else
+                {
+                    cbbNhanVienTiepNhan.Text = dtgvPhieuSuaChua.CurrentRow.Cells[2].Value.ToString();
+                }
+            }
+            catch { }
         }
     }
 }

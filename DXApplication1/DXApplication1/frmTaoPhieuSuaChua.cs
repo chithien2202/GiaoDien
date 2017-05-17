@@ -47,7 +47,7 @@ namespace DXApplication1
         private void LoadGridViewPSC()
         {
             var phieusuachua = from psc in qltb.PHIEUSUACHUAs
-                          select new { psc.MAPSC, psc.MANHANVIEN, psc.MANHANVIENTIEPNHAN, psc.NGAYBATDAU, psc.GHICHUPSC, psc.NGUOIGOI,
+                          select new { psc.MAPSC, psc.MANHANVIEN, psc.MANHANVIENTIEPNHAN, psc.MAPHIEUTN,psc.NGAYBATDAU, psc.GHICHUPSC, psc.NGUOIGOI,
                                         psc.DONGY, psc.GIADUKIEN, psc.THONGTINSUACHUA, psc.TONGTIEN, psc.TRANGTHAI };
             dtgvPhieuSuaChua.DataSource = phieusuachua;
         }
@@ -64,7 +64,7 @@ namespace DXApplication1
             dtpNgayBatDau.Enabled = false;
             cbbNguoiGoi.Enabled = false;
             txtGiaDuKien.Enabled = false;
-            txTongTien.Enabled = false;
+            txtTongTien.Enabled = false;
             txtThongTinSuaChua.Enabled = false;
             chkTrangThai.Enabled = false;
             chkDongY.Enabled = false;
@@ -82,17 +82,30 @@ namespace DXApplication1
                 dtpNgayBatDau.Enabled = true;
                 cbbNguoiGoi.Enabled = true;
                 txtGiaDuKien.Enabled = true;
-                txTongTien.Enabled = true;
+                txtTongTien.Enabled = true;
                 txtThongTinSuaChua.Enabled = true;
                 chkTrangThai.Enabled = true;
                 chkDongY.Enabled = true;
                 txtGhiChu.Enabled = true;
 
+                txtMaPSC.Text = String.Empty;
+                cbbNhanVienLap.Text = String.Empty;
+                cbbNhanVienTiepNhan.Text = String.Empty;
+                cbbMaPhieuTiepNhan.Text = String.Empty;
+                dtpNgayBatDau.Text = String.Empty;
+                cbbNguoiGoi.Text = String.Empty;
+                txtGiaDuKien.Text = String.Empty;
+                txtTongTien.Text = String.Empty;
+                txtThongTinSuaChua.Text = String.Empty;
+                chkTrangThai.Checked = false;
+                chkDongY.Checked = false;
+                txtGhiChu.Text = String.Empty;
+
                 btnThem.Text = "Lưu";
             }
             else
             {
-                if (txtGiaDuKien.Text == String.Empty || txTongTien.Text == String.Empty || txtThongTinSuaChua.Text == String.Empty)
+                if (txtGiaDuKien.Text == String.Empty || txtTongTien.Text == String.Empty || txtThongTinSuaChua.Text == String.Empty)
                 {
                     XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo");
                 }
@@ -105,7 +118,7 @@ namespace DXApplication1
                     psc.MAPHIEUTN = cbbMaPhieuTiepNhan.Text;
                     psc.NGAYBATDAU = dtpNgayBatDau.Value;
                     psc.GHICHUPSC = txtGhiChu.Text;
-                    psc.NGUOIGOI = cbbNguoiGoi.Text;
+                    psc.NGUOIGOI = Program.mainForm.getUserName;
                     if (chkDongY.Checked)
                     {
                         psc.DONGY = true;
@@ -116,7 +129,7 @@ namespace DXApplication1
                     }
                     psc.GIADUKIEN = decimal.Parse(txtGiaDuKien.Text);
                     psc.THONGTINSUACHUA = txtThongTinSuaChua.Text;
-                    psc.TONGTIEN = decimal.Parse(txTongTien.Text);
+                    psc.TONGTIEN = decimal.Parse(txtTongTien.Text);
                     if (chkTrangThai.Checked)
                     {
                         psc.TRANGTHAI = true;
@@ -138,7 +151,7 @@ namespace DXApplication1
                     dtpNgayBatDau.Enabled = false;
                     cbbNguoiGoi.Enabled = false;
                     txtGiaDuKien.Enabled = false;
-                    txTongTien.Enabled = false;
+                    txtTongTien.Enabled = false;
                     txtThongTinSuaChua.Enabled = false;
                     chkTrangThai.Enabled = false;
                     chkDongY.Enabled = false;
@@ -152,7 +165,7 @@ namespace DXApplication1
             if (btnSua.Text == "Sửa")
             {
                 txtGiaDuKien.Enabled = true;
-                txTongTien.Enabled = true;
+                txtTongTien.Enabled = true;
                 txtThongTinSuaChua.Enabled = true;
                 chkTrangThai.Enabled = true;
                 chkDongY.Enabled = true;
@@ -165,7 +178,7 @@ namespace DXApplication1
                 string mapsc = dtgvPhieuSuaChua.CurrentRow.Cells[0].Value.ToString();
                 PHIEUSUACHUA psc = qltb.PHIEUSUACHUAs.Where(t => t.MAPSC == mapsc).FirstOrDefault();
                 psc.GIADUKIEN = decimal.Parse(txtGiaDuKien.Text);
-                psc.TONGTIEN = decimal.Parse(txTongTien.Text);
+                psc.TONGTIEN = decimal.Parse(txtTongTien.Text);
                 psc.THONGTINSUACHUA = txtThongTinSuaChua.Text;
                 psc.GHICHUPSC = txtGhiChu.Text;
                 if (chkDongY.Checked)
@@ -193,14 +206,14 @@ namespace DXApplication1
                 btnSua.Text = "Sửa";
                 btnThem.Text = "Thêm";
                 txtGiaDuKien.Enabled = false;
-                txTongTien.Enabled = false;
+                txtTongTien.Enabled = false;
                 txtThongTinSuaChua.Enabled = false;
                 chkTrangThai.Enabled = false;
                 chkDongY.Enabled = false;
                 txtGhiChu.Enabled = false;
 
                 txtGiaDuKien.Text = String.Empty;
-                txTongTien.Text = String.Empty;
+                txtTongTien.Text = String.Empty;
                 txtThongTinSuaChua.Text = String.Empty;
                 chkDongY.Checked = false;
                 chkTrangThai.Checked = false;
@@ -225,6 +238,61 @@ namespace DXApplication1
             {
                 this.Close();
             }
+        }
+
+        private void dtgvPhieuSuaChua_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                txtMaPSC.Enabled = false;
+                cbbNhanVienLap.Enabled = false;
+                cbbNhanVienTiepNhan.Enabled = false;
+                cbbMaPhieuTiepNhan.Enabled = false;
+                dtpNgayBatDau.Enabled = false;
+                cbbNguoiGoi.Enabled = false;
+                txtGiaDuKien.Enabled = false;
+                txtTongTien.Enabled = false;
+                txtThongTinSuaChua.Enabled = false;
+                chkTrangThai.Enabled = false;
+                chkDongY.Enabled = false;
+                txtGhiChu.Enabled = false;
+                txtMaPSC.Text = dtgvPhieuSuaChua.CurrentRow.Cells[0].Value.ToString();
+                cbbNhanVienLap.Text = dtgvPhieuSuaChua.CurrentRow.Cells[1].Value.ToString();
+                
+                cbbMaPhieuTiepNhan.Text = dtgvPhieuSuaChua.CurrentRow.Cells[3].Value.ToString();
+                dtpNgayBatDau.Text = dtgvPhieuSuaChua.CurrentRow.Cells[4].Value.ToString();
+                txtGhiChu.Text = dtgvPhieuSuaChua.CurrentRow.Cells[5].Value.ToString();
+                cbbNguoiGoi.Text = dtgvPhieuSuaChua.CurrentRow.Cells[6].Value.ToString();
+                if (dtgvPhieuSuaChua.CurrentRow.Cells[7].Value.ToString() == "True")
+                {
+                    chkDongY.Checked = true;
+                }
+                else
+                {
+                    chkDongY.Checked = false;
+                }
+                txtGiaDuKien.Text = dtgvPhieuSuaChua.CurrentRow.Cells[8].Value.ToString();
+                txtThongTinSuaChua.Text = dtgvPhieuSuaChua.CurrentRow.Cells[9].Value.ToString();
+                txtTongTien.Text = dtgvPhieuSuaChua.CurrentRow.Cells[10].Value.ToString();  
+                if (dtgvPhieuSuaChua.CurrentRow.Cells[11].Value.ToString() == "True")
+                {
+                    chkTrangThai.Checked = true;
+                }
+                else
+                {
+                    chkTrangThai.Checked = false;
+                }
+
+                if(dtgvPhieuSuaChua.CurrentRow.Cells[2].Value ==null || dtgvPhieuSuaChua.CurrentRow.Cells[2].Value.ToString() == "")
+                {
+                    cbbNhanVienTiepNhan.Text = "";
+                }
+                else
+                {
+                    cbbNhanVienTiepNhan.Text = dtgvPhieuSuaChua.CurrentRow.Cells[2].Value.ToString();
+                }
+            }
+            catch { }
         }
     }
 }

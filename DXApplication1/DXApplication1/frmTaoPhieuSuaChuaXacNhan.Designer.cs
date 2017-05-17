@@ -37,6 +37,8 @@
             this.dtgvPhieuSuaChua = new System.Windows.Forms.DataGridView();
             this.chkDaGiao = new System.Windows.Forms.CheckBox();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.cbbMaPhieuTiepNhan = new System.Windows.Forms.ComboBox();
+            this.txtTongTien = new DevExpress.XtraEditors.TextEdit();
             this.chkDongY = new System.Windows.Forms.CheckBox();
             this.chkTrangThai = new System.Windows.Forms.CheckBox();
             this.cbbNhanVienTiepNhan = new System.Windows.Forms.ComboBox();
@@ -57,8 +59,6 @@
             this.txtGiaDuKien = new DevExpress.XtraEditors.TextEdit();
             this.txtMaPSC = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.cbbMaPhieuTiepNhan = new System.Windows.Forms.ComboBox();
-            this.txTongTien = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -66,10 +66,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPhieuSuaChua)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTongTien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtThongTinSuaChua.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaDuKien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaPSC.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txTongTien.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl3
@@ -121,6 +121,7 @@
             this.dtgvPhieuSuaChua.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvPhieuSuaChua.Size = new System.Drawing.Size(1308, 225);
             this.dtgvPhieuSuaChua.TabIndex = 0;
+            this.dtgvPhieuSuaChua.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPhieuSuaChua_CellClick);
             // 
             // chkDaGiao
             // 
@@ -137,7 +138,7 @@
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.Controls.Add(this.cbbMaPhieuTiepNhan);
-            this.groupControl1.Controls.Add(this.txTongTien);
+            this.groupControl1.Controls.Add(this.txtTongTien);
             this.groupControl1.Controls.Add(this.chkDongY);
             this.groupControl1.Controls.Add(this.chkTrangThai);
             this.groupControl1.Controls.Add(this.cbbNhanVienTiepNhan);
@@ -165,6 +166,25 @@
             this.groupControl1.TabIndex = 17;
             this.groupControl1.Tag = "";
             this.groupControl1.Text = "Thông tin Sửa chữa";
+            // 
+            // cbbMaPhieuTiepNhan
+            // 
+            this.cbbMaPhieuTiepNhan.Enabled = false;
+            this.cbbMaPhieuTiepNhan.FormattingEnabled = true;
+            this.cbbMaPhieuTiepNhan.Location = new System.Drawing.Point(1084, 38);
+            this.cbbMaPhieuTiepNhan.Name = "cbbMaPhieuTiepNhan";
+            this.cbbMaPhieuTiepNhan.Size = new System.Drawing.Size(181, 21);
+            this.cbbMaPhieuTiepNhan.TabIndex = 57;
+            // 
+            // txtTongTien
+            // 
+            this.txtTongTien.Enabled = false;
+            this.txtTongTien.Location = new System.Drawing.Point(1084, 76);
+            this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTongTien.Properties.Appearance.Options.UseFont = true;
+            this.txtTongTien.Size = new System.Drawing.Size(181, 22);
+            this.txtTongTien.TabIndex = 56;
             // 
             // chkDongY
             // 
@@ -361,25 +381,6 @@
             this.labelControl2.TabIndex = 43;
             this.labelControl2.Text = "Ngày bắt đầu :";
             // 
-            // cbbMaPhieuTiepNhan
-            // 
-            this.cbbMaPhieuTiepNhan.Enabled = false;
-            this.cbbMaPhieuTiepNhan.FormattingEnabled = true;
-            this.cbbMaPhieuTiepNhan.Location = new System.Drawing.Point(1084, 38);
-            this.cbbMaPhieuTiepNhan.Name = "cbbMaPhieuTiepNhan";
-            this.cbbMaPhieuTiepNhan.Size = new System.Drawing.Size(181, 21);
-            this.cbbMaPhieuTiepNhan.TabIndex = 57;
-            // 
-            // txTongTien
-            // 
-            this.txTongTien.Enabled = false;
-            this.txTongTien.Location = new System.Drawing.Point(1084, 76);
-            this.txTongTien.Name = "txTongTien";
-            this.txTongTien.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txTongTien.Properties.Appearance.Options.UseFont = true;
-            this.txTongTien.Size = new System.Drawing.Size(181, 22);
-            this.txTongTien.TabIndex = 56;
-            // 
             // frmTaoPhieuSuaChuaXacNhan
             // 
             this.ClientSize = new System.Drawing.Size(1334, 505);
@@ -396,10 +397,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTongTien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtThongTinSuaChua.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaDuKien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaPSC.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txTongTien.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -434,6 +435,6 @@
         private DevExpress.XtraEditors.TextEdit txtMaPSC;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private System.Windows.Forms.ComboBox cbbMaPhieuTiepNhan;
-        private DevExpress.XtraEditors.TextEdit txTongTien;
+        private DevExpress.XtraEditors.TextEdit txtTongTien;
     }
 }
