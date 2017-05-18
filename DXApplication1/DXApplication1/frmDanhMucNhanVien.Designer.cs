@@ -250,6 +250,7 @@
             this.btnIn.Size = new System.Drawing.Size(75, 23);
             this.btnIn.TabIndex = 3;
             this.btnIn.Text = "In";
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // btnSua
             // 

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
 
 namespace DXApplication1
 {
@@ -191,6 +192,14 @@ namespace DXApplication1
         private void btnDong_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            Report.DanhMucKhachHang_Report report = new Report.DanhMucKhachHang_Report();
+            ReportPrintTool rpt = new ReportPrintTool(report);
+            report.CreateDocument(false);
+            report.ShowPreviewDialog();
         }
     }
 }

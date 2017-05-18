@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
 
 namespace DXApplication1
 {
@@ -211,6 +212,14 @@ namespace DXApplication1
             cbbMaModel.DataSource = qltb.MODELs;
             cbbMaModel.DisplayMember = "MAMODEL";
             cbbMaModel.ValueMember = "MAMODEL";
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            Report.DanhMucThietBi_Report report = new Report.DanhMucThietBi_Report();
+            ReportPrintTool rpt = new ReportPrintTool(report);
+            report.CreateDocument(false);
+            report.ShowPreviewDialog();
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Windows;
+using DevExpress.XtraReports.UI;
 
 namespace DXApplication1
 {
@@ -188,6 +189,14 @@ namespace DXApplication1
                 cbbNhaSanXuat.Text = dtgvDSModel.CurrentRow.Cells[1].Value.ToString();
             }
             catch { }
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            Report.DanhMucModel_Report report = new Report.DanhMucModel_Report();
+            ReportPrintTool rpt = new ReportPrintTool(report);
+            report.CreateDocument(false);
+            report.ShowPreviewDialog();
         }
     }
 }

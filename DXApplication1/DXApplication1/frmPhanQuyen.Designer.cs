@@ -39,17 +39,17 @@
             this.mANHINHTableAdapter = new DXApplication1.QLTBDataSetTableAdapters.MANHINHTableAdapter();
             this.pHANQUYENTableAdapter = new DXApplication1.QLTBDataSetTableAdapters.PHANQUYENTableAdapter();
             this.nHOMNGUOIDUNGDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mANHINHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.getPhanQuyenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.getPhanQuyenTableAdapter = new DXApplication1.QLTBDataSetTableAdapters.GetPhanQuyenTableAdapter();
             this.getPhanQuyenDataGridView = new System.Windows.Forms.DataGridView();
-            this.pHANQUYENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pHANQUYENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qLTBDataSet)).BeginInit();
@@ -67,7 +67,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1120, 34);
+            this.panelControl1.Size = new System.Drawing.Size(1344, 34);
             this.panelControl1.TabIndex = 8;
             // 
             // btnLuu
@@ -145,12 +145,30 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.nHOMNGUOIDUNGDataGridView.DataSource = this.nHOMNGUOIDUNGBindingSource;
-            this.nHOMNGUOIDUNGDataGridView.Location = new System.Drawing.Point(29, 87);
+            this.nHOMNGUOIDUNGDataGridView.Location = new System.Drawing.Point(12, 67);
             this.nHOMNGUOIDUNGDataGridView.Name = "nHOMNGUOIDUNGDataGridView";
             this.nHOMNGUOIDUNGDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.nHOMNGUOIDUNGDataGridView.Size = new System.Drawing.Size(411, 283);
+            this.nHOMNGUOIDUNGDataGridView.Size = new System.Drawing.Size(633, 445);
             this.nHOMNGUOIDUNGDataGridView.TabIndex = 11;
             this.nHOMNGUOIDUNGDataGridView.SelectionChanged += new System.EventHandler(this.nHOMNGUOIDUNGDataGridView_SelectionChanged);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "MANHOM";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã nhóm";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "TENNHOM";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tên nhóm";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "GHICHU";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Ghi chú";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // mANHINHBindingSource
             // 
@@ -177,16 +195,11 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewCheckBoxColumn1});
             this.getPhanQuyenDataGridView.DataSource = this.getPhanQuyenBindingSource;
-            this.getPhanQuyenDataGridView.Location = new System.Drawing.Point(517, 87);
+            this.getPhanQuyenDataGridView.Location = new System.Drawing.Point(732, 67);
             this.getPhanQuyenDataGridView.Name = "getPhanQuyenDataGridView";
             this.getPhanQuyenDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.getPhanQuyenDataGridView.Size = new System.Drawing.Size(457, 283);
+            this.getPhanQuyenDataGridView.Size = new System.Drawing.Size(600, 445);
             this.getPhanQuyenDataGridView.TabIndex = 12;
-            // 
-            // pHANQUYENBindingSource
-            // 
-            this.pHANQUYENBindingSource.DataMember = "PHANQUYEN";
-            this.pHANQUYENBindingSource.DataSource = this.qLTBDataSet;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -206,29 +219,16 @@
             this.dataGridViewCheckBoxColumn1.HeaderText = "Có quyền";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             // 
-            // dataGridViewTextBoxColumn1
+            // pHANQUYENBindingSource
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "MANHOM";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã nhóm";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TENNHOM";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tên nhóm";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "GHICHU";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Ghi chú";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.pHANQUYENBindingSource.DataMember = "PHANQUYEN";
+            this.pHANQUYENBindingSource.DataSource = this.qLTBDataSet;
             // 
             // frmPhanQuyen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1120, 500);
+            this.ClientSize = new System.Drawing.Size(1344, 524);
             this.Controls.Add(this.getPhanQuyenDataGridView);
             this.Controls.Add(this.nHOMNGUOIDUNGDataGridView);
             this.Controls.Add(this.panelControl1);

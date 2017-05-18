@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
 
 namespace DXApplication1
 {
@@ -207,6 +208,14 @@ namespace DXApplication1
                 txtDienGiai.Text = dtgvnhanvien.CurrentRow.Cells[7].Value.ToString();
             }
             catch { }
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            Report.DanhMucNhanVien_Report report = new Report.DanhMucNhanVien_Report();
+            ReportPrintTool rpt = new ReportPrintTool(report);
+            report.CreateDocument(false);
+            report.ShowPreviewDialog();
         }
     }
 }

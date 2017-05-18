@@ -35,15 +35,19 @@
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v16.1" />
+    <Reference Include="DevExpress.DataAccess.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.ExpressApp.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.ExpressApp.Xpo.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v16.1.Core, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Persistent.Base.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v16.1.Core" />
+    <Reference Include="DevExpress.RichEdit.v16.1.Core, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v16.1" />
     <Reference Include="DevExpress.Xpo.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v16.1" />
     <Reference Include="DevExpress.Sparkline.v16.1.Core" />
     <Reference Include="DevExpress.XtraEditors.v16.1" />
+    <Reference Include="DevExpress.XtraGauges.v16.1.Core, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -313,6 +317,54 @@
       <DependentUpon>QLTBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="QL_NguoiDung.cs" />
+    <Compile Include="Report\DanhMucBoPhan_Report.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\DanhMucBoPhan_Report.Designer.cs">
+      <DependentUpon>DanhMucBoPhan_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DanhMucGia_Report.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\DanhMucGia_Report.Designer.cs">
+      <DependentUpon>DanhMucGia_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DanhMucKhachHang_Report.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\DanhMucKhachHang_Report.Designer.cs">
+      <DependentUpon>DanhMucKhachHang_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DanhMucLinhKien_Report.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\DanhMucLinhKien_Report.Designer.cs">
+      <DependentUpon>DanhMucLinhKien_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DanhMucModel_Report.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\DanhMucModel_Report.Designer.cs">
+      <DependentUpon>DanhMucModel_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DanhMucNhanVien_Report.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\DanhMucNhanVien_Report.Designer.cs">
+      <DependentUpon>DanhMucNhanVien_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DanhMucNSX_Report.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\DanhMucNSX_Report.Designer.cs">
+      <DependentUpon>DanhMucNSX_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DanhMucThietBi_Report.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\DanhMucThietBi_Report.Designer.cs">
+      <DependentUpon>DanhMucThietBi_Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="TangMa.cs" />
     <EmbeddedResource Include="frmChiTietPhieuSuaChua.resx">
       <DependentUpon>frmChiTietPhieuSuaChua.cs</DependentUpon>
@@ -435,6 +487,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDanhSachHoaDon.resx">
       <DependentUpon>frmDanhSachHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\DanhMucBoPhan_Report.resx">
+      <DependentUpon>DanhMucBoPhan_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\DanhMucGia_Report.resx">
+      <DependentUpon>DanhMucGia_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\DanhMucKhachHang_Report.resx">
+      <DependentUpon>DanhMucKhachHang_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\DanhMucLinhKien_Report.resx">
+      <DependentUpon>DanhMucLinhKien_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\DanhMucModel_Report.resx">
+      <DependentUpon>DanhMucModel_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\DanhMucNhanVien_Report.resx">
+      <DependentUpon>DanhMucNhanVien_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\DanhMucNSX_Report.resx">
+      <DependentUpon>DanhMucNSX_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\DanhMucThietBi_Report.resx">
+      <DependentUpon>DanhMucThietBi_Report.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="QLTB.dbml.layout">
       <DependentUpon>QLTB.dbml</DependentUpon>

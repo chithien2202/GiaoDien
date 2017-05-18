@@ -30,6 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDanhMucGia));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.cbbMaPhanLoai = new System.Windows.Forms.ComboBox();
+            this.txtGhiChu = new System.Windows.Forms.TextBox();
+            this.txtDonGia = new System.Windows.Forms.TextBox();
+            this.txtTenBBG = new System.Windows.Forms.TextBox();
+            this.txtMaBBG = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnDong = new DevExpress.XtraEditors.SimpleButton();
             this.btnIn = new DevExpress.XtraEditors.SimpleButton();
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
@@ -42,16 +52,6 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtMaBBG = new System.Windows.Forms.TextBox();
-            this.txtTenBBG = new System.Windows.Forms.TextBox();
-            this.txtDonGia = new System.Windows.Forms.TextBox();
-            this.txtGhiChu = new System.Windows.Forms.TextBox();
-            this.cbbMaPhanLoai = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -81,6 +81,88 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(862, 125);
             this.panelControl1.TabIndex = 5;
+            // 
+            // cbbMaPhanLoai
+            // 
+            this.cbbMaPhanLoai.FormattingEnabled = true;
+            this.cbbMaPhanLoai.Location = new System.Drawing.Point(388, 17);
+            this.cbbMaPhanLoai.Name = "cbbMaPhanLoai";
+            this.cbbMaPhanLoai.Size = new System.Drawing.Size(173, 21);
+            this.cbbMaPhanLoai.TabIndex = 12;
+            // 
+            // txtGhiChu
+            // 
+            this.txtGhiChu.Location = new System.Drawing.Point(388, 60);
+            this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.Size = new System.Drawing.Size(173, 21);
+            this.txtGhiChu.TabIndex = 11;
+            // 
+            // txtDonGia
+            // 
+            this.txtDonGia.Location = new System.Drawing.Point(104, 60);
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.Size = new System.Drawing.Size(182, 21);
+            this.txtDonGia.TabIndex = 11;
+            // 
+            // txtTenBBG
+            // 
+            this.txtTenBBG.Location = new System.Drawing.Point(650, 17);
+            this.txtTenBBG.Name = "txtTenBBG";
+            this.txtTenBBG.Size = new System.Drawing.Size(182, 21);
+            this.txtTenBBG.TabIndex = 11;
+            // 
+            // txtMaBBG
+            // 
+            this.txtMaBBG.Enabled = false;
+            this.txtMaBBG.Location = new System.Drawing.Point(104, 17);
+            this.txtMaBBG.Name = "txtMaBBG";
+            this.txtMaBBG.Size = new System.Drawing.Size(182, 21);
+            this.txtMaBBG.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 63);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Đơn giá";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(315, 63);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(42, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Ghi chú";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(588, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Tên báo giá";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(315, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Phân loại";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Mã bảng báo giá";
             // 
             // btnDong
             // 
@@ -113,6 +195,7 @@
             this.btnIn.Size = new System.Drawing.Size(75, 23);
             this.btnIn.TabIndex = 3;
             this.btnIn.Text = "In";
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // btnSua
             // 
@@ -224,88 +307,6 @@
             this.Column5.DataPropertyName = "GHICHUBAOGIA";
             this.Column5.HeaderText = "Ghi chú";
             this.Column5.Name = "Column5";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Mã bảng báo giá";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(315, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Phân loại";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(588, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Tên báo giá";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(315, 63);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Ghi chú";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 63);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Đơn giá";
-            // 
-            // txtMaBBG
-            // 
-            this.txtMaBBG.Enabled = false;
-            this.txtMaBBG.Location = new System.Drawing.Point(104, 17);
-            this.txtMaBBG.Name = "txtMaBBG";
-            this.txtMaBBG.Size = new System.Drawing.Size(182, 21);
-            this.txtMaBBG.TabIndex = 11;
-            // 
-            // txtTenBBG
-            // 
-            this.txtTenBBG.Location = new System.Drawing.Point(650, 17);
-            this.txtTenBBG.Name = "txtTenBBG";
-            this.txtTenBBG.Size = new System.Drawing.Size(182, 21);
-            this.txtTenBBG.TabIndex = 11;
-            // 
-            // txtDonGia
-            // 
-            this.txtDonGia.Location = new System.Drawing.Point(104, 60);
-            this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(182, 21);
-            this.txtDonGia.TabIndex = 11;
-            // 
-            // txtGhiChu
-            // 
-            this.txtGhiChu.Location = new System.Drawing.Point(388, 60);
-            this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(173, 21);
-            this.txtGhiChu.TabIndex = 11;
-            // 
-            // cbbMaPhanLoai
-            // 
-            this.cbbMaPhanLoai.FormattingEnabled = true;
-            this.cbbMaPhanLoai.Location = new System.Drawing.Point(388, 17);
-            this.cbbMaPhanLoai.Name = "cbbMaPhanLoai";
-            this.cbbMaPhanLoai.Size = new System.Drawing.Size(173, 21);
-            this.cbbMaPhanLoai.TabIndex = 12;
             // 
             // frmDanhMucGia
             // 
