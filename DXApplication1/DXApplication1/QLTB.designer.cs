@@ -290,10 +290,6 @@ namespace DXApplication1
 		
 		private System.Nullable<bool> _XOA;
 		
-		private EntitySet<CHITIETSUACHUA> _CHITIETSUACHUAs;
-		
-		private EntityRef<PHANLOAI> _PHANLOAI;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -314,8 +310,6 @@ namespace DXApplication1
 		
 		public BANGBAOGIA()
 		{
-			this._CHITIETSUACHUAs = new EntitySet<CHITIETSUACHUA>(new Action<CHITIETSUACHUA>(this.attach_CHITIETSUACHUAs), new Action<CHITIETSUACHUA>(this.detach_CHITIETSUACHUAs));
-			this._PHANLOAI = default(EntityRef<PHANLOAI>);
 			OnCreated();
 		}
 		
@@ -350,10 +344,6 @@ namespace DXApplication1
 			{
 				if ((this._MAPHANLOAI != value))
 				{
-					if (this._PHANLOAI.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnMAPHANLOAIChanging(value);
 					this.SendPropertyChanging();
 					this._MAPHANLOAI = value;
@@ -443,53 +433,6 @@ namespace DXApplication1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BANGBAOGIA_CHITIETSUACHUA", Storage="_CHITIETSUACHUAs", ThisKey="MABG", OtherKey="GIATHANH")]
-		public EntitySet<CHITIETSUACHUA> CHITIETSUACHUAs
-		{
-			get
-			{
-				return this._CHITIETSUACHUAs;
-			}
-			set
-			{
-				this._CHITIETSUACHUAs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PHANLOAI_BANGBAOGIA", Storage="_PHANLOAI", ThisKey="MAPHANLOAI", OtherKey="MAPHANLOAI", IsForeignKey=true)]
-		public PHANLOAI PHANLOAI
-		{
-			get
-			{
-				return this._PHANLOAI.Entity;
-			}
-			set
-			{
-				PHANLOAI previousValue = this._PHANLOAI.Entity;
-				if (((previousValue != value) 
-							|| (this._PHANLOAI.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._PHANLOAI.Entity = null;
-						previousValue.BANGBAOGIAs.Remove(this);
-					}
-					this._PHANLOAI.Entity = value;
-					if ((value != null))
-					{
-						value.BANGBAOGIAs.Add(this);
-						this._MAPHANLOAI = value.MAPHANLOAI;
-					}
-					else
-					{
-						this._MAPHANLOAI = default(string);
-					}
-					this.SendPropertyChanged("PHANLOAI");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -508,18 +451,6 @@ namespace DXApplication1
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_CHITIETSUACHUAs(CHITIETSUACHUA entity)
-		{
-			this.SendPropertyChanging();
-			entity.BANGBAOGIA = this;
-		}
-		
-		private void detach_CHITIETSUACHUAs(CHITIETSUACHUA entity)
-		{
-			this.SendPropertyChanging();
-			entity.BANGBAOGIA = null;
 		}
 	}
 	
@@ -1314,9 +1245,9 @@ namespace DXApplication1
 		
 		private string _MANHANVIENNHAN;
 		
-		private string _GIATHANH;
-		
 		private int _STT;
+		
+		private System.Nullable<decimal> _GIATHANH;
 		
 		private System.Nullable<System.DateTime> _NGAYSUA;
 		
@@ -1328,13 +1259,9 @@ namespace DXApplication1
 		
 		private string _MALINHKIEN;
 		
-		private EntityRef<BANGBAOGIA> _BANGBAOGIA;
-		
 		private EntityRef<LINHKIEN> _LINHKIEN;
 		
 		private EntityRef<NHANVIEN> _NHANVIEN;
-		
-		private EntityRef<PHIEUSUACHUA> _PHIEUSUACHUA;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1348,10 +1275,10 @@ namespace DXApplication1
     partial void OnMANHANVIENSUAChanged();
     partial void OnMANHANVIENNHANChanging(string value);
     partial void OnMANHANVIENNHANChanged();
-    partial void OnGIATHANHChanging(string value);
-    partial void OnGIATHANHChanged();
     partial void OnSTTChanging(int value);
     partial void OnSTTChanged();
+    partial void OnGIATHANHChanging(System.Nullable<decimal> value);
+    partial void OnGIATHANHChanged();
     partial void OnNGAYSUAChanging(System.Nullable<System.DateTime> value);
     partial void OnNGAYSUAChanged();
     partial void OnNGAYSUAXONGChanging(System.Nullable<System.DateTime> value);
@@ -1366,10 +1293,8 @@ namespace DXApplication1
 		
 		public CHITIETSUACHUA()
 		{
-			this._BANGBAOGIA = default(EntityRef<BANGBAOGIA>);
 			this._LINHKIEN = default(EntityRef<LINHKIEN>);
 			this._NHANVIEN = default(EntityRef<NHANVIEN>);
-			this._PHIEUSUACHUA = default(EntityRef<PHIEUSUACHUA>);
 			OnCreated();
 		}
 		
@@ -1404,10 +1329,6 @@ namespace DXApplication1
 			{
 				if ((this._MAPSC != value))
 				{
-					if (this._PHIEUSUACHUA.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnMAPSCChanging(value);
 					this.SendPropertyChanging();
 					this._MAPSC = value;
@@ -1461,30 +1382,6 @@ namespace DXApplication1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIATHANH", DbType="Char(10)")]
-		public string GIATHANH
-		{
-			get
-			{
-				return this._GIATHANH;
-			}
-			set
-			{
-				if ((this._GIATHANH != value))
-				{
-					if (this._BANGBAOGIA.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnGIATHANHChanging(value);
-					this.SendPropertyChanging();
-					this._GIATHANH = value;
-					this.SendPropertyChanged("GIATHANH");
-					this.OnGIATHANHChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STT", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
 		public int STT
 		{
@@ -1501,6 +1398,26 @@ namespace DXApplication1
 					this._STT = value;
 					this.SendPropertyChanged("STT");
 					this.OnSTTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIATHANH", DbType="Money")]
+		public System.Nullable<decimal> GIATHANH
+		{
+			get
+			{
+				return this._GIATHANH;
+			}
+			set
+			{
+				if ((this._GIATHANH != value))
+				{
+					this.OnGIATHANHChanging(value);
+					this.SendPropertyChanging();
+					this._GIATHANH = value;
+					this.SendPropertyChanged("GIATHANH");
+					this.OnGIATHANHChanged();
 				}
 			}
 		}
@@ -1609,40 +1526,6 @@ namespace DXApplication1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="BANGBAOGIA_CHITIETSUACHUA", Storage="_BANGBAOGIA", ThisKey="GIATHANH", OtherKey="MABG", IsForeignKey=true)]
-		public BANGBAOGIA BANGBAOGIA
-		{
-			get
-			{
-				return this._BANGBAOGIA.Entity;
-			}
-			set
-			{
-				BANGBAOGIA previousValue = this._BANGBAOGIA.Entity;
-				if (((previousValue != value) 
-							|| (this._BANGBAOGIA.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._BANGBAOGIA.Entity = null;
-						previousValue.CHITIETSUACHUAs.Remove(this);
-					}
-					this._BANGBAOGIA.Entity = value;
-					if ((value != null))
-					{
-						value.CHITIETSUACHUAs.Add(this);
-						this._GIATHANH = value.MABG;
-					}
-					else
-					{
-						this._GIATHANH = default(string);
-					}
-					this.SendPropertyChanged("BANGBAOGIA");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LINHKIEN_CHITIETSUACHUA", Storage="_LINHKIEN", ThisKey="MALINHKIEN", OtherKey="MALINHKIEN", IsForeignKey=true)]
 		public LINHKIEN LINHKIEN
 		{
@@ -1707,40 +1590,6 @@ namespace DXApplication1
 						this._MANHANVIENNHAN = default(string);
 					}
 					this.SendPropertyChanged("NHANVIEN");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PHIEUSUACHUA_CHITIETSUACHUA", Storage="_PHIEUSUACHUA", ThisKey="MAPSC", OtherKey="MAPSC", IsForeignKey=true)]
-		public PHIEUSUACHUA PHIEUSUACHUA
-		{
-			get
-			{
-				return this._PHIEUSUACHUA.Entity;
-			}
-			set
-			{
-				PHIEUSUACHUA previousValue = this._PHIEUSUACHUA.Entity;
-				if (((previousValue != value) 
-							|| (this._PHIEUSUACHUA.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._PHIEUSUACHUA.Entity = null;
-						previousValue.CHITIETSUACHUAs.Remove(this);
-					}
-					this._PHIEUSUACHUA.Entity = value;
-					if ((value != null))
-					{
-						value.CHITIETSUACHUAs.Add(this);
-						this._MAPSC = value.MAPSC;
-					}
-					else
-					{
-						this._MAPSC = default(string);
-					}
-					this.SendPropertyChanged("PHIEUSUACHUA");
 				}
 			}
 		}
@@ -4237,8 +4086,6 @@ namespace DXApplication1
 		
 		private string _GHICHU;
 		
-		private EntitySet<BANGBAOGIA> _BANGBAOGIAs;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -4253,7 +4100,6 @@ namespace DXApplication1
 		
 		public PHANLOAI()
 		{
-			this._BANGBAOGIAs = new EntitySet<BANGBAOGIA>(new Action<BANGBAOGIA>(this.attach_BANGBAOGIAs), new Action<BANGBAOGIA>(this.detach_BANGBAOGIAs));
 			OnCreated();
 		}
 		
@@ -4317,19 +4163,6 @@ namespace DXApplication1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PHANLOAI_BANGBAOGIA", Storage="_BANGBAOGIAs", ThisKey="MAPHANLOAI", OtherKey="MAPHANLOAI")]
-		public EntitySet<BANGBAOGIA> BANGBAOGIAs
-		{
-			get
-			{
-				return this._BANGBAOGIAs;
-			}
-			set
-			{
-				this._BANGBAOGIAs.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -4348,18 +4181,6 @@ namespace DXApplication1
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_BANGBAOGIAs(BANGBAOGIA entity)
-		{
-			this.SendPropertyChanging();
-			entity.PHANLOAI = this;
-		}
-		
-		private void detach_BANGBAOGIAs(BANGBAOGIA entity)
-		{
-			this.SendPropertyChanging();
-			entity.PHANLOAI = null;
 		}
 	}
 	
@@ -4587,8 +4408,6 @@ namespace DXApplication1
 		
 		private System.Nullable<bool> _XOA;
 		
-		private EntitySet<CHITIETSUACHUA> _CHITIETSUACHUAs;
-		
 		private EntitySet<HOADON> _HOADONs;
 		
 		private EntityRef<NHANVIEN> _NHANVIEN;
@@ -4633,7 +4452,6 @@ namespace DXApplication1
 		
 		public PHIEUSUACHUA()
 		{
-			this._CHITIETSUACHUAs = new EntitySet<CHITIETSUACHUA>(new Action<CHITIETSUACHUA>(this.attach_CHITIETSUACHUAs), new Action<CHITIETSUACHUA>(this.detach_CHITIETSUACHUAs));
 			this._HOADONs = new EntitySet<HOADON>(new Action<HOADON>(this.attach_HOADONs), new Action<HOADON>(this.detach_HOADONs));
 			this._NHANVIEN = default(EntityRef<NHANVIEN>);
 			this._NHANVIEN1 = default(EntityRef<NHANVIEN>);
@@ -4918,19 +4736,6 @@ namespace DXApplication1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PHIEUSUACHUA_CHITIETSUACHUA", Storage="_CHITIETSUACHUAs", ThisKey="MAPSC", OtherKey="MAPSC")]
-		public EntitySet<CHITIETSUACHUA> CHITIETSUACHUAs
-		{
-			get
-			{
-				return this._CHITIETSUACHUAs;
-			}
-			set
-			{
-				this._CHITIETSUACHUAs.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PHIEUSUACHUA_HOADON", Storage="_HOADONs", ThisKey="MAPSC", OtherKey="MAPSC")]
 		public EntitySet<HOADON> HOADONs
 		{
@@ -5098,18 +4903,6 @@ namespace DXApplication1
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_CHITIETSUACHUAs(CHITIETSUACHUA entity)
-		{
-			this.SendPropertyChanging();
-			entity.PHIEUSUACHUA = this;
-		}
-		
-		private void detach_CHITIETSUACHUAs(CHITIETSUACHUA entity)
-		{
-			this.SendPropertyChanging();
-			entity.PHIEUSUACHUA = null;
 		}
 		
 		private void attach_HOADONs(HOADON entity)

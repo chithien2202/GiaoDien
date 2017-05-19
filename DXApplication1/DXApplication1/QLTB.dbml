@@ -8,8 +8,6 @@
       <Column Name="DONGIA" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="GHICHUBAOGIA" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="XOA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="BANGBAOGIA_CHITIETSUACHUA" Member="CHITIETSUACHUAs" ThisKey="MABG" OtherKey="GIATHANH" Type="CHITIETSUACHUA" />
-      <Association Name="PHANLOAI_BANGBAOGIA" Member="PHANLOAI" ThisKey="MAPHANLOAI" OtherKey="MAPHANLOAI" Type="PHANLOAI" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.THIETBI" Member="THIETBIs">
@@ -55,17 +53,15 @@
       <Column Name="MAPSC" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
       <Column Name="MANHANVIENSUA" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Column Name="MANHANVIENNHAN" Type="System.String" DbType="Char(10)" CanBeNull="true" />
-      <Column Name="GIATHANH" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GIATHANH" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="NGAYSUA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="NGAYSUAXONG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="GHICHUCTSC" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="MALINHKIEN" Type="System.String" DbType="Char(10)" CanBeNull="true" />
-      <Association Name="BANGBAOGIA_CHITIETSUACHUA" Member="BANGBAOGIA" ThisKey="GIATHANH" OtherKey="MABG" Type="BANGBAOGIA" IsForeignKey="true" />
       <Association Name="LINHKIEN_CHITIETSUACHUA" Member="LINHKIEN" ThisKey="MALINHKIEN" OtherKey="MALINHKIEN" Type="LINHKIEN" IsForeignKey="true" />
       <Association Name="NHANVIEN_CHITIETSUACHUA" Member="NHANVIEN" ThisKey="MANHANVIENNHAN" OtherKey="MANHANVIEN" Type="NHANVIEN" IsForeignKey="true" />
-      <Association Name="PHIEUSUACHUA_CHITIETSUACHUA" Member="PHIEUSUACHUA" ThisKey="MAPSC" OtherKey="MAPSC" Type="PHIEUSUACHUA" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.HOADON" Member="HOADONs">
@@ -192,7 +188,6 @@
       <Column Name="MAPHANLOAI" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TENPHANLOAI" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
       <Column Name="GHICHU" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Association Name="PHANLOAI_BANGBAOGIA" Member="BANGBAOGIAs" ThisKey="MAPHANLOAI" OtherKey="MAPHANLOAI" Type="BANGBAOGIA" />
     </Type>
   </Table>
   <Table Name="dbo.PHANQUYEN" Member="PHANQUYENs">
@@ -219,7 +214,6 @@
       <Column Name="TONGTIEN" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="XOA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="PHIEUSUACHUA_CHITIETSUACHUA" Member="CHITIETSUACHUAs" ThisKey="MAPSC" OtherKey="MAPSC" Type="CHITIETSUACHUA" />
       <Association Name="PHIEUSUACHUA_HOADON" Member="HOADONs" ThisKey="MAPSC" OtherKey="MAPSC" Type="HOADON" />
       <Association Name="NHANVIEN_PHIEUSUACHUA" Member="NHANVIEN" ThisKey="MANHANVIENTIEPNHAN" OtherKey="MANHANVIEN" Type="NHANVIEN" IsForeignKey="true" />
       <Association Name="NHANVIEN_PHIEUSUACHUA1" Member="NHANVIEN1" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="NHANVIEN" IsForeignKey="true" />

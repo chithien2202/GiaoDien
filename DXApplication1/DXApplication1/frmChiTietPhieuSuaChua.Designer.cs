@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietPhieuSuaChua));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.cbbMaPSC = new System.Windows.Forms.ComboBox();
             this.cbbMaLinhKien = new System.Windows.Forms.ComboBox();
             this.cbbBangBaoGia = new System.Windows.Forms.ComboBox();
             this.chkBaoHanh = new System.Windows.Forms.CheckBox();
@@ -38,7 +39,6 @@
             this.dtpNgaySua = new System.Windows.Forms.DateTimePicker();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txtGiaThanh = new System.Windows.Forms.TextBox();
-            this.cbbMaPSC = new DevExpress.XtraEditors.DateEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
@@ -48,17 +48,17 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.dtgvChiTietPSC = new System.Windows.Forms.DataGridView();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
@@ -101,10 +101,13 @@
             this.dateEdit7 = new DevExpress.XtraEditors.DateEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
+            this.btnĐóng = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSua = new DevExpress.XtraEditors.SimpleButton();
+            this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbMaPSC.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbMaPSC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvChiTietPSC)).BeginInit();
@@ -131,12 +134,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit6.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit7.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit7.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
+            this.groupControl1.Controls.Add(this.cbbMaPSC);
             this.groupControl1.Controls.Add(this.cbbMaLinhKien);
             this.groupControl1.Controls.Add(this.cbbBangBaoGia);
             this.groupControl1.Controls.Add(this.chkBaoHanh);
@@ -145,7 +151,6 @@
             this.groupControl1.Controls.Add(this.dtpNgaySua);
             this.groupControl1.Controls.Add(this.labelControl5);
             this.groupControl1.Controls.Add(this.txtGiaThanh);
-            this.groupControl1.Controls.Add(this.cbbMaPSC);
             this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Controls.Add(this.txtGhiChu);
             this.groupControl1.Controls.Add(this.labelControl7);
@@ -155,10 +160,18 @@
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Location = new System.Drawing.Point(6, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1105, 180);
+            this.groupControl1.Size = new System.Drawing.Size(1342, 180);
             this.groupControl1.TabIndex = 18;
             this.groupControl1.Tag = "";
             this.groupControl1.Text = "Thông tin chi tiết sửa chữa";
+            // 
+            // cbbMaPSC
+            // 
+            this.cbbMaPSC.FormattingEnabled = true;
+            this.cbbMaPSC.Location = new System.Drawing.Point(160, 38);
+            this.cbbMaPSC.Name = "cbbMaPSC";
+            this.cbbMaPSC.Size = new System.Drawing.Size(200, 21);
+            this.cbbMaPSC.TabIndex = 40;
             // 
             // cbbMaLinhKien
             // 
@@ -229,21 +242,6 @@
             this.txtGiaThanh.Name = "txtGiaThanh";
             this.txtGiaThanh.Size = new System.Drawing.Size(200, 22);
             this.txtGiaThanh.TabIndex = 34;
-            // 
-            // cbbMaPSC
-            // 
-            this.cbbMaPSC.EditValue = null;
-            this.cbbMaPSC.Enabled = false;
-            this.cbbMaPSC.Location = new System.Drawing.Point(161, 38);
-            this.cbbMaPSC.Name = "cbbMaPSC";
-            this.cbbMaPSC.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbMaPSC.Properties.Appearance.Options.UseFont = true;
-            this.cbbMaPSC.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbbMaPSC.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbbMaPSC.Size = new System.Drawing.Size(199, 22);
-            this.cbbMaPSC.TabIndex = 33;
             // 
             // labelControl6
             // 
@@ -319,87 +317,101 @@
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
             this.groupControl2.Controls.Add(this.dtgvChiTietPSC);
-            this.groupControl2.Location = new System.Drawing.Point(6, 198);
+            this.groupControl2.Location = new System.Drawing.Point(6, 256);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1105, 122);
+            this.groupControl2.Size = new System.Drawing.Size(1342, 128);
             this.groupControl2.TabIndex = 34;
             this.groupControl2.Text = "Danh sách thông tin chi tiết phiếu sửa chữa";
             // 
             // dtgvChiTietPSC
             // 
+            this.dtgvChiTietPSC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvChiTietPSC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvChiTietPSC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column5,
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4,
-            this.Column5,
             this.Column6,
             this.Column7,
             this.Column8,
+            this.Column11,
             this.Column9,
-            this.Column10,
-            this.Column11});
+            this.Column10});
             this.dtgvChiTietPSC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvChiTietPSC.Location = new System.Drawing.Point(2, 20);
             this.dtgvChiTietPSC.Name = "dtgvChiTietPSC";
-            this.dtgvChiTietPSC.Size = new System.Drawing.Size(1101, 100);
+            this.dtgvChiTietPSC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvChiTietPSC.Size = new System.Drawing.Size(1338, 106);
             this.dtgvChiTietPSC.TabIndex = 0;
+            this.dtgvChiTietPSC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvChiTietPSC_CellClick);
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "STT";
+            this.Column5.HeaderText = "STT";
+            this.Column5.Name = "Column5";
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "MACTSC";
+            this.Column1.DataPropertyName = "MACTSC";
+            this.Column1.HeaderText = "Mã CTSC";
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "MAPSC";
+            this.Column2.DataPropertyName = "MAPSC";
+            this.Column2.HeaderText = "Mã PSC";
             this.Column2.Name = "Column2";
             // 
             // Column3
             // 
-            this.Column3.HeaderText = "MANHANVIENSUA";
+            this.Column3.DataPropertyName = "MANHANVIENSUA";
+            this.Column3.HeaderText = "Mã nhân viên sửa";
             this.Column3.Name = "Column3";
             // 
             // Column4
             // 
-            this.Column4.HeaderText = "MANHANVIENNHAN";
+            this.Column4.DataPropertyName = "MANHANVIENNHAN";
+            this.Column4.HeaderText = "Mã nhân viên nhận";
             this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "GIATHANH";
-            this.Column5.Name = "Column5";
             // 
             // Column6
             // 
-            this.Column6.HeaderText = "STT";
+            this.Column6.DataPropertyName = "GIATHANH";
+            this.Column6.HeaderText = "Giá thành";
             this.Column6.Name = "Column6";
             // 
             // Column7
             // 
-            this.Column7.HeaderText = "NGAYSUA";
+            this.Column7.DataPropertyName = "NGAYSUA";
+            this.Column7.HeaderText = "Ngày sửa";
             this.Column7.Name = "Column7";
             // 
             // Column8
             // 
-            this.Column8.HeaderText = "NGAYSUAXONG";
+            this.Column8.DataPropertyName = "NGAYSUAXONG";
+            this.Column8.HeaderText = "Ngày sửa xong";
             this.Column8.Name = "Column8";
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "MALINHKIEN";
+            this.Column11.HeaderText = "Mã linh kiện";
+            this.Column11.Name = "Column11";
             // 
             // Column9
             // 
-            this.Column9.HeaderText = "TRANGTHAI";
+            this.Column9.DataPropertyName = "TRANGTHAI";
+            this.Column9.HeaderText = "Trạng thái";
             this.Column9.Name = "Column9";
             // 
             // Column10
             // 
-            this.Column10.HeaderText = "GHICHUCTSC";
+            this.Column10.DataPropertyName = "GHICHUCTSC";
+            this.Column10.HeaderText = "Ghi chú";
             this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "MALINHKIEN";
-            this.Column11.Name = "Column11";
             // 
             // groupControl5
             // 
@@ -407,9 +419,9 @@
             this.groupControl5.AppearanceCaption.Options.UseFont = true;
             this.groupControl5.Controls.Add(this.xtraTabControl1);
             this.groupControl5.Controls.Add(this.panelControl2);
-            this.groupControl5.Location = new System.Drawing.Point(8, 338);
+            this.groupControl5.Location = new System.Drawing.Point(6, 390);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(1105, 155);
+            this.groupControl5.Size = new System.Drawing.Size(1342, 155);
             this.groupControl5.TabIndex = 17;
             this.groupControl5.Text = "Danh sách phiếu sửa chữa";
             // 
@@ -419,7 +431,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(2, 51);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1101, 102);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1338, 102);
             this.xtraTabControl1.TabIndex = 8;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -430,7 +442,7 @@
             // 
             this.xtraTabPage1.Controls.Add(this.gridControl2);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1095, 74);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1332, 74);
             this.xtraTabPage1.Text = "Thông tin chung";
             // 
             // gridControl2
@@ -439,7 +451,7 @@
             this.gridControl2.Location = new System.Drawing.Point(0, 0);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1095, 74);
+            this.gridControl2.Size = new System.Drawing.Size(1332, 74);
             this.gridControl2.TabIndex = 2;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -520,7 +532,7 @@
             // 
             this.xtraTabPage2.Controls.Add(this.gridControl3);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1095, 74);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1332, 74);
             this.xtraTabPage2.Text = "Thông tin chi tiết";
             // 
             // gridControl3
@@ -534,7 +546,7 @@
             this.repositoryItemDateEdit2,
             this.repositoryItemComboBox4});
             this.gridControl3.ShowOnlyPredefinedDetails = true;
-            this.gridControl3.Size = new System.Drawing.Size(1095, 74);
+            this.gridControl3.Size = new System.Drawing.Size(1332, 74);
             this.gridControl3.TabIndex = 1;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -646,7 +658,7 @@
             // 
             this.xtraTabPage3.Controls.Add(this.gridControl4);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1095, 74);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1332, 74);
             this.xtraTabPage3.Text = "Thông tin gọi khách hàng";
             // 
             // gridControl4
@@ -655,7 +667,7 @@
             this.gridControl4.Location = new System.Drawing.Point(0, 0);
             this.gridControl4.MainView = this.gridView4;
             this.gridControl4.Name = "gridControl4";
-            this.gridControl4.Size = new System.Drawing.Size(1095, 74);
+            this.gridControl4.Size = new System.Drawing.Size(1332, 74);
             this.gridControl4.TabIndex = 0;
             this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -704,7 +716,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Location = new System.Drawing.Point(2, 20);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1101, 31);
+            this.panelControl2.Size = new System.Drawing.Size(1338, 31);
             this.panelControl2.TabIndex = 7;
             // 
             // simpleButton9
@@ -780,11 +792,93 @@
             this.labelControl10.TabIndex = 2;
             this.labelControl10.Text = "Từ ";
             // 
+            // groupControl3
+            // 
+            this.groupControl3.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupControl3.AppearanceCaption.Options.UseFont = true;
+            this.groupControl3.Controls.Add(this.btnXoa);
+            this.groupControl3.Controls.Add(this.btnĐóng);
+            this.groupControl3.Controls.Add(this.btnSua);
+            this.groupControl3.Controls.Add(this.btnThem);
+            this.groupControl3.Location = new System.Drawing.Point(6, 198);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(509, 52);
+            this.groupControl3.TabIndex = 14;
+            this.groupControl3.Text = "Tác vụ chi tiết phiếu sửa chữa";
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnXoa.Appearance.BackColor2 = System.Drawing.Color.Navy;
+            this.btnXoa.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnXoa.Appearance.Options.UseBackColor = true;
+            this.btnXoa.Appearance.Options.UseFont = true;
+            this.btnXoa.Appearance.Options.UseForeColor = true;
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+            this.btnXoa.Location = new System.Drawing.Point(283, 24);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.TabIndex = 11;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnĐóng
+            // 
+            this.btnĐóng.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnĐóng.Appearance.BackColor2 = System.Drawing.Color.Navy;
+            this.btnĐóng.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnĐóng.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnĐóng.Appearance.Options.UseBackColor = true;
+            this.btnĐóng.Appearance.Options.UseFont = true;
+            this.btnĐóng.Appearance.Options.UseForeColor = true;
+            this.btnĐóng.Image = ((System.Drawing.Image)(resources.GetObject("btnĐóng.Image")));
+            this.btnĐóng.Location = new System.Drawing.Point(400, 24);
+            this.btnĐóng.Name = "btnĐóng";
+            this.btnĐóng.Size = new System.Drawing.Size(88, 23);
+            this.btnĐóng.TabIndex = 10;
+            this.btnĐóng.Text = "Đóng";
+            // 
+            // btnSua
+            // 
+            this.btnSua.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnSua.Appearance.BackColor2 = System.Drawing.Color.Navy;
+            this.btnSua.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnSua.Appearance.Options.UseBackColor = true;
+            this.btnSua.Appearance.Options.UseFont = true;
+            this.btnSua.Appearance.Options.UseForeColor = true;
+            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
+            this.btnSua.Location = new System.Drawing.Point(150, 24);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(75, 23);
+            this.btnSua.TabIndex = 8;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnThem.Appearance.BackColor2 = System.Drawing.Color.Navy;
+            this.btnThem.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnThem.Appearance.Options.UseBackColor = true;
+            this.btnThem.Appearance.Options.UseFont = true;
+            this.btnThem.Appearance.Options.UseForeColor = true;
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
+            this.btnThem.Location = new System.Drawing.Point(5, 24);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(98, 23);
+            this.btnThem.TabIndex = 6;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // frmChiTietPhieuSuaChua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1123, 505);
+            this.ClientSize = new System.Drawing.Size(1360, 548);
+            this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.groupControl5);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
@@ -794,8 +888,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbMaPSC.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbMaPSC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvChiTietPSC)).EndInit();
@@ -823,6 +915,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit6.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit7.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit7.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -837,7 +931,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.DateEdit cbbMaPSC;
         private System.Windows.Forms.CheckBox chkBaoHanh;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private System.Windows.Forms.DateTimePicker dtpNgaySuaXong;
@@ -846,17 +939,6 @@
         private System.Windows.Forms.TextBox txtGiaThanh;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private System.Windows.Forms.DataGridView dtgvChiTietPSC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private DevExpress.XtraEditors.GroupControl groupControl5;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
@@ -901,5 +983,22 @@
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private System.Windows.Forms.ComboBox cbbMaLinhKien;
         private System.Windows.Forms.ComboBox cbbBangBaoGia;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private DevExpress.XtraEditors.SimpleButton btnXoa;
+        private DevExpress.XtraEditors.SimpleButton btnĐóng;
+        private DevExpress.XtraEditors.SimpleButton btnSua;
+        private DevExpress.XtraEditors.SimpleButton btnThem;
+        private System.Windows.Forms.ComboBox cbbMaPSC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
     }
 }
