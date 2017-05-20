@@ -79,6 +79,7 @@
             this.username = new DevExpress.XtraBars.BarHeaderItem();
             this.btnCauHinh = new DevExpress.XtraBars.BarButtonItem();
             this.btnQuanLySuaChuaBaoHanh2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCTPhieuSuaChua = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -98,7 +99,7 @@
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.btnCTPhieuSuaChua = new DevExpress.XtraBars.BarButtonItem();
+            this.btnChiTietPhieuSuaChua_NVKyThuat = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.SuspendLayout();
@@ -158,9 +159,10 @@
             this.username,
             this.btnCauHinh,
             this.btnQuanLySuaChuaBaoHanh2,
-            this.btnCTPhieuSuaChua});
+            this.btnCTPhieuSuaChua,
+            this.btnChiTietPhieuSuaChua_NVKyThuat});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 80;
+            this.ribbonControl1.MaxItemId = 81;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -586,6 +588,17 @@
             this.btnQuanLySuaChuaBaoHanh2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnQuanLySuaChuaBaoHanh2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQuanLySuaChuaBaoHanh2_ItemClick);
             // 
+            // btnCTPhieuSuaChua
+            // 
+            this.btnCTPhieuSuaChua.Caption = "Chi tiết phiếu sửa chữa.";
+            this.btnCTPhieuSuaChua.Glyph = ((System.Drawing.Image)(resources.GetObject("btnCTPhieuSuaChua.Glyph")));
+            this.btnCTPhieuSuaChua.Id = 79;
+            this.btnCTPhieuSuaChua.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnCTPhieuSuaChua.LargeGlyph")));
+            this.btnCTPhieuSuaChua.Name = "btnCTPhieuSuaChua";
+            this.btnCTPhieuSuaChua.Tag = "MH029     ";
+            this.btnCTPhieuSuaChua.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btnCTPhieuSuaChua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCTPhieuSuaChua_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -669,6 +682,7 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.btnHoaDonThanhToan);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnQuanLySuaChuaBaoHanh2);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnCTPhieuSuaChua);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnChiTietPhieuSuaChua_NVKyThuat);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Nghiệp vụ xử lý";
             // 
@@ -761,16 +775,16 @@
             this.xtraTabControl1.Size = new System.Drawing.Size(1130, 523);
             this.xtraTabControl1.TabIndex = 7;
             // 
-            // btnCTPhieuSuaChua
+            // btnChiTietPhieuSuaChua_NVKyThuat
             // 
-            this.btnCTPhieuSuaChua.Caption = "Chi tiết phiếu sửa chữa";
-            this.btnCTPhieuSuaChua.Glyph = ((System.Drawing.Image)(resources.GetObject("btnCTPhieuSuaChua.Glyph")));
-            this.btnCTPhieuSuaChua.Id = 79;
-            this.btnCTPhieuSuaChua.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnCTPhieuSuaChua.LargeGlyph")));
-            this.btnCTPhieuSuaChua.Name = "btnCTPhieuSuaChua";
-            this.btnCTPhieuSuaChua.Tag = "MH029     ";
-            this.btnCTPhieuSuaChua.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.btnCTPhieuSuaChua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCTPhieuSuaChua_ItemClick);
+            this.btnChiTietPhieuSuaChua_NVKyThuat.Caption = "Chi tiết phiếu sửa chữa";
+            this.btnChiTietPhieuSuaChua_NVKyThuat.Glyph = ((System.Drawing.Image)(resources.GetObject("btnChiTietPhieuSuaChua_NVKyThuat.Glyph")));
+            this.btnChiTietPhieuSuaChua_NVKyThuat.Id = 80;
+            this.btnChiTietPhieuSuaChua_NVKyThuat.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnChiTietPhieuSuaChua_NVKyThuat.LargeGlyph")));
+            this.btnChiTietPhieuSuaChua_NVKyThuat.Name = "btnChiTietPhieuSuaChua_NVKyThuat";
+            this.btnChiTietPhieuSuaChua_NVKyThuat.Tag = "MH030     ";
+            this.btnChiTietPhieuSuaChua_NVKyThuat.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btnChiTietPhieuSuaChua_NVKyThuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnChiTietPhieuSuaChua_NVKyThuat_ItemClick);
             // 
             // frmMain
             // 
@@ -869,6 +883,7 @@
         private DevExpress.XtraBars.BarButtonItem btnCauHinh;
         private DevExpress.XtraBars.BarButtonItem btnQuanLySuaChuaBaoHanh2;
         private DevExpress.XtraBars.BarButtonItem btnCTPhieuSuaChua;
+        private DevExpress.XtraBars.BarButtonItem btnChiTietPhieuSuaChua_NVKyThuat;
     }
 }
 

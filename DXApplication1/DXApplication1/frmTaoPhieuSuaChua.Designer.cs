@@ -45,14 +45,12 @@
             this.chkTrangThai = new System.Windows.Forms.CheckBox();
             this.cbbNhanVienTiepNhan = new System.Windows.Forms.ComboBox();
             this.cbbMaPhieuTiepNhan = new System.Windows.Forms.ComboBox();
-            this.cbbNguoiGoi = new System.Windows.Forms.ComboBox();
             this.cbbNhanVienLap = new System.Windows.Forms.ComboBox();
             this.dtpNgayBatDau = new System.Windows.Forms.DateTimePicker();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtTongTien = new DevExpress.XtraEditors.TextEdit();
             this.txtThongTinSuaChua = new DevExpress.XtraEditors.TextEdit();
@@ -103,6 +101,7 @@
             this.dateEdit7 = new DevExpress.XtraEditors.DateEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.chkDaGoi = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -285,11 +284,11 @@
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
+            this.groupControl1.Controls.Add(this.chkDaGoi);
             this.groupControl1.Controls.Add(this.chkDongY);
             this.groupControl1.Controls.Add(this.chkTrangThai);
             this.groupControl1.Controls.Add(this.cbbNhanVienTiepNhan);
             this.groupControl1.Controls.Add(this.cbbMaPhieuTiepNhan);
-            this.groupControl1.Controls.Add(this.cbbNguoiGoi);
             this.groupControl1.Controls.Add(this.txtGhiChu);
             this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.cbbNhanVienLap);
@@ -300,7 +299,6 @@
             this.groupControl1.Controls.Add(this.labelControl13);
             this.groupControl1.Controls.Add(this.labelControl8);
             this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Controls.Add(this.labelControl5);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.txtTongTien);
             this.groupControl1.Controls.Add(this.txtThongTinSuaChua);
@@ -316,7 +314,7 @@
             // chkDongY
             // 
             this.chkDongY.AutoSize = true;
-            this.chkDongY.Location = new System.Drawing.Point(943, 117);
+            this.chkDongY.Location = new System.Drawing.Point(943, 120);
             this.chkDongY.Name = "chkDongY";
             this.chkDongY.Size = new System.Drawing.Size(109, 17);
             this.chkDongY.TabIndex = 35;
@@ -335,6 +333,7 @@
             // 
             // cbbNhanVienTiepNhan
             // 
+            this.cbbNhanVienTiepNhan.Enabled = false;
             this.cbbNhanVienTiepNhan.FormattingEnabled = true;
             this.cbbNhanVienTiepNhan.Location = new System.Drawing.Point(744, 41);
             this.cbbNhanVienTiepNhan.Name = "cbbNhanVienTiepNhan";
@@ -349,16 +348,9 @@
             this.cbbMaPhieuTiepNhan.Size = new System.Drawing.Size(181, 21);
             this.cbbMaPhieuTiepNhan.TabIndex = 34;
             // 
-            // cbbNguoiGoi
-            // 
-            this.cbbNguoiGoi.FormattingEnabled = true;
-            this.cbbNguoiGoi.Location = new System.Drawing.Point(425, 78);
-            this.cbbNguoiGoi.Name = "cbbNguoiGoi";
-            this.cbbNguoiGoi.Size = new System.Drawing.Size(181, 21);
-            this.cbbNguoiGoi.TabIndex = 34;
-            // 
             // cbbNhanVienLap
             // 
+            this.cbbNhanVienLap.Enabled = false;
             this.cbbNhanVienLap.FormattingEnabled = true;
             this.cbbNhanVienLap.Location = new System.Drawing.Point(425, 37);
             this.cbbNhanVienLap.Name = "cbbNhanVienLap";
@@ -411,17 +403,6 @@
             this.labelControl1.Size = new System.Drawing.Size(112, 16);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Mã phiếu sửa chữa";
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl5.Location = new System.Drawing.Point(336, 78);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(61, 16);
-            this.labelControl5.TabIndex = 5;
-            this.labelControl5.Text = "Người gọi:";
-            this.labelControl5.Click += new System.EventHandler(this.labelControl3_Click);
             // 
             // labelControl3
             // 
@@ -864,6 +845,16 @@
             this.labelControl10.TabIndex = 2;
             this.labelControl10.Text = "Từ ";
             // 
+            // chkDaGoi
+            // 
+            this.chkDaGoi.AutoSize = true;
+            this.chkDaGoi.Location = new System.Drawing.Point(336, 79);
+            this.chkDaGoi.Name = "chkDaGoi";
+            this.chkDaGoi.Size = new System.Drawing.Size(135, 17);
+            this.chkDaGoi.TabIndex = 36;
+            this.chkDaGoi.Text = "Đã gọi cho khách hàng";
+            this.chkDaGoi.UseVisualStyleBackColor = true;
+            // 
             // frmTaoPhieuSuaChua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -966,11 +957,9 @@
         private System.Windows.Forms.DateTimePicker dtpNgayBatDau;
         private System.Windows.Forms.DataGridView dtgvPhieuSuaChua;
         private System.Windows.Forms.CheckBox chkTrangThai;
-        private System.Windows.Forms.ComboBox cbbNguoiGoi;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.TextEdit txtTongTien;
         private DevExpress.XtraEditors.TextEdit txtThongTinSuaChua;
         private DevExpress.XtraEditors.TextEdit txtGiaDuKien;
@@ -987,5 +976,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.CheckBox chkDaGoi;
     }
 }

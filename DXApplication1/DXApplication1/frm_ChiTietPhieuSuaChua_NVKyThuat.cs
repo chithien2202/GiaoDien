@@ -12,52 +12,13 @@ using DevExpress.XtraEditors;
 
 namespace DXApplication1
 {
-    public partial class frmChiTietPhieuSuaChua : RibbonForm
+    public partial class frm_ChiTietPhieuSuaChua_NVKyThuat : RibbonForm
     {
-        TangMa tangma = new TangMa();
         QLTBDataContext qltb = new QLTBDataContext();
-        public frmChiTietPhieuSuaChua()
+        TangMa tangma = new TangMa();
+        public frm_ChiTietPhieuSuaChua_NVKyThuat()
         {
             InitializeComponent();
-        }
-
-        public void LoadCbbBangBaoGia()
-        {
-            cbbBangBaoGia.DataSource = qltb.BANGBAOGIAs;
-            cbbBangBaoGia.DisplayMember = "TENBAOGIA";
-            cbbBangBaoGia.ValueMember = "TENBAOGIA";
-        }
-
-        public void LoadCbbMaLinhKien()
-        {
-            cbbMaLinhKien.DataSource = qltb.LINHKIENs;
-            cbbMaLinhKien.DisplayMember = "MALINHKIEN";
-            cbbMaLinhKien.ValueMember = "MALINHKIEN";
-        }
-        private void frmChiTietPhieuSuaChua_Load(object sender, EventArgs e)
-        {
-            LoadCbbMaPSC();
-            LoadCbbBangBaoGia();
-            LoadGridViewCTSC();
-            LoadCbbNhanVienSua();
-            LoadCbbMaLinhKien();
-            cbbMaPSC.Enabled = false;
-            txtGiaThanh.Enabled = false;
-            cbbBangBaoGia.Enabled = false;
-            dtpNgaySua.Enabled = false;
-            dtpNgaySuaXong.Enabled = false;
-            cbbMaLinhKien.Enabled = false;
-            txtGhiChu.Enabled = false;
-            chkBaoHanh.Enabled = false;
-        }
-
-        private void cbbBangBaoGia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var tien = (from pk in qltb.BANGBAOGIAs
-                        where pk.TENBAOGIA == cbbBangBaoGia.SelectedValue.ToString()
-                        select pk.DONGIA).FirstOrDefault();
-
-            txtGiaThanh.Text = tien.ToString();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -73,6 +34,7 @@ namespace DXApplication1
                 txtGhiChu.Enabled = true;
                 chkBaoHanh.Enabled = true;
                 cbbNhanVienSuaChua.Enabled = true;
+                chkDaNhanThietBi.Enabled = true;
 
                 cbbMaPSC.Text = String.Empty;
                 txtGiaThanh.Text = String.Empty;
@@ -80,12 +42,13 @@ namespace DXApplication1
                 cbbMaLinhKien.Text = String.Empty;
                 txtGhiChu.Text = String.Empty;
                 chkBaoHanh.Checked = false;
+                chkDaNhanThietBi.Checked = false;
 
                 btnThem.Text = "Lưu";
             }
             else
             {
-                if (cbbNhanVienSuaChua.Text == String.Empty) 
+                if (cbbNhanVienSuaChua.Text == String.Empty)
                 {
                     XtraMessageBox.Show("Vui lòng nhập nhân viên sửa chữa", "Thông báo");
                 }
@@ -99,7 +62,7 @@ namespace DXApplication1
                     ctsc.GIATHANH = decimal.Parse(txtGiaThanh.Text);
                     ctsc.NGAYSUA = dtpNgaySua.Value;
                     ctsc.NGAYSUAXONG = dtpNgaySuaXong.Value;
-                    
+
                     if (chkBaoHanh.Checked)
                     {
                         ctsc.TRANGTHAI = true;
@@ -110,7 +73,7 @@ namespace DXApplication1
                     }
                     ctsc.GHICHUCTSC = txtGhiChu.Text;
                     ctsc.MALINHKIEN = cbbMaLinhKien.Text;
-                  
+
                     qltb.CHITIETSUACHUAs.InsertOnSubmit(ctsc);
                     qltb.SubmitChanges();
                     LoadGridViewCTSC();
@@ -125,28 +88,28 @@ namespace DXApplication1
                     cbbMaLinhKien.Enabled = false;
                     txtGhiChu.Enabled = false;
                     chkBaoHanh.Enabled = false;
+                    chkDaNhanThietBi.Enabled = false;
                 }
             }
         }
 
-
         public void LoadGridViewCTSC()
         {
             var chitietsuachua = from ctsc in qltb.CHITIETSUACHUAs
-                               select new
-                               {
-                                   ctsc.MACTSC,
-                                   ctsc.MAPSC,
-                                   ctsc.MANHANVIENSUA,
-                                   ctsc.MANHANVIENNHAN,
-                                   ctsc.STT,
-                                   ctsc.GIATHANH,
-                                   ctsc.NGAYSUA,
-                                   ctsc.NGAYSUAXONG,
-                                   ctsc.TRANGTHAI,
-                                   ctsc.GHICHUCTSC,
-                                   ctsc.MALINHKIEN
-                               };
+                                 select new
+                                 {
+                                     ctsc.MACTSC,
+                                     ctsc.MAPSC,
+                                     ctsc.MANHANVIENSUA,
+                                     ctsc.MANHANVIENNHAN,
+                                     ctsc.STT,
+                                     ctsc.GIATHANH,
+                                     ctsc.NGAYSUA,
+                                     ctsc.NGAYSUAXONG,
+                                     ctsc.TRANGTHAI,
+                                     ctsc.GHICHUCTSC,
+                                     ctsc.MALINHKIEN
+                                 };
             dtgvChiTietPSC.DataSource = chitietsuachua;
         }
 
@@ -155,6 +118,20 @@ namespace DXApplication1
             cbbMaPSC.DataSource = qltb.PHIEUSUACHUAs;
             cbbMaPSC.DisplayMember = "MAPSC";
             cbbMaPSC.ValueMember = "MAPSC";
+        }
+
+        public void LoadCbbBangBaoGia()
+        {
+            cbbBangBaoGia.DataSource = qltb.BANGBAOGIAs;
+            cbbBangBaoGia.DisplayMember = "TENBAOGIA";
+            cbbBangBaoGia.ValueMember = "TENBAOGIA";
+        }
+
+        public void LoadCbbMaLinhKien()
+        {
+            cbbMaLinhKien.DataSource = qltb.LINHKIENs;
+            cbbMaLinhKien.DisplayMember = "MALINHKIEN";
+            cbbMaLinhKien.ValueMember = "MALINHKIEN";
         }
 
         public void LoadCbbNhanVienSua()
@@ -169,13 +146,14 @@ namespace DXApplication1
             if (btnSua.Text == "Sửa")
             {
                 cbbMaPSC.Enabled = false;
-                txtGiaThanh.Enabled = false;
-                cbbBangBaoGia.Enabled = false;
+                txtGiaThanh.Enabled = true;
+                cbbBangBaoGia.Enabled = true;
                 dtpNgaySua.Enabled = true;
                 dtpNgaySuaXong.Enabled = true;
-                cbbMaLinhKien.Enabled = false;
+                cbbMaLinhKien.Enabled = true;
                 txtGhiChu.Enabled = true;
-                chkBaoHanh.Enabled = false;
+                chkBaoHanh.Enabled = true;
+                chkDaNhanThietBi.Enabled = true;
 
                 btnSua.Text = "Lưu";
             }
@@ -183,20 +161,25 @@ namespace DXApplication1
             {
                 string mactsc = dtgvChiTietPSC.CurrentRow.Cells[0].Value.ToString();
                 CHITIETSUACHUA ctsc = qltb.CHITIETSUACHUAs.Where(t => t.MACTSC == mactsc).FirstOrDefault();
-                //ctsc.GIATHANH = decimal.Parse(txtGiaThanh.Text);
+                ctsc.GIATHANH = decimal.Parse(txtGiaThanh.Text);
                 ctsc.NGAYSUA = dtpNgaySua.Value;
                 ctsc.NGAYSUAXONG = dtpNgaySuaXong.Value;
+                if (chkDaNhanThietBi.Checked)
+                {
+                    ctsc.MANHANVIENNHAN = Program.mainForm.getUserName;
+                }
 
-                //if (chkBaoHanh.Checked)
-                //{
-                //    ctsc.TRANGTHAI = true;
-                //}
-                //else
-                //{
-                //    ctsc.TRANGTHAI = false;
-                //}
+
+                if (chkBaoHanh.Checked)
+                {
+                    ctsc.TRANGTHAI = true;
+                }
+                else
+                {
+                    ctsc.TRANGTHAI = false;
+                }
                 ctsc.GHICHUCTSC = txtGhiChu.Text;
-                //ctsc.MALINHKIEN = cbbMaLinhKien.Text;
+                ctsc.MALINHKIEN = cbbMaLinhKien.Text;
 
                 qltb.SubmitChanges();
                 XtraMessageBox.Show("Sửa thành công", "Thông báo");
@@ -212,6 +195,7 @@ namespace DXApplication1
                 cbbMaLinhKien.Enabled = false;
                 txtGhiChu.Enabled = false;
                 chkBaoHanh.Enabled = false;
+                chkDaNhanThietBi.Enabled = false;
 
                 cbbMaPSC.Text = String.Empty;
                 txtGiaThanh.Text = String.Empty;
@@ -219,6 +203,7 @@ namespace DXApplication1
                 cbbMaLinhKien.Text = String.Empty;
                 txtGhiChu.Text = String.Empty;
                 chkBaoHanh.Checked = false;
+                chkDaNhanThietBi.Checked = false;
             }
         }
 
@@ -245,7 +230,7 @@ namespace DXApplication1
         private void dtgvChiTietPSC_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
-            { 
+            {
                 cbbMaPSC.Enabled = false;
                 txtGiaThanh.Enabled = false;
                 cbbBangBaoGia.Enabled = false;
@@ -254,13 +239,15 @@ namespace DXApplication1
                 cbbMaLinhKien.Enabled = false;
                 txtGhiChu.Enabled = false;
                 chkBaoHanh.Enabled = false;
+                chkDaNhanThietBi.Enabled = false;
 
                 cbbMaPSC.Text = dtgvChiTietPSC.CurrentRow.Cells[1].Value.ToString();
                 txtGiaThanh.Text = dtgvChiTietPSC.CurrentRow.Cells[5].Value.ToString();
                 dtpNgaySua.Text = dtgvChiTietPSC.CurrentRow.Cells[6].Value.ToString();
                 dtpNgaySuaXong.Text = dtgvChiTietPSC.CurrentRow.Cells[7].Value.ToString();
                 cbbMaLinhKien.Text = dtgvChiTietPSC.CurrentRow.Cells[10].Value.ToString();
-                if(dtgvChiTietPSC.CurrentRow.Cells[9].Value == null)
+                cbbNhanVienSuaChua.Text = dtgvChiTietPSC.CurrentRow.Cells[2].Value.ToString();
+                if (dtgvChiTietPSC.CurrentRow.Cells[9].Value == null)
                 {
                     txtGhiChu.Text = "";
                 }
@@ -268,7 +255,7 @@ namespace DXApplication1
                 {
                     txtGhiChu.Text = dtgvChiTietPSC.CurrentRow.Cells[9].Value.ToString();
                 }
-                
+
                 if (dtgvChiTietPSC.CurrentRow.Cells[8].Value.ToString() == "True")
                 {
                     chkBaoHanh.Checked = true;
@@ -277,8 +264,44 @@ namespace DXApplication1
                 {
                     chkBaoHanh.Checked = false;
                 }
+
+                if (dtgvChiTietPSC.CurrentRow.Cells[3].Value == null || dtgvChiTietPSC.CurrentRow.Cells[4].Value.ToString() == "")
+                {
+                    chkDaNhanThietBi.Checked = false;
+                }
+                else
+                {
+                    chkDaNhanThietBi.Checked = true;
+                }
             }
             catch { }
+        }
+
+        private void cbbBangBaoGia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var tien = (from pk in qltb.BANGBAOGIAs
+                        where pk.TENBAOGIA == cbbBangBaoGia.SelectedValue.ToString()
+                        select pk.DONGIA).FirstOrDefault();
+
+            txtGiaThanh.Text = tien.ToString();
+        }
+
+        private void ChiTietPhieuSuaChua_NVKyThuat_Load(object sender, EventArgs e)
+        {
+            LoadCbbMaPSC();
+            LoadCbbBangBaoGia();
+            LoadGridViewCTSC();
+            LoadCbbNhanVienSua();
+            LoadCbbMaLinhKien();
+            cbbMaPSC.Enabled = false;
+            txtGiaThanh.Enabled = false;
+            cbbBangBaoGia.Enabled = false;
+            dtpNgaySua.Enabled = false;
+            dtpNgaySuaXong.Enabled = false;
+            cbbMaLinhKien.Enabled = false;
+            txtGhiChu.Enabled = false;
+            chkBaoHanh.Enabled = false;
+            chkDaNhanThietBi.Enabled = false;
         }
     }
 }

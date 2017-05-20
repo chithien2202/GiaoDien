@@ -343,5 +343,11 @@ namespace DXApplication1
             XtraForm fff = new frmChiTietPhieuSuaChua();
             TabCreating(this.xtraTabControl1, "Chi tiết phiếu sửa chữa", fff);
         }
+
+        private void btnChiTietPhieuSuaChua_NVKyThuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            XtraForm fff = new frm_ChiTietPhieuSuaChua_NVKyThuat();
+            TabCreating(this.xtraTabControl1, "Chi tiết phiếu sửa chữa", fff);
+        }
     }
 }

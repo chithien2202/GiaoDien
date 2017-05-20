@@ -189,6 +189,7 @@
             // chkDongY
             // 
             this.chkDongY.AutoSize = true;
+            this.chkDongY.Enabled = false;
             this.chkDongY.Location = new System.Drawing.Point(963, 111);
             this.chkDongY.Name = "chkDongY";
             this.chkDongY.Size = new System.Drawing.Size(109, 17);

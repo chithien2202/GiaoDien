@@ -78,6 +78,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm_ChiTietPhieuSuaChua_NVKyThuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ChiTietPhieuSuaChua_NVKyThuat.Designer.cs">
+      <DependentUpon>frm_ChiTietPhieuSuaChua_NVKyThuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChiTietPhieuSuaChua.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,6 +372,9 @@
       <DependentUpon>DanhMucThietBi_Report.cs</DependentUpon>
     </Compile>
     <Compile Include="TangMa.cs" />
+    <EmbeddedResource Include="frm_ChiTietPhieuSuaChua_NVKyThuat.resx">
+      <DependentUpon>frm_ChiTietPhieuSuaChua_NVKyThuat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChiTietPhieuSuaChua.resx">
       <DependentUpon>frmChiTietPhieuSuaChua.cs</DependentUpon>
     </EmbeddedResource>

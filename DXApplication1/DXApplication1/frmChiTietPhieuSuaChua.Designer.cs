@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietPhieuSuaChua));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.cbbNhanVienSuaChua = new System.Windows.Forms.ComboBox();
             this.cbbMaPSC = new System.Windows.Forms.ComboBox();
             this.cbbMaLinhKien = new System.Windows.Forms.ComboBox();
             this.cbbBangBaoGia = new System.Windows.Forms.ComboBox();
@@ -42,6 +43,7 @@
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -142,6 +144,7 @@
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
+            this.groupControl1.Controls.Add(this.cbbNhanVienSuaChua);
             this.groupControl1.Controls.Add(this.cbbMaPSC);
             this.groupControl1.Controls.Add(this.cbbMaLinhKien);
             this.groupControl1.Controls.Add(this.cbbBangBaoGia);
@@ -154,6 +157,7 @@
             this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Controls.Add(this.txtGhiChu);
             this.groupControl1.Controls.Add(this.labelControl7);
+            this.groupControl1.Controls.Add(this.labelControl12);
             this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Controls.Add(this.labelControl3);
@@ -165,8 +169,18 @@
             this.groupControl1.Tag = "";
             this.groupControl1.Text = "Thông tin chi tiết sửa chữa";
             // 
+            // cbbNhanVienSuaChua
+            // 
+            this.cbbNhanVienSuaChua.FormattingEnabled = true;
+            this.cbbNhanVienSuaChua.Location = new System.Drawing.Point(875, 110);
+            this.cbbNhanVienSuaChua.Name = "cbbNhanVienSuaChua";
+            this.cbbNhanVienSuaChua.Size = new System.Drawing.Size(184, 21);
+            this.cbbNhanVienSuaChua.TabIndex = 40;
+            this.cbbNhanVienSuaChua.Visible = false;
+            // 
             // cbbMaPSC
             // 
+            this.cbbMaPSC.Enabled = false;
             this.cbbMaPSC.FormattingEnabled = true;
             this.cbbMaPSC.Location = new System.Drawing.Point(160, 38);
             this.cbbMaPSC.Name = "cbbMaPSC";
@@ -175,16 +189,18 @@
             // 
             // cbbMaLinhKien
             // 
+            this.cbbMaLinhKien.Enabled = false;
             this.cbbMaLinhKien.FormattingEnabled = true;
-            this.cbbMaLinhKien.Location = new System.Drawing.Point(842, 76);
+            this.cbbMaLinhKien.Location = new System.Drawing.Point(875, 75);
             this.cbbMaLinhKien.Name = "cbbMaLinhKien";
             this.cbbMaLinhKien.Size = new System.Drawing.Size(184, 21);
             this.cbbMaLinhKien.TabIndex = 39;
             // 
             // cbbBangBaoGia
             // 
+            this.cbbBangBaoGia.Enabled = false;
             this.cbbBangBaoGia.FormattingEnabled = true;
-            this.cbbBangBaoGia.Location = new System.Drawing.Point(842, 38);
+            this.cbbBangBaoGia.Location = new System.Drawing.Point(875, 37);
             this.cbbBangBaoGia.Name = "cbbBangBaoGia";
             this.cbbBangBaoGia.Size = new System.Drawing.Size(184, 21);
             this.cbbBangBaoGia.TabIndex = 39;
@@ -193,6 +209,7 @@
             // chkBaoHanh
             // 
             this.chkBaoHanh.AutoSize = true;
+            this.chkBaoHanh.Enabled = false;
             this.chkBaoHanh.Location = new System.Drawing.Point(486, 110);
             this.chkBaoHanh.Name = "chkBaoHanh";
             this.chkBaoHanh.Size = new System.Drawing.Size(71, 17);
@@ -271,6 +288,17 @@
             this.labelControl7.Size = new System.Drawing.Size(44, 16);
             this.labelControl7.TabIndex = 26;
             this.labelControl7.Text = "Ghi chú";
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl12.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl12.Location = new System.Drawing.Point(747, 110);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(117, 16);
+            this.labelControl12.TabIndex = 0;
+            this.labelControl12.Text = "Nhân viên sửa chữa";
+            this.labelControl12.Visible = false;
             // 
             // labelControl4
             // 
@@ -374,7 +402,7 @@
             // Column4
             // 
             this.Column4.DataPropertyName = "MANHANVIENNHAN";
-            this.Column4.HeaderText = "Mã nhân viên nhận";
+            this.Column4.HeaderText = "Mã nhân viên nhận sau khi sửa xong";
             this.Column4.Name = "Column4";
             // 
             // Column6
@@ -815,6 +843,7 @@
             this.btnXoa.Appearance.Options.UseBackColor = true;
             this.btnXoa.Appearance.Options.UseFont = true;
             this.btnXoa.Appearance.Options.UseForeColor = true;
+            this.btnXoa.Enabled = false;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.Location = new System.Drawing.Point(283, 24);
             this.btnXoa.Name = "btnXoa";
@@ -865,6 +894,7 @@
             this.btnThem.Appearance.Options.UseBackColor = true;
             this.btnThem.Appearance.Options.UseFont = true;
             this.btnThem.Appearance.Options.UseForeColor = true;
+            this.btnThem.Enabled = false;
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.Location = new System.Drawing.Point(5, 24);
             this.btnThem.Name = "btnThem";
@@ -989,6 +1019,8 @@
         private DevExpress.XtraEditors.SimpleButton btnSua;
         private DevExpress.XtraEditors.SimpleButton btnThem;
         private System.Windows.Forms.ComboBox cbbMaPSC;
+        private System.Windows.Forms.ComboBox cbbNhanVienSuaChua;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

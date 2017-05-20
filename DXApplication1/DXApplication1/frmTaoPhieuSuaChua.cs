@@ -62,7 +62,7 @@ namespace DXApplication1
             cbbNhanVienTiepNhan.Enabled = false;
             cbbMaPhieuTiepNhan.Enabled = false;
             dtpNgayBatDau.Enabled = false;
-            cbbNguoiGoi.Enabled = false;
+            chkDaGoi.Enabled = false;
             txtGiaDuKien.Enabled = false;
             txtTongTien.Enabled = false;
             txtThongTinSuaChua.Enabled = false;
@@ -75,12 +75,12 @@ namespace DXApplication1
         {
             if (btnThem.Text == "Thêm")
             {
-                txtMaPSC.Enabled = true;
-                cbbNhanVienLap.Enabled = true;
-                cbbNhanVienTiepNhan.Enabled = true;
+                txtMaPSC.Enabled = false;
+                cbbNhanVienLap.Enabled = false;
+                cbbNhanVienTiepNhan.Enabled = false;
                 cbbMaPhieuTiepNhan.Enabled = true;
                 dtpNgayBatDau.Enabled = true;
-                cbbNguoiGoi.Enabled = true;
+                chkDaGoi.Enabled = true;
                 txtGiaDuKien.Enabled = true;
                 txtTongTien.Enabled = true;
                 txtThongTinSuaChua.Enabled = true;
@@ -93,7 +93,7 @@ namespace DXApplication1
                 cbbNhanVienTiepNhan.Text = String.Empty;
                 cbbMaPhieuTiepNhan.Text = String.Empty;
                 dtpNgayBatDau.Text = String.Empty;
-                cbbNguoiGoi.Text = String.Empty;
+                chkDaGoi.Checked = false;
                 txtGiaDuKien.Text = String.Empty;
                 txtTongTien.Text = String.Empty;
                 txtThongTinSuaChua.Text = String.Empty;
@@ -118,7 +118,15 @@ namespace DXApplication1
                     psc.MAPHIEUTN = cbbMaPhieuTiepNhan.Text;
                     psc.NGAYBATDAU = dtpNgayBatDau.Value;
                     psc.GHICHUPSC = txtGhiChu.Text;
-                    psc.NGUOIGOI = Program.mainForm.getUserName;
+                    if (chkDaGoi.Checked)
+                    {
+                        psc.NGUOIGOI = Program.mainForm.getUserName;
+                    }
+                    else
+                    {
+                        psc.NGUOIGOI = null;
+                    }
+
                     if (chkDongY.Checked)
                     {
                         psc.DONGY = true;
@@ -149,7 +157,7 @@ namespace DXApplication1
                     cbbNhanVienTiepNhan.Enabled = false;
                     cbbMaPhieuTiepNhan.Enabled = false;
                     dtpNgayBatDau.Enabled = false;
-                    cbbNguoiGoi.Enabled = false;
+                    chkDaGoi.Enabled = false;
                     txtGiaDuKien.Enabled = false;
                     txtTongTien.Enabled = false;
                     txtThongTinSuaChua.Enabled = false;
@@ -170,6 +178,7 @@ namespace DXApplication1
                 chkTrangThai.Enabled = true;
                 chkDongY.Enabled = true;
                 txtGhiChu.Enabled = true;
+                chkDaGoi.Enabled = true;
 
                 btnSua.Text = "Lưu";
             }
@@ -181,6 +190,15 @@ namespace DXApplication1
                 psc.TONGTIEN = decimal.Parse(txtTongTien.Text);
                 psc.THONGTINSUACHUA = txtThongTinSuaChua.Text;
                 psc.GHICHUPSC = txtGhiChu.Text;
+                if (chkDaGoi.Checked)
+                {
+                    psc.NGUOIGOI = Program.mainForm.getUserName;
+                }
+                else
+                {
+                    psc.NGUOIGOI = null;
+                }
+
                 if (chkDongY.Checked)
                 {
                     psc.DONGY = true;
@@ -211,6 +229,7 @@ namespace DXApplication1
                 chkTrangThai.Enabled = false;
                 chkDongY.Enabled = false;
                 txtGhiChu.Enabled = false;
+                chkDaGoi.Enabled = false;
 
                 txtGiaDuKien.Text = String.Empty;
                 txtTongTien.Text = String.Empty;
@@ -249,7 +268,7 @@ namespace DXApplication1
                 cbbNhanVienTiepNhan.Enabled = false;
                 cbbMaPhieuTiepNhan.Enabled = false;
                 dtpNgayBatDau.Enabled = false;
-                cbbNguoiGoi.Enabled = false;
+                chkDaGoi.Enabled = false;
                 txtGiaDuKien.Enabled = false;
                 txtTongTien.Enabled = false;
                 txtThongTinSuaChua.Enabled = false;
@@ -258,11 +277,19 @@ namespace DXApplication1
                 txtGhiChu.Enabled = false;
                 txtMaPSC.Text = dtgvPhieuSuaChua.CurrentRow.Cells[0].Value.ToString();
                 cbbNhanVienLap.Text = dtgvPhieuSuaChua.CurrentRow.Cells[1].Value.ToString();
-                
+
                 cbbMaPhieuTiepNhan.Text = dtgvPhieuSuaChua.CurrentRow.Cells[3].Value.ToString();
                 dtpNgayBatDau.Text = dtgvPhieuSuaChua.CurrentRow.Cells[4].Value.ToString();
-                txtGhiChu.Text = dtgvPhieuSuaChua.CurrentRow.Cells[5].Value.ToString();
-                cbbNguoiGoi.Text = dtgvPhieuSuaChua.CurrentRow.Cells[6].Value.ToString();
+                if (dtgvPhieuSuaChua.CurrentRow.Cells[5].Value == null)
+                {
+                    txtGhiChu.Text = "";
+                }
+                else
+                {
+                    txtGhiChu.Text = dtgvPhieuSuaChua.CurrentRow.Cells[5].Value.ToString();
+                }
+                
+                
                 if (dtgvPhieuSuaChua.CurrentRow.Cells[7].Value.ToString() == "True")
                 {
                     chkDongY.Checked = true;
@@ -290,6 +317,14 @@ namespace DXApplication1
                 else
                 {
                     cbbNhanVienTiepNhan.Text = dtgvPhieuSuaChua.CurrentRow.Cells[2].Value.ToString();
+                }
+                if (dtgvPhieuSuaChua.CurrentRow.Cells[6].Value == null)
+                {
+                    chkDaGoi.Checked = false;
+                }
+                else
+                {
+                    chkDaGoi.Checked = true;
                 }
             }
             catch { }
