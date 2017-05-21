@@ -18,7 +18,6 @@ namespace DXApplication1
     {
         QLTBDataContext qltb = new QLTBDataContext();
         TangMa tangma = new TangMa();
-        PhieuTiepNhanService ptn = new PhieuTiepNhanService();
         public frmTaoPhieuTiepNhan()
         {
             InitializeComponent();
@@ -53,6 +52,7 @@ namespace DXApplication1
                 txtPhuKienDiCung.Enabled = true;
                 txtTinhTrangHuHong.Enabled = true;
                 txtGhiChu.Enabled = true;
+                chkDaNhan.Enabled = false;
 
                 txtPhuKienDiCung.Text = String.Empty;
                 txtGhiChu.Text = String.Empty;
@@ -69,19 +69,21 @@ namespace DXApplication1
                 }
                 else
                 {
-                    //string maptn = tangma.ThemMaPTN();
-                    bool flag = ptn.AddPhieuNhan(
-                    tangma.ThemMaPTN(),
-                    cbbThietBi.SelectedValue.ToString(),
-                    Program.mainForm.getUserName,
-                    cbbKhachHang.SelectedValue.ToString(),
-                    DateTime.Parse(dtpNgayNhap.Value.ToString()),
-                    DateTime.Parse(dtpNgayHenTra.Value.ToString()),
-                    txtTinhTrangHuHong.Text,
-                    txtPhuKienDiCung.Text,
-                    false,
-                    txtGhiChu.Text
-                    );
+                    PHIEUTIEPNHAN ptn = new PHIEUTIEPNHAN();
+                    ptn.MAPHIEUTN = tangma.ThemMaPTN();
+                    ptn.MATHIETBI = cbbThietBi.SelectedValue.ToString();
+                    ptn.MANHANVIEN = Program.mainForm.getUserName;
+                    ptn.MANHANVIENNHANMAY = null;
+                    ptn.MAKHACHKHACH = cbbKhachHang.Text;
+                    ptn.NGAYNHAN = dtpNgayNhap.Value;
+                    ptn.NGAYHENTRA = dtpNgayHenTra.Value;
+                    ptn.TINHHINHHUHONG = txtTinhTrangHuHong.Text;
+                    ptn.PHUKIENKEMTHEO = txtPhuKienDiCung.Text;
+                    ptn.HINHTHUC = null;
+                    ptn.GHICHUPTN = txtGhiChu.Text;
+                    qltb.PHIEUTIEPNHANs.InsertOnSubmit(ptn);
+                    qltb.SubmitChanges();
+                    XtraMessageBox.Show("Thêm thành công", "Thông báo");
                     LoadGridViewPTN();
                 }
             }
@@ -107,12 +109,19 @@ namespace DXApplication1
             LoadCbbKhachHang();
             LoadCbbThietBi();
             LoadGridViewPTN();
+
+            cbbKhachHang.Enabled = false;
+            cbbThietBi.Enabled = false;
+            txtPhuKienDiCung.Enabled = false;
+            txtTinhTrangHuHong.Enabled = false;
+            txtGhiChu.Enabled = false;
+            chkDaNhan.Enabled = false;
         }
 
         private void LoadGridViewPTN()
         {
             var phieutiepnhan = from ptn in qltb.PHIEUTIEPNHANs
-                          select new { ptn.MAPHIEUTN, ptn.MATHIETBI, ptn.MANHANVIEN, ptn.MAKHACHKHACH, ptn.NGAYNHAN,
+                          select new { ptn.MAPHIEUTN, ptn.MATHIETBI, ptn.MANHANVIEN, ptn.MANHANVIENNHANMAY, ptn.MAKHACHKHACH, ptn.NGAYNHAN,
                               ptn.NGAYHENTRA, ptn.TINHHINHHUHONG, ptn.PHUKIENKEMTHEO, ptn.HINHTHUC, ptn.GHICHUPTN };
             dtgvDSPTN.DataSource = phieutiepnhan;
         }
@@ -161,6 +170,7 @@ namespace DXApplication1
                 txtTinhTrangHuHong.Enabled = true;
                 txtGhiChu.Enabled = true;
                 txtPhuKienDiCung.Enabled = true;
+                chkDaNhan.Enabled = true;
 
                 btnSua.Text = "Lưu";
             }
@@ -170,6 +180,10 @@ namespace DXApplication1
                 PHIEUTIEPNHAN ptn = qltb.PHIEUTIEPNHANs.Where(t => t.MAPHIEUTN == maptn).FirstOrDefault();
                 ptn.NGAYNHAN = dtpNgayNhap.Value;
                 ptn.NGAYHENTRA = dtpNgayHenTra.Value;
+                if(chkDaNhan.Checked)
+                {
+                    ptn.MANHANVIENNHANMAY = Program.mainForm.getUserName;
+                }
                 ptn.PHUKIENKEMTHEO = txtPhuKienDiCung.Text;
                 ptn.TINHHINHHUHONG = txtTinhTrangHuHong.Text;
                 ptn.GHICHUPTN = txtGhiChu.Text;
@@ -199,13 +213,46 @@ namespace DXApplication1
                 txtPhuKienDiCung.Enabled = false;
                 txtTinhTrangHuHong.Enabled = false;
                 txtGhiChu.Enabled = false;
+                chkDaNhan.Enabled = false;
+
                 cbbThietBi.Text = dtgvDSPTN.CurrentRow.Cells[1].Value.ToString();
-                dtpNgayNhap.Text = dtgvDSPTN.CurrentRow.Cells[4].Value.ToString();
-                dtpNgayHenTra.Text = dtgvDSPTN.CurrentRow.Cells[5].Value.ToString();
-                cbbKhachHang.Text = dtgvDSPTN.CurrentRow.Cells[3].Value.ToString();
-                txtPhuKienDiCung.Text = dtgvDSPTN.CurrentRow.Cells[7].Value.ToString();
-                txtTinhTrangHuHong.Text = dtgvDSPTN.CurrentRow.Cells[6].Value.ToString();
-                txtGhiChu.Text = dtgvDSPTN.CurrentRow.Cells[9].Value.ToString();
+                dtpNgayNhap.Text = dtgvDSPTN.CurrentRow.Cells[5].Value.ToString();
+                dtpNgayHenTra.Text = dtgvDSPTN.CurrentRow.Cells[6].Value.ToString();
+                cbbKhachHang.Text = dtgvDSPTN.CurrentRow.Cells[4].Value.ToString();
+                if (dtgvDSPTN.CurrentRow.Cells[8].Value == null || dtgvDSPTN.CurrentRow.Cells[8].Value.ToString() == "")
+                {
+                    txtPhuKienDiCung.Text = "";
+                }
+                else
+                {
+                    txtPhuKienDiCung.Text = dtgvDSPTN.CurrentRow.Cells[8].Value.ToString();
+                }
+
+                if (dtgvDSPTN.CurrentRow.Cells[7].Value == null || dtgvDSPTN.CurrentRow.Cells[7].Value.ToString() == "")
+                {
+                    txtTinhTrangHuHong.Text = "";
+                }
+                else
+                {
+                    txtTinhTrangHuHong.Text = dtgvDSPTN.CurrentRow.Cells[7].Value.ToString();
+                }
+                if (dtgvDSPTN.CurrentRow.Cells[10].Value == null || dtgvDSPTN.CurrentRow.Cells[10].Value.ToString() == "")
+                {
+                    txtGhiChu.Text = "";
+                }
+                else
+                {
+                    txtGhiChu.Text = dtgvDSPTN.CurrentRow.Cells[10].Value.ToString();
+                }
+
+                if (dtgvDSPTN.CurrentRow.Cells[3].Value == null || dtgvDSPTN.CurrentRow.Cells[3].Value.ToString() == "")
+                {
+                    chkDaNhan.Checked = false;
+                }
+                else
+                {
+                    chkDaNhan.Checked = true;
+                }
             }
             catch { }
         }

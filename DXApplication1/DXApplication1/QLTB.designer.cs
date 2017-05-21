@@ -4930,6 +4930,8 @@ namespace DXApplication1
 		
 		private string _MANHANVIEN;
 		
+		private string _MANHANVIENNHANMAY;
+		
 		private string _MAKHACHKHACH;
 		
 		private System.Nullable<System.DateTime> _NGAYNHAN;
@@ -4964,6 +4966,8 @@ namespace DXApplication1
     partial void OnMATHIETBIChanged();
     partial void OnMANHANVIENChanging(string value);
     partial void OnMANHANVIENChanged();
+    partial void OnMANHANVIENNHANMAYChanging(string value);
+    partial void OnMANHANVIENNHANMAYChanged();
     partial void OnMAKHACHKHACHChanging(string value);
     partial void OnMAKHACHKHACHChanged();
     partial void OnNGAYNHANChanging(System.Nullable<System.DateTime> value);
@@ -5055,6 +5059,26 @@ namespace DXApplication1
 					this._MANHANVIEN = value;
 					this.SendPropertyChanged("MANHANVIEN");
 					this.OnMANHANVIENChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MANHANVIENNHANMAY", DbType="Char(10)")]
+		public string MANHANVIENNHANMAY
+		{
+			get
+			{
+				return this._MANHANVIENNHANMAY;
+			}
+			set
+			{
+				if ((this._MANHANVIENNHANMAY != value))
+				{
+					this.OnMANHANVIENNHANMAYChanging(value);
+					this.SendPropertyChanging();
+					this._MANHANVIENNHANMAY = value;
+					this.SendPropertyChanged("MANHANVIENNHANMAY");
+					this.OnMANHANVIENNHANMAYChanged();
 				}
 			}
 		}

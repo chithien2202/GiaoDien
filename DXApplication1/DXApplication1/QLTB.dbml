@@ -226,6 +226,7 @@
       <Column Name="MAPHIEUTN" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MATHIETBI" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
       <Column Name="MANHANVIEN" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MANHANVIENNHANMAY" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Column Name="MAKHACHKHACH" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Column Name="NGAYNHAN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="NGAYHENTRA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
