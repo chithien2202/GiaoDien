@@ -118,7 +118,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1120, 500);
+            this.groupControl1.Size = new System.Drawing.Size(1355, 528);
             this.groupControl1.TabIndex = 7;
             this.groupControl1.Text = "Thông tin phiếu nhận";
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
@@ -153,17 +153,17 @@
             // 
             // txtTinhTrangHuHong
             // 
-            this.txtTinhTrangHuHong.Location = new System.Drawing.Point(833, 66);
+            this.txtTinhTrangHuHong.Location = new System.Drawing.Point(859, 66);
             this.txtTinhTrangHuHong.Multiline = true;
             this.txtTinhTrangHuHong.Name = "txtTinhTrangHuHong";
-            this.txtTinhTrangHuHong.Size = new System.Drawing.Size(243, 24);
+            this.txtTinhTrangHuHong.Size = new System.Drawing.Size(215, 24);
             this.txtTinhTrangHuHong.TabIndex = 35;
             // 
             // labelControl13
             // 
             this.labelControl13.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl13.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.labelControl13.Location = new System.Drawing.Point(718, 70);
+            this.labelControl13.Location = new System.Drawing.Point(744, 70);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(109, 16);
             this.labelControl13.TabIndex = 34;
@@ -201,17 +201,17 @@
             // 
             // txtPhuKienDiCung
             // 
-            this.txtPhuKienDiCung.Location = new System.Drawing.Point(833, 33);
+            this.txtPhuKienDiCung.Location = new System.Drawing.Point(859, 33);
             this.txtPhuKienDiCung.Multiline = true;
             this.txtPhuKienDiCung.Name = "txtPhuKienDiCung";
-            this.txtPhuKienDiCung.Size = new System.Drawing.Size(243, 24);
+            this.txtPhuKienDiCung.Size = new System.Drawing.Size(215, 24);
             this.txtPhuKienDiCung.TabIndex = 30;
             // 
             // labelControl8
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.labelControl8.Location = new System.Drawing.Point(718, 35);
+            this.labelControl8.Location = new System.Drawing.Point(744, 35);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(100, 16);
             this.labelControl8.TabIndex = 29;
@@ -445,7 +445,7 @@
             this.groupControl5.Controls.Add(this.panelControl2);
             this.groupControl5.Location = new System.Drawing.Point(13, 224);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(1097, 264);
+            this.groupControl5.Size = new System.Drawing.Size(1334, 292);
             this.groupControl5.TabIndex = 12;
             this.groupControl5.Text = "Danh sách phiếu nhận";
             // 
@@ -457,7 +457,7 @@
             this.dtgvDSPTN.Location = new System.Drawing.Point(2, 51);
             this.dtgvDSPTN.Name = "dtgvDSPTN";
             this.dtgvDSPTN.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvDSPTN.Size = new System.Drawing.Size(1093, 211);
+            this.dtgvDSPTN.Size = new System.Drawing.Size(1330, 239);
             this.dtgvDSPTN.TabIndex = 7;
             this.dtgvDSPTN.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSPTN_CellClick);
             // 
@@ -475,7 +475,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Location = new System.Drawing.Point(2, 20);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1093, 31);
+            this.panelControl2.Size = new System.Drawing.Size(1330, 31);
             this.panelControl2.TabIndex = 6;
             // 
             // labelControl12
@@ -516,7 +516,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1120, 500);
+            this.ClientSize = new System.Drawing.Size(1355, 528);
             this.Controls.Add(this.groupControl5);
             this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.groupControl1);

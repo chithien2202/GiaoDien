@@ -81,7 +81,15 @@ namespace DXApplication1
 
                 cbbMaPhieuTiepNhan.Text = dtgvPhieuSuaChua.CurrentRow.Cells[3].Value.ToString();
                 dtpNgayBatDau.Text = dtgvPhieuSuaChua.CurrentRow.Cells[4].Value.ToString();
-                txtGhiChu.Text = dtgvPhieuSuaChua.CurrentRow.Cells[5].Value.ToString();
+
+                if (dtgvPhieuSuaChua.CurrentRow.Cells[5].Value == null || dtgvPhieuSuaChua.CurrentRow.Cells[5].Value.ToString() == "")
+                {
+                    txtGhiChu.Text = "";
+                }
+                else
+                {
+                    txtGhiChu.Text = dtgvPhieuSuaChua.CurrentRow.Cells[5].Value.ToString();
+                }
                 cbbNguoiGoi.Text = dtgvPhieuSuaChua.CurrentRow.Cells[6].Value.ToString();
                 if (dtgvPhieuSuaChua.CurrentRow.Cells[7].Value.ToString() == "True")
                 {
@@ -92,7 +100,14 @@ namespace DXApplication1
                     chkDongY.Checked = false;
                 }
                 txtGiaDuKien.Text = dtgvPhieuSuaChua.CurrentRow.Cells[8].Value.ToString();
-                txtThongTinSuaChua.Text = dtgvPhieuSuaChua.CurrentRow.Cells[9].Value.ToString();
+                if (dtgvPhieuSuaChua.CurrentRow.Cells[9].Value == null || dtgvPhieuSuaChua.CurrentRow.Cells[9].Value.ToString() == "")
+                {
+                    txtThongTinSuaChua.Text = "";
+                }
+                else
+                {
+                    txtThongTinSuaChua.Text = dtgvPhieuSuaChua.CurrentRow.Cells[9].Value.ToString();
+                }
                 txtTongTien.Text = dtgvPhieuSuaChua.CurrentRow.Cells[10].Value.ToString();
                 if (dtgvPhieuSuaChua.CurrentRow.Cells[11].Value.ToString() == "True")
                 {
