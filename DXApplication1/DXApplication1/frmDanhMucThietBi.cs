@@ -26,6 +26,9 @@ namespace DXApplication1
         {
             if (btnThem.Text == "Thêm")
             {
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
+
                 cbbMaModel.Enabled = true;
                 txtSoSerial.Enabled = true;
                 txtTenThietBi.Enabled = true;
@@ -69,6 +72,8 @@ namespace DXApplication1
                     LoadGridViewThietBi();
                     XtraMessageBox.Show("Thêm thành công", "Thông báo");
 
+                    btnSua.Enabled = true;
+                    btnXoa.Enabled = true;
 
                     btnThem.Text = "Thêm";
                     cbbMaModel.Enabled = false;
@@ -91,6 +96,8 @@ namespace DXApplication1
         {
             if (btnSua.Text == "Sửa")
             {
+                btnThem.Enabled = false;
+                btnXoa.Enabled = false;
 
                 cbbMaModel.Enabled = true;
                 txtSoSerial.Enabled = true;
@@ -114,7 +121,9 @@ namespace DXApplication1
                 qltb.SubmitChanges();
                 LoadGridViewThietBi();
                 XtraMessageBox.Show("Sửa thành công","Thông báo");
-                
+
+                btnThem.Enabled = true;
+                btnSua.Enabled = true;
 
                 btnSua.Text = "Sửa";
                 cbbMaModel.Enabled = false;

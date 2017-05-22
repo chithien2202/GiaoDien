@@ -47,6 +47,9 @@ namespace DXApplication1
         {
             if (btnThem.Text == "Thêm")
             {
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
+
                 cbbKhachHang.Enabled = true;
                 cbbThietBi.Enabled = true;
                 txtPhuKienDiCung.Enabled = true;
@@ -85,6 +88,9 @@ namespace DXApplication1
                     qltb.SubmitChanges();
                     XtraMessageBox.Show("Thêm thành công", "Thông báo");
                     LoadGridViewPTN();
+
+                    btnSua.Enabled = true;
+                    btnXoa.Enabled = true;
                 }
             }
         }
@@ -164,6 +170,8 @@ namespace DXApplication1
         {
             if (btnSua.Text == "Sửa")
             {
+                btnThem.Enabled = false;
+                btnXoa.Enabled = false;
 
                 cbbKhachHang.Enabled = true;
                 cbbThietBi.Enabled = true;
@@ -190,6 +198,9 @@ namespace DXApplication1
                 qltb.SubmitChanges();
                 XtraMessageBox.Show("Sửa thành công", "Thông báo");
                 LoadGridViewPTN();
+
+                btnThem.Enabled = true;
+                btnXoa.Enabled = true;
 
                 btnSua.Text = "Sửa";
                 cbbKhachHang.Enabled = false;

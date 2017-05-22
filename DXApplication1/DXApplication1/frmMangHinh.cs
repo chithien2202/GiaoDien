@@ -24,6 +24,8 @@ namespace DXApplication1
         {
             if (btnThem.Text == "Thêm")
             {
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
 
                 txtTenMangHinh.Enabled = true;
                 txtTenMangHinh.Text = String.Empty;
@@ -49,6 +51,9 @@ namespace DXApplication1
                     XtraMessageBox.Show("Thêm thành công", "Thông báo");
                     LoadGridViewMangHinh();
 
+                    btnSua.Enabled = true;
+                    btnXoa.Enabled = true;
+
                     btnThem.Text = "Thêm";
                     txtTenMangHinh.Enabled = false;
 
@@ -62,6 +67,8 @@ namespace DXApplication1
         {
             if (btnSua.Text == "Sửa")
             {
+                btnThem.Enabled = false;
+                btnXoa.Enabled = false;
 
                 txtTenMangHinh.Enabled = true;
 
@@ -76,6 +83,9 @@ namespace DXApplication1
                 qltb.SubmitChanges();
                 XtraMessageBox.Show("Sửa thành công","Thông báo");
                 LoadGridViewMangHinh();
+
+                btnThem.Enabled = true;
+                btnXoa.Enabled = true;
 
                 btnSua.Text = "Sửa";
                 txtTenMangHinh.Enabled = false;

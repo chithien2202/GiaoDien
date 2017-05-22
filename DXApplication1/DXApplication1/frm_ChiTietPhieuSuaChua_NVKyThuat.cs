@@ -25,6 +25,9 @@ namespace DXApplication1
         {
             if (btnThem.Text == "Thêm")
             {
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
+
                 cbbMaPSC.Enabled = true;
                 txtGiaThanh.Enabled = true;
                 cbbBangBaoGia.Enabled = true;
@@ -34,7 +37,7 @@ namespace DXApplication1
                 txtGhiChu.Enabled = true;
                 chkBaoHanh.Enabled = true;
                 cbbNhanVienSuaChua.Enabled = true;
-                chkDaNhanThietBi.Enabled = true;
+                chkDaNhanThietBi.Enabled = false;
 
                 cbbMaPSC.Text = String.Empty;
                 txtGiaThanh.Text = String.Empty;
@@ -79,6 +82,8 @@ namespace DXApplication1
                     LoadGridViewCTSC();
                     XtraMessageBox.Show("Thêm thành công", "Thông báo");
 
+                    btnSua.Enabled = true;
+                    btnXoa.Enabled = true;
 
                     cbbMaPSC.Enabled = false;
                     txtGiaThanh.Enabled = false;
@@ -145,6 +150,9 @@ namespace DXApplication1
         {
             if (btnSua.Text == "Sửa")
             {
+                btnThem.Enabled = false;
+                btnXoa.Enabled = false;
+
                 cbbMaPSC.Enabled = false;
                 txtGiaThanh.Enabled = true;
                 cbbBangBaoGia.Enabled = true;
@@ -187,6 +195,10 @@ namespace DXApplication1
 
                 btnSua.Text = "Sửa";
                 btnThem.Text = "Thêm";
+
+                btnThem.Enabled = true;
+                btnXoa.Enabled = true;
+
                 cbbMaPSC.Enabled = false;
                 txtGiaThanh.Enabled = false;
                 cbbBangBaoGia.Enabled = false;

@@ -25,6 +25,9 @@ namespace DXApplication1
         {
             if (btnThem.Text == "Thêm")
             {
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
+
                 txtTenBoPhan.Enabled = true;
                 txtDienGiai.Enabled = true;
                 txtTenBoPhan.Text = String.Empty;
@@ -57,6 +60,8 @@ namespace DXApplication1
                     LoadGridViewBoPhan();
                     XtraMessageBox.Show("Thêm thành công", "Thông báo");
 
+                    btnSua.Enabled = true;
+                    btnXoa.Enabled = true;
 
                     btnThem.Text = "Thêm";
                     txtTenBoPhan.Enabled = false;
@@ -74,6 +79,8 @@ namespace DXApplication1
         {
             if (btnSua.Text == "Sửa")
             {
+                btnThem.Enabled = false;
+                btnXoa.Enabled = false;
 
                 txtTenBoPhan.Enabled = true;
                 txtDienGiai.Enabled = true;
@@ -91,6 +98,10 @@ namespace DXApplication1
                 XtraMessageBox.Show("Sửa thành công","Thông báo");
 
                 btnSua.Text = "Sửa";
+
+                btnThem.Enabled = true;
+                btnXoa.Enabled = true;
+
                 txtTenBoPhan.Enabled = false;
                 txtDienGiai.Enabled = false;
 

@@ -25,6 +25,9 @@ namespace DXApplication1
         {
             if (btnThem.Text == "Thêm")
             {
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
+
                 cbbMaPhanLoai.Enabled = true;
                 txtTenBBG.Enabled = true;
                 txtDonGia.Enabled = true;
@@ -65,6 +68,9 @@ namespace DXApplication1
 
 
                     btnThem.Text = "Thêm";
+                    btnSua.Enabled = true;
+                    btnXoa.Enabled = true;
+
                     cbbMaPhanLoai.Enabled = false;
                     txtTenBBG.Enabled = false;
                     txtDonGia.Enabled = false;
@@ -83,6 +89,8 @@ namespace DXApplication1
         {
             if (btnSua.Text == "Sửa")
             {
+                btnThem.Enabled = false;
+                btnXoa.Enabled = false;
 
                 cbbMaPhanLoai.Enabled = true;
                 txtTenBBG.Enabled = true;
@@ -104,6 +112,9 @@ namespace DXApplication1
                 XtraMessageBox.Show("Sửa thành công", "Thông báo");
 
                 btnSua.Text = "Sửa";
+                btnThem.Enabled = true;
+                btnXoa.Enabled = true;
+
                 cbbMaPhanLoai.Enabled = false;
                 txtTenBBG.Enabled = false;
                 txtDonGia.Enabled = false;

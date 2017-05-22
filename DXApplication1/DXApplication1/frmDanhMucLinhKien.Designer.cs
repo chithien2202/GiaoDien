@@ -89,22 +89,22 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(862, 147);
+            this.panelControl1.Size = new System.Drawing.Size(915, 130);
             this.panelControl1.TabIndex = 5;
             // 
             // txtDienGiai
             // 
-            this.txtDienGiai.Location = new System.Drawing.Point(128, 90);
+            this.txtDienGiai.Location = new System.Drawing.Point(742, 53);
             this.txtDienGiai.Name = "txtDienGiai";
             this.txtDienGiai.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDienGiai.Properties.Appearance.Options.UseFont = true;
-            this.txtDienGiai.Size = new System.Drawing.Size(174, 22);
+            this.txtDienGiai.Size = new System.Drawing.Size(161, 22);
             this.txtDienGiai.TabIndex = 36;
             // 
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Location = new System.Drawing.Point(12, 93);
+            this.labelControl3.Location = new System.Drawing.Point(626, 56);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(49, 16);
             this.labelControl3.TabIndex = 35;
@@ -114,7 +114,7 @@
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl7.Location = new System.Drawing.Point(620, 52);
+            this.labelControl7.Location = new System.Drawing.Point(331, 53);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(69, 16);
             this.labelControl7.TabIndex = 34;
@@ -123,15 +123,15 @@
             // dtpNgayHetBH
             // 
             this.dtpNgayHetBH.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayHetBH.Location = new System.Drawing.Point(695, 47);
+            this.dtpNgayHetBH.Location = new System.Drawing.Point(448, 51);
             this.dtpNgayHetBH.Name = "dtpNgayHetBH";
-            this.dtpNgayHetBH.Size = new System.Drawing.Size(155, 21);
+            this.dtpNgayHetBH.Size = new System.Drawing.Size(161, 21);
             this.dtpNgayHetBH.TabIndex = 31;
             // 
             // dtpNgayMua
             // 
             this.dtpNgayMua.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayMua.Location = new System.Drawing.Point(448, 49);
+            this.dtpNgayMua.Location = new System.Drawing.Point(742, 12);
             this.dtpNgayMua.Name = "dtpNgayMua";
             this.dtpNgayMua.Size = new System.Drawing.Size(161, 21);
             this.dtpNgayMua.TabIndex = 32;
@@ -141,14 +141,14 @@
             this.dtpNgaySX.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgaySX.Location = new System.Drawing.Point(448, 12);
             this.dtpNgaySX.Name = "dtpNgaySX";
-            this.dtpNgaySX.Size = new System.Drawing.Size(402, 21);
+            this.dtpNgaySX.Size = new System.Drawing.Size(161, 21);
             this.dtpNgaySX.TabIndex = 33;
             // 
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl4.Location = new System.Drawing.Point(332, 51);
+            this.labelControl4.Location = new System.Drawing.Point(626, 14);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(115, 16);
             this.labelControl4.TabIndex = 30;
@@ -211,7 +211,7 @@
             this.btnDong.Appearance.Options.UseFont = true;
             this.btnDong.Appearance.Options.UseForeColor = true;
             this.btnDong.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.Image")));
-            this.btnDong.Location = new System.Drawing.Point(580, 118);
+            this.btnDong.Location = new System.Drawing.Point(580, 97);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(95, 23);
             this.btnDong.TabIndex = 5;
@@ -228,7 +228,7 @@
             this.btnTroGiup.Appearance.Options.UseFont = true;
             this.btnTroGiup.Appearance.Options.UseForeColor = true;
             this.btnTroGiup.Image = ((System.Drawing.Image)(resources.GetObject("btnTroGiup.Image")));
-            this.btnTroGiup.Location = new System.Drawing.Point(434, 118);
+            this.btnTroGiup.Location = new System.Drawing.Point(434, 97);
             this.btnTroGiup.Name = "btnTroGiup";
             this.btnTroGiup.Size = new System.Drawing.Size(108, 23);
             this.btnTroGiup.TabIndex = 4;
@@ -244,7 +244,7 @@
             this.btnIn.Appearance.Options.UseFont = true;
             this.btnIn.Appearance.Options.UseForeColor = true;
             this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
-            this.btnIn.Location = new System.Drawing.Point(327, 118);
+            this.btnIn.Location = new System.Drawing.Point(327, 97);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(75, 23);
             this.btnIn.TabIndex = 3;
@@ -261,7 +261,7 @@
             this.btnSua.Appearance.Options.UseFont = true;
             this.btnSua.Appearance.Options.UseForeColor = true;
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
-            this.btnSua.Location = new System.Drawing.Point(123, 118);
+            this.btnSua.Location = new System.Drawing.Point(123, 97);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(82, 23);
             this.btnSua.TabIndex = 2;
@@ -278,7 +278,7 @@
             this.btnXoa.Appearance.Options.UseFont = true;
             this.btnXoa.Appearance.Options.UseForeColor = true;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(227, 118);
+            this.btnXoa.Location = new System.Drawing.Point(227, 97);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 1;
@@ -295,7 +295,7 @@
             this.btnThem.Appearance.Options.UseFont = true;
             this.btnThem.Appearance.Options.UseForeColor = true;
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.Location = new System.Drawing.Point(12, 118);
+            this.btnThem.Location = new System.Drawing.Point(12, 97);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(83, 23);
             this.btnThem.TabIndex = 0;
@@ -308,9 +308,9 @@
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.Controls.Add(this.dtgvDSLinhKien);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 147);
+            this.groupControl1.Location = new System.Drawing.Point(0, 130);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(862, 313);
+            this.groupControl1.Size = new System.Drawing.Size(915, 330);
             this.groupControl1.TabIndex = 6;
             this.groupControl1.Text = "Danh sách linh kiện";
             // 
@@ -330,7 +330,7 @@
             this.dtgvDSLinhKien.Location = new System.Drawing.Point(2, 26);
             this.dtgvDSLinhKien.Name = "dtgvDSLinhKien";
             this.dtgvDSLinhKien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvDSLinhKien.Size = new System.Drawing.Size(858, 285);
+            this.dtgvDSLinhKien.Size = new System.Drawing.Size(911, 302);
             this.dtgvDSLinhKien.TabIndex = 0;
             this.dtgvDSLinhKien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSLinhKien_CellClick);
             // 
@@ -380,7 +380,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 460);
+            this.ClientSize = new System.Drawing.Size(915, 460);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
