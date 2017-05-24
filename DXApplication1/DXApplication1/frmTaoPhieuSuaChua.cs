@@ -16,10 +16,9 @@ namespace DXApplication1
         QLTBDataContext qltb = new QLTBDataContext();
         TangMa tangma = new TangMa();
         public frmTaoPhieuSuaChua()
-        {
+        {  
             InitializeComponent();
-        }
-
+        } 
         private void dateEdit1_EditValueChanged(object sender, EventArgs e)
         {
 
@@ -52,6 +51,7 @@ namespace DXApplication1
             dtgvPhieuSuaChua.DataSource = phieusuachua;
         }
 
+        
         private void frmTaoPhieuSuaChua_Load(object sender, EventArgs e)
         {
             LoadCbbPTN();
@@ -337,8 +337,15 @@ namespace DXApplication1
                 {
                     chkDaGoi.Checked = true;
                 }
+
             }
             catch { }
+        }
+
+        private void btnTTKH_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmThongTinKH_Goi();
+            frm.ShowDialog();
         }
     }
 }

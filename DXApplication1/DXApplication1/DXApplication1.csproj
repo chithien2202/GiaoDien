@@ -78,6 +78,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmThongTinKH_Goi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongTinKH_Goi.Designer.cs">
+      <DependentUpon>frmThongTinKH_Goi.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_ChiTietPhieuSuaChua_NVKyThuat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -371,6 +377,9 @@
       <DependentUpon>DanhMucThietBi_Report.cs</DependentUpon>
     </Compile>
     <Compile Include="TangMa.cs" />
+    <EmbeddedResource Include="frmThongTinKH_Goi.resx">
+      <DependentUpon>frmThongTinKH_Goi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_ChiTietPhieuSuaChua_NVKyThuat.resx">
       <DependentUpon>frm_ChiTietPhieuSuaChua_NVKyThuat.cs</DependentUpon>
     </EmbeddedResource>
