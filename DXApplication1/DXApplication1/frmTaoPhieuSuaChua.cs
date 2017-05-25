@@ -341,9 +341,10 @@ namespace DXApplication1
             }
             catch { }
         }
-
+        public static string mapsc = "";
         private void btnTTKH_Click(object sender, EventArgs e)
         {
+            mapsc = txtMaPSC.Text;
             Form frm = new frmThongTinKH_Goi();
             frm.ShowDialog();
         }

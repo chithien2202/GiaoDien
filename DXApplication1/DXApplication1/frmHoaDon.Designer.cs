@@ -49,10 +49,17 @@
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.txtMaHoaDon = new System.Windows.Forms.TextBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cbbMaPhieuSuaChua = new System.Windows.Forms.ComboBox();
+            this.cbbKhachHang = new System.Windows.Forms.ComboBox();
+            this.cbbNhanVienLap = new System.Windows.Forms.ComboBox();
             this.btnThemKhachHang = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.txtTongTien = new System.Windows.Forms.TextBox();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.dtgvDSHoaDon = new System.Windows.Forms.DataGridView();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,13 +88,7 @@
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.cbbNhanVienLap = new System.Windows.Forms.ComboBox();
-            this.cbbKhachHang = new System.Windows.Forms.ComboBox();
-            this.cbbMaPhieuSuaChua = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.txtMaHoaDon = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.txtTongTien = new System.Windows.Forms.TextBox();
+            this.lbMKH = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvThongTinCTHoaDon)).BeginInit();
@@ -304,6 +305,7 @@
             this.btnThem.Size = new System.Drawing.Size(98, 23);
             this.btnThem.TabIndex = 6;
             this.btnThem.Text = "Thê&m(F5)";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // groupControl3
             // 
@@ -324,6 +326,7 @@
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
+            this.groupControl1.Controls.Add(this.lbMKH);
             this.groupControl1.Controls.Add(this.txtMaHoaDon);
             this.groupControl1.Controls.Add(this.dateTimePicker2);
             this.groupControl1.Controls.Add(this.dateTimePicker1);
@@ -342,6 +345,54 @@
             this.groupControl1.TabIndex = 15;
             this.groupControl1.Text = "Thông tin hóa đơn";
             // 
+            // txtMaHoaDon
+            // 
+            this.txtMaHoaDon.Location = new System.Drawing.Point(149, 34);
+            this.txtMaHoaDon.Name = "txtMaHoaDon";
+            this.txtMaHoaDon.Size = new System.Drawing.Size(189, 21);
+            this.txtMaHoaDon.TabIndex = 36;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(-470, -29);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(189, 21);
+            this.dateTimePicker2.TabIndex = 12;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(149, 69);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(189, 21);
+            this.dateTimePicker1.TabIndex = 12;
+            // 
+            // cbbMaPhieuSuaChua
+            // 
+            this.cbbMaPhieuSuaChua.FormattingEnabled = true;
+            this.cbbMaPhieuSuaChua.Location = new System.Drawing.Point(879, 34);
+            this.cbbMaPhieuSuaChua.Name = "cbbMaPhieuSuaChua";
+            this.cbbMaPhieuSuaChua.Size = new System.Drawing.Size(173, 21);
+            this.cbbMaPhieuSuaChua.TabIndex = 33;
+            this.cbbMaPhieuSuaChua.SelectedIndexChanged += new System.EventHandler(this.cbbMaPhieuSuaChua_SelectedIndexChanged);
+            this.cbbMaPhieuSuaChua.SelectionChangeCommitted += new System.EventHandler(this.cbbMaPhieuSuaChua_SelectionChangeCommitted);
+            // 
+            // cbbKhachHang
+            // 
+            this.cbbKhachHang.FormattingEnabled = true;
+            this.cbbKhachHang.Location = new System.Drawing.Point(480, 69);
+            this.cbbKhachHang.Name = "cbbKhachHang";
+            this.cbbKhachHang.Size = new System.Drawing.Size(194, 21);
+            this.cbbKhachHang.TabIndex = 33;
+            this.cbbKhachHang.SelectionChangeCommitted += new System.EventHandler(this.cbbKhachHang_SelectionChangeCommitted);
+            // 
+            // cbbNhanVienLap
+            // 
+            this.cbbNhanVienLap.FormattingEnabled = true;
+            this.cbbNhanVienLap.Location = new System.Drawing.Point(480, 34);
+            this.cbbNhanVienLap.Name = "cbbNhanVienLap";
+            this.cbbNhanVienLap.Size = new System.Drawing.Size(194, 21);
+            this.cbbNhanVienLap.TabIndex = 33;
+            // 
             // btnThemKhachHang
             // 
             this.btnThemKhachHang.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -353,6 +404,7 @@
             this.btnThemKhachHang.Name = "btnThemKhachHang";
             this.btnThemKhachHang.Size = new System.Drawing.Size(22, 22);
             this.btnThemKhachHang.TabIndex = 32;
+            this.btnThemKhachHang.Click += new System.EventHandler(this.btnThemKhachHang_Click);
             // 
             // labelControl7
             // 
@@ -385,6 +437,13 @@
             this.groupControl4.Size = new System.Drawing.Size(349, 50);
             this.groupControl4.TabIndex = 18;
             this.groupControl4.Text = "Tiền thanh toán";
+            // 
+            // txtTongTien
+            // 
+            this.txtTongTien.Location = new System.Drawing.Point(91, 24);
+            this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.Size = new System.Drawing.Size(189, 21);
+            this.txtTongTien.TabIndex = 36;
             // 
             // groupControl5
             // 
@@ -657,58 +716,16 @@
             this.gridView4.Name = "gridView4";
             this.gridView4.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             // 
-            // cbbNhanVienLap
+            // lbMKH
             // 
-            this.cbbNhanVienLap.FormattingEnabled = true;
-            this.cbbNhanVienLap.Location = new System.Drawing.Point(480, 34);
-            this.cbbNhanVienLap.Name = "cbbNhanVienLap";
-            this.cbbNhanVienLap.Size = new System.Drawing.Size(194, 21);
-            this.cbbNhanVienLap.TabIndex = 33;
-            // 
-            // cbbKhachHang
-            // 
-            this.cbbKhachHang.FormattingEnabled = true;
-            this.cbbKhachHang.Location = new System.Drawing.Point(480, 69);
-            this.cbbKhachHang.Name = "cbbKhachHang";
-            this.cbbKhachHang.Size = new System.Drawing.Size(194, 21);
-            this.cbbKhachHang.TabIndex = 33;
-            // 
-            // cbbMaPhieuSuaChua
-            // 
-            this.cbbMaPhieuSuaChua.FormattingEnabled = true;
-            this.cbbMaPhieuSuaChua.Location = new System.Drawing.Point(879, 34);
-            this.cbbMaPhieuSuaChua.Name = "cbbMaPhieuSuaChua";
-            this.cbbMaPhieuSuaChua.Size = new System.Drawing.Size(173, 21);
-            this.cbbMaPhieuSuaChua.TabIndex = 33;
-            this.cbbMaPhieuSuaChua.SelectedIndexChanged += new System.EventHandler(this.cbbMaPhieuSuaChua_SelectedIndexChanged);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(149, 69);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(189, 21);
-            this.dateTimePicker1.TabIndex = 12;
-            // 
-            // txtMaHoaDon
-            // 
-            this.txtMaHoaDon.Location = new System.Drawing.Point(149, 34);
-            this.txtMaHoaDon.Name = "txtMaHoaDon";
-            this.txtMaHoaDon.Size = new System.Drawing.Size(189, 21);
-            this.txtMaHoaDon.TabIndex = 36;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(-470, -29);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(189, 21);
-            this.dateTimePicker2.TabIndex = 12;
-            // 
-            // txtTongTien
-            // 
-            this.txtTongTien.Location = new System.Drawing.Point(91, 24);
-            this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(189, 21);
-            this.txtTongTien.TabIndex = 36;
+            this.lbMKH.AutoSize = true;
+            this.lbMKH.ForeColor = System.Drawing.Color.Transparent;
+            this.lbMKH.Location = new System.Drawing.Point(786, 77);
+            this.lbMKH.Name = "lbMKH";
+            this.lbMKH.Size = new System.Drawing.Size(35, 13);
+            this.lbMKH.TabIndex = 37;
+            this.lbMKH.Text = "label1";
+            this.lbMKH.Visible = false;
             // 
             // frmHoaDon
             // 
@@ -818,5 +835,6 @@
         private System.Windows.Forms.TextBox txtMaHoaDon;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.TextBox txtTongTien;
+        private System.Windows.Forms.Label lbMKH;
     }
 }
