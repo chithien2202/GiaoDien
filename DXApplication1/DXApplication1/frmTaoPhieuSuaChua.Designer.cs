@@ -41,6 +41,7 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnTTKH = new System.Windows.Forms.Button();
             this.chkDaGoi = new System.Windows.Forms.CheckBox();
             this.chkDongY = new System.Windows.Forms.CheckBox();
             this.chkTrangThai = new System.Windows.Forms.CheckBox();
@@ -102,7 +103,6 @@
             this.dateEdit7 = new DevExpress.XtraEditors.DateEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.btnTTKH = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -285,6 +285,7 @@
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
+            this.groupControl1.AutoSize = true;
             this.groupControl1.Controls.Add(this.btnTTKH);
             this.groupControl1.Controls.Add(this.chkDaGoi);
             this.groupControl1.Controls.Add(this.chkDongY);
@@ -312,6 +313,16 @@
             this.groupControl1.Size = new System.Drawing.Size(1321, 165);
             this.groupControl1.TabIndex = 11;
             this.groupControl1.Text = "Thông tin Phiếu sửa chữa";
+            // 
+            // btnTTKH
+            // 
+            this.btnTTKH.Location = new System.Drawing.Point(477, 75);
+            this.btnTTKH.Name = "btnTTKH";
+            this.btnTTKH.Size = new System.Drawing.Size(93, 23);
+            this.btnTTKH.TabIndex = 37;
+            this.btnTTKH.Text = "Thông tin KH";
+            this.btnTTKH.UseVisualStyleBackColor = true;
+            this.btnTTKH.Click += new System.EventHandler(this.btnTTKH_Click);
             // 
             // chkDaGoi
             // 
@@ -857,16 +868,6 @@
             this.labelControl10.TabIndex = 2;
             this.labelControl10.Text = "Từ ";
             // 
-            // btnTTKH
-            // 
-            this.btnTTKH.Location = new System.Drawing.Point(477, 75);
-            this.btnTTKH.Name = "btnTTKH";
-            this.btnTTKH.Size = new System.Drawing.Size(93, 23);
-            this.btnTTKH.TabIndex = 37;
-            this.btnTTKH.Text = "Thông tin KH";
-            this.btnTTKH.UseVisualStyleBackColor = true;
-            this.btnTTKH.Click += new System.EventHandler(this.btnTTKH_Click);
-            // 
             // frmTaoPhieuSuaChua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -912,6 +913,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit7.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit7.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
