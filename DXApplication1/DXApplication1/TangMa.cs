@@ -159,6 +159,17 @@ namespace DXApplication1
         }
 
 
+        public string ThemMaHoaDon()
+        {
+            ArrayList MangTam = new ArrayList();
+            var ma = from hoadon in qltb.HOADONs select hoadon;
+            foreach (HOADON hd in ma)
+            {
+                MangTam.Add(int.Parse(hd.MAHOADON.Substring(2)));
+            }
+            return KiemTra(MangTam, "HD");
+        }
+
 
 
 

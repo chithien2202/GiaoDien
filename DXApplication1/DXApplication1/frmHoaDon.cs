@@ -14,6 +14,7 @@ namespace DXApplication1
     public partial class frmHoaDon : DevExpress.XtraEditors.XtraForm
     {
         QLTBDataContext qltb = new QLTBDataContext();
+        TangMa tangma = new TangMa();
         public frmHoaDon()
         {
             InitializeComponent();
@@ -21,7 +22,13 @@ namespace DXApplication1
 
         private void frmHoaDon_Load(object sender, EventArgs e)
         {
+            LoadGridViewHoaDon();
             LoadCbbPSC();
+            cbbMaPhieuSuaChua.Enabled = false;
+            dtpNgayLap.Enabled = false;
+            txtMaHoaDon.Enabled = false;
+            txtKhachHang.Enabled = false;
+            cbbNhanVienLap.Enabled = false;
         }
 
         public void LoadCbbPSC()
@@ -45,7 +52,7 @@ namespace DXApplication1
            // var kh = (from k in qltb.HOADONs where k.MAPSC == cbbMaPhieuSuaChua.SelectedValue.ToString() select new { k.MAKHACHHANG, k.KHACHHANG.TENKHACHHANG, k.PHIEUSUACHUA.TRANGTHAI,k.PHIEUSUACHUA.TONGTIEN }).FirstOrDefault();
             var psc = (from p in qltb.PHIEUSUACHUAs where p.MAPSC == cbbMaPhieuSuaChua.SelectedValue.ToString() select new {p.PHIEUTIEPNHAN.MAKHACHKHACH,p.PHIEUTIEPNHAN.KHACHHANG.TENKHACHHANG, p.TRANGTHAI,p.TONGTIEN }).FirstOrDefault();
             lbMKH.Text = psc.MAKHACHKHACH;
-            cbbKhachHang.Text = psc.TENKHACHHANG;
+            txtKhachHang.Text = psc.TENKHACHHANG;
             if(psc.TRANGTHAI.Value.ToString()=="True")
             {
                 txtTongTien.Text = "0";
@@ -56,19 +63,101 @@ namespace DXApplication1
             }
         }
 
-        private void cbbKhachHang_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            
-        }
 
-        private void btnThemKhachHang_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(cbbKhachHang.Text + "   " + lbMKH.Text);
-        }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            
+            if (btnThem.Text == "Thêm")
+            {
+                btnXoa.Enabled = false;
+                btnSua.Enabled = false;
+
+                cbbMaPhieuSuaChua.Enabled = true;
+                dtpNgayLap.Enabled = true;
+                txtMaHoaDon.Enabled = false;
+                txtKhachHang.Enabled = false;
+                cbbNhanVienLap.Enabled = false;
+
+                cbbMaPhieuSuaChua.Text = String.Empty;
+                txtMaHoaDon.Text = String.Empty;
+                txtKhachHang.Text = String.Empty;
+                cbbNhanVienLap.Text = String.Empty;
+
+                btnThem.Text = "Lưu";
+            }
+            else
+            {
+                if (cbbMaPhieuSuaChua.Text == String.Empty || txtKhachHang.Text == String.Empty) 
+                {
+                    XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo");
+                }
+                else
+                {
+                    HOADON hd = new HOADON();
+                    hd.MAHOADON = tangma.ThemMaHoaDon();
+                    hd.MAKHACHHANG = lbMKH.Text;
+                    hd.MAPSC = cbbMaPhieuSuaChua.Text;
+                    hd.MANHANVIEN = Program.mainForm.getUserName;
+                    hd.NGAYLAP = dtpNgayLap.Value;
+                    hd.TONGTIEN = decimal.Parse(txtTongTien.Text);
+                    qltb.HOADONs.InsertOnSubmit(hd);
+                    qltb.SubmitChanges();
+                    XtraMessageBox.Show("Thêm thành công", "Thông báo");
+                    LoadGridViewHoaDon();
+
+                    btnXoa.Enabled = true;
+                    btnSua.Enabled = true;
+
+                    btnThem.Text = "Thêm";
+
+                    cbbMaPhieuSuaChua.Enabled = false;
+                    dtpNgayLap.Enabled = false;
+                    txtMaHoaDon.Enabled = false;
+                    txtKhachHang.Enabled = false;
+                    cbbNhanVienLap.Enabled = false;
+
+                    cbbMaPhieuSuaChua.Text = String.Empty;
+                    txtMaHoaDon.Text = String.Empty;
+                    txtKhachHang.Text = String.Empty;
+                    cbbNhanVienLap.Text = String.Empty;
+                }
+            }
+        }
+
+
+
+        public void LoadGridViewHoaDon()
+        {
+            var hoadon = from hd in qltb.HOADONs
+                        select new { hd.MAHOADON, hd.MAKHACHHANG, hd.MAPSC, hd.MANHANVIEN, hd.NGAYLAP, hd.TONGTIEN };
+            dtgvDSHoaDon.DataSource = hoadon;
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = XtraMessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo);
+
+            if (dr == DialogResult.Yes)
+
+            {
+                string mahoadon = dtgvDSHoaDon.CurrentRow.Cells[0].Value.ToString();
+                HOADON hoadon = qltb.HOADONs.Where(t => t.MAHOADON == mahoadon).FirstOrDefault();
+                qltb.HOADONs.DeleteOnSubmit(hoadon);
+                qltb.SubmitChanges();
+                XtraMessageBox.Show("Xóa thành công", "Thông báo");
+                LoadGridViewHoaDon();
+            }
+
+            if (dr == DialogResult.No)
+
+            {
+                this.Close();
+            }
         }
     }
 }
