@@ -312,7 +312,7 @@
             // 
             this.lbMKH.AutoSize = true;
             this.lbMKH.ForeColor = System.Drawing.Color.Transparent;
-            this.lbMKH.Location = new System.Drawing.Point(786, 77);
+            this.lbMKH.Location = new System.Drawing.Point(747, 77);
             this.lbMKH.Name = "lbMKH";
             this.lbMKH.Size = new System.Drawing.Size(35, 13);
             this.lbMKH.TabIndex = 37;

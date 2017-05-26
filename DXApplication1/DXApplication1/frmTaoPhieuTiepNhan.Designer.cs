@@ -42,10 +42,8 @@
             this.cbbKhachHang = new System.Windows.Forms.ComboBox();
             this.txtPhuKienDiCung = new System.Windows.Forms.TextBox();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.btnThemThietBi = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.btnThemKH = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
@@ -109,10 +107,8 @@
             this.groupControl1.Controls.Add(this.cbbKhachHang);
             this.groupControl1.Controls.Add(this.txtPhuKienDiCung);
             this.groupControl1.Controls.Add(this.labelControl8);
-            this.groupControl1.Controls.Add(this.btnThemThietBi);
             this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Controls.Add(this.labelControl5);
-            this.groupControl1.Controls.Add(this.btnThemKH);
             this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -217,19 +213,6 @@
             this.labelControl8.TabIndex = 29;
             this.labelControl8.Text = "Phụ kiện đi cùng:";
             // 
-            // btnThemThietBi
-            // 
-            this.btnThemThietBi.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemThietBi.Appearance.ForeColor = System.Drawing.Color.Navy;
-            this.btnThemThietBi.Appearance.Options.UseFont = true;
-            this.btnThemThietBi.Appearance.Options.UseForeColor = true;
-            this.btnThemThietBi.Image = ((System.Drawing.Image)(resources.GetObject("btnThemThietBi.Image")));
-            this.btnThemThietBi.Location = new System.Drawing.Point(658, 69);
-            this.btnThemThietBi.Name = "btnThemThietBi";
-            this.btnThemThietBi.Size = new System.Drawing.Size(22, 22);
-            this.btnThemThietBi.TabIndex = 28;
-            this.btnThemThietBi.Click += new System.EventHandler(this.btnThemThietBi_Click);
-            // 
             // labelControl6
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -249,19 +232,6 @@
             this.labelControl5.Size = new System.Drawing.Size(82, 16);
             this.labelControl5.TabIndex = 21;
             this.labelControl5.Text = "Ngày hẹn trả :";
-            // 
-            // btnThemKH
-            // 
-            this.btnThemKH.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemKH.Appearance.ForeColor = System.Drawing.Color.Navy;
-            this.btnThemKH.Appearance.Options.UseFont = true;
-            this.btnThemKH.Appearance.Options.UseForeColor = true;
-            this.btnThemKH.Image = ((System.Drawing.Image)(resources.GetObject("btnThemKH.Image")));
-            this.btnThemKH.Location = new System.Drawing.Point(658, 28);
-            this.btnThemKH.Name = "btnThemKH";
-            this.btnThemKH.Size = new System.Drawing.Size(22, 22);
-            this.btnThemKH.TabIndex = 20;
-            this.btnThemKH.Click += new System.EventHandler(this.btnThemKH_Click);
             // 
             // labelControl4
             // 
@@ -551,8 +521,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.SimpleButton btnThemKH;
-        private DevExpress.XtraEditors.SimpleButton btnThemThietBi;
         private System.Windows.Forms.TextBox txtPhuKienDiCung;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.GroupControl groupControl3;

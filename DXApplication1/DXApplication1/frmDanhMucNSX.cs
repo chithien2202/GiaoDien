@@ -164,14 +164,17 @@ namespace DXApplication1
 
         private void dtgvNhaSanXuat_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
                 txtTenNhaSanXuat.Enabled = false;
                 txtDienGiai.Enabled = false;
                 txtTenNhaSanXuat.Text = dtgvNhaSanXuat.CurrentRow.Cells[1].Value.ToString();
-                txtDienGiai.Text = dtgvNhaSanXuat.CurrentRow.Cells[2].Value.ToString();
-            }
-            catch { }
+                if (dtgvNhaSanXuat.CurrentRow.Cells[2].Value == null || dtgvNhaSanXuat.CurrentRow.Cells[2].Value.ToString() == "")
+                {
+                    txtDienGiai.Text = "";
+                }
+                else
+                {
+                    txtDienGiai.Text = dtgvNhaSanXuat.CurrentRow.Cells[2].Value.ToString();
+                }
         }
 
         private void btnIn_Click(object sender, EventArgs e)

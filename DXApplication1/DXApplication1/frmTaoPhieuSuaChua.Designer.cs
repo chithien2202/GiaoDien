@@ -32,7 +32,6 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnĐóng = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -141,12 +140,11 @@
             this.groupControl3.AppearanceCaption.Options.UseFont = true;
             this.groupControl3.Controls.Add(this.btnXoa);
             this.groupControl3.Controls.Add(this.btnĐóng);
-            this.groupControl3.Controls.Add(this.simpleButton4);
             this.groupControl3.Controls.Add(this.btnSua);
             this.groupControl3.Controls.Add(this.btnThem);
             this.groupControl3.Location = new System.Drawing.Point(8, 178);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(660, 52);
+            this.groupControl3.Size = new System.Drawing.Size(570, 52);
             this.groupControl3.TabIndex = 13;
             this.groupControl3.Text = "Tác vụ phiếu sửa chữa";
             // 
@@ -177,27 +175,11 @@
             this.btnĐóng.Appearance.Options.UseFont = true;
             this.btnĐóng.Appearance.Options.UseForeColor = true;
             this.btnĐóng.Image = ((System.Drawing.Image)(resources.GetObject("btnĐóng.Image")));
-            this.btnĐóng.Location = new System.Drawing.Point(565, 24);
+            this.btnĐóng.Location = new System.Drawing.Point(425, 24);
             this.btnĐóng.Name = "btnĐóng";
             this.btnĐóng.Size = new System.Drawing.Size(88, 23);
             this.btnĐóng.TabIndex = 10;
             this.btnĐóng.Text = "Đóng";
-            // 
-            // simpleButton4
-            // 
-            this.simpleButton4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.simpleButton4.Appearance.BackColor2 = System.Drawing.Color.Navy;
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton4.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.simpleButton4.Appearance.Options.UseBackColor = true;
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.Appearance.Options.UseForeColor = true;
-            this.simpleButton4.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(425, 24);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton4.TabIndex = 9;
-            this.simpleButton4.Text = "&Gọi(F8)";
             // 
             // btnSua
             // 
@@ -921,7 +903,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraEditors.SimpleButton btnXoa;
         private DevExpress.XtraEditors.SimpleButton btnĐóng;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton btnSua;
         private DevExpress.XtraEditors.SimpleButton btnThem;
         private DevExpress.XtraEditors.LabelControl labelControl2;

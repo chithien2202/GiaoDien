@@ -270,7 +270,7 @@ namespace DXApplication1
 
         private void btnDoanhThu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            XtraForm fff = new frmThongKeDanhThu();
+            XtraForm fff = new frmThongKeDoanhThu();
             TabCreating(this.xtraTabControl1, "Thống kê doanh thu", fff);
         }
 

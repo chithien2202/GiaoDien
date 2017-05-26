@@ -174,12 +174,6 @@
     <Compile Include="frmDanhSachPhieuNhan.Designer.cs">
       <DependentUpon>frmDanhSachPhieuNhan.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGoiDienKhachHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmGoiDienKhachHang.Designer.cs">
-      <DependentUpon>frmGoiDienKhachHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,12 +203,6 @@
     </Compile>
     <Compile Include="frmNhomNguoiDung.Designer.cs">
       <DependentUpon>frmNhomNguoiDung.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmPhanLoaiGia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPhanLoaiGia.Designer.cs">
-      <DependentUpon>frmPhanLoaiGia.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPhanQuyen.cs">
       <SubType>Form</SubType>
@@ -252,11 +240,11 @@
     <Compile Include="frmThemNguoiDungVaoNhomNguoiDung.Designer.cs">
       <DependentUpon>frmThemNguoiDungVaoNhomNguoiDung.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThongKeDanhThu.cs">
+    <Compile Include="frmThongKeDoanhThu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThongKeDanhThu.Designer.cs">
-      <DependentUpon>frmThongKeDanhThu.cs</DependentUpon>
+    <Compile Include="frmThongKeDoanhThu.Designer.cs">
+      <DependentUpon>frmThongKeDoanhThu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThongKeLinhKien.cs">
       <SubType>Form</SubType>
@@ -294,6 +282,7 @@
     <Compile Include="frm_background.Designer.cs">
       <DependentUpon>frm_background.cs</DependentUpon>
     </Compile>
+    <Compile Include="HamHT.cs" />
     <Compile Include="LoginResult.cs" />
     <Compile Include="MaHoaPass.cs" />
     <Compile Include="Module_CauHinh.cs" />
@@ -428,9 +417,6 @@
     <EmbeddedResource Include="frmDanhSachPhieuNhan.resx">
       <DependentUpon>frmDanhSachPhieuNhan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGoiDienKhachHang.resx">
-      <DependentUpon>frmGoiDienKhachHang.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmHoaDon.resx">
       <DependentUpon>frmHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -442,9 +428,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhomNguoiDung.resx">
       <DependentUpon>frmNhomNguoiDung.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPhanLoaiGia.resx">
-      <DependentUpon>frmPhanLoaiGia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPhanQuyen.resx">
       <DependentUpon>frmPhanQuyen.cs</DependentUpon>
@@ -467,8 +450,8 @@
     <EmbeddedResource Include="frmThemNguoiDungVaoNhomNguoiDung.resx">
       <DependentUpon>frmThemNguoiDungVaoNhomNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThongKeDanhThu.resx">
-      <DependentUpon>frmThongKeDanhThu.cs</DependentUpon>
+    <EmbeddedResource Include="frmThongKeDoanhThu.resx">
+      <DependentUpon>frmThongKeDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThongKeLinhKien.resx">
       <DependentUpon>frmThongKeLinhKien.cs</DependentUpon>

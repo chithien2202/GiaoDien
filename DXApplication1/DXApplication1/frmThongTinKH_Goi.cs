@@ -17,10 +17,10 @@ namespace DXApplication1
         {
             InitializeComponent();
         }
-        QLTBDataContext ql = new QLTBDataContext();
+        QLTBDataContext qltb = new QLTBDataContext();
         private void frmThongTinKH_Goi_Load(object sender, EventArgs e)
         {
-            var psc = (from p in ql.PHIEUSUACHUAs where p.MAPSC == frmTaoPhieuSuaChua.mapsc select p).FirstOrDefault();
+            var psc = (from p in qltb.PHIEUSUACHUAs where p.MAPSC == frmTaoPhieuSuaChua.mapsc select p).FirstOrDefault();
             txtMaPSC.Text = psc.MAPSC;
             txtMaKH.Text = psc.PHIEUTIEPNHAN.KHACHHANG.MAKHACHKHACH;
             txtTenKH.Text = psc.PHIEUTIEPNHAN.KHACHHANG.TENKHACHHANG;

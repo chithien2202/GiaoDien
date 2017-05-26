@@ -170,6 +170,17 @@ namespace DXApplication1
             return KiemTra(MangTam, "HD");
         }
 
+        public string ThemMaPhanLoaiGia()
+        {
+            ArrayList MangTam = new ArrayList();
+            var ma = from phanloaigia in qltb.PHANLOAIs select phanloaigia;
+            foreach (PHANLOAI plg in ma)
+            {
+                MangTam.Add(int.Parse(plg.MAPHANLOAI.Substring(2)));
+            }
+            return KiemTra(MangTam, "PL");
+        }
+
 
 
 
