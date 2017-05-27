@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DXApplication1
 {
-    public class HamHT
+    public class HamLayNgay
     {
         public string madr()
         {

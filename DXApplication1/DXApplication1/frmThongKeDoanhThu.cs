@@ -14,7 +14,7 @@ namespace DXApplication1
     public partial class frmThongKeDoanhThu : DevExpress.XtraEditors.XtraForm
     {
         QLTBDataContext qltb = new QLTBDataContext();
-        HamHT ht = new HamHT();
+        HamLayNgay layngay = new HamLayNgay();
         public frmThongKeDoanhThu()
         {
             InitializeComponent();
@@ -22,13 +22,23 @@ namespace DXApplication1
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            string tg = ht.ngay();
+            string tg = layngay.ngay();
             DateTime dt = Convert.ToDateTime(tg);
-            dtgvThongKeDoanhThu.DataSource = qltb.HOADONs.Where(x => x.NGAYLAP == dt).ToList();
+            var hd = from h in qltb.HOADONs where (h.NGAYLAP >= dtpTu.DateTime) && (h.NGAYLAP <= dtpDen.DateTime) select new { h.MAHOADON, h.MAKHACHHANG, h.MAPSC, h.MANHANVIEN, h.NGAYLAP, h.TONGTIEN };
+            dtgvThongKeDoanhThu.DataSource = hd;
 
-            var a = qltb.HOADONs.Where(x => x.NGAYLAP == dt).Sum(x => x.TONGTIEN);// tinh tong tien nhap bán lẻ
-            decimal? ttbl = (a == null) ? 0 : a;
-            txtTongTien.Text = ttbl.ToString();
+            var s = (from a in qltb.HOADONs where (a.NGAYLAP >= dtpTu.DateTime) && (a.NGAYLAP <= dtpDen.DateTime) select a).Count();
+            int? tksl = (s == null) ? 0 : s;
+            txtSoLuong.Text = tksl.ToString();
+
+            var q = (from a in qltb.HOADONs where (a.NGAYLAP >= dtpTu.DateTime) && (a.NGAYLAP <= dtpDen.DateTime) select a).Sum(x => x.TONGTIEN);
+            decimal? tktt = (q == null) ? 0 : q;
+            txtTongTien.Text = tktt.ToString();
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

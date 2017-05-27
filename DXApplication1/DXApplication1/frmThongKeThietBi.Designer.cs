@@ -38,8 +38,6 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.btnTim = new DevExpress.XtraEditors.SimpleButton();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dtgvDSThietBi = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,15 +46,25 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTongSo = new System.Windows.Forms.TextBox();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.dtpTu = new DevExpress.XtraEditors.DateEdit();
+            this.dtpDen = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSThietBi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpTu.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpTu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpDen.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpDen.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.dateTimePicker2);
-            this.groupControl1.Controls.Add(this.dateTimePicker1);
+            this.groupControl1.Controls.Add(this.dtpDen);
+            this.groupControl1.Controls.Add(this.dtpTu);
+            this.groupControl1.Controls.Add(this.txtTongSo);
+            this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Controls.Add(this.rbBaoHanh);
             this.groupControl1.Controls.Add(this.rbSuaChua);
             this.groupControl1.Controls.Add(this.labelControl4);
@@ -155,20 +163,7 @@
             this.btnTim.Size = new System.Drawing.Size(55, 23);
             this.btnTim.TabIndex = 4;
             this.btnTim.Text = "Tìm";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(38, 30);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(204, 21);
-            this.dateTimePicker1.TabIndex = 18;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(292, 30);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(204, 21);
-            this.dateTimePicker2.TabIndex = 18;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // dtgvDSThietBi
             // 
@@ -231,6 +226,46 @@
             this.Column7.HeaderText = "Ghi chú";
             this.Column7.Name = "Column7";
             // 
+            // txtTongSo
+            // 
+            this.txtTongSo.Location = new System.Drawing.Point(807, 70);
+            this.txtTongSo.Name = "txtTongSo";
+            this.txtTongSo.Size = new System.Drawing.Size(153, 21);
+            this.txtTongSo.TabIndex = 16;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Location = new System.Drawing.Point(554, 70);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(230, 16);
+            this.labelControl1.TabIndex = 15;
+            this.labelControl1.Text = "Tổng số lượng thiết bị đã mua/sửa chữa";
+            // 
+            // dtpTu
+            // 
+            this.dtpTu.EditValue = null;
+            this.dtpTu.Location = new System.Drawing.Point(38, 32);
+            this.dtpTu.Name = "dtpTu";
+            this.dtpTu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtpTu.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtpTu.Size = new System.Drawing.Size(190, 20);
+            this.dtpTu.TabIndex = 18;
+            // 
+            // dtpDen
+            // 
+            this.dtpDen.EditValue = null;
+            this.dtpDen.Location = new System.Drawing.Point(291, 33);
+            this.dtpDen.Name = "dtpDen";
+            this.dtpDen.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtpDen.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtpDen.Size = new System.Drawing.Size(190, 20);
+            this.dtpDen.TabIndex = 18;
+            // 
             // frmThongKeThietBi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,6 +280,10 @@
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSThietBi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpTu.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpTu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpDen.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpDen.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -260,8 +299,6 @@
         private System.Windows.Forms.RadioButton rbBaoHanh;
         private System.Windows.Forms.RadioButton rbSuaChua;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridView dtgvDSThietBi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -270,5 +307,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.TextBox txtTongSo;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.DateEdit dtpDen;
+        private DevExpress.XtraEditors.DateEdit dtpTu;
     }
 }

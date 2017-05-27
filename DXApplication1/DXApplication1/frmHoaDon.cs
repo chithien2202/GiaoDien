@@ -49,7 +49,7 @@ namespace DXApplication1
 
         private void cbbMaPhieuSuaChua_SelectionChangeCommitted(object sender, EventArgs e)
         {
-           // var kh = (from k in qltb.HOADONs where k.MAPSC == cbbMaPhieuSuaChua.SelectedValue.ToString() select new { k.MAKHACHHANG, k.KHACHHANG.TENKHACHHANG, k.PHIEUSUACHUA.TRANGTHAI,k.PHIEUSUACHUA.TONGTIEN }).FirstOrDefault();
+            //var kh = (from k in qltb.HOADONs where k.MAPSC == cbbMaPhieuSuaChua.SelectedValue.ToString() select new { k.MAKHACHHANG, k.KHACHHANG.TENKHACHHANG, k.PHIEUSUACHUA.TRANGTHAI,k.PHIEUSUACHUA.TONGTIEN }).FirstOrDefault();
             var psc = (from p in qltb.PHIEUSUACHUAs where p.MAPSC == cbbMaPhieuSuaChua.SelectedValue.ToString() select new {p.PHIEUTIEPNHAN.MAKHACHKHACH,p.PHIEUTIEPNHAN.KHACHHANG.TENKHACHHANG, p.TRANGTHAI,p.TONGTIEN }).FirstOrDefault();
             lbMKH.Text = psc.MAKHACHKHACH;
             txtKhachHang.Text = psc.TENKHACHHANG;

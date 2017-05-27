@@ -282,7 +282,7 @@
     <Compile Include="frm_background.Designer.cs">
       <DependentUpon>frm_background.cs</DependentUpon>
     </Compile>
-    <Compile Include="HamHT.cs" />
+    <Compile Include="HamLayNgay.cs" />
     <Compile Include="LoginResult.cs" />
     <Compile Include="MaHoaPass.cs" />
     <Compile Include="Module_CauHinh.cs" />

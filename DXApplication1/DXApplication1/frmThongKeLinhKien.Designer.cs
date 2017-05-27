@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThongKeLinhKien));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.btnTim = new DevExpress.XtraEditors.SimpleButton();
-            this.btnIn = new DevExpress.XtraEditors.SimpleButton();
+            this.txtTongSo = new System.Windows.Forms.TextBox();
             this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
-            this.dtpTu = new System.Windows.Forms.DateTimePicker();
-            this.dtpDen = new System.Windows.Forms.DateTimePicker();
+            this.btnIn = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.btnTim = new DevExpress.XtraEditors.SimpleButton();
             this.dtgvDSLinhKien = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,18 +45,22 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtTongSo = new System.Windows.Forms.TextBox();
+            this.dtpTu = new DevExpress.XtraEditors.DateEdit();
+            this.dtpDen = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSLinhKien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpTu.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpTu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpDen.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpDen.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.txtTongSo);
             this.groupControl1.Controls.Add(this.dtpDen);
             this.groupControl1.Controls.Add(this.dtpTu);
+            this.groupControl1.Controls.Add(this.txtTongSo);
             this.groupControl1.Controls.Add(this.btnHuy);
             this.groupControl1.Controls.Add(this.btnIn);
             this.groupControl1.Controls.Add(this.labelControl3);
@@ -70,45 +74,12 @@
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Thông tin chung";
             // 
-            // labelControl2
+            // txtTongSo
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Location = new System.Drawing.Point(111, 31);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(20, 16);
-            this.labelControl2.TabIndex = 7;
-            this.labelControl2.Text = "Từ ";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Location = new System.Drawing.Point(344, 31);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(23, 16);
-            this.labelControl3.TabIndex = 9;
-            this.labelControl3.Text = "Đến";
-            // 
-            // btnTim
-            // 
-            this.btnTim.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.Appearance.Options.UseFont = true;
-            this.btnTim.Image = ((System.Drawing.Image)(resources.GetObject("btnTim.Image")));
-            this.btnTim.Location = new System.Drawing.Point(579, 27);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(55, 23);
-            this.btnTim.TabIndex = 4;
-            this.btnTim.Text = "Tìm";
-            // 
-            // btnIn
-            // 
-            this.btnIn.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIn.Appearance.Options.UseFont = true;
-            this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
-            this.btnIn.Location = new System.Drawing.Point(654, 27);
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(55, 23);
-            this.btnIn.TabIndex = 11;
-            this.btnIn.Text = "In";
+            this.txtTongSo.Location = new System.Drawing.Point(373, 69);
+            this.txtTongSo.Name = "txtTongSo";
+            this.txtTongSo.Size = new System.Drawing.Size(182, 21);
+            this.txtTongSo.TabIndex = 14;
             // 
             // btnHuy
             // 
@@ -121,19 +92,55 @@
             this.btnHuy.TabIndex = 12;
             this.btnHuy.Text = "Hủy";
             // 
-            // dtpTu
+            // btnIn
             // 
-            this.dtpTu.Location = new System.Drawing.Point(138, 27);
-            this.dtpTu.Name = "dtpTu";
-            this.dtpTu.Size = new System.Drawing.Size(200, 21);
-            this.dtpTu.TabIndex = 13;
+            this.btnIn.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIn.Appearance.Options.UseFont = true;
+            this.btnIn.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.Image")));
+            this.btnIn.Location = new System.Drawing.Point(654, 27);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(55, 23);
+            this.btnIn.TabIndex = 11;
+            this.btnIn.Text = "In";
             // 
-            // dtpDen
+            // labelControl3
             // 
-            this.dtpDen.Location = new System.Drawing.Point(373, 27);
-            this.dtpDen.Name = "dtpDen";
-            this.dtpDen.Size = new System.Drawing.Size(200, 21);
-            this.dtpDen.TabIndex = 13;
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Location = new System.Drawing.Point(344, 31);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(23, 16);
+            this.labelControl3.TabIndex = 9;
+            this.labelControl3.Text = "Đến";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Location = new System.Drawing.Point(111, 70);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(238, 16);
+            this.labelControl1.TabIndex = 7;
+            this.labelControl1.Text = "Tổng số lượng linh kiện đã mua/sửa chữa";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Location = new System.Drawing.Point(111, 31);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(20, 16);
+            this.labelControl2.TabIndex = 7;
+            this.labelControl2.Text = "Từ ";
+            // 
+            // btnTim
+            // 
+            this.btnTim.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTim.Appearance.Options.UseFont = true;
+            this.btnTim.Image = ((System.Drawing.Image)(resources.GetObject("btnTim.Image")));
+            this.btnTim.Location = new System.Drawing.Point(579, 27);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(55, 23);
+            this.btnTim.TabIndex = 4;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // dtgvDSLinhKien
             // 
@@ -196,21 +203,29 @@
             this.Column7.HeaderText = "Ghi chú";
             this.Column7.Name = "Column7";
             // 
-            // labelControl1
+            // dtpTu
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Location = new System.Drawing.Point(111, 70);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(133, 16);
-            this.labelControl1.TabIndex = 7;
-            this.labelControl1.Text = "Tổng số lượng linh kiện";
+            this.dtpTu.EditValue = null;
+            this.dtpTu.Location = new System.Drawing.Point(144, 30);
+            this.dtpTu.Name = "dtpTu";
+            this.dtpTu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtpTu.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtpTu.Size = new System.Drawing.Size(182, 20);
+            this.dtpTu.TabIndex = 15;
             // 
-            // txtTongSo
+            // dtpDen
             // 
-            this.txtTongSo.Location = new System.Drawing.Point(250, 69);
-            this.txtTongSo.Name = "txtTongSo";
-            this.txtTongSo.Size = new System.Drawing.Size(159, 21);
-            this.txtTongSo.TabIndex = 14;
+            this.dtpDen.EditValue = null;
+            this.dtpDen.Location = new System.Drawing.Point(373, 30);
+            this.dtpDen.Name = "dtpDen";
+            this.dtpDen.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtpDen.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtpDen.Size = new System.Drawing.Size(182, 20);
+            this.dtpDen.TabIndex = 15;
             // 
             // frmThongKeLinhKien
             // 
@@ -227,6 +242,10 @@
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSLinhKien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpTu.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpTu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpDen.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpDen.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -235,8 +254,6 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private System.Windows.Forms.TextBox txtTongSo;
-        private System.Windows.Forms.DateTimePicker dtpDen;
-        private System.Windows.Forms.DateTimePicker dtpTu;
         private DevExpress.XtraEditors.SimpleButton btnHuy;
         private DevExpress.XtraEditors.SimpleButton btnIn;
         private DevExpress.XtraEditors.LabelControl labelControl3;
@@ -251,5 +268,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private DevExpress.XtraEditors.DateEdit dtpDen;
+        private DevExpress.XtraEditors.DateEdit dtpTu;
     }
 }
