@@ -34,7 +34,6 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.btnXacNhan = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.dtgvPhieuSuaChua = new System.Windows.Forms.DataGridView();
             this.chkDaGiao = new System.Windows.Forms.CheckBox();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.cbbMaPhieuTiepNhan = new System.Windows.Forms.ComboBox();
@@ -59,17 +58,30 @@
             this.txtGiaDuKien = new DevExpress.XtraEditors.TextEdit();
             this.txtMaPSC = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.dtgvPhieuSuaChua = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvPhieuSuaChua)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTongTien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtThongTinSuaChua.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaDuKien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaPSC.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvPhieuSuaChua)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl3
@@ -110,18 +122,6 @@
             this.groupControl2.Size = new System.Drawing.Size(1312, 247);
             this.groupControl2.TabIndex = 18;
             this.groupControl2.Text = "Danh sách phiếu sửa chữa";
-            // 
-            // dtgvPhieuSuaChua
-            // 
-            this.dtgvPhieuSuaChua.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvPhieuSuaChua.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvPhieuSuaChua.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvPhieuSuaChua.Location = new System.Drawing.Point(2, 20);
-            this.dtgvPhieuSuaChua.Name = "dtgvPhieuSuaChua";
-            this.dtgvPhieuSuaChua.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvPhieuSuaChua.Size = new System.Drawing.Size(1308, 225);
-            this.dtgvPhieuSuaChua.TabIndex = 0;
-            this.dtgvPhieuSuaChua.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPhieuSuaChua_CellClick);
             // 
             // chkDaGiao
             // 
@@ -238,7 +238,7 @@
             // labelControl7
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.Black;
             this.labelControl7.Location = new System.Drawing.Point(641, 112);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(44, 16);
@@ -382,6 +382,102 @@
             this.labelControl2.TabIndex = 43;
             this.labelControl2.Text = "Ngày bắt đầu :";
             // 
+            // dtgvPhieuSuaChua
+            // 
+            this.dtgvPhieuSuaChua.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvPhieuSuaChua.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvPhieuSuaChua.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9,
+            this.Column10,
+            this.Column12,
+            this.Column11});
+            this.dtgvPhieuSuaChua.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvPhieuSuaChua.Location = new System.Drawing.Point(2, 20);
+            this.dtgvPhieuSuaChua.Name = "dtgvPhieuSuaChua";
+            this.dtgvPhieuSuaChua.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvPhieuSuaChua.Size = new System.Drawing.Size(1308, 225);
+            this.dtgvPhieuSuaChua.TabIndex = 2;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MAPSC";
+            this.Column1.HeaderText = "Mã PSC";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "MANHANVIEN";
+            this.Column2.HeaderText = "Mã nhân viên";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "MANHANVIENTIEPNHAN";
+            this.Column3.HeaderText = "Mã nhân viên tiếp nhận";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "MAPHIEUTN";
+            this.Column4.HeaderText = "Mã phiếu tiếp nhận";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "NGAYBATDAU";
+            this.Column5.HeaderText = "Ngày bắt đầu";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "GHICHUPSC";
+            this.Column6.HeaderText = "Ghi chú";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "NGUOIGOI";
+            this.Column7.HeaderText = "Người gọi";
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "DONGY";
+            this.Column8.HeaderText = "Đồng ý";
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "GIADUKIEN";
+            this.Column9.HeaderText = "Giá dự kiến ";
+            this.Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "THONGTINSUACHUA";
+            this.Column10.HeaderText = "Thông tin sửa chữa";
+            this.Column10.Name = "Column10";
+            // 
+            // Column12
+            // 
+            this.Column12.DataPropertyName = "TONGTIEN";
+            this.Column12.HeaderText = "Tổng tiền";
+            this.Column12.Name = "Column12";
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "TRANGTHAI";
+            this.Column11.HeaderText = "Trạng thái";
+            this.Column11.Name = "Column11";
+            // 
             // frmTaoPhieuSuaChuaXacNhan
             // 
             this.ClientSize = new System.Drawing.Size(1334, 505);
@@ -394,7 +490,6 @@
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvPhieuSuaChua)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -402,6 +497,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtThongTinSuaChua.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaDuKien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaPSC.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvPhieuSuaChua)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -412,7 +508,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraEditors.SimpleButton btnXacNhan;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private System.Windows.Forms.DataGridView dtgvPhieuSuaChua;
         private System.Windows.Forms.CheckBox chkDaGiao;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private System.Windows.Forms.CheckBox chkDongY;
@@ -437,5 +532,18 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private System.Windows.Forms.ComboBox cbbMaPhieuTiepNhan;
         private DevExpress.XtraEditors.TextEdit txtTongTien;
+        private System.Windows.Forms.DataGridView dtgvPhieuSuaChua;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
     }
 }

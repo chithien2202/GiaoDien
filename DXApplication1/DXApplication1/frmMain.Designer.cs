@@ -80,6 +80,7 @@
             this.btnCauHinh = new DevExpress.XtraBars.BarButtonItem();
             this.btnQuanLySuaChuaBaoHanh2 = new DevExpress.XtraBars.BarButtonItem();
             this.btnCTPhieuSuaChua = new DevExpress.XtraBars.BarButtonItem();
+            this.btnChiTietPhieuSuaChua_NVKyThuat = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -93,13 +94,11 @@
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.btnChiTietPhieuSuaChua_NVKyThuat = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.SuspendLayout();
@@ -169,8 +168,7 @@
             this.ribbonPage2,
             this.ribbonPage3,
             this.ribbonPage4,
-            this.ribbonPage5,
-            this.ribbonPage6});
+            this.ribbonPage5});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.MacOffice;
             this.ribbonControl1.Size = new System.Drawing.Size(1130, 135);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
@@ -599,6 +597,17 @@
             this.btnCTPhieuSuaChua.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnCTPhieuSuaChua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCTPhieuSuaChua_ItemClick);
             // 
+            // btnChiTietPhieuSuaChua_NVKyThuat
+            // 
+            this.btnChiTietPhieuSuaChua_NVKyThuat.Caption = "Chi tiết phiếu sửa chữa";
+            this.btnChiTietPhieuSuaChua_NVKyThuat.Glyph = ((System.Drawing.Image)(resources.GetObject("btnChiTietPhieuSuaChua_NVKyThuat.Glyph")));
+            this.btnChiTietPhieuSuaChua_NVKyThuat.Id = 80;
+            this.btnChiTietPhieuSuaChua_NVKyThuat.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnChiTietPhieuSuaChua_NVKyThuat.LargeGlyph")));
+            this.btnChiTietPhieuSuaChua_NVKyThuat.Name = "btnChiTietPhieuSuaChua_NVKyThuat";
+            this.btnChiTietPhieuSuaChua_NVKyThuat.Tag = "MH030     ";
+            this.btnChiTietPhieuSuaChua_NVKyThuat.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btnChiTietPhieuSuaChua_NVKyThuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnChiTietPhieuSuaChua_NVKyThuat_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -729,15 +738,6 @@
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Báo cáo danh thu";
             // 
-            // ribbonPage6
-            // 
-            this.ribbonPage6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ribbonPage6.Appearance.ForeColor = System.Drawing.Color.Blue;
-            this.ribbonPage6.Appearance.Options.UseFont = true;
-            this.ribbonPage6.Appearance.Options.UseForeColor = true;
-            this.ribbonPage6.Name = "ribbonPage6";
-            this.ribbonPage6.Text = "Hỗ Trợ";
-            // 
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem1);
@@ -774,17 +774,6 @@
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.Size = new System.Drawing.Size(1130, 523);
             this.xtraTabControl1.TabIndex = 7;
-            // 
-            // btnChiTietPhieuSuaChua_NVKyThuat
-            // 
-            this.btnChiTietPhieuSuaChua_NVKyThuat.Caption = "Chi tiết phiếu sửa chữa";
-            this.btnChiTietPhieuSuaChua_NVKyThuat.Glyph = ((System.Drawing.Image)(resources.GetObject("btnChiTietPhieuSuaChua_NVKyThuat.Glyph")));
-            this.btnChiTietPhieuSuaChua_NVKyThuat.Id = 80;
-            this.btnChiTietPhieuSuaChua_NVKyThuat.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnChiTietPhieuSuaChua_NVKyThuat.LargeGlyph")));
-            this.btnChiTietPhieuSuaChua_NVKyThuat.Name = "btnChiTietPhieuSuaChua_NVKyThuat";
-            this.btnChiTietPhieuSuaChua_NVKyThuat.Tag = "MH030     ";
-            this.btnChiTietPhieuSuaChua_NVKyThuat.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.btnChiTietPhieuSuaChua_NVKyThuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnChiTietPhieuSuaChua_NVKyThuat_ItemClick);
             // 
             // frmMain
             // 
@@ -873,7 +862,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem42;
         private DevExpress.XtraBars.BarButtonItem barButtonItem43;
         private DevExpress.XtraBars.BarButtonGroup barButtonGroup1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage6;
         private DevExpress.XtraBars.BarButtonItem btnDangXuat;
         private DevExpress.XtraBars.BarButtonItem btnDoanhThu;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;

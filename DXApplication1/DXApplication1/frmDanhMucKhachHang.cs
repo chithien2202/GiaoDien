@@ -114,7 +114,14 @@ namespace DXApplication1
                 kh.SDTKH = int.Parse(txtSDT.Text);
                 kh.DIACHIKH = txtDChi.Text;
                 kh.GHICHU = txtDienGiai.Text;
-                kh.FAX = int.Parse(txtFax.Text);
+                if (txtFax.Text == "" || txtFax.Text == null)
+                {
+                    kh.FAX = null;
+                }
+                else
+                {
+                    kh.FAX = int.Parse(txtFax.Text);
+                }        
                 kh.EMAILKH = txtEmail.Text;
                 qltb.SubmitChanges();
                 XtraMessageBox.Show("Sửa thành công","Thông báo");

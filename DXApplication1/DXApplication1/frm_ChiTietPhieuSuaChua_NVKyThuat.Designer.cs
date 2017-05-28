@@ -104,11 +104,11 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.chkDaNhanThietBi = new System.Windows.Forms.CheckBox();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.dtgvChiTietPSC = new System.Windows.Forms.DataGridView();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
-            this.chkDaNhanThietBi = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit6.Properties.CalendarTimeProperties)).BeginInit();
@@ -701,7 +701,7 @@
             // labelControl8
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl8.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelControl8.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl8.Location = new System.Drawing.Point(746, 76);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(70, 16);
@@ -763,7 +763,7 @@
             // labelControl7
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.Black;
             this.labelControl7.Location = new System.Drawing.Point(32, 109);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(44, 16);
@@ -840,6 +840,16 @@
             this.groupControl1.Tag = "";
             this.groupControl1.Text = "Thông tin chi tiết sửa chữa";
             // 
+            // chkDaNhanThietBi
+            // 
+            this.chkDaNhanThietBi.AutoSize = true;
+            this.chkDaNhanThietBi.Location = new System.Drawing.Point(390, 150);
+            this.chkDaNhanThietBi.Name = "chkDaNhanThietBi";
+            this.chkDaNhanThietBi.Size = new System.Drawing.Size(103, 17);
+            this.chkDaNhanThietBi.TabIndex = 38;
+            this.chkDaNhanThietBi.Text = "Đã nhận thiết bị";
+            this.chkDaNhanThietBi.UseVisualStyleBackColor = true;
+            // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -896,16 +906,6 @@
             this.groupControl5.Size = new System.Drawing.Size(1342, 155);
             this.groupControl5.TabIndex = 36;
             this.groupControl5.Text = "Danh sách phiếu sửa chữa";
-            // 
-            // chkDaNhanThietBi
-            // 
-            this.chkDaNhanThietBi.AutoSize = true;
-            this.chkDaNhanThietBi.Location = new System.Drawing.Point(390, 150);
-            this.chkDaNhanThietBi.Name = "chkDaNhanThietBi";
-            this.chkDaNhanThietBi.Size = new System.Drawing.Size(103, 17);
-            this.chkDaNhanThietBi.TabIndex = 38;
-            this.chkDaNhanThietBi.Text = "Đã nhận thiết bị";
-            this.chkDaNhanThietBi.UseVisualStyleBackColor = true;
             // 
             // frm_ChiTietPhieuSuaChua_NVKyThuat
             // 
