@@ -22,7 +22,7 @@ namespace DXApplication1
         {
             ShowUser(getUserName);
             XtraForm fff = new frm_background();
-            TabCreating(this.xtraTabControl1, "Màng Hình Chính", fff);
+            TabCreating(this.xtraTabControl1, "Màn Hình Chính", fff);
 
             IEnumerable<string> listNQ = GetNhomNguoiDungByUserName(username.Caption);
 
