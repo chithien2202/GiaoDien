@@ -168,7 +168,14 @@ namespace DXApplication1
                 txtTenBoPhan.Enabled = false;
                 txtDienGiai.Enabled = false;
                 txtTenBoPhan.Text = dtgvDSBoPhan.CurrentRow.Cells[1].Value.ToString();
-                txtDienGiai.Text = dtgvDSBoPhan.CurrentRow.Cells[2].Value.ToString();
+                if (dtgvDSBoPhan.CurrentRow.Cells[2].Value == null || dtgvDSBoPhan.CurrentRow.Cells[2].Value.ToString() == "")
+                {
+                    txtDienGiai.Text = "";
+                }
+                else
+                {
+                    txtDienGiai.Text = dtgvDSBoPhan.CurrentRow.Cells[2].Value.ToString();
+                }
             }
             catch
             {

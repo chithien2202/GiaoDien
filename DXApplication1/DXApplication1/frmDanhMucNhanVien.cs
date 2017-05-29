@@ -217,7 +217,14 @@ namespace DXApplication1
                 txtSDT.Text = dtgvnhanvien.CurrentRow.Cells[4].Value.ToString();
                 txtEmail.Text = dtgvnhanvien.CurrentRow.Cells[5].Value.ToString();
                 txtLuong.Text = dtgvnhanvien.CurrentRow.Cells[6].Value.ToString();
-                txtDienGiai.Text = dtgvnhanvien.CurrentRow.Cells[7].Value.ToString();
+                if (dtgvnhanvien.CurrentRow.Cells[7].Value == null || dtgvnhanvien.CurrentRow.Cells[7].Value.ToString() == "")
+                {
+                    txtDienGiai.Text = "";
+                }
+                else
+                {
+                    txtDienGiai.Text = dtgvnhanvien.CurrentRow.Cells[7].Value.ToString();
+                }
             }
             catch { }
         }

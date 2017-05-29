@@ -50,6 +50,8 @@ namespace DXApplication1
                 btnSua.Enabled = false;
                 btnXoa.Enabled = false;
 
+                dtpNgayNhap.Enabled = true;
+                dtpNgayHenTra.Enabled = true;
                 cbbKhachHang.Enabled = true;
                 cbbThietBi.Enabled = true;
                 txtPhuKienDiCung.Enabled = true;
@@ -116,6 +118,8 @@ namespace DXApplication1
             LoadCbbThietBi();
             LoadGridViewPTN();
 
+            dtpNgayNhap.Enabled = false;
+            dtpNgayHenTra.Enabled = false;
             cbbKhachHang.Enabled = false;
             cbbThietBi.Enabled = false;
             txtPhuKienDiCung.Enabled = false;
@@ -173,6 +177,8 @@ namespace DXApplication1
                 btnThem.Enabled = false;
                 btnXoa.Enabled = false;
 
+                dtpNgayNhap.Enabled = true;
+                dtpNgayHenTra.Enabled = true;
                 cbbKhachHang.Enabled = true;
                 cbbThietBi.Enabled = true;
                 txtTinhTrangHuHong.Enabled = true;
@@ -203,6 +209,9 @@ namespace DXApplication1
                 btnXoa.Enabled = true;
 
                 btnSua.Text = "Sửa";
+
+                dtpNgayNhap.Enabled = false;
+                dtpNgayHenTra.Enabled = false;
                 cbbKhachHang.Enabled = false;
                 cbbThietBi.Enabled = false;
                 txtPhuKienDiCung.Enabled = false;
@@ -219,6 +228,8 @@ namespace DXApplication1
         {
             try
             {
+                dtpNgayNhap.Enabled = false;
+                dtpNgayHenTra.Enabled = false;
                 cbbKhachHang.Enabled = false;
                 cbbThietBi.Enabled = false;
                 txtPhuKienDiCung.Enabled = false;

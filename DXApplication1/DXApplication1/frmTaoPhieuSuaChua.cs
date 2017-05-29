@@ -272,6 +272,18 @@ namespace DXApplication1
 
         private void dtgvPhieuSuaChua_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+        }
+        public static string mapsc = "";
+        private void btnTTKH_Click(object sender, EventArgs e)
+        {
+            mapsc = txtMaPSC.Text;
+            Form frm = new frmThongTinKH_Goi();
+            frm.ShowDialog();
+        }
+
+        private void dtgvPhieuSuaChua_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
             try
             {
                 txtMaPSC.Enabled = false;
@@ -291,7 +303,7 @@ namespace DXApplication1
 
                 cbbMaPhieuTiepNhan.Text = dtgvPhieuSuaChua.CurrentRow.Cells[3].Value.ToString();
                 dtpNgayBatDau.Text = dtgvPhieuSuaChua.CurrentRow.Cells[4].Value.ToString();
-                
+
                 if (dtgvPhieuSuaChua.CurrentRow.Cells[7].Value.ToString() == "True")
                 {
                     chkDongY.Checked = true;
@@ -309,7 +321,7 @@ namespace DXApplication1
                 {
                     txtThongTinSuaChua.Text = dtgvPhieuSuaChua.CurrentRow.Cells[9].Value.ToString();
                 }
-                txtTongTien.Text = dtgvPhieuSuaChua.CurrentRow.Cells[10].Value.ToString();  
+                txtTongTien.Text = dtgvPhieuSuaChua.CurrentRow.Cells[10].Value.ToString();
                 if (dtgvPhieuSuaChua.CurrentRow.Cells[11].Value.ToString() == "True")
                 {
                     chkTrangThai.Checked = true;
@@ -319,7 +331,7 @@ namespace DXApplication1
                     chkTrangThai.Checked = false;
                 }
 
-                if(dtgvPhieuSuaChua.CurrentRow.Cells[2].Value ==null || dtgvPhieuSuaChua.CurrentRow.Cells[2].Value.ToString() == "")
+                if (dtgvPhieuSuaChua.CurrentRow.Cells[2].Value == null || dtgvPhieuSuaChua.CurrentRow.Cells[2].Value.ToString() == "")
                 {
                     cbbNhanVienTiepNhan.Text = "";
                 }
@@ -336,7 +348,7 @@ namespace DXApplication1
                     chkDaGoi.Checked = true;
                 }
 
-                if (dtgvPhieuSuaChua.CurrentRow.Cells[5].Value == null || dtgvPhieuSuaChua.CurrentRow.Cells[5].Value.ToString() == "") 
+                if (dtgvPhieuSuaChua.CurrentRow.Cells[5].Value == null || dtgvPhieuSuaChua.CurrentRow.Cells[5].Value.ToString() == "")
                 {
                     txtGhiChu.Text = "";
                 }
@@ -347,13 +359,6 @@ namespace DXApplication1
 
             }
             catch { }
-        }
-        public static string mapsc = "";
-        private void btnTTKH_Click(object sender, EventArgs e)
-        {
-            mapsc = txtMaPSC.Text;
-            Form frm = new frmThongTinKH_Goi();
-            frm.ShowDialog();
         }
     }
 }

@@ -202,7 +202,7 @@
             this.Controls.Add(this.txtTenKH);
             this.Controls.Add(this.label1);
             this.Name = "frmThongTinKH_Goi";
-            this.Text = "frmThongTinKH_Goi";
+            this.Text = "Thông tin khách hàng";
             this.Load += new System.EventHandler(this.frmThongTinKH_Goi_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
