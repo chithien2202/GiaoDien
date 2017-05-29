@@ -57,6 +57,7 @@ namespace DXApplication1
             LoadCbbPTN();
             LoadGridViewPSC();
 
+            btnTTKH.Enabled = false;
             txtMaPSC.Enabled = false;
             cbbNhanVienLap.Enabled = false;
             cbbNhanVienTiepNhan.Enabled = false;
@@ -286,6 +287,7 @@ namespace DXApplication1
         {
             try
             {
+                btnTTKH.Enabled = true;
                 txtMaPSC.Enabled = false;
                 cbbNhanVienLap.Enabled = false;
                 cbbNhanVienTiepNhan.Enabled = false;
