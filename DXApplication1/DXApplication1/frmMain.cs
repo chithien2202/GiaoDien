@@ -115,7 +115,6 @@ namespace DXApplication1
         private void xtraTabControl1_CloseButtonClick(object sender, EventArgs e)
         {
             XtraTabControl TabControl = (XtraTabControl)sender;
-
             int i = TabControl.SelectedTabPageIndex;
             TabControl.TabPages.RemoveAt(TabControl.SelectedTabPageIndex);
             TabControl.SelectedTabPageIndex = i - 1;
