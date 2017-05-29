@@ -196,7 +196,14 @@ namespace DXApplication1
                 txtDienGiai.Enabled = false;
                 cbbLoai.Text = dtgvDSModel.CurrentRow.Cells[3].Value.ToString();
                 txtTenModel.Text = dtgvDSModel.CurrentRow.Cells[2].Value.ToString();
-                txtDienGiai.Text = dtgvDSModel.CurrentRow.Cells[4].Value.ToString();
+                if (dtgvDSModel.CurrentRow.Cells[4].Value == null || dtgvDSModel.CurrentRow.Cells[4].Value.ToString() == "")
+                {
+                    txtDienGiai.Text = "";
+                }
+                else
+                {
+                    txtDienGiai.Text = dtgvDSModel.CurrentRow.Cells[4].Value.ToString();
+                }
                 cbbNhaSanXuat.Text = dtgvDSModel.CurrentRow.Cells[1].Value.ToString();
             }
             catch { }

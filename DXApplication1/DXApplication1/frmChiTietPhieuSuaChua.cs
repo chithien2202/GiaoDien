@@ -41,6 +41,7 @@ namespace DXApplication1
             LoadGridViewCTSC();
             LoadCbbNhanVienSua();
             LoadCbbMaLinhKien();
+            LoadGridViewPSC();
             cbbMaPSC.Enabled = false;
             txtGiaThanh.Enabled = false;
             cbbBangBaoGia.Enabled = false;
@@ -168,6 +169,27 @@ namespace DXApplication1
             cbbNhanVienSuaChua.DataSource = qltb.NHANVIENs;
             cbbNhanVienSuaChua.DisplayMember = "MANHANVIEN";
             cbbNhanVienSuaChua.ValueMember = "MANHANVIEN";
+        }
+
+        private void LoadGridViewPSC()
+        {
+            var phieusuachua = from psc in qltb.PHIEUSUACHUAs
+                               select new
+                               {
+                                   psc.MAPSC,
+                                   psc.MANHANVIEN,
+                                   psc.MANHANVIENTIEPNHAN,
+                                   psc.MAPHIEUTN,
+                                   psc.NGAYBATDAU,
+                                   psc.GHICHUPSC,
+                                   psc.NGUOIGOI,
+                                   psc.DONGY,
+                                   psc.GIADUKIEN,
+                                   psc.THONGTINSUACHUA,
+                                   psc.TONGTIEN,
+                                   psc.TRANGTHAI
+                               };
+            dtgvPhieuSuaChua.DataSource = phieusuachua;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
