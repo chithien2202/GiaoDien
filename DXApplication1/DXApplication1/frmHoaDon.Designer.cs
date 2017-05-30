@@ -55,12 +55,12 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayLap = new System.Windows.Forms.DateTimePicker();
             this.cbbMaPhieuSuaChua = new System.Windows.Forms.ComboBox();
-            this.cbbNhanVienLap = new System.Windows.Forms.ComboBox();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.txtNhanVienLap = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSHoaDon)).BeginInit();
@@ -151,6 +151,7 @@
             this.dtgvDSHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvDSHoaDon.Size = new System.Drawing.Size(1095, 293);
             this.dtgvDSHoaDon.TabIndex = 0;
+            this.dtgvDSHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSHoaDon_CellClick);
             // 
             // Column1
             // 
@@ -292,11 +293,11 @@
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.Controls.Add(this.lbMKH);
             this.groupControl1.Controls.Add(this.txtKhachHang);
+            this.groupControl1.Controls.Add(this.txtNhanVienLap);
             this.groupControl1.Controls.Add(this.txtMaHoaDon);
             this.groupControl1.Controls.Add(this.dateTimePicker2);
             this.groupControl1.Controls.Add(this.dtpNgayLap);
             this.groupControl1.Controls.Add(this.cbbMaPhieuSuaChua);
-            this.groupControl1.Controls.Add(this.cbbNhanVienLap);
             this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.labelControl1);
@@ -357,14 +358,6 @@
             this.cbbMaPhieuSuaChua.SelectedIndexChanged += new System.EventHandler(this.cbbMaPhieuSuaChua_SelectedIndexChanged);
             this.cbbMaPhieuSuaChua.SelectionChangeCommitted += new System.EventHandler(this.cbbMaPhieuSuaChua_SelectionChangeCommitted);
             // 
-            // cbbNhanVienLap
-            // 
-            this.cbbNhanVienLap.FormattingEnabled = true;
-            this.cbbNhanVienLap.Location = new System.Drawing.Point(480, 34);
-            this.cbbNhanVienLap.Name = "cbbNhanVienLap";
-            this.cbbNhanVienLap.Size = new System.Drawing.Size(194, 21);
-            this.cbbNhanVienLap.TabIndex = 33;
-            // 
             // labelControl7
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -408,6 +401,13 @@
             // 
             this.gridView4.Name = "gridView4";
             this.gridView4.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            // 
+            // txtNhanVienLap
+            // 
+            this.txtNhanVienLap.Location = new System.Drawing.Point(480, 36);
+            this.txtNhanVienLap.Name = "txtNhanVienLap";
+            this.txtNhanVienLap.Size = new System.Drawing.Size(189, 21);
+            this.txtNhanVienLap.TabIndex = 36;
             // 
             // frmHoaDon
             // 
@@ -457,7 +457,6 @@
         private System.Windows.Forms.DataGridView dtgvDSHoaDon;
         private System.Windows.Forms.DateTimePicker dtpNgayLap;
         private System.Windows.Forms.ComboBox cbbMaPhieuSuaChua;
-        private System.Windows.Forms.ComboBox cbbNhanVienLap;
         private System.Windows.Forms.TextBox txtMaHoaDon;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.TextBox txtTongTien;
@@ -471,5 +470,6 @@
         private System.Windows.Forms.TextBox txtKhachHang;
         private DevExpress.XtraEditors.SimpleButton btnSua;
         private DevExpress.XtraEditors.SimpleButton btnXoa;
+        private System.Windows.Forms.TextBox txtNhanVienLap;
     }
 }

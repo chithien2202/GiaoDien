@@ -28,7 +28,7 @@ namespace DXApplication1
             dtpNgayLap.Enabled = false;
             txtMaHoaDon.Enabled = false;
             txtKhachHang.Enabled = false;
-            cbbNhanVienLap.Enabled = false;
+            txtNhanVienLap.Enabled = false;
         }
 
         public void LoadCbbPSC()
@@ -76,12 +76,12 @@ namespace DXApplication1
                 dtpNgayLap.Enabled = true;
                 txtMaHoaDon.Enabled = false;
                 txtKhachHang.Enabled = false;
-                cbbNhanVienLap.Enabled = false;
+                txtNhanVienLap.Enabled = false;
 
                 cbbMaPhieuSuaChua.Text = String.Empty;
                 txtMaHoaDon.Text = String.Empty;
                 txtKhachHang.Text = String.Empty;
-                cbbNhanVienLap.Text = String.Empty;
+                txtNhanVienLap.Text = String.Empty;
 
                 btnThem.Text = "Lưu";
             }
@@ -114,12 +114,12 @@ namespace DXApplication1
                     dtpNgayLap.Enabled = false;
                     txtMaHoaDon.Enabled = false;
                     txtKhachHang.Enabled = false;
-                    cbbNhanVienLap.Enabled = false;
+                    txtNhanVienLap.Enabled = false;
 
                     cbbMaPhieuSuaChua.Text = String.Empty;
                     txtMaHoaDon.Text = String.Empty;
                     txtKhachHang.Text = String.Empty;
-                    cbbNhanVienLap.Text = String.Empty;
+                    txtNhanVienLap.Text = String.Empty;
                 }
             }
         }
@@ -158,6 +158,15 @@ namespace DXApplication1
             {
                 this.Close();
             }
+        }
+
+        private void dtgvDSHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtMaHoaDon.Text = dtgvDSHoaDon.CurrentRow.Cells[0].Value.ToString();
+            txtNhanVienLap.Text = dtgvDSHoaDon.CurrentRow.Cells[3].Value.ToString();
+            dtpNgayLap.Text = dtgvDSHoaDon.CurrentRow.Cells[4].Value.ToString();
+            txtTongTien.Text = dtgvDSHoaDon.CurrentRow.Cells[5].Value.ToString();
+            cbbMaPhieuSuaChua.Text = dtgvDSHoaDon.CurrentRow.Cells[2].Value.ToString();
         }
     }
 }
