@@ -137,5 +137,10 @@ namespace DXApplication1
             LoadGridViewMangHinh();
             txtTenMangHinh.Enabled = false;
         }
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

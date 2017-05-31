@@ -134,6 +134,7 @@
             this.btnĐóng.Size = new System.Drawing.Size(88, 23);
             this.btnĐóng.TabIndex = 10;
             this.btnĐóng.Text = "Đóng";
+            this.btnĐóng.Click += new System.EventHandler(this.btnĐóng_Click);
             // 
             // btnSua
             // 

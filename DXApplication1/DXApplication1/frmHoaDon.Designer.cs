@@ -51,6 +51,7 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lbMKH = new System.Windows.Forms.Label();
             this.txtKhachHang = new System.Windows.Forms.TextBox();
+            this.txtNhanVienLap = new System.Windows.Forms.TextBox();
             this.txtMaHoaDon = new System.Windows.Forms.TextBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayLap = new System.Windows.Forms.DateTimePicker();
@@ -60,7 +61,6 @@
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.txtNhanVienLap = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSHoaDon)).BeginInit();
@@ -204,6 +204,7 @@
             this.btnDong.Size = new System.Drawing.Size(88, 23);
             this.btnDong.TabIndex = 10;
             this.btnDong.Text = "Đóng";
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnIn
             // 
@@ -327,6 +328,13 @@
             this.txtKhachHang.Size = new System.Drawing.Size(194, 21);
             this.txtKhachHang.TabIndex = 36;
             // 
+            // txtNhanVienLap
+            // 
+            this.txtNhanVienLap.Location = new System.Drawing.Point(480, 36);
+            this.txtNhanVienLap.Name = "txtNhanVienLap";
+            this.txtNhanVienLap.Size = new System.Drawing.Size(189, 21);
+            this.txtNhanVienLap.TabIndex = 36;
+            // 
             // txtMaHoaDon
             // 
             this.txtMaHoaDon.Location = new System.Drawing.Point(149, 34);
@@ -401,13 +409,6 @@
             // 
             this.gridView4.Name = "gridView4";
             this.gridView4.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
-            // 
-            // txtNhanVienLap
-            // 
-            this.txtNhanVienLap.Location = new System.Drawing.Point(480, 36);
-            this.txtNhanVienLap.Name = "txtNhanVienLap";
-            this.txtNhanVienLap.Size = new System.Drawing.Size(189, 21);
-            this.txtNhanVienLap.TabIndex = 36;
             // 
             // frmHoaDon
             // 

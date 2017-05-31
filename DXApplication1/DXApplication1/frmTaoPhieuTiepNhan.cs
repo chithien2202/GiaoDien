@@ -301,7 +301,12 @@ namespace DXApplication1
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            xuatExcel(dtgvDSPTN, @"D:\", "Danh sach phieu tiep nhan");
+            //xuatExcel(dtgvDSPTN., @"D:\", "Danh sach phieu tiep nhan");
+        }
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -236,5 +236,10 @@ namespace DXApplication1
             report.CreateDocument(false);
             report.ShowPreviewDialog();
         }
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -59,11 +59,6 @@
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.dtgvDSPTN = new System.Windows.Forms.DataGridView();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
-            this.qltbDataSet1 = new DXApplication1.QLTBDataSet();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,6 +70,11 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
+            this.qltbDataSet1 = new DXApplication1.QLTBDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
@@ -301,6 +301,7 @@
             this.btnDong.Size = new System.Drawing.Size(88, 23);
             this.btnDong.TabIndex = 10;
             this.btnDong.Text = "&Đóng(F3)";
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnIn
             // 
@@ -454,57 +455,6 @@
             this.dtgvDSPTN.TabIndex = 7;
             this.dtgvDSPTN.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSPTN_CellClick);
             // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.labelControl12);
-            this.panelControl2.Controls.Add(this.comboBoxEdit1);
-            this.panelControl2.Controls.Add(this.simpleButton9);
-            this.panelControl2.Controls.Add(this.labelControl11);
-            this.panelControl2.Controls.Add(this.dateEdit6);
-            this.panelControl2.Controls.Add(this.comboBox1);
-            this.panelControl2.Controls.Add(this.dateEdit7);
-            this.panelControl2.Controls.Add(this.labelControl9);
-            this.panelControl2.Controls.Add(this.labelControl10);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(2, 20);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1330, 31);
-            this.panelControl2.TabIndex = 6;
-            // 
-            // labelControl12
-            // 
-            this.labelControl12.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl12.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.labelControl12.Location = new System.Drawing.Point(556, 8);
-            this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(82, 16);
-            this.labelControl12.TabIndex = 7;
-            this.labelControl12.Text = "Nhân viên lập";
-            // 
-            // comboBoxEdit1
-            // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(661, 5);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxEdit1.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(151, 22);
-            this.comboBoxEdit1.TabIndex = 8;
-            // 
-            // simpleButton9
-            // 
-            this.simpleButton9.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton9.Image")));
-            this.simpleButton9.Location = new System.Drawing.Point(836, 5);
-            this.simpleButton9.Name = "simpleButton9";
-            this.simpleButton9.Size = new System.Drawing.Size(24, 21);
-            this.simpleButton9.TabIndex = 6;
-            // 
-            // qltbDataSet1
-            // 
-            this.qltbDataSet1.DataSetName = "QLTBDataSet";
-            this.qltbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "MAPHIEUTN";
@@ -570,6 +520,57 @@
             this.Column11.DataPropertyName = "GHICHUPTN";
             this.Column11.HeaderText = "Ghi chú";
             this.Column11.Name = "Column11";
+            // 
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(this.labelControl12);
+            this.panelControl2.Controls.Add(this.comboBoxEdit1);
+            this.panelControl2.Controls.Add(this.simpleButton9);
+            this.panelControl2.Controls.Add(this.labelControl11);
+            this.panelControl2.Controls.Add(this.dateEdit6);
+            this.panelControl2.Controls.Add(this.comboBox1);
+            this.panelControl2.Controls.Add(this.dateEdit7);
+            this.panelControl2.Controls.Add(this.labelControl9);
+            this.panelControl2.Controls.Add(this.labelControl10);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl2.Location = new System.Drawing.Point(2, 20);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(1330, 31);
+            this.panelControl2.TabIndex = 6;
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl12.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelControl12.Location = new System.Drawing.Point(556, 8);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(82, 16);
+            this.labelControl12.TabIndex = 7;
+            this.labelControl12.Text = "Nhân viên lập";
+            // 
+            // comboBoxEdit1
+            // 
+            this.comboBoxEdit1.Location = new System.Drawing.Point(661, 5);
+            this.comboBoxEdit1.Name = "comboBoxEdit1";
+            this.comboBoxEdit1.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxEdit1.Properties.Appearance.Options.UseFont = true;
+            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit1.Size = new System.Drawing.Size(151, 22);
+            this.comboBoxEdit1.TabIndex = 8;
+            // 
+            // simpleButton9
+            // 
+            this.simpleButton9.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton9.Image")));
+            this.simpleButton9.Location = new System.Drawing.Point(836, 5);
+            this.simpleButton9.Name = "simpleButton9";
+            this.simpleButton9.Size = new System.Drawing.Size(24, 21);
+            this.simpleButton9.TabIndex = 6;
+            // 
+            // qltbDataSet1
+            // 
+            this.qltbDataSet1.DataSetName = "QLTBDataSet";
+            this.qltbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // frmTaoPhieuTiepNhan
             // 

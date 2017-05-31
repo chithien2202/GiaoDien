@@ -160,5 +160,10 @@ namespace DXApplication1
             }
             
         }
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -168,5 +168,10 @@ namespace DXApplication1
             txtTongTien.Text = dtgvDSHoaDon.CurrentRow.Cells[5].Value.ToString();
             cbbMaPhieuSuaChua.Text = dtgvDSHoaDon.CurrentRow.Cells[2].Value.ToString();
         }
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

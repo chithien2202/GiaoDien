@@ -62,11 +62,6 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
-            this.btnĐóng = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSua = new DevExpress.XtraEditors.SimpleButton();
-            this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.dtgvPhieuSuaChua = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,6 +75,11 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
+            this.btnĐóng = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSua = new DevExpress.XtraEditors.SimpleButton();
+            this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -87,9 +87,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvChiTietPSC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvPhieuSuaChua)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvPhieuSuaChua)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -404,89 +404,6 @@
             this.groupControl5.TabIndex = 17;
             this.groupControl5.Text = "Danh sách phiếu sửa chữa";
             // 
-            // groupControl3
-            // 
-            this.groupControl3.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupControl3.AppearanceCaption.Options.UseFont = true;
-            this.groupControl3.Controls.Add(this.btnXoa);
-            this.groupControl3.Controls.Add(this.btnĐóng);
-            this.groupControl3.Controls.Add(this.btnSua);
-            this.groupControl3.Controls.Add(this.btnThem);
-            this.groupControl3.Location = new System.Drawing.Point(6, 198);
-            this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(509, 52);
-            this.groupControl3.TabIndex = 14;
-            this.groupControl3.Text = "Tác vụ chi tiết phiếu sửa chữa";
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnXoa.Appearance.BackColor2 = System.Drawing.Color.Navy;
-            this.btnXoa.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnXoa.Appearance.Options.UseBackColor = true;
-            this.btnXoa.Appearance.Options.UseFont = true;
-            this.btnXoa.Appearance.Options.UseForeColor = true;
-            this.btnXoa.Enabled = false;
-            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(283, 24);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 23);
-            this.btnXoa.TabIndex = 11;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnĐóng
-            // 
-            this.btnĐóng.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnĐóng.Appearance.BackColor2 = System.Drawing.Color.Navy;
-            this.btnĐóng.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnĐóng.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnĐóng.Appearance.Options.UseBackColor = true;
-            this.btnĐóng.Appearance.Options.UseFont = true;
-            this.btnĐóng.Appearance.Options.UseForeColor = true;
-            this.btnĐóng.Image = ((System.Drawing.Image)(resources.GetObject("btnĐóng.Image")));
-            this.btnĐóng.Location = new System.Drawing.Point(400, 24);
-            this.btnĐóng.Name = "btnĐóng";
-            this.btnĐóng.Size = new System.Drawing.Size(88, 23);
-            this.btnĐóng.TabIndex = 10;
-            this.btnĐóng.Text = "Đóng";
-            // 
-            // btnSua
-            // 
-            this.btnSua.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnSua.Appearance.BackColor2 = System.Drawing.Color.Navy;
-            this.btnSua.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnSua.Appearance.Options.UseBackColor = true;
-            this.btnSua.Appearance.Options.UseFont = true;
-            this.btnSua.Appearance.Options.UseForeColor = true;
-            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
-            this.btnSua.Location = new System.Drawing.Point(150, 24);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(75, 23);
-            this.btnSua.TabIndex = 8;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnThem.Appearance.BackColor2 = System.Drawing.Color.Navy;
-            this.btnThem.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnThem.Appearance.Options.UseBackColor = true;
-            this.btnThem.Appearance.Options.UseFont = true;
-            this.btnThem.Appearance.Options.UseForeColor = true;
-            this.btnThem.Enabled = false;
-            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.Location = new System.Drawing.Point(5, 24);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(98, 23);
-            this.btnThem.TabIndex = 6;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
             // dtgvPhieuSuaChua
             // 
             this.dtgvPhieuSuaChua.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -583,6 +500,90 @@
             this.dataGridViewTextBoxColumn11.HeaderText = "Trạng thái";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             // 
+            // groupControl3
+            // 
+            this.groupControl3.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupControl3.AppearanceCaption.Options.UseFont = true;
+            this.groupControl3.Controls.Add(this.btnXoa);
+            this.groupControl3.Controls.Add(this.btnĐóng);
+            this.groupControl3.Controls.Add(this.btnSua);
+            this.groupControl3.Controls.Add(this.btnThem);
+            this.groupControl3.Location = new System.Drawing.Point(6, 198);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(509, 52);
+            this.groupControl3.TabIndex = 14;
+            this.groupControl3.Text = "Tác vụ chi tiết phiếu sửa chữa";
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnXoa.Appearance.BackColor2 = System.Drawing.Color.Navy;
+            this.btnXoa.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnXoa.Appearance.Options.UseBackColor = true;
+            this.btnXoa.Appearance.Options.UseFont = true;
+            this.btnXoa.Appearance.Options.UseForeColor = true;
+            this.btnXoa.Enabled = false;
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+            this.btnXoa.Location = new System.Drawing.Point(283, 24);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.TabIndex = 11;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnĐóng
+            // 
+            this.btnĐóng.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnĐóng.Appearance.BackColor2 = System.Drawing.Color.Navy;
+            this.btnĐóng.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnĐóng.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnĐóng.Appearance.Options.UseBackColor = true;
+            this.btnĐóng.Appearance.Options.UseFont = true;
+            this.btnĐóng.Appearance.Options.UseForeColor = true;
+            this.btnĐóng.Image = ((System.Drawing.Image)(resources.GetObject("btnĐóng.Image")));
+            this.btnĐóng.Location = new System.Drawing.Point(400, 24);
+            this.btnĐóng.Name = "btnĐóng";
+            this.btnĐóng.Size = new System.Drawing.Size(88, 23);
+            this.btnĐóng.TabIndex = 10;
+            this.btnĐóng.Text = "Đóng";
+            this.btnĐóng.Click += new System.EventHandler(this.btnĐóng_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnSua.Appearance.BackColor2 = System.Drawing.Color.Navy;
+            this.btnSua.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnSua.Appearance.Options.UseBackColor = true;
+            this.btnSua.Appearance.Options.UseFont = true;
+            this.btnSua.Appearance.Options.UseForeColor = true;
+            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
+            this.btnSua.Location = new System.Drawing.Point(150, 24);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(75, 23);
+            this.btnSua.TabIndex = 8;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnThem.Appearance.BackColor2 = System.Drawing.Color.Navy;
+            this.btnThem.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnThem.Appearance.Options.UseBackColor = true;
+            this.btnThem.Appearance.Options.UseFont = true;
+            this.btnThem.Appearance.Options.UseForeColor = true;
+            this.btnThem.Enabled = false;
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
+            this.btnThem.Location = new System.Drawing.Point(5, 24);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(98, 23);
+            this.btnThem.TabIndex = 6;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // frmChiTietPhieuSuaChua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -603,9 +604,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvChiTietPSC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvPhieuSuaChua)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvPhieuSuaChua)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
+using DevExpress.XtraReports.Design;
 
 namespace DXApplication1
 {
@@ -314,6 +315,11 @@ namespace DXApplication1
                 }
             }
             catch { }
+        }
+
+        private void btnĐóng_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

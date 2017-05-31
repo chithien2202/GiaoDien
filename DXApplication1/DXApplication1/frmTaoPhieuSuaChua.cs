@@ -362,5 +362,10 @@ namespace DXApplication1
             }
             catch { }
         }
+
+        private void btnĐóng_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
