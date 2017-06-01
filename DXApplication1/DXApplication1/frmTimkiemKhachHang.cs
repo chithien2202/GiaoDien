@@ -13,9 +13,31 @@ namespace DXApplication1
 {
     public partial class frmTimkiemKhachHang : DevExpress.XtraEditors.XtraForm
     {
+        QLTBDataContext qltb = new QLTBDataContext();
         public frmTimkiemKhachHang()
         {
             InitializeComponent();
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            if (cbbTim.SelectedItem.ToString() == "Tên khách hàng")
+            {
+                var query = from tb in qltb.KHACHHANGs
+                            where tb.TENKHACHHANG.Contains(txtTim.Text.ToString())
+                            select tb;
+                dgtvKhachHang.DataSource = query;
+
+
+
+            }
+            else if (cbbTim.SelectedItem.ToString() == "Mã khách hàng")
+            {
+                var query = from tb in qltb.KHACHHANGs
+                            where tb.MAKHACHKHACH.Contains(txtTim.Text.ToString())
+                            select tb;
+                dgtvKhachHang.DataSource = query;
+            }
         }
     }
 }

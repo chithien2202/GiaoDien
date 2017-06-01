@@ -24,11 +24,33 @@ namespace DXApplication1
         {
             string tg = layngay.ngay();
             DateTime dt = Convert.ToDateTime(tg);
-            var thietbi = from tb in qltb.THIETBIs where (tb.NGAYMUA_SUACHUA >= dtpTu.DateTime) && (tb.NGAYMUA_SUACHUA <= dtpDen.DateTime) select new { tb.MATHIETBI, tb.MAMODEL, tb.SERIAL, tb.TENTHIETBI, tb.NGAYMUA_SUACHUA, tb.NGAYKETTHUC, tb.GHICHUTHIETBI };
-            dtgvDSThietBi.DataSource = thietbi;
-            var q = (from a in qltb.THIETBIs where (a.NGAYMUA_SUACHUA >= dtpTu.DateTime) && (a.NGAYMUA_SUACHUA <= dtpDen.DateTime) select a).Count();
-            int? tksl = (q == null) ? 0 : q;
-            txtTongSo.Text = tksl.ToString();
+            if (rbBaoHanh.Checked)
+            {
+                var thietbi = from tb in qltb.THIETBIs
+                              where (tb.NGAYMUA_SUACHUA >= dtpTu.DateTime) && (tb.NGAYMUA_SUACHUA <= dtpDen.DateTime) && tb.TRANGTHAI == true
+                              select new { tb.MATHIETBI, tb.MAMODEL, tb.SERIAL, tb.TENTHIETBI, tb.NGAYMUA_SUACHUA, tb.NGAYKETTHUC, tb.GHICHUTHIETBI };
+                dtgvDSThietBi.DataSource = thietbi;
+
+                var q = (from a in qltb.THIETBIs
+                         where (a.NGAYMUA_SUACHUA >= dtpTu.DateTime) && (a.NGAYMUA_SUACHUA <= dtpDen.DateTime) && a.TRANGTHAI == true
+                         select a).Count();
+                int? tksl = (q == null) ? 0 : q;
+                txtTongSo.Text = tksl.ToString();
+
+            }
+            else
+            {
+                var thietbi = from tb in qltb.THIETBIs
+                              where (tb.NGAYMUA_SUACHUA >= dtpTu.DateTime) && (tb.NGAYMUA_SUACHUA <= dtpDen.DateTime) && tb.TRANGTHAI == false
+                              select new { tb.MATHIETBI, tb.MAMODEL, tb.SERIAL, tb.TENTHIETBI, tb.NGAYMUA_SUACHUA, tb.NGAYKETTHUC, tb.GHICHUTHIETBI };
+                dtgvDSThietBi.DataSource = thietbi;
+
+                var q = (from a in qltb.THIETBIs
+                         where (a.NGAYMUA_SUACHUA >= dtpTu.DateTime) && (a.NGAYMUA_SUACHUA <= dtpDen.DateTime) && a.TRANGTHAI == false
+                         select a).Count();
+                int? tksl = (q == null) ? 0 : q;
+                txtTongSo.Text = tksl.ToString();
+            }
         }
     }
 }
