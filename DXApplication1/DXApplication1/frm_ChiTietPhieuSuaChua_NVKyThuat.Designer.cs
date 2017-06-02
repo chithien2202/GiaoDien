@@ -514,6 +514,7 @@
             this.dtgvPhieuSuaChua.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvPhieuSuaChua.Size = new System.Drawing.Size(1338, 133);
             this.dtgvPhieuSuaChua.TabIndex = 2;
+            this.dtgvPhieuSuaChua.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPhieuSuaChua_CellClick);
             // 
             // dataGridViewTextBoxColumn1
             // 

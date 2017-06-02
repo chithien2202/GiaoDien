@@ -345,5 +345,20 @@ namespace DXApplication1
                                };
             dtgvPhieuSuaChua.DataSource = phieusuachua;
         }
+
+        private void dtgvPhieuSuaChua_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cbbMaPSC.Enabled = false;
+            txtGiaThanh.Enabled = false;
+            cbbBangBaoGia.Enabled = false;
+            dtpNgaySua.Enabled = false;
+            dtpNgaySuaXong.Enabled = false;
+            cbbMaLinhKien.Enabled = false;
+            txtGhiChu.Enabled = false;
+            chkBaoHanh.Enabled = false;
+            chkDaNhanThietBi.Enabled = false;
+
+            cbbMaPSC.Text = dtgvPhieuSuaChua.CurrentRow.Cells[0].Value.ToString();
+        }
     }
 }
