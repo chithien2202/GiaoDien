@@ -16,6 +16,7 @@ namespace DXApplication1
 {
     public partial class frmTaoPhieuTiepNhan : DevExpress.XtraEditors.XtraForm
     {
+        HamLayNgay layngay = new HamLayNgay();
         QLTBDataContext qltb = new QLTBDataContext();
         TangMa tangma = new TangMa();
         public frmTaoPhieuTiepNhan()
@@ -26,6 +27,25 @@ namespace DXApplication1
         private void groupControl1_Paint(object sender, PaintEventArgs e)
         {
         
+        }
+        //Ví dụ nè
+        public void TrangThai()
+        {
+            //ngày bắt đầu
+            var ngaybd = (from q in qltb.THIETBIs
+                          where q.SERIAL == cbbThietBi.EditValue.ToString()
+                          select q.NGAYMUA_SUACHUA).FirstOrDefault();
+
+            var ngaykt = (from q in qltb.THIETBIs
+                          where q.SERIAL == cbbThietBi.EditValue.ToString()
+                          select q.NGAYKETTHUC).FirstOrDefault();
+
+            if(DateTime.Now > ngaybd && DateTime.Now < ngaykt)
+            {
+
+            }
+
+
         }
 
         private void dateEdit1_EditValueChanged(object sender, EventArgs e)
@@ -76,7 +96,7 @@ namespace DXApplication1
                 {
                     PHIEUTIEPNHAN ptn = new PHIEUTIEPNHAN();
                     ptn.MAPHIEUTN = tangma.ThemMaPTN();
-                    ptn.MATHIETBI = cbbThietBi.SelectedValue.ToString();
+                    ptn.MATHIETBI = cbbThietBi.EditValue.ToString();
                     ptn.MANHANVIEN = Program.mainForm.getUserName;
                     ptn.MANHANVIENNHANMAY = null;
                     ptn.MAKHACHKHACH = cbbKhachHang.Text;
@@ -84,12 +104,32 @@ namespace DXApplication1
                     ptn.NGAYHENTRA = dtpNgayHenTra.Value;
                     ptn.TINHHINHHUHONG = txtTinhTrangHuHong.Text;
                     ptn.PHUKIENKEMTHEO = txtPhuKienDiCung.Text;
-                    ptn.HINHTHUC = null;
+                    //ptn.HINHTHUC = null;
+                    var ngaybd = (from q in qltb.THIETBIs
+                                  where q.MATHIETBI == cbbThietBi.EditValue.ToString()
+                                  select q.NGAYMUA_SUACHUA).FirstOrDefault();
+
+                    var ngaykt = (from q in qltb.THIETBIs
+                                  where q.MATHIETBI == cbbThietBi.EditValue.ToString()
+                                  select q.NGAYKETTHUC).FirstOrDefault();
+              
+                    if (DateTime.Now >= ngaybd && DateTime.Now <= ngaykt)
+                    {
+                        ptn.HINHTHUC = true;
+                    }
+                    if(DateTime.Now > ngaykt)
+                    {
+                        ptn.HINHTHUC = false;
+                    }
+
+
                     ptn.GHICHUPTN = txtGhiChu.Text;
                     qltb.PHIEUTIEPNHANs.InsertOnSubmit(ptn);
                     qltb.SubmitChanges();
                     XtraMessageBox.Show("Thêm thành công", "Thông báo");
                     LoadGridViewPTN();
+
+                    btnThem.Text = "Thêm";
 
                     btnSua.Enabled = true;
                     btnXoa.Enabled = true;
@@ -107,9 +147,9 @@ namespace DXApplication1
 
         public void LoadCbbThietBi()
         { 
-            cbbThietBi.DataSource = qltb.THIETBIs;
-            cbbThietBi.DisplayMember = "SERIAL";
-            cbbThietBi.ValueMember = "MATHIETBI";
+            cbbThietBi.Properties.DataSource = qltb.THIETBIs;
+            cbbThietBi.Properties.DisplayMember = "SERIAL";
+            cbbThietBi.Properties.ValueMember = "MATHIETBI";
         }
 
         private void frmTaoPhieuTiepNhan_Load(object sender, EventArgs e)
@@ -152,19 +192,24 @@ namespace DXApplication1
         {
             DialogResult dr = XtraMessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo);
 
-            if (dr == DialogResult.Yes)
-
-            {
-                string maptn = dtgvDSPTN.CurrentRow.Cells[0].Value.ToString();
-                PHIEUTIEPNHAN ptn = qltb.PHIEUTIEPNHANs.Where(t => t.MAPHIEUTN == maptn).FirstOrDefault();
-                qltb.PHIEUTIEPNHANs.DeleteOnSubmit(ptn);
-                qltb.SubmitChanges();
-                XtraMessageBox.Show("Xóa thành công", "Thông báo");
-                LoadGridViewPTN();
-            }
+                if (dr == DialogResult.Yes)
+                {
+                    try
+                    {
+                        string maptn = dtgvDSPTN.CurrentRow.Cells[0].Value.ToString();
+                        PHIEUTIEPNHAN ptn = qltb.PHIEUTIEPNHANs.Where(t => t.MAPHIEUTN == maptn).FirstOrDefault();
+                        qltb.PHIEUTIEPNHANs.DeleteOnSubmit(ptn);
+                        qltb.SubmitChanges();
+                        XtraMessageBox.Show("Xóa thành công", "Thông báo");
+                        LoadGridViewPTN();
+                    }
+                    catch
+                    {
+                    XtraMessageBox.Show("Dữ liệu đang được sử dụng, không thể xóa!", "Thông báo");
+                }
+                }
 
             if (dr == DialogResult.No)
-
             {
                 this.Close();
             }
@@ -307,6 +352,18 @@ namespace DXApplication1
         private void btnDong_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnThietBi_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmDanhMucThietBi();
+            frm.ShowDialog();
+        }
+
+        private void btnKhachHang_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmDanhMucKhachHang();
+            frm.ShowDialog();
         }
     }
 }

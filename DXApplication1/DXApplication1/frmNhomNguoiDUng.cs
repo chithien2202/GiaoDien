@@ -109,12 +109,19 @@ namespace DXApplication1
 
             if (dr == DialogResult.Yes)
             {
-                string manhomnd = dtgvnhomnguoidung.CurrentRow.Cells[0].Value.ToString();
-                NHOMNGUOIDUNG nhomnd = qltb.NHOMNGUOIDUNGs.Where(t => t.MANHOM == manhomnd).FirstOrDefault();
-                qltb.NHOMNGUOIDUNGs.DeleteOnSubmit(nhomnd);
-                qltb.SubmitChanges();
-                XtraMessageBox.Show("Xóa thành công","Thông báo");
-                LoadGridviewnhomnguoidung();
+                try
+                {
+                    string manhomnd = dtgvnhomnguoidung.CurrentRow.Cells[0].Value.ToString();
+                    NHOMNGUOIDUNG nhomnd = qltb.NHOMNGUOIDUNGs.Where(t => t.MANHOM == manhomnd).FirstOrDefault();
+                    qltb.NHOMNGUOIDUNGs.DeleteOnSubmit(nhomnd);
+                    qltb.SubmitChanges();
+                    XtraMessageBox.Show("Xóa thành công", "Thông báo");
+                    LoadGridviewnhomnguoidung();
+                }
+                catch
+                {
+                    XtraMessageBox.Show("Dữ liệu đang được sử dụng, không thể xóa!", "Thông báo");
+                }
             }
 
             if (dr == DialogResult.No)

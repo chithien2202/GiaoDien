@@ -145,12 +145,19 @@ namespace DXApplication1
             if (dr == DialogResult.Yes)
 
             {
-                string mahoadon = dtgvDSHoaDon.CurrentRow.Cells[0].Value.ToString();
-                HOADON hoadon = qltb.HOADONs.Where(t => t.MAHOADON == mahoadon).FirstOrDefault();
-                qltb.HOADONs.DeleteOnSubmit(hoadon);
-                qltb.SubmitChanges();
-                XtraMessageBox.Show("Xóa thành công", "Thông báo");
-                LoadGridViewHoaDon();
+                try
+                {
+                    string mahoadon = dtgvDSHoaDon.CurrentRow.Cells[0].Value.ToString();
+                    HOADON hoadon = qltb.HOADONs.Where(t => t.MAHOADON == mahoadon).FirstOrDefault();
+                    qltb.HOADONs.DeleteOnSubmit(hoadon);
+                    qltb.SubmitChanges();
+                    XtraMessageBox.Show("Xóa thành công", "Thông báo");
+                    LoadGridViewHoaDon();
+                }
+                catch
+                {
+                    XtraMessageBox.Show("Dữ liệu đang được sử dụng, không thể xóa!", "Thông báo");
+                }
             }
 
             if (dr == DialogResult.No)

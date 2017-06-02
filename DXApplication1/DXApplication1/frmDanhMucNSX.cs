@@ -140,13 +140,11 @@ namespace DXApplication1
                     qltb.NHASANXUATs.DeleteOnSubmit(nsx);
                     qltb.SubmitChanges();
                     LoadGridViewNSX();
-                    XtraMessageBox.Show("Xóa thành công","Thông báo");
-                    
+                    XtraMessageBox.Show("Xóa thành công","Thông báo");    
                 }
                 catch
                 {
                     XtraMessageBox.Show("Dữ liệu đang được sử dụng, không thể xóa!","Thông báo");
-
                 }
             }
 

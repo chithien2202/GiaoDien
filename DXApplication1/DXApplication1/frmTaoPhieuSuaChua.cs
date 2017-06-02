@@ -155,6 +155,8 @@ namespace DXApplication1
                     LoadGridViewPSC();
                     XtraMessageBox.Show("Thêm thành công", "Thông báo");
 
+                    btnThem.Text = "Thêm";
+
                     btnSua.Enabled = true;
                     btnXoa.Enabled = true;
 
@@ -254,17 +256,22 @@ namespace DXApplication1
         private void btnXoa_Click(object sender, EventArgs e)
         {
             DialogResult dr = XtraMessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo);
-
             if (dr == DialogResult.Yes)
             {
-                string mapsc = dtgvPhieuSuaChua.CurrentRow.Cells[0].Value.ToString();
-                PHIEUSUACHUA phieusuachua = qltb.PHIEUSUACHUAs.Where(t => t.MAPSC == mapsc).FirstOrDefault();
-                qltb.PHIEUSUACHUAs.DeleteOnSubmit(phieusuachua);
-                qltb.SubmitChanges();
-                XtraMessageBox.Show("Xóa thành công", "Thông báo");
-                LoadGridViewPSC();
+                try
+                {
+                    string mapsc = dtgvPhieuSuaChua.CurrentRow.Cells[0].Value.ToString();
+                    PHIEUSUACHUA phieusuachua = qltb.PHIEUSUACHUAs.Where(t => t.MAPSC == mapsc).FirstOrDefault();
+                    qltb.PHIEUSUACHUAs.DeleteOnSubmit(phieusuachua);
+                    qltb.SubmitChanges();
+                    XtraMessageBox.Show("Xóa thành công", "Thông báo");
+                    LoadGridViewPSC();
+                }
+                catch
+                {
+                    XtraMessageBox.Show("Dữ liệu đang được sử dụng, không thể xóa!", "Thông báo");
+                }
             }
-
             if (dr == DialogResult.No)
             {
                 this.Close();

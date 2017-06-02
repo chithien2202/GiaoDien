@@ -179,7 +179,6 @@ namespace DXApplication1
                 catch
                 {
                     XtraMessageBox.Show("Dữ liệu đang được sử dụng, không thể xóa!","Thông báo");
-
                 }
             }
 

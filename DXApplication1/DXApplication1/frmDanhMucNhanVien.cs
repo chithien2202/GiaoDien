@@ -176,12 +176,19 @@ namespace DXApplication1
 
             if (dr == DialogResult.Yes)
             {
-                string manhanvien = dtgvnhanvien.CurrentRow.Cells[0].Value.ToString();
-                NHANVIEN nhanvien = qltb.NHANVIENs.Where(t => t.MANHANVIEN == manhanvien).FirstOrDefault();
-                qltb.NHANVIENs.DeleteOnSubmit(nhanvien);
-                qltb.SubmitChanges();
-                XtraMessageBox.Show("Xóa thành công","Thông báo");
-                LoadGridviewnhanvien();
+                try
+                {
+                    string manhanvien = dtgvnhanvien.CurrentRow.Cells[0].Value.ToString();
+                    NHANVIEN nhanvien = qltb.NHANVIENs.Where(t => t.MANHANVIEN == manhanvien).FirstOrDefault();
+                    qltb.NHANVIENs.DeleteOnSubmit(nhanvien);
+                    qltb.SubmitChanges();
+                    XtraMessageBox.Show("Xóa thành công", "Thông báo");
+                    LoadGridviewnhanvien();
+                }
+                catch
+                {
+                    XtraMessageBox.Show("Dữ liệu đang được sử dụng, không thể xóa!", "Thông báo");
+                }
             }
 
             if (dr == DialogResult.No)

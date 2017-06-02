@@ -154,12 +154,19 @@ namespace DXApplication1
             if (dr == DialogResult.Yes)
 
             {
-                string mamodel = dtgvDSModel.CurrentRow.Cells[0].Value.ToString();
-                MODEL model = qltb.MODELs.Where(t => t.MAMODEL == mamodel).FirstOrDefault();
-                qltb.MODELs.DeleteOnSubmit(model);
-                qltb.SubmitChanges();
-                XtraMessageBox.Show("Xóa thành công","Thông báo");
-                LoadGridviewModel();
+                try
+                {
+                    string mamodel = dtgvDSModel.CurrentRow.Cells[0].Value.ToString();
+                    MODEL model = qltb.MODELs.Where(t => t.MAMODEL == mamodel).FirstOrDefault();
+                    qltb.MODELs.DeleteOnSubmit(model);
+                    qltb.SubmitChanges();
+                    XtraMessageBox.Show("Xóa thành công", "Thông báo");
+                    LoadGridviewModel();
+                }
+                catch
+                {
+                    XtraMessageBox.Show("Dữ liệu đang được sử dụng, không thể xóa!", "Thông báo");
+                }
             }
 
             if (dr == DialogResult.No)

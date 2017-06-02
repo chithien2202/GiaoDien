@@ -161,12 +161,19 @@ namespace DXApplication1
 
             if (dr == DialogResult.Yes)
             {
-                string makhachhang = dgtvKhachHang.CurrentRow.Cells[0].Value.ToString();
-                KHACHHANG khachhang = qltb.KHACHHANGs.Where(t => t.MAKHACHKHACH == makhachhang).FirstOrDefault();
-                qltb.KHACHHANGs.DeleteOnSubmit(khachhang);
-                qltb.SubmitChanges();
-                XtraMessageBox.Show("Xóa thành công","Thong báo");
-                LoadGridviewkhachhang();
+                try
+                {
+                    string makhachhang = dgtvKhachHang.CurrentRow.Cells[0].Value.ToString();
+                    KHACHHANG khachhang = qltb.KHACHHANGs.Where(t => t.MAKHACHKHACH == makhachhang).FirstOrDefault();
+                    qltb.KHACHHANGs.DeleteOnSubmit(khachhang);
+                    qltb.SubmitChanges();
+                    XtraMessageBox.Show("Xóa thành công", "Thong báo");
+                    LoadGridviewkhachhang();
+                }
+                catch
+                {
+                    XtraMessageBox.Show("Dữ liệu đang được sử dụng!", "Thông báo");
+                }
             }
 
             if (dr == DialogResult.No)

@@ -260,22 +260,30 @@ namespace DXApplication1
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult dr = XtraMessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo);
-
-            if (dr == DialogResult.Yes)
+            try
             {
-                string mactsc = dtgvChiTietPSC.CurrentRow.Cells[0].Value.ToString();
-                CHITIETSUACHUA chitietsuachua = qltb.CHITIETSUACHUAs.Where(t => t.MACTSC == mactsc).FirstOrDefault();
-                qltb.CHITIETSUACHUAs.DeleteOnSubmit(chitietsuachua);
-                qltb.SubmitChanges();
-                XtraMessageBox.Show("Xóa thành công", "Thông báo");
-                LoadGridViewCTSC();
+                DialogResult dr = XtraMessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo);
+
+                if (dr == DialogResult.Yes)
+                {
+                    string mactsc = dtgvChiTietPSC.CurrentRow.Cells[0].Value.ToString();
+                    CHITIETSUACHUA chitietsuachua = qltb.CHITIETSUACHUAs.Where(t => t.MACTSC == mactsc).FirstOrDefault();
+                    qltb.CHITIETSUACHUAs.DeleteOnSubmit(chitietsuachua);
+                    qltb.SubmitChanges();
+                    XtraMessageBox.Show("Xóa thành công", "Thông báo");
+                    LoadGridViewCTSC();
+                }
+
+                if (dr == DialogResult.No)
+                {
+                    this.Close();
+                }
+            }
+            catch
+            {
+                XtraMessageBox.Show("Dữ liệu đang được sử dụng, không thể xóa!", "Thông báo");
             }
 
-            if (dr == DialogResult.No)
-            {
-                this.Close();
-            }
         }
 
         private void dtgvChiTietPSC_CellClick(object sender, DataGridViewCellEventArgs e)
