@@ -33,6 +33,7 @@ namespace DXApplication1
         private void frmHoaDon_Load(object sender, EventArgs e)
         {
             LoadGridViewHoaDon();
+            btnSua.Enabled = false;
             //LoadCbbPSC();
             loadKH();
             //  cbbMaPhieuTiepNhan.Enabled = false;

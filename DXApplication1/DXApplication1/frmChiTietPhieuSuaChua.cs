@@ -353,7 +353,26 @@ namespace DXApplication1
 
         private void dtgvPhieuSuaChua_Click(object sender, EventArgs e)
         {
-
+            if (dtgvPhieuSuaChua.SelectedRows.Count > 0)
+            {
+                var chitietsuachua = from ctsc in qltb.CHITIETSUACHUAs
+                                     where ctsc.MAPSC == dtgvPhieuSuaChua.CurrentRow.Cells["MaPSC"].Value.ToString()
+                                     select new
+                                     {
+                                         ctsc.MACTSC,
+                                         ctsc.MAPSC,
+                                         ctsc.MANHANVIENSUA,
+                                         ctsc.MANHANVIENNHAN,
+                                         ctsc.STT,
+                                         ctsc.GIATHANH,
+                                         ctsc.NGAYSUA,
+                                         ctsc.NGAYSUAXONG,
+                                         ctsc.TRANGTHAI,
+                                         ctsc.GHICHUCTSC,
+                                         ctsc.MALINHKIEN
+                                     };
+                dtgvChiTietPSC.DataSource = chitietsuachua;
+            }
         }
     }
 }

@@ -304,6 +304,11 @@ namespace DXApplication1
                         select pk.DONGIA).FirstOrDefault();
 
             txtGiaThanh.Text = tien.ToString();
+
+            var malinhkien = (from ma in qltb.LINHKIENs
+                              where ma.TENLINHKIEN == cbbBangBaoGia.SelectedValue.ToString()
+                              select ma.MALINHKIEN).FirstOrDefault();
+            cbbMaLinhKien.Text = malinhkien;
         }
 
         private void ChiTietPhieuSuaChua_NVKyThuat_Load(object sender, EventArgs e)
