@@ -307,6 +307,7 @@
             this.cbbMaPhieuTiepNhan.Name = "cbbMaPhieuTiepNhan";
             this.cbbMaPhieuTiepNhan.Size = new System.Drawing.Size(181, 21);
             this.cbbMaPhieuTiepNhan.TabIndex = 34;
+            this.cbbMaPhieuTiepNhan.SelectionChangeCommitted += new System.EventHandler(this.cbbMaPhieuTiepNhan_SelectionChangeCommitted);
             // 
             // cbbNhanVienLap
             // 

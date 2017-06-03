@@ -43,6 +43,9 @@ namespace DXApplication1
             LoadCbbNhanVienSua();
             LoadCbbMaLinhKien();
             LoadGridViewPSC();
+            btnThem.Enabled = false;
+            btnXoa.Enabled = false;
+            btnSua.Enabled = true;
             cbbMaPSC.Enabled = false;
             txtGiaThanh.Enabled = false;
             cbbBangBaoGia.Enabled = false;
@@ -69,6 +72,7 @@ namespace DXApplication1
             {
                 btnSua.Enabled = false;
                 btnXoa.Enabled = false;
+                btnThem.Enabled = false;
 
                 cbbMaPSC.Enabled = true;
                 txtGiaThanh.Enabled = true;
@@ -122,8 +126,9 @@ namespace DXApplication1
                     LoadGridViewCTSC();
                     XtraMessageBox.Show("Thêm thành công", "Thông báo");
 
-                    btnSua.Enabled = true;
-                    btnXoa.Enabled = true;
+                    btnSua.Enabled = false;
+                    btnXoa.Enabled = false;
+                    btnThem.Enabled = false;
 
                     cbbMaPSC.Enabled = false;
                     txtGiaThanh.Enabled = false;
@@ -237,8 +242,8 @@ namespace DXApplication1
                 btnSua.Text = "Sửa";
                 btnThem.Text = "Thêm";
 
-                btnThem.Enabled = true;
-                btnXoa.Enabled = true;
+                btnThem.Enabled = false;
+                btnXoa.Enabled = false;
 
                 cbbMaPSC.Enabled = false;
                 txtGiaThanh.Enabled = false;
@@ -283,7 +288,6 @@ namespace DXApplication1
             {
                 XtraMessageBox.Show("Dữ liệu đang được sử dụng, không thể xóa!", "Thông báo");
             }
-
         }
 
         private void dtgvChiTietPSC_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -332,6 +336,7 @@ namespace DXApplication1
 
         private void dtgvPhieuSuaChua_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             cbbMaPSC.Enabled = false;
             txtGiaThanh.Enabled = false;
             cbbBangBaoGia.Enabled = false;
@@ -342,6 +347,13 @@ namespace DXApplication1
             chkBaoHanh.Enabled = false;
 
             cbbMaPSC.Text = dtgvPhieuSuaChua.CurrentRow.Cells[0].Value.ToString();
+
+            
+        }
+
+        private void dtgvPhieuSuaChua_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

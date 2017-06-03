@@ -69,7 +69,7 @@
             this.dtgvChiTietPSC = new System.Windows.Forms.DataGridView();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.dtgvPhieuSuaChua = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaPSC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -496,7 +496,7 @@
             this.dtgvPhieuSuaChua.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvPhieuSuaChua.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvPhieuSuaChua.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
+            this.MaPSC,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
@@ -515,12 +515,13 @@
             this.dtgvPhieuSuaChua.Size = new System.Drawing.Size(1338, 133);
             this.dtgvPhieuSuaChua.TabIndex = 2;
             this.dtgvPhieuSuaChua.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPhieuSuaChua_CellClick);
+            this.dtgvPhieuSuaChua.Click += new System.EventHandler(this.dtgvPhieuSuaChua_Click);
             // 
-            // dataGridViewTextBoxColumn1
+            // MaPSC
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "MAPSC";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã PSC";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.MaPSC.DataPropertyName = "MAPSC";
+            this.MaPSC.HeaderText = "Mã PSC";
+            this.MaPSC.Name = "MaPSC";
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -656,7 +657,7 @@
         private DevExpress.XtraEditors.GroupControl groupControl5;
         private System.Windows.Forms.CheckBox chkDaNhanThietBi;
         private System.Windows.Forms.DataGridView dtgvPhieuSuaChua;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPSC;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;

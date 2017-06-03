@@ -39,7 +39,7 @@ namespace DXApplication1
                 cbbNhanVienSuaChua.Enabled = true;
                 chkDaNhanThietBi.Enabled = false;
 
-                cbbMaPSC.Text = String.Empty;
+                cbbMaPSC.Text = dtgvPhieuSuaChua.CurrentRow.Cells[0].Value.ToString();
                 txtGiaThanh.Text = String.Empty;
                 cbbBangBaoGia.Text = String.Empty;
                 cbbMaLinhKien.Text = String.Empty;
@@ -82,6 +82,7 @@ namespace DXApplication1
                     LoadGridViewCTSC();
                     XtraMessageBox.Show("Thêm thành công", "Thông báo");
 
+                    btnThem.Text = "Thêm";
                     btnSua.Enabled = true;
                     btnXoa.Enabled = true;
 
@@ -359,6 +360,30 @@ namespace DXApplication1
             chkDaNhanThietBi.Enabled = false;
 
             cbbMaPSC.Text = dtgvPhieuSuaChua.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void dtgvPhieuSuaChua_Click(object sender, EventArgs e)
+        {
+            if (dtgvPhieuSuaChua.SelectedRows.Count > 0)
+            {
+                var chitietsuachua = from ctsc in qltb.CHITIETSUACHUAs
+                                     where ctsc.MAPSC == dtgvPhieuSuaChua.CurrentRow.Cells["MaPSC"].Value.ToString()
+                                     select new
+                                     {
+                                         ctsc.MACTSC,
+                                         ctsc.MAPSC,
+                                         ctsc.MANHANVIENSUA,
+                                         ctsc.MANHANVIENNHAN,
+                                         ctsc.STT,
+                                         ctsc.GIATHANH,
+                                         ctsc.NGAYSUA,
+                                         ctsc.NGAYSUAXONG,
+                                         ctsc.TRANGTHAI,
+                                         ctsc.GHICHUCTSC,
+                                         ctsc.MALINHKIEN
+                                     };
+                dtgvChiTietPSC.DataSource = chitietsuachua;
+            }
         }
     }
 }

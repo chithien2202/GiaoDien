@@ -88,7 +88,7 @@ namespace DXApplication1
             }
             else
             {
-                if (txtTinhTrangHuHong.Text == String.Empty)
+                if (txtTinhTrangHuHong.Text == String.Empty || cbbThietBi.Text == String.Empty) 
                 {
                     XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo");
                 }

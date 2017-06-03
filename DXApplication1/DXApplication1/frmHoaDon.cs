@@ -20,47 +20,60 @@ namespace DXApplication1
             InitializeComponent();
         }
 
+
+        void loadKH()
+        {
+            var kh = from k in qltb.KHACHHANGs select k;
+            cbbKhachHang.DataSource = kh;
+            cbbKhachHang.DisplayMember = "TENKHACHHANG";
+            cbbKhachHang.ValueMember = "MAKHACHKHACH";
+
+        }
+
         private void frmHoaDon_Load(object sender, EventArgs e)
         {
             LoadGridViewHoaDon();
-            LoadCbbPSC();
-            cbbMaPhieuSuaChua.Enabled = false;
-            dtpNgayLap.Enabled = false;
-            txtMaHoaDon.Enabled = false;
-            txtKhachHang.Enabled = false;
+            //LoadCbbPSC();
+            loadKH();
+            //  cbbMaPhieuTiepNhan.Enabled = false;
+            //dtpNgayLap.Enabled = false;
+            //txtMaHoaDon.Enabled = false;
+            //   txtKhachHang.Enabled = false;
+            grbTTHD.Enabled = false;
+         
             txtNhanVienLap.Enabled = false;
         }
 
         public void LoadCbbPSC()
         {
-            cbbMaPhieuSuaChua.DataSource = qltb.PHIEUSUACHUAs;
-            cbbMaPhieuSuaChua.DisplayMember = "MAPSC";
-            cbbMaPhieuSuaChua.ValueMember = "MAPSC";
+            //cbbMaPhieuTiepNhan.DataSource = qltb.PHIEUTIEPNHANs;
+            //cbbMaPhieuTiepNhan.DisplayMember = "MAPHIEUTN";
+            //cbbMaPhieuTiepNhan.ValueMember = "MAPHIEUTN";
         }
 
         private void cbbMaPhieuSuaChua_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var tongtien = (from pk in qltb.PHIEUSUACHUAs
-                        where pk.MAPSC == cbbMaPhieuSuaChua.SelectedValue.ToString()
-                        select pk.TONGTIEN).FirstOrDefault();
+            //var tongtien = (from pk in qltb.PHIEUSUACHUAs
+            //            where pk.MAPSC == cbbMaPhieuTiepNhan.SelectedValue.ToString()
+            //            select pk.TONGTIEN).FirstOrDefault();
 
           //  txtTongTien.Text = tongtien.ToString();
         }
 
         private void cbbMaPhieuSuaChua_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            //var kh = (from k in qltb.HOADONs where k.MAPSC == cbbMaPhieuSuaChua.SelectedValue.ToString() select new { k.MAKHACHHANG, k.KHACHHANG.TENKHACHHANG, k.PHIEUSUACHUA.TRANGTHAI,k.PHIEUSUACHUA.TONGTIEN }).FirstOrDefault();
-            var psc = (from p in qltb.PHIEUSUACHUAs where p.MAPSC == cbbMaPhieuSuaChua.SelectedValue.ToString() select new {p.PHIEUTIEPNHAN.MAKHACHKHACH,p.PHIEUTIEPNHAN.KHACHHANG.TENKHACHHANG, p.TRANGTHAI,p.TONGTIEN }).FirstOrDefault();
-            lbMKH.Text = psc.MAKHACHKHACH;
-            txtKhachHang.Text = psc.TENKHACHHANG;
-            if(psc.TRANGTHAI.Value.ToString()=="True")
-            {
-                txtTongTien.Text = "0";
-            }
-            else
-            {
-                txtTongTien.Text = psc.TONGTIEN.ToString();
-            }
+            ////var kh = (from k in qltb.HOADONs where k.MAPSC == cbbMaPhieuSuaChua.SelectedValue.ToString() select new { k.MAKHACHHANG, k.KHACHHANG.TENKHACHHANG, k.PHIEUSUACHUA.TRANGTHAI,k.PHIEUSUACHUA.TONGTIEN }).FirstOrDefault();
+            //var psc = (from p in qltb.PHIEUSUACHUAs where p.MAPHIEUTN == cbbMaPhieuTiepNhan.SelectedValue.ToString() select new {p.PHIEUTIEPNHAN.MAKHACHKHACH,p.PHIEUTIEPNHAN.KHACHHANG.TENKHACHHANG, p.TRANGTHAI,p.TONGTIEN }).FirstOrDefault();
+            //lbMKH.Text = psc.MAKHACHKHACH;
+            //txtKhachHang.Text = psc.TENKHACHHANG;
+            //if(psc.TRANGTHAI.Value.ToString()=="True")
+            //{
+            //    txtTongTien.Text = "0";
+            //}
+            //else
+            //{
+            //    txtTongTien.Text = psc.TONGTIEN.ToString();
+            //}
         }
 
 
@@ -72,55 +85,122 @@ namespace DXApplication1
                 btnXoa.Enabled = false;
                 btnSua.Enabled = false;
 
-                cbbMaPhieuSuaChua.Enabled = true;
+                dtgvPSC.Enabled = true;
                 dtpNgayLap.Enabled = true;
                 txtMaHoaDon.Enabled = false;
-                txtKhachHang.Enabled = false;
+                cbbKhachHang.Enabled = true;
                 txtNhanVienLap.Enabled = false;
 
-                cbbMaPhieuSuaChua.Text = String.Empty;
+                grbTTHD.Enabled = true;
+                
                 txtMaHoaDon.Text = String.Empty;
-                txtKhachHang.Text = String.Empty;
                 txtNhanVienLap.Text = String.Empty;
-
+                foreach(DataGridViewRow r in dtgvCTHD.Rows)
+                {
+                    dtgvCTHD.Rows.Remove(r);
+                }
                 btnThem.Text = "Lưu";
             }
             else
             {
-                if (cbbMaPhieuSuaChua.Text == String.Empty || txtKhachHang.Text == String.Empty) 
+                //if (cbbMaPhieuTiepNhan.Text == String.Empty || txtKhachHang.Text == String.Empty) 
+                //{
+                //    XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo");
+                //}
+                //else
+                //{
+                    //HOADON hd = new HOADON();
+                    //hd.MAHOADON = tangma.ThemMaHoaDon();
+                    //hd.MAKHACHHANG = lbMKH.Text;
+                    //hd.MAPSC = cbbMaPhieuTiepNhan.Text;
+                    //hd.MANHANVIEN = Program.mainForm.getUserName;
+                    //hd.NGAYLAP = dtpNgayLap.Value;
+                    //hd.TONGTIEN = decimal.Parse(txtTongTien.Text);
+                    //qltb.HOADONs.InsertOnSubmit(hd);
+                    //qltb.SubmitChanges();
+                    //XtraMessageBox.Show("Thêm thành công", "Thông báo");
+                    //LoadGridViewHoaDon();
+
+                if(dtgvCTHD.Rows.Count<1)
                 {
-                    XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo");
+                    MessageBox.Show("1 hóa đơn cần có ít nhất 1 chi tiết hóa đơn","Thông báo");
+                    return;
                 }
-                else
+               
+
+                List<string> lstmpsc = new List<string>();
+
+                foreach (DataGridViewRow r in dtgvCTHD.Rows)
+                {
+                    int trung = 0;
+                    foreach (string ma in lstmpsc)
+                    {
+                        if (r.Cells["PSC"].Value.ToString() == ma)
+                        {
+                            trung ++;
+                            break;
+                        }
+                        
+                    }
+                    if(trung ==0)
+                    {
+                        lstmpsc.Add(r.Cells["PSC"].Value.ToString());
+                    }
+                    trung = 0;
+                }
+
+
+                foreach (string mapsc in lstmpsc)
                 {
                     HOADON hd = new HOADON();
                     hd.MAHOADON = tangma.ThemMaHoaDon();
-                    hd.MAKHACHHANG = lbMKH.Text;
-                    hd.MAPSC = cbbMaPhieuSuaChua.Text;
+                    hd.MAKHACHHANG = cbbKhachHang.SelectedValue.ToString();
                     hd.MANHANVIEN = Program.mainForm.getUserName;
                     hd.NGAYLAP = dtpNgayLap.Value;
-                    hd.TONGTIEN = decimal.Parse(txtTongTien.Text);
+                    hd.TONGTIEN = 0;
+                    hd.MAPSC = mapsc;
                     qltb.HOADONs.InsertOnSubmit(hd);
                     qltb.SubmitChanges();
-                    XtraMessageBox.Show("Thêm thành công", "Thông báo");
-                    LoadGridViewHoaDon();
 
-                    btnXoa.Enabled = true;
+                    foreach (DataGridViewRow r in dtgvCTHD.Rows)
+                    {
+                        if (r.Cells["PSC"].Value.ToString() == mapsc)
+                        {
+                            CHITIETHOADON ct = new CHITIETHOADON();
+                            ct.MAHOADON = hd.MAHOADON;
+                            ct.MALINHKIEN = r.Cells["MaLK"].Value.ToString();
+                            ct.NGAYKETTHUCBH = DateTime.Parse(r.Cells["NgayKT"].Value.ToString());
+                            ct.THANHTIEN = decimal.Parse(r.Cells["ThanhTien"].Value.ToString());
+                            ct.GIATHANH = decimal.Parse(r.Cells["GiaThanh"].Value.ToString());
+                            ct.TRANGTHAI = bool.Parse(r.Cells["BH"].Value.ToString());
+                            qltb.CHITIETHOADONs.InsertOnSubmit(ct);
+                            qltb.SubmitChanges();
+                            HOADON hdcn = qltb.HOADONs.Where(x => x.MAHOADON == ct.MAHOADON).FirstOrDefault();
+                            hdcn.TONGTIEN += ct.THANHTIEN;
+                            qltb.SubmitChanges();
+                        }
+                    }
+                }
+
+                MessageBox.Show("Tạo hóa đơn thành công","Thông báo");
+
+                btnXoa.Enabled = true;
                     btnSua.Enabled = true;
 
                     btnThem.Text = "Thêm";
 
-                    cbbMaPhieuSuaChua.Enabled = false;
+                    dtgvPSC.Enabled = false;
                     dtpNgayLap.Enabled = false;
                     txtMaHoaDon.Enabled = false;
-                    txtKhachHang.Enabled = false;
+                    cbbKhachHang.Enabled = false;
                     txtNhanVienLap.Enabled = false;
 
-                    cbbMaPhieuSuaChua.Text = String.Empty;
+               //     cbbMaPhieuTiepNhan.Text = String.Empty;
                     txtMaHoaDon.Text = String.Empty;
-                    txtKhachHang.Text = String.Empty;
+                  //  txtKhachHang.Text = String.Empty;
                     txtNhanVienLap.Text = String.Empty;
-                }
+                LoadGridViewHoaDon();
+                //}
             }
         }
 
@@ -173,12 +253,119 @@ namespace DXApplication1
             txtNhanVienLap.Text = dtgvDSHoaDon.CurrentRow.Cells[3].Value.ToString();
             dtpNgayLap.Text = dtgvDSHoaDon.CurrentRow.Cells[4].Value.ToString();
             txtTongTien.Text = dtgvDSHoaDon.CurrentRow.Cells[5].Value.ToString();
-            cbbMaPhieuSuaChua.Text = dtgvDSHoaDon.CurrentRow.Cells[2].Value.ToString();
+           // cbbMaPhieuTiepNhan.Text = dtgvDSHoaDon.CurrentRow.Cells[2].Value.ToString();
         }
 
         private void btnDong_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        void loadcbbPTN()
+        {
+            var ptn = from p in qltb.PHIEUTIEPNHANs where p.MAKHACHKHACH== cbbKhachHang.SelectedValue.ToString() select p;
+            cbbPTN.DataSource = ptn;
+            cbbPTN.DisplayMember = "MAPHIEUTN";
+            cbbPTN.ValueMember = "MAPHIEUTN";
+        }
+        private void cbbKhachHang_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            loadcbbPTN();
+            psc();
+        }
+        void loaddtgvPSC()
+        {
+            var sc = (from s in qltb.PHIEUSUACHUAs where s.MAPHIEUTN == cbbPTN.SelectedValue.ToString() select s).FirstOrDefault();
+            var ctsc = from c in qltb.CHITIETSUACHUAs where c.MAPSC == sc.MAPSC select new { c.MAPSC, c.MACTSC, c.MALINHKIEN, c.LINHKIEN.TENLINHKIEN, c.NGAYSUA };
+            dtgvPSC.DataSource = ctsc;
+            
+        }
+        private void cbbPTN_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            loaddtgvPSC();
+        }
+
+        private void btnThemCTHD_Click(object sender, EventArgs e)
+        {
+            if(dtgvPSC.SelectedRows.Count>0)
+            {
+                DataGridViewRow ctsc = dtgvPSC.CurrentRow;
+                var ctpsc = (from c in qltb.CHITIETSUACHUAs where c.MACTSC == ctsc.Cells["MaCTSC"].Value.ToString() select c).FirstOrDefault();
+                DateTime ngs= DateTime.Parse(ctsc.Cells["NgaySua"].Value.ToString());
+                DateTime ngaykt = ngs.AddMonths(3);
+                string tt = "";
+                if (ctpsc.TRANGTHAI == true)
+                {
+                    tt = "0";
+                }
+                else
+                    tt = ctpsc.GIATHANH.ToString();
+                dtgvCTHD.Rows.Add(ctsc.Cells["MLK"].Value.ToString(), ctsc.Cells["TenLK"].Value.ToString(),ngaykt.ToString(),tt,ctpsc.TRANGTHAI,ctpsc.GIATHANH, ctsc.Cells["MaPSC"].Value.ToString());
+
+                Tong();
+            }
+        }
+
+        void  Tong()
+        {
+            double tt = 0;
+            foreach(DataGridViewRow r in dtgvCTHD.Rows)
+            {
+                tt += double.Parse(r.Cells["ThanhTien"].Value.ToString());
+            }
+            txtTongTien.Text=tt.ToString();
+        }
+
+        private void btnXoaCTHD_Click(object sender, EventArgs e)
+        {
+            if(dtgvCTHD.SelectedRows.Count>0)
+            {
+                DialogResult d = MessageBox.Show("Bạn có chắc muốn xóa?","Thông báo", MessageBoxButtons.OKCancel);
+                if(d == DialogResult.OK)
+                {
+                    dtgvCTHD.Rows.Remove(dtgvCTHD.CurrentRow);
+                    MessageBox.Show("đã xóa");
+                    Tong();
+                }
+                
+            }
+        }
+
+        void psc()
+        {
+           foreach(DataGridViewRow r in dtgvPSC.Rows)
+            {
+                PHIEUSUACHUA psc = qltb.PHIEUSUACHUAs.Where(x => x.MAPSC == r.Cells["MaPSC"].Value.ToString()).FirstOrDefault();
+                var hds = from h in qltb.HOADONs select h;
+                foreach (var hd in hds)
+                {
+                    if (psc.MAPSC == hd.MAPSC)
+                    {
+                        dtgvPSC.Rows.Remove(r);
+                    }
+                }
+            }
+        }
+
+        private void dtgvPSC_Click(object sender, EventArgs e)
+        {
+            if(dtgvPSC.SelectedRows.Count>0)
+            {
+                PHIEUSUACHUA psc = qltb.PHIEUSUACHUAs.Where(x => x.MAPSC == dtgvPSC.CurrentRow.Cells["MaPSC"].Value.ToString()).FirstOrDefault();
+                var hds = from h in qltb.HOADONs select h;
+                foreach (var hd in hds)
+                {
+                    if(psc.MAPSC == hd.MAPSC)
+                    {
+                        btnThemCTHD.Enabled = false;
+                        return;
+                    }
+                    else
+                    {
+                        btnThemCTHD.Enabled = true;
+                    }
+                }
+            }
         }
     }
 }

@@ -374,5 +374,11 @@ namespace DXApplication1
         {
             this.Close();
         }
+
+        private void cbbMaPhieuTiepNhan_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            PHIEUTIEPNHAN ptn = qltb.PHIEUTIEPNHANs.Where(x => x.MAPHIEUTN == cbbMaPhieuTiepNhan.SelectedValue.ToString()).FirstOrDefault();
+            txtThongTinSuaChua.Text = ptn.TINHHINHHUHONG;
+        }
     }
 }
