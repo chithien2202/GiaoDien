@@ -96,6 +96,7 @@ namespace DXApplication1
                 
                 txtMaHoaDon.Text = String.Empty;
                 txtNhanVienLap.Text = String.Empty;
+                txtTongTien.Text = String.Empty;
                 foreach(DataGridViewRow r in dtgvCTHD.Rows)
                 {
                     dtgvCTHD.Rows.Remove(r);
@@ -378,6 +379,23 @@ namespace DXApplication1
         {
             loadcbbPTN();
             psc();
+        }
+
+        private void dtgvDSHoaDon_Click(object sender, EventArgs e)
+        {
+            if (dtgvDSHoaDon.SelectedRows.Count > 0)
+            {
+                var chitiethoadon = from cthd in qltb.CHITIETHOADONs
+                                    where cthd.MAHOADON == dtgvDSHoaDon.CurrentRow.Cells[0].Value.ToString()
+                                    select new
+                                    {
+                                        cthd.MALINHKIEN,
+                                        cthd.TRANGTHAI,
+                                        cthd.GIATHANH,
+                                        cthd.THANHTIEN
+                                     };
+                dtgvCTHD.DataSource = chitiethoadon;
+            }
         }
     }
 }

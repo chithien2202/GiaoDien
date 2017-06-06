@@ -48,6 +48,7 @@
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.grbTTHD = new DevExpress.XtraEditors.GroupControl();
+            this.cbbKhachHang = new DevExpress.XtraEditors.LookUpEdit();
             this.cbbPTN = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dtgvPSC = new System.Windows.Forms.DataGridView();
@@ -77,7 +78,6 @@
             this.dtpNgayLap = new System.Windows.Forms.DateTimePicker();
             this.lbMKH = new System.Windows.Forms.Label();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.cbbKhachHang = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSHoaDon)).BeginInit();
@@ -85,12 +85,12 @@
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grbTTHD)).BeginInit();
             this.grbTTHD.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbKhachHang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPSC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCTHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbKhachHang.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl4
@@ -162,6 +162,7 @@
             this.dtgvDSHoaDon.Size = new System.Drawing.Size(1095, 141);
             this.dtgvDSHoaDon.TabIndex = 0;
             this.dtgvDSHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSHoaDon_CellClick);
+            this.dtgvDSHoaDon.Click += new System.EventHandler(this.dtgvDSHoaDon_Click);
             // 
             // Column1
             // 
@@ -324,6 +325,22 @@
             this.grbTTHD.Size = new System.Drawing.Size(1099, 234);
             this.grbTTHD.TabIndex = 15;
             this.grbTTHD.Text = "Thông tin hóa đơn";
+            // 
+            // cbbKhachHang
+            // 
+            this.cbbKhachHang.Location = new System.Drawing.Point(149, 142);
+            this.cbbKhachHang.Name = "cbbKhachHang";
+            this.cbbKhachHang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbbKhachHang.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TENKHACHHANG", "Tên khách hàng")});
+            this.cbbKhachHang.Properties.DisplayMember = "TENKHACHHANG";
+            this.cbbKhachHang.Properties.NullText = "";
+            this.cbbKhachHang.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.cbbKhachHang.Properties.ValueMember = "MAKHACHHANG";
+            this.cbbKhachHang.Size = new System.Drawing.Size(233, 20);
+            this.cbbKhachHang.TabIndex = 37;
+            this.cbbKhachHang.EditValueChanged += new System.EventHandler(this.cbbKhachHang_EditValueChanged);
             // 
             // cbbPTN
             // 
@@ -576,22 +593,6 @@
             this.gridView4.Name = "gridView4";
             this.gridView4.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             // 
-            // cbbKhachHang
-            // 
-            this.cbbKhachHang.Location = new System.Drawing.Point(149, 142);
-            this.cbbKhachHang.Name = "cbbKhachHang";
-            this.cbbKhachHang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbbKhachHang.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TENKHACHHANG", "Tên khách hàng")});
-            this.cbbKhachHang.Properties.DisplayMember = "TENKHACHHANG";
-            this.cbbKhachHang.Properties.NullText = "";
-            this.cbbKhachHang.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.cbbKhachHang.Properties.ValueMember = "MAKHACHHANG";
-            this.cbbKhachHang.Size = new System.Drawing.Size(233, 20);
-            this.cbbKhachHang.TabIndex = 37;
-            this.cbbKhachHang.EditValueChanged += new System.EventHandler(this.cbbKhachHang_EditValueChanged);
-            // 
             // frmHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -613,13 +614,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.grbTTHD)).EndInit();
             this.grbTTHD.ResumeLayout(false);
             this.grbTTHD.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbKhachHang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPSC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
             this.groupControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCTHD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbbKhachHang.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
