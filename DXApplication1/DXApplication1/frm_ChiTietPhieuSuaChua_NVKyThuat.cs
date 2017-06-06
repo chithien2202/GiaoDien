@@ -29,11 +29,11 @@ namespace DXApplication1
                 btnXoa.Enabled = false;
 
                 cbbMaPSC.Enabled = true;
-                txtGiaThanh.Enabled = true;
+                txtGiaThanh.Enabled = false;
                 cbbBangBaoGia.Enabled = true;
                 dtpNgaySua.Enabled = true;
                 dtpNgaySuaXong.Enabled = true;
-                cbbMaLinhKien.Enabled = true;
+                txtMaLinhKien.Enabled = false;
                 txtGhiChu.Enabled = true;
                 chkBaoHanh.Enabled = true;
                 cbbNhanVienSuaChua.Enabled = true;
@@ -42,7 +42,7 @@ namespace DXApplication1
                 cbbMaPSC.Text = dtgvPhieuSuaChua.CurrentRow.Cells[0].Value.ToString();
                 txtGiaThanh.Text = String.Empty;
                 cbbBangBaoGia.Text = String.Empty;
-                cbbMaLinhKien.Text = String.Empty;
+                txtMaLinhKien.Text = String.Empty;
                 txtGhiChu.Text = String.Empty;
                 chkBaoHanh.Checked = false;
                 chkDaNhanThietBi.Checked = false;
@@ -75,7 +75,7 @@ namespace DXApplication1
                         ctsc.TRANGTHAI = false;
                     }
                     ctsc.GHICHUCTSC = txtGhiChu.Text;
-                    ctsc.MALINHKIEN = cbbMaLinhKien.Text;
+                    ctsc.MALINHKIEN = txtMaLinhKien.Text;
 
                     qltb.CHITIETSUACHUAs.InsertOnSubmit(ctsc);
                     qltb.SubmitChanges();
@@ -91,7 +91,7 @@ namespace DXApplication1
                     cbbBangBaoGia.Enabled = false;
                     dtpNgaySua.Enabled = false;
                     dtpNgaySuaXong.Enabled = false;
-                    cbbMaLinhKien.Enabled = false;
+                    txtMaLinhKien.Enabled = false;
                     txtGhiChu.Enabled = false;
                     chkBaoHanh.Enabled = false;
                     chkDaNhanThietBi.Enabled = false;
@@ -135,9 +135,9 @@ namespace DXApplication1
 
         public void LoadCbbMaLinhKien()
         {
-            cbbMaLinhKien.DataSource = qltb.LINHKIENs;
-            cbbMaLinhKien.DisplayMember = "MALINHKIEN";
-            cbbMaLinhKien.ValueMember = "MALINHKIEN";
+            //cbbMaLinhKien.DataSource = qltb.LINHKIENs;
+            //cbbMaLinhKien.DisplayMember = "MALINHKIEN";
+            //cbbMaLinhKien.ValueMember = "MALINHKIEN";
         }
 
         public void LoadCbbNhanVienSua()
@@ -155,11 +155,11 @@ namespace DXApplication1
                 btnXoa.Enabled = false;
 
                 cbbMaPSC.Enabled = false;
-                txtGiaThanh.Enabled = true;
+                txtGiaThanh.Enabled = false;
                 cbbBangBaoGia.Enabled = true;
                 dtpNgaySua.Enabled = true;
                 dtpNgaySuaXong.Enabled = true;
-                cbbMaLinhKien.Enabled = true;
+                txtMaLinhKien.Enabled = false;
                 txtGhiChu.Enabled = true;
                 chkBaoHanh.Enabled = true;
                 chkDaNhanThietBi.Enabled = true;
@@ -188,7 +188,7 @@ namespace DXApplication1
                     ctsc.TRANGTHAI = false;
                 }
                 ctsc.GHICHUCTSC = txtGhiChu.Text;
-                ctsc.MALINHKIEN = cbbMaLinhKien.Text;
+                ctsc.MALINHKIEN = txtMaLinhKien.Text;
 
                 qltb.SubmitChanges();
                 XtraMessageBox.Show("Sửa thành công", "Thông báo");
@@ -205,7 +205,7 @@ namespace DXApplication1
                 cbbBangBaoGia.Enabled = false;
                 dtpNgaySua.Enabled = false;
                 dtpNgaySuaXong.Enabled = false;
-                cbbMaLinhKien.Enabled = false;
+                txtMaLinhKien.Enabled = false;
                 txtGhiChu.Enabled = false;
                 chkBaoHanh.Enabled = false;
                 chkDaNhanThietBi.Enabled = false;
@@ -213,7 +213,7 @@ namespace DXApplication1
                 cbbMaPSC.Text = String.Empty;
                 txtGiaThanh.Text = String.Empty;
                 cbbBangBaoGia.Text = String.Empty;
-                cbbMaLinhKien.Text = String.Empty;
+                txtMaLinhKien.Text = String.Empty;
                 txtGhiChu.Text = String.Empty;
                 chkBaoHanh.Checked = false;
                 chkDaNhanThietBi.Checked = false;
@@ -256,7 +256,7 @@ namespace DXApplication1
                 cbbBangBaoGia.Enabled = false;
                 dtpNgaySua.Enabled = false;
                 dtpNgaySuaXong.Enabled = false;
-                cbbMaLinhKien.Enabled = false;
+                txtMaLinhKien.Enabled = false;
                 txtGhiChu.Enabled = false;
                 chkBaoHanh.Enabled = false;
                 chkDaNhanThietBi.Enabled = false;
@@ -265,7 +265,7 @@ namespace DXApplication1
                 txtGiaThanh.Text = dtgvChiTietPSC.CurrentRow.Cells[5].Value.ToString();
                 dtpNgaySua.Text = dtgvChiTietPSC.CurrentRow.Cells[6].Value.ToString();
                 dtpNgaySuaXong.Text = dtgvChiTietPSC.CurrentRow.Cells[7].Value.ToString();
-                cbbMaLinhKien.Text = dtgvChiTietPSC.CurrentRow.Cells[10].Value.ToString();
+                txtMaLinhKien.Text = dtgvChiTietPSC.CurrentRow.Cells[10].Value.ToString();
                 cbbNhanVienSuaChua.Text = dtgvChiTietPSC.CurrentRow.Cells[2].Value.ToString();
                 if (dtgvChiTietPSC.CurrentRow.Cells[9].Value == null)
                 {
@@ -308,7 +308,7 @@ namespace DXApplication1
             var malinhkien = (from ma in qltb.LINHKIENs
                               where ma.TENLINHKIEN == cbbBangBaoGia.SelectedValue.ToString()
                               select ma.MALINHKIEN).FirstOrDefault();
-            cbbMaLinhKien.Text = malinhkien;
+            txtMaLinhKien.Text = malinhkien;
         }
 
         private void ChiTietPhieuSuaChua_NVKyThuat_Load(object sender, EventArgs e)
@@ -325,7 +325,7 @@ namespace DXApplication1
             cbbBangBaoGia.Enabled = false;
             dtpNgaySua.Enabled = false;
             dtpNgaySuaXong.Enabled = false;
-            cbbMaLinhKien.Enabled = false;
+            txtMaLinhKien.Enabled = false;
             txtGhiChu.Enabled = false;
             chkBaoHanh.Enabled = false;
             chkDaNhanThietBi.Enabled = false;
@@ -354,12 +354,15 @@ namespace DXApplication1
 
         private void dtgvPhieuSuaChua_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnThem.Text = "Thêm";
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
             cbbMaPSC.Enabled = false;
             txtGiaThanh.Enabled = false;
             cbbBangBaoGia.Enabled = false;
             dtpNgaySua.Enabled = false;
             dtpNgaySuaXong.Enabled = false;
-            cbbMaLinhKien.Enabled = false;
+            txtMaLinhKien.Enabled = false;
             txtGhiChu.Enabled = false;
             chkBaoHanh.Enabled = false;
             chkDaNhanThietBi.Enabled = false;

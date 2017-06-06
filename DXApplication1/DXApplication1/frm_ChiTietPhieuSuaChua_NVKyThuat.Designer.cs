@@ -47,7 +47,6 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbbNhanVienSuaChua = new System.Windows.Forms.ComboBox();
             this.cbbMaPSC = new System.Windows.Forms.ComboBox();
-            this.cbbMaLinhKien = new System.Windows.Forms.ComboBox();
             this.cbbBangBaoGia = new System.Windows.Forms.ComboBox();
             this.chkBaoHanh = new System.Windows.Forms.CheckBox();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -81,6 +80,7 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtMaLinhKien = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -256,14 +256,6 @@
             this.cbbMaPSC.Size = new System.Drawing.Size(200, 21);
             this.cbbMaPSC.TabIndex = 40;
             // 
-            // cbbMaLinhKien
-            // 
-            this.cbbMaLinhKien.FormattingEnabled = true;
-            this.cbbMaLinhKien.Location = new System.Drawing.Point(875, 75);
-            this.cbbMaLinhKien.Name = "cbbMaLinhKien";
-            this.cbbMaLinhKien.Size = new System.Drawing.Size(184, 21);
-            this.cbbMaLinhKien.TabIndex = 39;
-            // 
             // cbbBangBaoGia
             // 
             this.cbbBangBaoGia.FormattingEnabled = true;
@@ -399,9 +391,9 @@
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
+            this.groupControl1.Controls.Add(this.txtMaLinhKien);
             this.groupControl1.Controls.Add(this.cbbNhanVienSuaChua);
             this.groupControl1.Controls.Add(this.cbbMaPSC);
-            this.groupControl1.Controls.Add(this.cbbMaLinhKien);
             this.groupControl1.Controls.Add(this.cbbBangBaoGia);
             this.groupControl1.Controls.Add(this.chkDaNhanThietBi);
             this.groupControl1.Controls.Add(this.chkBaoHanh);
@@ -589,6 +581,13 @@
             this.dataGridViewTextBoxColumn11.HeaderText = "Trạng thái";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             // 
+            // txtMaLinhKien
+            // 
+            this.txtMaLinhKien.Location = new System.Drawing.Point(875, 75);
+            this.txtMaLinhKien.Name = "txtMaLinhKien";
+            this.txtMaLinhKien.Size = new System.Drawing.Size(184, 21);
+            this.txtMaLinhKien.TabIndex = 41;
+            // 
             // frm_ChiTietPhieuSuaChua_NVKyThuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -635,7 +634,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.ComboBox cbbNhanVienSuaChua;
         private System.Windows.Forms.ComboBox cbbMaPSC;
-        private System.Windows.Forms.ComboBox cbbMaLinhKien;
         private System.Windows.Forms.ComboBox cbbBangBaoGia;
         private System.Windows.Forms.CheckBox chkBaoHanh;
         private DevExpress.XtraEditors.LabelControl labelControl8;
@@ -669,5 +667,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.TextBox txtMaLinhKien;
     }
 }

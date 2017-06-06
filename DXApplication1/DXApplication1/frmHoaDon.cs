@@ -254,7 +254,12 @@ namespace DXApplication1
             txtNhanVienLap.Text = dtgvDSHoaDon.CurrentRow.Cells[3].Value.ToString();
             dtpNgayLap.Text = dtgvDSHoaDon.CurrentRow.Cells[4].Value.ToString();
             txtTongTien.Text = dtgvDSHoaDon.CurrentRow.Cells[5].Value.ToString();
-           // cbbMaPhieuTiepNhan.Text = dtgvDSHoaDon.CurrentRow.Cells[2].Value.ToString();
+            // cbbMaPhieuTiepNhan.Text = dtgvDSHoaDon.CurrentRow.Cells[2].Value.ToString();
+
+            var tenkhachhang = (from ma in qltb.KHACHHANGs
+                              where ma.MAKHACHKHACH == dtgvDSHoaDon.CurrentRow.Cells[1].Value.ToString()
+                              select ma.TENKHACHHANG).FirstOrDefault();
+            cbbKhachHang.Text = tenkhachhang;
         }
 
         private void btnDong_Click(object sender, EventArgs e)
