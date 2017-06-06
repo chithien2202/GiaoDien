@@ -109,7 +109,7 @@ namespace DXApplication1
             }
             else
             {
-                if (txtGiaDuKien.Text == String.Empty || txtTongTien.Text == String.Empty || txtThongTinSuaChua.Text == String.Empty)
+                if (txtGiaDuKien.Text == String.Empty || txtThongTinSuaChua.Text == String.Empty)
                 {
                     XtraMessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo");
                 }
@@ -141,7 +141,14 @@ namespace DXApplication1
                     }
                     psc.GIADUKIEN = decimal.Parse(txtGiaDuKien.Text);
                     psc.THONGTINSUACHUA = txtThongTinSuaChua.Text;
-                    psc.TONGTIEN = decimal.Parse(txtTongTien.Text);
+                    if (txtTongTien.Text == null || txtTongTien.Text == "")
+                    {
+                        psc.TONGTIEN = 0;
+                    }
+                    else
+                    {
+                        psc.TONGTIEN = decimal.Parse(txtTongTien.Text);
+                    }
                     if (chkTrangThai.Checked)
                     {
                         psc.TRANGTHAI = true;

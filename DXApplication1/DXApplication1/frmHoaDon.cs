@@ -124,7 +124,7 @@ namespace DXApplication1
 
                 if(dtgvCTHD.Rows.Count<1)
                 {
-                    MessageBox.Show("1 hóa đơn cần có ít nhất 1 chi tiết hóa đơn","Thông báo");
+                    XtraMessageBox.Show("1 hóa đơn cần có ít nhất 1 chi tiết hóa đơn","Thông báo");
                     return;
                 }
                
@@ -183,7 +183,7 @@ namespace DXApplication1
                     }
                 }
 
-                MessageBox.Show("Tạo hóa đơn thành công","Thông báo");
+                XtraMessageBox.Show("Tạo hóa đơn thành công","Thông báo");
 
                 btnXoa.Enabled = true;
                     btnSua.Enabled = true;
@@ -321,11 +321,11 @@ namespace DXApplication1
         {
             if(dtgvCTHD.SelectedRows.Count>0)
             {
-                DialogResult d = MessageBox.Show("Bạn có chắc muốn xóa?","Thông báo", MessageBoxButtons.OKCancel);
+                DialogResult d = XtraMessageBox.Show("Bạn có chắc muốn xóa?","Thông báo", MessageBoxButtons.OKCancel);
                 if(d == DialogResult.OK)
                 {
                     dtgvCTHD.Rows.Remove(dtgvCTHD.CurrentRow);
-                    MessageBox.Show("đã xóa");
+                    XtraMessageBox.Show("Đã xóa");
                     Tong();
                 }
                 

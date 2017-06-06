@@ -64,13 +64,6 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.dtgvCTHD = new System.Windows.Forms.DataGridView();
-            this.cbbKhachHang = new System.Windows.Forms.ComboBox();
-            this.txtNhanVienLap = new System.Windows.Forms.TextBox();
-            this.txtMaHoaDon = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dtpNgayLap = new System.Windows.Forms.DateTimePicker();
-            this.lbMKH = new System.Windows.Forms.Label();
-            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MaLK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayKT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,6 +71,13 @@
             this.BH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GiaThanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PSC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbbKhachHang = new System.Windows.Forms.ComboBox();
+            this.txtNhanVienLap = new System.Windows.Forms.TextBox();
+            this.txtMaHoaDon = new System.Windows.Forms.TextBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayLap = new System.Windows.Forms.DateTimePicker();
+            this.lbMKH = new System.Windows.Forms.Label();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSHoaDon)).BeginInit();
@@ -327,9 +327,9 @@
             // cbbPTN
             // 
             this.cbbPTN.FormattingEnabled = true;
-            this.cbbPTN.Location = new System.Drawing.Point(391, 57);
+            this.cbbPTN.Location = new System.Drawing.Point(388, 57);
             this.cbbPTN.Name = "cbbPTN";
-            this.cbbPTN.Size = new System.Drawing.Size(217, 21);
+            this.cbbPTN.Size = new System.Drawing.Size(220, 21);
             this.cbbPTN.TabIndex = 45;
             this.cbbPTN.SelectionChangeCommitted += new System.EventHandler(this.cbbPTN_SelectionChangeCommitted);
             // 
@@ -486,6 +486,51 @@
             this.dtgvCTHD.Size = new System.Drawing.Size(379, 163);
             this.dtgvCTHD.TabIndex = 38;
             // 
+            // MaLK
+            // 
+            this.MaLK.DataPropertyName = "MALINHKIEN";
+            this.MaLK.HeaderText = "Mã linh kiện";
+            this.MaLK.Name = "MaLK";
+            this.MaLK.Visible = false;
+            // 
+            // LK
+            // 
+            this.LK.DataPropertyName = "TENLINHKIEN";
+            this.LK.HeaderText = "Linh kiện";
+            this.LK.Name = "LK";
+            // 
+            // NgayKT
+            // 
+            this.NgayKT.DataPropertyName = "NGAYKETTHUCBH";
+            this.NgayKT.HeaderText = "Ngày kết thúc BH";
+            this.NgayKT.Name = "NgayKT";
+            this.NgayKT.Visible = false;
+            // 
+            // ThanhTien
+            // 
+            this.ThanhTien.DataPropertyName = "THANHTIEN";
+            this.ThanhTien.HeaderText = "Thành tiền";
+            this.ThanhTien.Name = "ThanhTien";
+            // 
+            // BH
+            // 
+            this.BH.DataPropertyName = "TRANGTHAI";
+            this.BH.HeaderText = "Bảo hành";
+            this.BH.Name = "BH";
+            // 
+            // GiaThanh
+            // 
+            this.GiaThanh.DataPropertyName = "GIATHANH";
+            this.GiaThanh.HeaderText = "Giá thành";
+            this.GiaThanh.Name = "GiaThanh";
+            // 
+            // PSC
+            // 
+            this.PSC.DataPropertyName = "MAPSC";
+            this.PSC.HeaderText = "Mã PSC";
+            this.PSC.Name = "PSC";
+            this.PSC.Visible = false;
+            // 
             // cbbKhachHang
             // 
             this.cbbKhachHang.FormattingEnabled = true;
@@ -538,51 +583,6 @@
             // 
             this.gridView4.Name = "gridView4";
             this.gridView4.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
-            // 
-            // MaLK
-            // 
-            this.MaLK.DataPropertyName = "MALINHKIEN";
-            this.MaLK.HeaderText = "Mã linh kiện";
-            this.MaLK.Name = "MaLK";
-            this.MaLK.Visible = false;
-            // 
-            // LK
-            // 
-            this.LK.DataPropertyName = "TENLINHKIEN";
-            this.LK.HeaderText = "Linh kiện";
-            this.LK.Name = "LK";
-            // 
-            // NgayKT
-            // 
-            this.NgayKT.DataPropertyName = "NGAYKETTHUCBH";
-            this.NgayKT.HeaderText = "Ngày kết thúc BH";
-            this.NgayKT.Name = "NgayKT";
-            this.NgayKT.Visible = false;
-            // 
-            // ThanhTien
-            // 
-            this.ThanhTien.DataPropertyName = "THANHTIEN";
-            this.ThanhTien.HeaderText = "Thành tiền";
-            this.ThanhTien.Name = "ThanhTien";
-            // 
-            // BH
-            // 
-            this.BH.DataPropertyName = "TRANGTHAI";
-            this.BH.HeaderText = "Bảo hành";
-            this.BH.Name = "BH";
-            // 
-            // GiaThanh
-            // 
-            this.GiaThanh.DataPropertyName = "GIATHANH";
-            this.GiaThanh.HeaderText = "Giá thành";
-            this.GiaThanh.Name = "GiaThanh";
-            // 
-            // PSC
-            // 
-            this.PSC.DataPropertyName = "MAPSC";
-            this.PSC.HeaderText = "Mã PSC";
-            this.PSC.Name = "PSC";
-            this.PSC.Visible = false;
             // 
             // frmHoaDon
             // 
