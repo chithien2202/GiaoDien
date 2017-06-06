@@ -71,13 +71,13 @@
             this.BH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GiaThanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PSC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbbKhachHang = new System.Windows.Forms.ComboBox();
             this.txtNhanVienLap = new System.Windows.Forms.TextBox();
             this.txtMaHoaDon = new System.Windows.Forms.TextBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayLap = new System.Windows.Forms.DateTimePicker();
             this.lbMKH = new System.Windows.Forms.Label();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.cbbKhachHang = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSHoaDon)).BeginInit();
@@ -90,6 +90,7 @@
             this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCTHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbKhachHang.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl4
@@ -301,6 +302,7 @@
             // 
             this.grbTTHD.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbTTHD.AppearanceCaption.Options.UseFont = true;
+            this.grbTTHD.Controls.Add(this.cbbKhachHang);
             this.grbTTHD.Controls.Add(this.cbbPTN);
             this.grbTTHD.Controls.Add(this.label2);
             this.grbTTHD.Controls.Add(this.dtgvPSC);
@@ -309,7 +311,6 @@
             this.grbTTHD.Controls.Add(this.btnThemCTHD);
             this.grbTTHD.Controls.Add(this.groupControl4);
             this.grbTTHD.Controls.Add(this.dtgvCTHD);
-            this.grbTTHD.Controls.Add(this.cbbKhachHang);
             this.grbTTHD.Controls.Add(this.txtNhanVienLap);
             this.grbTTHD.Controls.Add(this.txtMaHoaDon);
             this.grbTTHD.Controls.Add(this.dateTimePicker2);
@@ -531,15 +532,6 @@
             this.PSC.Name = "PSC";
             this.PSC.Visible = false;
             // 
-            // cbbKhachHang
-            // 
-            this.cbbKhachHang.FormattingEnabled = true;
-            this.cbbKhachHang.Location = new System.Drawing.Point(149, 142);
-            this.cbbKhachHang.Name = "cbbKhachHang";
-            this.cbbKhachHang.Size = new System.Drawing.Size(233, 21);
-            this.cbbKhachHang.TabIndex = 37;
-            this.cbbKhachHang.SelectionChangeCommitted += new System.EventHandler(this.cbbKhachHang_SelectionChangeCommitted);
-            // 
             // txtNhanVienLap
             // 
             this.txtNhanVienLap.Location = new System.Drawing.Point(149, 106);
@@ -584,6 +576,22 @@
             this.gridView4.Name = "gridView4";
             this.gridView4.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             // 
+            // cbbKhachHang
+            // 
+            this.cbbKhachHang.Location = new System.Drawing.Point(149, 142);
+            this.cbbKhachHang.Name = "cbbKhachHang";
+            this.cbbKhachHang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbbKhachHang.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TENKHACHHANG", "Tên khách hàng")});
+            this.cbbKhachHang.Properties.DisplayMember = "TENKHACHHANG";
+            this.cbbKhachHang.Properties.NullText = "";
+            this.cbbKhachHang.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.cbbKhachHang.Properties.ValueMember = "MAKHACHHANG";
+            this.cbbKhachHang.Size = new System.Drawing.Size(233, 20);
+            this.cbbKhachHang.TabIndex = 37;
+            this.cbbKhachHang.EditValueChanged += new System.EventHandler(this.cbbKhachHang_EditValueChanged);
+            // 
             // frmHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -611,6 +619,7 @@
             this.groupControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCTHD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbKhachHang.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -647,7 +656,6 @@
         private DevExpress.XtraEditors.SimpleButton btnXoa;
         private System.Windows.Forms.TextBox txtNhanVienLap;
         private System.Windows.Forms.DataGridView dtgvCTHD;
-        private System.Windows.Forms.ComboBox cbbKhachHang;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dtgvPSC;
         private System.Windows.Forms.Label label1;
@@ -666,5 +674,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn BH;
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaThanh;
         private System.Windows.Forms.DataGridViewTextBoxColumn PSC;
+        private DevExpress.XtraEditors.LookUpEdit cbbKhachHang;
     }
 }

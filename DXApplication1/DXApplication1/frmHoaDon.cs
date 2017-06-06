@@ -24,9 +24,9 @@ namespace DXApplication1
         void loadKH()
         {
             var kh = from k in qltb.KHACHHANGs select k;
-            cbbKhachHang.DataSource = kh;
-            cbbKhachHang.DisplayMember = "TENKHACHHANG";
-            cbbKhachHang.ValueMember = "MAKHACHKHACH";
+            cbbKhachHang.Properties.DataSource = kh;
+            cbbKhachHang.Properties.DisplayMember = "TENKHACHHANG";
+            cbbKhachHang.Properties.ValueMember = "MAKHACHKHACH";
 
         }
 
@@ -155,7 +155,7 @@ namespace DXApplication1
                 {
                     HOADON hd = new HOADON();
                     hd.MAHOADON = tangma.ThemMaHoaDon();
-                    hd.MAKHACHHANG = cbbKhachHang.SelectedValue.ToString();
+                    hd.MAKHACHHANG = cbbKhachHang.EditValue.ToString();
                     hd.MANHANVIEN = Program.mainForm.getUserName;
                     hd.NGAYLAP = dtpNgayLap.Value;
                     hd.TONGTIEN = 0;
@@ -269,15 +269,15 @@ namespace DXApplication1
 
         void loadcbbPTN()
         {
-            var ptn = from p in qltb.PHIEUTIEPNHANs where p.MAKHACHKHACH== cbbKhachHang.SelectedValue.ToString() select p;
+            var ptn = from p in qltb.PHIEUTIEPNHANs where p.MAKHACHKHACH== cbbKhachHang.EditValue.ToString() select p;
             cbbPTN.DataSource = ptn;
             cbbPTN.DisplayMember = "MAPHIEUTN";
             cbbPTN.ValueMember = "MAPHIEUTN";
         }
         private void cbbKhachHang_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            loadcbbPTN();
-            psc();
+            //loadcbbPTN();
+            //psc();
         }
         void loaddtgvPSC()
         {
@@ -372,6 +372,12 @@ namespace DXApplication1
                     }
                 }
             }
+        }
+
+        private void cbbKhachHang_EditValueChanged(object sender, EventArgs e)
+        {
+            loadcbbPTN();
+            psc();
         }
     }
 }
