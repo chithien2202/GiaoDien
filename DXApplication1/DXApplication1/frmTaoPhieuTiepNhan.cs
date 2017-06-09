@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraTab;
-using Microsoft.Office.Interop.Excel;
-using app = Microsoft.Office.Interop.Excel.Application;
+using System.Data.SqlClient;
+using DevExpress.XtraReports.UI;
 
 namespace DXApplication1
 {
@@ -70,6 +70,7 @@ namespace DXApplication1
                 btnSua.Enabled = false;
                 btnXoa.Enabled = false;
 
+                txtMaPTN.Enabled = false;
                 dtpNgayNhap.Enabled = true;
                 dtpNgayHenTra.Enabled = true;
                 cbbKhachHang.Enabled = true;
@@ -82,6 +83,7 @@ namespace DXApplication1
                 txtPhuKienDiCung.Text = String.Empty;
                 txtGhiChu.Text = String.Empty;
                 txtTinhTrangHuHong.Text= String.Empty;
+                txtMaPTN.Text = String.Empty;
 
 
                 btnThem.Text = "Lưu";
@@ -158,6 +160,7 @@ namespace DXApplication1
             LoadCbbThietBi();
             LoadGridViewPTN();
 
+            txtMaPTN.Enabled = false;
             dtpNgayNhap.Enabled = false;
             dtpNgayHenTra.Enabled = false;
             cbbKhachHang.Enabled = false;
@@ -222,6 +225,7 @@ namespace DXApplication1
                 btnThem.Enabled = false;
                 btnXoa.Enabled = false;
 
+                txtMaPTN.Enabled = false;
                 dtpNgayNhap.Enabled = true;
                 dtpNgayHenTra.Enabled = true;
                 cbbKhachHang.Enabled = true;
@@ -255,6 +259,7 @@ namespace DXApplication1
 
                 btnSua.Text = "Sửa";
 
+                txtMaPTN.Enabled = false;
                 dtpNgayNhap.Enabled = false;
                 dtpNgayHenTra.Enabled = false;
                 cbbKhachHang.Enabled = false;
@@ -273,6 +278,7 @@ namespace DXApplication1
         {
             try
             {
+                txtMaPTN.Enabled = false;
                 dtpNgayNhap.Enabled = false;
                 dtpNgayHenTra.Enabled = false;
                 cbbKhachHang.Enabled = false;
@@ -282,6 +288,7 @@ namespace DXApplication1
                 txtGhiChu.Enabled = false;
                 chkDaNhan.Enabled = false;
 
+                txtMaPTN.Text = dtgvDSPTN.CurrentRow.Cells[0].Value.ToString();
                 cbbThietBi.Text = dtgvDSPTN.CurrentRow.Cells[1].Value.ToString();
                 dtpNgayNhap.Text = dtgvDSPTN.CurrentRow.Cells[5].Value.ToString();
                 dtpNgayHenTra.Text = dtgvDSPTN.CurrentRow.Cells[6].Value.ToString();
@@ -325,28 +332,39 @@ namespace DXApplication1
         }
 
 
-        private void xuatExcel(DataGridView g, string duongDan, string tenTap)
-        {
-            app obj = new app();
-            obj.Application.Workbooks.Add(Type.Missing);
-            obj.Columns.ColumnWidth = 20;
-            obj.Visible = true;// mở excel lên
-            for (int i = 1; i < g.Columns.Count + 1; i++) { obj.Cells[1, i] = g.Columns[i - 1].HeaderText; }
-            for (int i = 0; i < g.Rows.Count; i++)
-            {
-                for (int j = 0; j < g.Columns.Count; j++)
-                {
-                    if (g.Rows[i].Cells[j].Value != null) { obj.Cells[i + 2, j + 1] = g.Rows[i].Cells[j].Value.ToString(); }
-                }
-            }
-            obj.ActiveWorkbook.SaveCopyAs(duongDan + tenTap + ".xlsx");
-            obj.ActiveWorkbook.Saved = true;
+        //private void xuatExcel(DataGridView g, string duongDan, string tenTap)
+        //{
+        //    app obj = new app();
+        //    obj.Application.Workbooks.Add(Type.Missing);
+        //    obj.Columns.ColumnWidth = 20;
+        //    obj.Visible = true;// mở excel lên
+        //    for (int i = 1; i < g.Columns.Count + 1; i++) { obj.Cells[1, i] = g.Columns[i - 1].HeaderText; }
+        //    for (int i = 0; i < g.Rows.Count; i++)
+        //    {
+        //        for (int j = 0; j < g.Columns.Count; j++)
+        //        {
+        //            if (g.Rows[i].Cells[j].Value != null) { obj.Cells[i + 2, j + 1] = g.Rows[i].Cells[j].Value.ToString(); }
+        //        }
+        //    }
+        //    obj.ActiveWorkbook.SaveCopyAs(duongDan + tenTap + ".xlsx");
+        //    obj.ActiveWorkbook.Saved = true;
 
-        }
+        //}
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            //xuatExcel(dtgvDSPTN., @"D:\", "Danh sach phieu tiep nhan");
+            SqlConnection con = new SqlConnection(@"Data Source = DESKTOP-6V52PV4\SQLEXPRESS; Initial Catalog = QLTB; Integrated Security = True");
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand("select * from PHIEUTIEPNHAN where MAPHIEUTN = '" + txtMaPTN.Text + "'", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+
+            Report.PhieuTiepNhan_Report report = new Report.PhieuTiepNhan_Report();
+            report.DataSource = dt;
+            report.ShowPreviewDialog();
         }
 
         private void btnDong_Click(object sender, EventArgs e)

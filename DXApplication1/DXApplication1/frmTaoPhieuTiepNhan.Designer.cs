@@ -77,6 +77,8 @@
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
             this.qltbDataSet1 = new DXApplication1.QLTBDataSet();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txtMaPTN = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbKhachHang.Properties)).BeginInit();
@@ -100,7 +102,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl2.Location = new System.Drawing.Point(13, 35);
+            this.labelControl2.Location = new System.Drawing.Point(16, 76);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(72, 16);
             this.labelControl2.TabIndex = 2;
@@ -122,6 +124,8 @@
             this.groupControl1.Controls.Add(this.labelControl13);
             this.groupControl1.Controls.Add(this.dtpNgayHenTra);
             this.groupControl1.Controls.Add(this.dtpNgayNhap);
+            this.groupControl1.Controls.Add(this.txtMaPTN);
+            this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Controls.Add(this.txtPhuKienDiCung);
             this.groupControl1.Controls.Add(this.labelControl8);
             this.groupControl1.Controls.Add(this.labelControl6);
@@ -148,7 +152,7 @@
             // btnThietBi
             // 
             this.btnThietBi.Image = ((System.Drawing.Image)(resources.GetObject("btnThietBi.Image")));
-            this.btnThietBi.Location = new System.Drawing.Point(659, 70);
+            this.btnThietBi.Location = new System.Drawing.Point(659, 73);
             this.btnThietBi.Name = "btnThietBi";
             this.btnThietBi.Size = new System.Drawing.Size(23, 23);
             this.btnThietBi.TabIndex = 40;
@@ -172,7 +176,7 @@
             // 
             // cbbThietBi
             // 
-            this.cbbThietBi.Location = new System.Drawing.Point(468, 71);
+            this.cbbThietBi.Location = new System.Drawing.Point(468, 74);
             this.cbbThietBi.Name = "cbbThietBi";
             this.cbbThietBi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -198,17 +202,17 @@
             // 
             // txtGhiChu
             // 
-            this.txtGhiChu.Location = new System.Drawing.Point(142, 109);
+            this.txtGhiChu.Location = new System.Drawing.Point(467, 109);
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(203, 24);
+            this.txtGhiChu.Size = new System.Drawing.Size(186, 51);
             this.txtGhiChu.TabIndex = 37;
             // 
             // labelControl7
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.labelControl7.Location = new System.Drawing.Point(13, 110);
+            this.labelControl7.Location = new System.Drawing.Point(392, 110);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(44, 16);
             this.labelControl7.TabIndex = 36;
@@ -216,7 +220,7 @@
             // 
             // txtTinhTrangHuHong
             // 
-            this.txtTinhTrangHuHong.Location = new System.Drawing.Point(860, 71);
+            this.txtTinhTrangHuHong.Location = new System.Drawing.Point(860, 74);
             this.txtTinhTrangHuHong.Multiline = true;
             this.txtTinhTrangHuHong.Name = "txtTinhTrangHuHong";
             this.txtTinhTrangHuHong.Size = new System.Drawing.Size(215, 24);
@@ -226,7 +230,7 @@
             // 
             this.labelControl13.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl13.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.labelControl13.Location = new System.Drawing.Point(745, 74);
+            this.labelControl13.Location = new System.Drawing.Point(745, 77);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(109, 16);
             this.labelControl13.TabIndex = 34;
@@ -234,14 +238,14 @@
             // 
             // dtpNgayHenTra
             // 
-            this.dtpNgayHenTra.Location = new System.Drawing.Point(142, 70);
+            this.dtpNgayHenTra.Location = new System.Drawing.Point(142, 106);
             this.dtpNgayHenTra.Name = "dtpNgayHenTra";
             this.dtpNgayHenTra.Size = new System.Drawing.Size(203, 21);
             this.dtpNgayHenTra.TabIndex = 33;
             // 
             // dtpNgayNhap
             // 
-            this.dtpNgayNhap.Location = new System.Drawing.Point(142, 37);
+            this.dtpNgayNhap.Location = new System.Drawing.Point(142, 74);
             this.dtpNgayNhap.Name = "dtpNgayNhap";
             this.dtpNgayNhap.Size = new System.Drawing.Size(203, 21);
             this.dtpNgayNhap.TabIndex = 33;
@@ -268,7 +272,7 @@
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl6.Location = new System.Drawing.Point(392, 72);
+            this.labelControl6.Location = new System.Drawing.Point(392, 75);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(44, 16);
             this.labelControl6.TabIndex = 24;
@@ -278,7 +282,7 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl5.Location = new System.Drawing.Point(13, 72);
+            this.labelControl5.Location = new System.Drawing.Point(16, 110);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(82, 16);
             this.labelControl5.TabIndex = 21;
@@ -612,6 +616,24 @@
             this.qltbDataSet1.DataSetName = "QLTBDataSet";
             this.qltbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelControl1.Location = new System.Drawing.Point(15, 42);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(115, 16);
+            this.labelControl1.TabIndex = 29;
+            this.labelControl1.Text = "Mã phiếu tiếp nhận:";
+            // 
+            // txtMaPTN
+            // 
+            this.txtMaPTN.Location = new System.Drawing.Point(142, 41);
+            this.txtMaPTN.Multiline = true;
+            this.txtMaPTN.Name = "txtMaPTN";
+            this.txtMaPTN.Size = new System.Drawing.Size(203, 24);
+            this.txtMaPTN.TabIndex = 30;
+            // 
             // frmTaoPhieuTiepNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -696,5 +718,7 @@
         private DevExpress.XtraEditors.SimpleButton btnThietBi;
         private DevExpress.XtraEditors.SimpleButton btnKhachHang;
         private DevExpress.XtraEditors.LookUpEdit cbbKhachHang;
+        private System.Windows.Forms.TextBox txtMaPTN;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

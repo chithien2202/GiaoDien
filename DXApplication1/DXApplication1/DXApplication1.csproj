@@ -346,6 +346,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportHD.tt</DependentUpon>
     </Compile>
+    <Compile Include="ReportPTN.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportPTN.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPTN.cs">
+      <DependentUpon>ReportPTN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPTN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportPTN.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPTN1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportPTN.tt</DependentUpon>
+    </Compile>
     <Compile Include="Report\DanhMucBoPhan_Report.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -399,6 +417,12 @@
     </Compile>
     <Compile Include="Report\HoaDon_Report.Designer.cs">
       <DependentUpon>HoaDon_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\PhieuTiepNhan_Report.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\PhieuTiepNhan_Report.Designer.cs">
+      <DependentUpon>PhieuTiepNhan_Report.cs</DependentUpon>
     </Compile>
     <Compile Include="TangMa.cs" />
     <EmbeddedResource Include="frmThongTinKH_Goi.resx">
@@ -550,6 +574,9 @@
     <EmbeddedResource Include="Report\HoaDon_Report.resx">
       <DependentUpon>HoaDon_Report.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\PhieuTiepNhan_Report.resx">
+      <DependentUpon>PhieuTiepNhan_Report.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="QLTB.dbml.layout">
       <DependentUpon>QLTB.dbml</DependentUpon>
@@ -586,6 +613,13 @@
     </EntityDeploy>
     <None Include="ReportHD.edmx.diagram">
       <DependentUpon>ReportHD.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="ReportPTN.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ReportPTN.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ReportPTN.edmx.diagram">
+      <DependentUpon>ReportPTN.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -631,6 +665,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ReportHD.edmx</DependentUpon>
       <LastGenOutput>ReportHD1.cs</LastGenOutput>
+    </Content>
+    <Content Include="ReportPTN.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ReportPTN.edmx</DependentUpon>
+      <LastGenOutput>ReportPTN.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ReportPTN.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ReportPTN.edmx</DependentUpon>
+      <LastGenOutput>ReportPTN1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
