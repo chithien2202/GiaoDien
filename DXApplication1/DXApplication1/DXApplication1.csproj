@@ -63,11 +63,22 @@
     <Reference Include="DevExpress.XtraScheduler.v16.1.Reporting.Extensions, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v16.1.Core, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -317,6 +328,24 @@
       <DependentUpon>QLTBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="QL_NguoiDung.cs" />
+    <Compile Include="ReportHD.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportHD.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportHD.cs">
+      <DependentUpon>ReportHD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportHD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportHD.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportHD1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportHD.tt</DependentUpon>
+    </Compile>
     <Compile Include="Report\DanhMucBoPhan_Report.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -521,6 +550,7 @@
     <EmbeddedResource Include="Report\HoaDon_Report.resx">
       <DependentUpon>HoaDon_Report.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="QLTB.dbml.layout">
       <DependentUpon>QLTB.dbml</DependentUpon>
     </None>
@@ -550,9 +580,17 @@
     <None Include="QLTBDataSet.xss">
       <DependentUpon>QLTBDataSet.xsd</DependentUpon>
     </None>
+    <EntityDeploy Include="ReportHD.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ReportHD.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ReportHD.edmx.diagram">
+      <DependentUpon>ReportHD.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">
@@ -582,6 +620,18 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReportHD.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ReportHD.Context.cs</LastGenOutput>
+      <DependentUpon>ReportHD.edmx</DependentUpon>
+    </Content>
+    <Content Include="ReportHD.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ReportHD.edmx</DependentUpon>
+      <LastGenOutput>ReportHD1.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

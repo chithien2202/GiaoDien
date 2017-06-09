@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTaoPhieuTiepNhan));
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnKhachHang = new DevExpress.XtraEditors.SimpleButton();
+            this.btnThietBi = new DevExpress.XtraEditors.SimpleButton();
+            this.cbbKhachHang = new DevExpress.XtraEditors.LookUpEdit();
             this.cbbThietBi = new DevExpress.XtraEditors.LookUpEdit();
             this.chkDaNhan = new System.Windows.Forms.CheckBox();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
@@ -39,7 +42,6 @@
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.dtpNgayHenTra = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayNhap = new System.Windows.Forms.DateTimePicker();
-            this.cbbKhachHang = new System.Windows.Forms.ComboBox();
             this.txtPhuKienDiCung = new System.Windows.Forms.TextBox();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -75,10 +77,9 @@
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
             this.qltbDataSet1 = new DXApplication1.QLTBDataSet();
-            this.btnThietBi = new DevExpress.XtraEditors.SimpleButton();
-            this.btnKhachHang = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbKhachHang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbThietBi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
@@ -112,6 +113,7 @@
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.Controls.Add(this.btnKhachHang);
             this.groupControl1.Controls.Add(this.btnThietBi);
+            this.groupControl1.Controls.Add(this.cbbKhachHang);
             this.groupControl1.Controls.Add(this.cbbThietBi);
             this.groupControl1.Controls.Add(this.chkDaNhan);
             this.groupControl1.Controls.Add(this.txtGhiChu);
@@ -120,7 +122,6 @@
             this.groupControl1.Controls.Add(this.labelControl13);
             this.groupControl1.Controls.Add(this.dtpNgayHenTra);
             this.groupControl1.Controls.Add(this.dtpNgayNhap);
-            this.groupControl1.Controls.Add(this.cbbKhachHang);
             this.groupControl1.Controls.Add(this.txtPhuKienDiCung);
             this.groupControl1.Controls.Add(this.labelControl8);
             this.groupControl1.Controls.Add(this.labelControl6);
@@ -134,6 +135,40 @@
             this.groupControl1.TabIndex = 7;
             this.groupControl1.Text = "Thông tin phiếu nhận";
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
+            // 
+            // btnKhachHang
+            // 
+            this.btnKhachHang.Image = ((System.Drawing.Image)(resources.GetObject("btnKhachHang.Image")));
+            this.btnKhachHang.Location = new System.Drawing.Point(658, 38);
+            this.btnKhachHang.Name = "btnKhachHang";
+            this.btnKhachHang.Size = new System.Drawing.Size(24, 26);
+            this.btnKhachHang.TabIndex = 41;
+            this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
+            // 
+            // btnThietBi
+            // 
+            this.btnThietBi.Image = ((System.Drawing.Image)(resources.GetObject("btnThietBi.Image")));
+            this.btnThietBi.Location = new System.Drawing.Point(659, 70);
+            this.btnThietBi.Name = "btnThietBi";
+            this.btnThietBi.Size = new System.Drawing.Size(23, 23);
+            this.btnThietBi.TabIndex = 40;
+            this.btnThietBi.Click += new System.EventHandler(this.btnThietBi_Click);
+            // 
+            // cbbKhachHang
+            // 
+            this.cbbKhachHang.Location = new System.Drawing.Point(467, 40);
+            this.cbbKhachHang.Name = "cbbKhachHang";
+            this.cbbKhachHang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbbKhachHang.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MAKHACHKHACH", "Mã khách hàng"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TENKHACHHANG", "Tên khách hàng")});
+            this.cbbKhachHang.Properties.DisplayMember = "TENKHACHHANG";
+            this.cbbKhachHang.Properties.NullText = "";
+            this.cbbKhachHang.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.cbbKhachHang.Properties.ValueMember = "MAKHACHKHACH";
+            this.cbbKhachHang.Size = new System.Drawing.Size(185, 20);
+            this.cbbKhachHang.TabIndex = 39;
             // 
             // cbbThietBi
             // 
@@ -210,14 +245,6 @@
             this.dtpNgayNhap.Name = "dtpNgayNhap";
             this.dtpNgayNhap.Size = new System.Drawing.Size(203, 21);
             this.dtpNgayNhap.TabIndex = 33;
-            // 
-            // cbbKhachHang
-            // 
-            this.cbbKhachHang.FormattingEnabled = true;
-            this.cbbKhachHang.Location = new System.Drawing.Point(468, 40);
-            this.cbbKhachHang.Name = "cbbKhachHang";
-            this.cbbKhachHang.Size = new System.Drawing.Size(185, 21);
-            this.cbbKhachHang.TabIndex = 32;
             // 
             // txtPhuKienDiCung
             // 
@@ -585,24 +612,6 @@
             this.qltbDataSet1.DataSetName = "QLTBDataSet";
             this.qltbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // btnThietBi
-            // 
-            this.btnThietBi.Image = ((System.Drawing.Image)(resources.GetObject("btnThietBi.Image")));
-            this.btnThietBi.Location = new System.Drawing.Point(659, 70);
-            this.btnThietBi.Name = "btnThietBi";
-            this.btnThietBi.Size = new System.Drawing.Size(23, 23);
-            this.btnThietBi.TabIndex = 40;
-            this.btnThietBi.Click += new System.EventHandler(this.btnThietBi_Click);
-            // 
-            // btnKhachHang
-            // 
-            this.btnKhachHang.Image = ((System.Drawing.Image)(resources.GetObject("btnKhachHang.Image")));
-            this.btnKhachHang.Location = new System.Drawing.Point(658, 38);
-            this.btnKhachHang.Name = "btnKhachHang";
-            this.btnKhachHang.Size = new System.Drawing.Size(24, 26);
-            this.btnKhachHang.TabIndex = 41;
-            this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
-            // 
             // frmTaoPhieuTiepNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -618,6 +627,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbKhachHang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbThietBi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
@@ -666,7 +676,6 @@
         private System.Windows.Forms.DataGridView dtgvDSPTN;
         private System.Windows.Forms.DateTimePicker dtpNgayHenTra;
         private System.Windows.Forms.DateTimePicker dtpNgayNhap;
-        private System.Windows.Forms.ComboBox cbbKhachHang;
         private System.Windows.Forms.TextBox txtGhiChu;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private System.Windows.Forms.TextBox txtTinhTrangHuHong;
@@ -686,5 +695,6 @@
         private DevExpress.XtraEditors.LookUpEdit cbbThietBi;
         private DevExpress.XtraEditors.SimpleButton btnThietBi;
         private DevExpress.XtraEditors.SimpleButton btnKhachHang;
+        private DevExpress.XtraEditors.LookUpEdit cbbKhachHang;
     }
 }

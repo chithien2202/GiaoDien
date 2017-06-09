@@ -140,9 +140,9 @@ namespace DXApplication1
 
         public void LoadCbbKhachHang()
         {
-            cbbKhachHang.DataSource = qltb.KHACHHANGs;
-            cbbKhachHang.DisplayMember = "MAKHACHKHACH";
-            cbbKhachHang.ValueMember = "MAKHACHKHACH";
+            cbbKhachHang.Properties.DataSource = qltb.KHACHHANGs;
+            cbbKhachHang.Properties.DisplayMember = "MAKHACHKHACH";
+            cbbKhachHang.Properties.ValueMember = "MAKHACHKHACH";
         }
 
         public void LoadCbbThietBi()

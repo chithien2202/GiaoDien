@@ -406,7 +406,7 @@ namespace DXApplication1
             SqlConnection con = new SqlConnection(@"Data Source = DESKTOP-6V52PV4\SQLEXPRESS; Initial Catalog = QLTB; Integrated Security = True");
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("Select * from CHITIETHOADON where MAHOADON = '" + txtMaHoaDon.Text + "'", con);
+            SqlCommand cmd = new SqlCommand("select * from CHITIETHOADON where MAHOADON = '" + txtMaHoaDon.Text + "'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -415,6 +415,8 @@ namespace DXApplication1
             Report.HoaDon_Report report = new Report.HoaDon_Report();
             report.DataSource = dt;
             report.ShowPreviewDialog();
+
+
             //Report.HoaDon_Report report = new Report.HoaDon_Report();
             //ReportPrintTool rpt = new ReportPrintTool(report);
             //report.CreateDocument(false);
