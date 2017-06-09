@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
+using System.Data.SqlClient;
 
 namespace DXApplication1
 {
@@ -20,7 +22,7 @@ namespace DXApplication1
             InitializeComponent();
         }
 
-
+        
         void loadKH()
         {
             var kh = from k in qltb.KHACHHANGs select k;
@@ -29,9 +31,10 @@ namespace DXApplication1
             cbbKhachHang.Properties.ValueMember = "MAKHACHKHACH";
 
         }
-
+        
         private void frmHoaDon_Load(object sender, EventArgs e)
         {
+            string mahd = txtMaHoaDon.Text;
             LoadGridViewHoaDon();
             btnSua.Enabled = false;
             //LoadCbbPSC();
@@ -396,6 +399,26 @@ namespace DXApplication1
                                      };
                 dtgvCTHD.DataSource = chitiethoadon;
             }
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(@"Data Source = DESKTOP-6V52PV4\SQLEXPRESS; Initial Catalog = QLTB; Integrated Security = True");
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand("Select * from CHITIETHOADON where MAHOADON = '" + txtMaHoaDon.Text + "'", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+
+            Report.HoaDon_Report report = new Report.HoaDon_Report();
+            report.DataSource = dt;
+            report.ShowPreviewDialog();
+            //Report.HoaDon_Report report = new Report.HoaDon_Report();
+            //ReportPrintTool rpt = new ReportPrintTool(report);
+            //report.CreateDocument(false);
+            //report.ShowPreviewDialog();
         }
     }
 }

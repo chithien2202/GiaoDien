@@ -365,6 +365,12 @@
     <Compile Include="Report\DanhMucThietBi_Report.Designer.cs">
       <DependentUpon>DanhMucThietBi_Report.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\HoaDon_Report.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\HoaDon_Report.Designer.cs">
+      <DependentUpon>HoaDon_Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="TangMa.cs" />
     <EmbeddedResource Include="frmThongTinKH_Goi.resx">
       <DependentUpon>frmThongTinKH_Goi.cs</DependentUpon>
@@ -511,6 +517,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\DanhMucThietBi_Report.resx">
       <DependentUpon>DanhMucThietBi_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\HoaDon_Report.resx">
+      <DependentUpon>HoaDon_Report.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="QLTB.dbml.layout">
       <DependentUpon>QLTB.dbml</DependentUpon>
