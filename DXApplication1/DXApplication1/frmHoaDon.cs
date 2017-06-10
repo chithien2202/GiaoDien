@@ -406,7 +406,7 @@ namespace DXApplication1
             SqlConnection con = new SqlConnection(@"Data Source = DESKTOP-6V52PV4\SQLEXPRESS; Initial Catalog = QLTB; Integrated Security = True");
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("select * from CHITIETHOADON where MAHOADON = '" + txtMaHoaDon.Text + "'", con);
+            SqlCommand cmd = new SqlCommand("select * from ReportHD where MAHOADON = '" + txtMaHoaDon.Text + "'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);

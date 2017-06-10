@@ -327,36 +327,23 @@ namespace DXApplication1
                 {
                     chkDaNhan.Checked = true;
                 }
+
+                var serial = (from ma in qltb.THIETBIs
+                                    where ma.MATHIETBI == dtgvDSPTN.CurrentRow.Cells[1].Value.ToString()
+                                    select ma.SERIAL).FirstOrDefault();
+                cbbThietBi.Text = serial;
             }
             catch { }
         }
 
 
-        //private void xuatExcel(DataGridView g, string duongDan, string tenTap)
-        //{
-        //    app obj = new app();
-        //    obj.Application.Workbooks.Add(Type.Missing);
-        //    obj.Columns.ColumnWidth = 20;
-        //    obj.Visible = true;// mở excel lên
-        //    for (int i = 1; i < g.Columns.Count + 1; i++) { obj.Cells[1, i] = g.Columns[i - 1].HeaderText; }
-        //    for (int i = 0; i < g.Rows.Count; i++)
-        //    {
-        //        for (int j = 0; j < g.Columns.Count; j++)
-        //        {
-        //            if (g.Rows[i].Cells[j].Value != null) { obj.Cells[i + 2, j + 1] = g.Rows[i].Cells[j].Value.ToString(); }
-        //        }
-        //    }
-        //    obj.ActiveWorkbook.SaveCopyAs(duongDan + tenTap + ".xlsx");
-        //    obj.ActiveWorkbook.Saved = true;
-
-        //}
 
         private void btnIn_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(@"Data Source = DESKTOP-6V52PV4\SQLEXPRESS; Initial Catalog = QLTB; Integrated Security = True");
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("select * from PHIEUTIEPNHAN where MAPHIEUTN = '" + txtMaPTN.Text + "'", con);
+            SqlCommand cmd = new SqlCommand("select * from ReportPTN where MAPHIEUTN = '" + txtMaPTN.Text + "'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);

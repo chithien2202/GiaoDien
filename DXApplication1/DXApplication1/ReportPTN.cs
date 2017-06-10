@@ -14,12 +14,17 @@ namespace DXApplication1
     
     public partial class ReportPTN
     {
-        public string MAPHIEUTN { get; set; }
         public string MAKHACHKHACH { get; set; }
+        public string TENKHACHHANG { get; set; }
+        public string DIACHIKH { get; set; }
+        public Nullable<int> SDTKH { get; set; }
+        public string MAPHIEUTN { get; set; }
         public Nullable<System.DateTime> NGAYNHAN { get; set; }
         public Nullable<System.DateTime> NGAYHENTRA { get; set; }
         public string TINHHINHHUHONG { get; set; }
         public string PHUKIENKEMTHEO { get; set; }
         public string GHICHUPTN { get; set; }
+        public string TENTHIETBI { get; set; }
+        public string SERIAL { get; set; }
     }
 }

@@ -9,26 +9,37 @@
 warning 6002: The table/view 'QLTB.dbo.ReportPTN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ReportPTN">
           <Key>
+            <PropertyRef Name="MAKHACHKHACH" />
             <PropertyRef Name="MAPHIEUTN" />
           </Key>
+          <Property Name="MAKHACHKHACH" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="TENKHACHHANG" Type="nvarchar" MaxLength="30" />
+          <Property Name="DIACHIKH" Type="nvarchar" MaxLength="50" />
+          <Property Name="SDTKH" Type="int" />
           <Property Name="MAPHIEUTN" Type="char" MaxLength="10" Nullable="false" />
-          <Property Name="MAKHACHKHACH" Type="char" MaxLength="10" />
           <Property Name="NGAYNHAN" Type="datetime" />
           <Property Name="NGAYHENTRA" Type="datetime" />
           <Property Name="TINHHINHHUHONG" Type="nvarchar" MaxLength="100" />
           <Property Name="PHUKIENKEMTHEO" Type="nvarchar" MaxLength="100" />
           <Property Name="GHICHUPTN" Type="nvarchar" MaxLength="100" />
+          <Property Name="TENTHIETBI" Type="nvarchar" MaxLength="50" />
+          <Property Name="SERIAL" Type="varchar" MaxLength="12" />
         </EntityType>
         <EntityContainer Name="QLTBModel1StoreContainer">
           <EntitySet Name="ReportPTN" EntityType="Self.ReportPTN" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [ReportPTN].[MAPHIEUTN] AS [MAPHIEUTN], 
     [ReportPTN].[MAKHACHKHACH] AS [MAKHACHKHACH], 
+    [ReportPTN].[TENKHACHHANG] AS [TENKHACHHANG], 
+    [ReportPTN].[DIACHIKH] AS [DIACHIKH], 
+    [ReportPTN].[SDTKH] AS [SDTKH], 
+    [ReportPTN].[MAPHIEUTN] AS [MAPHIEUTN], 
     [ReportPTN].[NGAYNHAN] AS [NGAYNHAN], 
     [ReportPTN].[NGAYHENTRA] AS [NGAYHENTRA], 
     [ReportPTN].[TINHHINHHUHONG] AS [TINHHINHHUHONG], 
     [ReportPTN].[PHUKIENKEMTHEO] AS [PHUKIENKEMTHEO], 
-    [ReportPTN].[GHICHUPTN] AS [GHICHUPTN]
+    [ReportPTN].[GHICHUPTN] AS [GHICHUPTN], 
+    [ReportPTN].[TENTHIETBI] AS [TENTHIETBI], 
+    [ReportPTN].[SERIAL] AS [SERIAL]
     FROM [dbo].[ReportPTN] AS [ReportPTN]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
@@ -39,17 +50,23 @@ warning 6002: The table/view 'QLTB.dbo.ReportPTN' does not have a primary key de
       <Schema Namespace="QLTBModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="ReportPTN">
           <Key>
+            <PropertyRef Name="MAKHACHKHACH" />
             <PropertyRef Name="MAPHIEUTN" />
           </Key>
+          <Property Name="MAKHACHKHACH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TENKHACHHANG" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DIACHIKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SDTKH" Type="Int32" />
           <Property Name="MAPHIEUTN" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="MAKHACHKHACH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="NGAYNHAN" Type="DateTime" Precision="3" />
           <Property Name="NGAYHENTRA" Type="DateTime" Precision="3" />
           <Property Name="TINHHINHHUHONG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="PHUKIENKEMTHEO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="GHICHUPTN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TENTHIETBI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SERIAL" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="QLTBEntities4" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ReportPTNs" EntityType="Self.ReportPTN" />
         </EntityContainer>
       </Schema>
@@ -57,17 +74,22 @@ warning 6002: The table/view 'QLTB.dbo.ReportPTN' does not have a primary key de
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QLTBModel1StoreContainer" CdmEntityContainer="QLTBEntities4">
+        <EntityContainerMapping StorageEntityContainer="QLTBModel1StoreContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="ReportPTNs">
             <EntityTypeMapping TypeName="QLTBModel1.ReportPTN">
               <MappingFragment StoreEntitySet="ReportPTN">
-                <ScalarProperty Name="MAPHIEUTN" ColumnName="MAPHIEUTN" />
                 <ScalarProperty Name="MAKHACHKHACH" ColumnName="MAKHACHKHACH" />
+                <ScalarProperty Name="TENKHACHHANG" ColumnName="TENKHACHHANG" />
+                <ScalarProperty Name="DIACHIKH" ColumnName="DIACHIKH" />
+                <ScalarProperty Name="SDTKH" ColumnName="SDTKH" />
+                <ScalarProperty Name="MAPHIEUTN" ColumnName="MAPHIEUTN" />
                 <ScalarProperty Name="NGAYNHAN" ColumnName="NGAYNHAN" />
                 <ScalarProperty Name="NGAYHENTRA" ColumnName="NGAYHENTRA" />
                 <ScalarProperty Name="TINHHINHHUHONG" ColumnName="TINHHINHHUHONG" />
                 <ScalarProperty Name="PHUKIENKEMTHEO" ColumnName="PHUKIENKEMTHEO" />
                 <ScalarProperty Name="GHICHUPTN" ColumnName="GHICHUPTN" />
+                <ScalarProperty Name="TENTHIETBI" ColumnName="TENTHIETBI" />
+                <ScalarProperty Name="SERIAL" ColumnName="SERIAL" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

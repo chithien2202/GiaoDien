@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="014fcae1173d427599921fa647668d33" Name="Diagram1">
+      <Diagram DiagramId="025756fb93054e318018197b6031bec2" Name="Diagram1">
         <EntityTypeShape EntityType="QLTBModel1.ReportPTN" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>

@@ -13,10 +13,10 @@ namespace DXApplication1
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class QLTBEntities4 : DbContext
+    public partial class Entities : DbContext
     {
-        public QLTBEntities4()
-            : base("name=QLTBEntities4")
+        public Entities()
+            : base("name=Entities")
         {
         }
     
