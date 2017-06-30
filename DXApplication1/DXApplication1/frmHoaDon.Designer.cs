@@ -138,9 +138,9 @@
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
             this.groupControl2.Controls.Add(this.dtgvDSHoaDon);
-            this.groupControl2.Location = new System.Drawing.Point(9, 322);
+            this.groupControl2.Location = new System.Drawing.Point(14, 345);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1099, 166);
+            this.groupControl2.Size = new System.Drawing.Size(1323, 191);
             this.groupControl2.TabIndex = 16;
             this.groupControl2.Text = "Danh sách hóa đơn";
             // 
@@ -159,7 +159,7 @@
             this.dtgvDSHoaDon.Location = new System.Drawing.Point(2, 23);
             this.dtgvDSHoaDon.Name = "dtgvDSHoaDon";
             this.dtgvDSHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvDSHoaDon.Size = new System.Drawing.Size(1095, 141);
+            this.dtgvDSHoaDon.Size = new System.Drawing.Size(1319, 166);
             this.dtgvDSHoaDon.TabIndex = 0;
             this.dtgvDSHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSHoaDon_CellClick);
             this.dtgvDSHoaDon.Click += new System.EventHandler(this.dtgvDSHoaDon_Click);
@@ -260,7 +260,7 @@
             this.groupControl3.Controls.Add(this.btnDong);
             this.groupControl3.Controls.Add(this.btnIn);
             this.groupControl3.Controls.Add(this.btnThem);
-            this.groupControl3.Location = new System.Drawing.Point(21, 260);
+            this.groupControl3.Location = new System.Drawing.Point(14, 287);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(492, 52);
             this.groupControl3.TabIndex = 17;
@@ -323,7 +323,7 @@
             this.grbTTHD.Controls.Add(this.labelControl2);
             this.grbTTHD.Location = new System.Drawing.Point(14, 4);
             this.grbTTHD.Name = "grbTTHD";
-            this.grbTTHD.Size = new System.Drawing.Size(1099, 234);
+            this.grbTTHD.Size = new System.Drawing.Size(1323, 277);
             this.grbTTHD.TabIndex = 15;
             this.grbTTHD.Text = "Thông tin hóa đơn";
             // 
@@ -346,7 +346,7 @@
             // cbbPTN
             // 
             this.cbbPTN.FormattingEnabled = true;
-            this.cbbPTN.Location = new System.Drawing.Point(388, 57);
+            this.cbbPTN.Location = new System.Drawing.Point(556, 36);
             this.cbbPTN.Name = "cbbPTN";
             this.cbbPTN.Size = new System.Drawing.Size(220, 21);
             this.cbbPTN.TabIndex = 45;
@@ -355,7 +355,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(388, 34);
+            this.label2.Location = new System.Drawing.Point(412, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(138, 13);
             this.label2.TabIndex = 44;
@@ -373,12 +373,12 @@
             this.MLK,
             this.TenLK,
             this.NgaySua});
-            this.dtgvPSC.Location = new System.Drawing.Point(388, 86);
+            this.dtgvPSC.Location = new System.Drawing.Point(415, 63);
             this.dtgvPSC.MultiSelect = false;
             this.dtgvPSC.Name = "dtgvPSC";
             this.dtgvPSC.RowHeadersVisible = false;
             this.dtgvPSC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvPSC.Size = new System.Drawing.Size(220, 134);
+            this.dtgvPSC.Size = new System.Drawing.Size(378, 205);
             this.dtgvPSC.TabIndex = 43;
             this.dtgvPSC.Click += new System.EventHandler(this.dtgvPSC_Click);
             // 
@@ -418,7 +418,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(699, 34);
+            this.label1.Location = new System.Drawing.Point(950, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 13);
             this.label1.TabIndex = 42;
@@ -426,7 +426,7 @@
             // 
             // btnXoaCTHD
             // 
-            this.btnXoaCTHD.Location = new System.Drawing.Point(614, 143);
+            this.btnXoaCTHD.Location = new System.Drawing.Point(836, 179);
             this.btnXoaCTHD.Name = "btnXoaCTHD";
             this.btnXoaCTHD.Size = new System.Drawing.Size(82, 36);
             this.btnXoaCTHD.TabIndex = 41;
@@ -436,7 +436,7 @@
             // 
             // btnThemCTHD
             // 
-            this.btnThemCTHD.Location = new System.Drawing.Point(614, 86);
+            this.btnThemCTHD.Location = new System.Drawing.Point(836, 122);
             this.btnThemCTHD.Name = "btnThemCTHD";
             this.btnThemCTHD.Size = new System.Drawing.Size(82, 36);
             this.btnThemCTHD.TabIndex = 39;
@@ -497,12 +497,12 @@
             this.BH,
             this.GiaThanh,
             this.PSC});
-            this.dtgvCTHD.Location = new System.Drawing.Point(702, 57);
+            this.dtgvCTHD.Location = new System.Drawing.Point(953, 59);
             this.dtgvCTHD.MultiSelect = false;
             this.dtgvCTHD.Name = "dtgvCTHD";
             this.dtgvCTHD.RowHeadersVisible = false;
             this.dtgvCTHD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvCTHD.Size = new System.Drawing.Size(379, 163);
+            this.dtgvCTHD.Size = new System.Drawing.Size(365, 213);
             this.dtgvCTHD.TabIndex = 38;
             // 
             // MaLK
@@ -598,7 +598,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1120, 500);
+            this.ClientSize = new System.Drawing.Size(1378, 572);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.grbTTHD);

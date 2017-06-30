@@ -247,7 +247,7 @@
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Location = new System.Drawing.Point(8, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1321, 165);
+            this.groupControl1.Size = new System.Drawing.Size(1345, 165);
             this.groupControl1.TabIndex = 11;
             this.groupControl1.Text = "Thông tin Phiếu sửa chữa";
             // 
@@ -420,7 +420,7 @@
             this.groupControl5.Controls.Add(this.dtgvPhieuSuaChua);
             this.groupControl5.Location = new System.Drawing.Point(8, 236);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(1321, 274);
+            this.groupControl5.Size = new System.Drawing.Size(1345, 274);
             this.groupControl5.TabIndex = 16;
             this.groupControl5.Text = "Danh sách phiếu sửa chữa";
             // 
@@ -445,7 +445,7 @@
             this.dtgvPhieuSuaChua.Location = new System.Drawing.Point(2, 20);
             this.dtgvPhieuSuaChua.Name = "dtgvPhieuSuaChua";
             this.dtgvPhieuSuaChua.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvPhieuSuaChua.Size = new System.Drawing.Size(1317, 252);
+            this.dtgvPhieuSuaChua.Size = new System.Drawing.Size(1341, 252);
             this.dtgvPhieuSuaChua.TabIndex = 1;
             this.dtgvPhieuSuaChua.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPhieuSuaChua_CellClick_1);
             // 
@@ -535,7 +535,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1341, 510);
+            this.ClientSize = new System.Drawing.Size(1365, 510);
             this.Controls.Add(this.groupControl5);
             this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.groupControl1);

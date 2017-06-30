@@ -37,6 +37,10 @@ namespace DXApplication1
                 txtFax.Enabled = true;
                 txtDienGiai.Enabled = true;
 
+                txtDChi.Text = String.Empty;
+                txtEmail.Text = String.Empty;
+                txtFax.Text = String.Empty;
+                txtSDT.Text = String.Empty;
                 txtTenKH.Text = String.Empty;
                 txtDienGiai.Text = String.Empty;
 
@@ -64,7 +68,15 @@ namespace DXApplication1
                     {
                         khachhang.GHICHU = txtDienGiai.Text;
                     }
-                    khachhang.FAX = int.Parse(txtFax.Text);
+                    if (txtFax.Text == null || txtFax.Text == "") 
+                    {
+                        khachhang.FAX = null;
+                    }
+                    else
+                    {
+                        khachhang.FAX = int.Parse(txtFax.Text);
+                    }
+                    
                     khachhang.EMAILKH = txtEmail.Text;
                     qltb.KHACHHANGs.InsertOnSubmit(khachhang);
                     qltb.SubmitChanges();
